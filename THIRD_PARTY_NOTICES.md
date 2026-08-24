@@ -40,6 +40,7 @@ Packages:
 
 - `google-auth`
 - `google-analytics`
+- `google-merchant`
 - `google-pagespeed-insights`
 - `google-search-console`
 

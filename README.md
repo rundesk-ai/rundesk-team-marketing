@@ -39,6 +39,7 @@ overall outcome, and integrates the returned evidence or artifact.
 ### Growth and acquisition
 
 - `conversion-landing-pages` — Plan and evaluate measurable campaign landing pages and experiments.
+- `google-merchant` — Read Merchant Center product serving, item issues, performance, pricing, best sellers, and competitive visibility.
 - `lead-compliance-gates` — Identify consent, suppression, privacy, and vertical-specific gates before lead traffic goes live.
 - `seo` — Audit and plan technical SEO, on-page content, structured data, AI-search visibility, and measurement.
 
@@ -103,7 +104,7 @@ This installs only the skills. You can add the complete team later without reins
 - Public GitHub access to this repository.
 - For complete-team installation: a provider and unused local names for all four members.
 - A configured PostHog profile for live PostHog reads.
-- A connected Google account and permitted GA4 or Search Console resources for Google reads.
+- A connected Google account and permitted GA4, Merchant Center, or Search Console resources for Google reads.
 - A PageSpeed Insights API key for PageSpeed reads.
 
 This catalog carries its own Google OAuth provider declaration. Do not install it alongside another
@@ -119,6 +120,7 @@ python3 -m unittest discover -s tests -v
 python3 skills/posthog/scripts/posthog.d/test-posthog.py -q
 python3 skills/google-auth/scripts/google-auth.d/test-google-auth.py -q
 python3 skills/google-analytics/scripts/google-analytics.d/test-google-analytics.py -q
+python3 skills/google-merchant/scripts/google-merchant.d/test-google-merchant.py -q
 python3 skills/google-pagespeed-insights/scripts/google-pagespeed-insights.d/test-google-pagespeed-insights.py -q
 python3 skills/google-search-console/scripts/google-search-console.d/test-google-search-console.py -q
 git diff --check

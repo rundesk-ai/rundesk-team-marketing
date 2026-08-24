@@ -38,6 +38,7 @@ AGENT_HEADINGS = (
 EXPECTED_GRANTS = {
     "beacon": {
         "conversion-landing-pages",
+        "google-merchant",
         "google-pagespeed-insights",
         "google-search-console",
         "lead-compliance-gates",
@@ -200,6 +201,7 @@ class RepositoryContract(unittest.TestCase):
                     "posthog",
                     "google-auth",
                     "google-analytics",
+                    "google-merchant",
                     "google-pagespeed-insights",
                     "google-search-console",
                 ):

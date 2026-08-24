@@ -8,6 +8,7 @@
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
         "conversion-landing-pages",
+        "google-merchant",
         "google-pagespeed-insights",
         "google-search-console",
         "lead-compliance-gates",
