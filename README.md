@@ -19,9 +19,9 @@
 </p>
 
 A versioned Rundesk marketing team: four specialists, their canonical instructions, the skills they
-use, and caller-facing orchestration for combining their work. Shared capabilities stay in their
-general, Google, and integration catalogs; this team declares and reuses those dependencies through
-the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
+use, and caller-facing orchestration for combining their work. Specialist guidance stays with this
+team; Google and PostHog integrations remain in their reusable integration catalogs and are declared
+as dependencies through the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
 
 ## 👥 Team
 
@@ -47,8 +47,8 @@ member: the caller retains the outcome and integrates every specialist return.
 Granted skills are grouped by the outcome they support and the specialist who receives them.
 Shared catalog access follows.
 
-The team catalog also owns `analyzing-growth-data`. Every other specialist skill below is installed
-once from its linked shared catalog and may be reused by other teams.
+This catalog owns and ships every guidance skill listed below. Only the Google and PostHog skills
+come from declared integration catalogs.
 
 ### Growth and acquisition — Beacon
 
@@ -87,7 +87,7 @@ Preview first, then confirm.
 
 ### Complete team
 
-Install the team, any missing shared catalogs, and four managed agents:
+Install the team, any missing integration catalogs, and four managed agents:
 
 ```sh
 rundesk teams install https://github.com/rundesk-ai/rundesk-team-marketing --provider <provider>
@@ -108,7 +108,7 @@ rundesk teams update rundesk-team-marketing --confirm
 
 ### Skills only
 
-Install only this catalog's team-specific skill without creating agents or dependencies:
+Install only this catalog's guidance skills without creating agents or dependencies:
 
 ```sh
 rundesk skills install https://github.com/rundesk-ai/rundesk-team-marketing
@@ -116,7 +116,7 @@ rundesk skills install https://github.com/rundesk-ai/rundesk-team-marketing --co
 rundesk skills grant <agent> rundesk-team-marketing/managing-marketing-work
 ```
 
-You can add the complete team later; its missing shared catalogs will then be installed, while
+You can add the complete team later; its missing integration catalogs will then be installed, while
 matching catalogs already present from the same sources will be reused.
 
 ## ✅ Requirements

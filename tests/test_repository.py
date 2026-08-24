@@ -1,4 +1,4 @@
-"""The marketing team catalog owns local work and declares shared dependencies exactly."""
+"""The marketing team catalog owns its specialist guidance and declares only integrations."""
 
 import json
 import os
@@ -37,23 +37,25 @@ AGENT_HEADINGS = (
 )
 EXPECTED_GRANTS = {
     "beacon": {
-        "rundesk-skills/conversion-landing-pages",
         "rundesk-skills-google/google-merchant",
         "rundesk-skills-google/google-pagespeed-insights",
         "rundesk-skills-google/google-search-console",
-        "rundesk-skills/lead-compliance-gates",
-        "rundesk-skills/seo",
+        "rundesk-team-marketing/conversion-landing-pages",
+        "rundesk-team-marketing/lead-compliance-gates",
+        "rundesk-team-marketing/seo",
     },
-    "quill": {"rundesk-skills/writing-prds", "rundesk-skills/writing-technical-docs"},
-    "scout": {"rundesk-skills/researching-topics"},
+    "quill": {
+        "rundesk-team-marketing/writing-prds",
+        "rundesk-team-marketing/writing-technical-docs",
+    },
+    "scout": {"rundesk-team-marketing/researching-topics"},
     "signal": {
-        "rundesk-team-marketing/analyzing-growth-data",
         "rundesk-skills-google/google-analytics",
         "rundesk-skills-integrations/posthog",
+        "rundesk-team-marketing/analyzing-growth-data",
     },
 }
 EXPECTED_CATALOGS = {
-    "rundesk-skills": "https://github.com/rundesk-ai/rundesk-skills",
     "rundesk-skills-google": "https://github.com/rundesk-ai/rundesk-skills-google",
     "rundesk-skills-integrations": "https://github.com/rundesk-ai/rundesk-skills-integrations",
 }
@@ -145,6 +147,7 @@ class RepositoryContract(unittest.TestCase):
         names = [member["name"] for member in self.team["members"]]
         self.assertEqual(sorted(names), names)
         self.assertEqual(MEMBERS, set(names))
+        local = self.skill_names()
         for name, member in self.members().items():
             with self.subTest(member=name):
                 self.assertEqual(
@@ -159,6 +162,11 @@ class RepositoryContract(unittest.TestCase):
                 self.assertTrue(all(skill.count("/") == 1 for skill in member["skills"]))
                 self.assertFalse({skill.rsplit("/", 1)[1] for skill in member["skills"]}
                                  & PRODUCT_OWNED)
+                for catalog, package in (skill.split("/") for skill in member["skills"]):
+                    if catalog == self.team["name"]:
+                        self.assertIn(package, local)
+                    else:
+                        self.assertIn(catalog, EXPECTED_CATALOGS)
                 self.assertEqual([], member["delegates_to"])
                 self.assertIs(False, member["self_improve"])
                 self.assertEqual(f"agents/{name}/AGENTS.md", member["instructions"])

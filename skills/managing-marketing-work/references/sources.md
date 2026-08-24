@@ -20,19 +20,19 @@ one external marketing framework prescribes a universal process.
 
 ## Composed specialist methods
 
-- [`researching-topics`](https://github.com/rundesk-ai/rundesk-skills/blob/826953197c01c7816fdd480e1eb91ee4fe708a8b/skills/researching-topics/SKILL.md) supports claim-based external research,
+- [`researching-topics`](../../researching-topics/SKILL.md) supports claim-based external research,
   source evaluation, uncertainty, and reproducible synthesis.
-- [`seo`](https://github.com/rundesk-ai/rundesk-skills/blob/826953197c01c7816fdd480e1eb91ee4fe708a8b/skills/seo/SKILL.md) and
-  [`conversion-landing-pages`](https://github.com/rundesk-ai/rundesk-skills/blob/826953197c01c7816fdd480e1eb91ee4fe708a8b/skills/conversion-landing-pages/SKILL.md) support ranked growth
+- [`seo`](../../seo/SKILL.md) and
+  [`conversion-landing-pages`](../../conversion-landing-pages/SKILL.md) support ranked growth
   findings, measurable opportunities, and experiment-ready recommendations.
 - [`analyzing-growth-data`](../../analyzing-growth-data/SKILL.md) supports metric contracts,
   funnels, cohorts, attribution, experiments, forecasts, and the boundary between descriptive and
   causal claims.
-- [`writing-prds`](https://github.com/rundesk-ai/rundesk-skills/blob/826953197c01c7816fdd480e1eb91ee4fe708a8b/skills/writing-prds/SKILL.md) and
-  [`writing-technical-docs`](https://github.com/rundesk-ai/rundesk-skills/blob/826953197c01c7816fdd480e1eb91ee4fe708a8b/skills/writing-technical-docs/SKILL.md) support artifacts grounded in
+- [`writing-prds`](../../writing-prds/SKILL.md) and
+  [`writing-technical-docs`](../../writing-technical-docs/SKILL.md) support artifacts grounded in
   approved direction and verifiable evidence.
-- The declared Google and integration catalogs establish bounded account, resource, period, output,
-  and mutation boundaries for service evidence. They do not decide what the evidence means.
+- The declared Google and PostHog integration catalogs establish bounded account, resource, period,
+  output, and mutation boundaries for service evidence. They do not decide what the evidence means.
 
 ## Structural source
 

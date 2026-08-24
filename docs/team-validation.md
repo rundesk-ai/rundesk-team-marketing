@@ -11,8 +11,8 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
   catalog.
 - `LIFE-03`: team preview names exact member, instruction, grant, provider, and revocation effects
   and changes nothing.
-- `LIFE-04`: direct team install installs missing shared catalogs, creates exactly Beacon, Quill,
-  Scout, and Signal, and leaves their gateways stopped.
+- `LIFE-04`: direct team install installs a missing integration catalog, creates exactly Beacon,
+  Quill, Scout, and Signal, and leaves their gateways stopped.
 - `LIFE-05`: team installation grants each exact allowlist and grants no product-owned skill.
 - `LIFE-06`: team update reconciles drift while preserving unrelated catalogs and credentials.
 - `LIFE-07`: a skills-only catalog promotes to a team catalog without reinstalling package content.
