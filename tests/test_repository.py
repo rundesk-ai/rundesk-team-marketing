@@ -86,7 +86,6 @@ class RepositoryContract(unittest.TestCase):
         self.assertIn("catalog-v0.1.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
-        self.assertIn("Quill intentionally starts with no packaged skills", readme)
 
     def test_every_skill_has_valid_frontmatter_and_a_self_contained_package(self):
         for name in self.skill_names():

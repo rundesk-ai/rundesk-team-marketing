@@ -34,9 +34,6 @@ skill catalog and a team declaration for the [Rundesk CLI](https://github.com/ru
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
 overall outcome, and integrates the returned evidence or artifact.
 
-Quill intentionally starts with no packaged skills in v0.1.0. Its focused instructions provide the
-initial messaging boundary while dedicated content-production skills are developed.
-
 ## 🧠 Skills
 
 ### Growth and acquisition
