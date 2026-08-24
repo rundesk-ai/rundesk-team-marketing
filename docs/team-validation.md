@@ -16,6 +16,8 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 - `LIFE-07`: a skills-only catalog promotes to a team catalog without reinstalling package content.
 - `LIFE-08`: the Google provider declaration is accepted when no other catalog owns `google` and is
   refused as ambiguous when another installed declaration owns it.
+- `LIFE-09`: `managing-marketing-work` installs with the catalog and is not granted to Beacon,
+  Scout, Signal, or Quill during team install or update.
 
 ## Member cases
 

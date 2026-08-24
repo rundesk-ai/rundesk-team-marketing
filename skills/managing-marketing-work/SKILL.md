@@ -1,0 +1,155 @@
+---
+name: managing-marketing-work
+description: Use when a domain-facing agent owns a marketing outcome that requires coordinating two or more of external research, growth planning, first-party measurement, or content production. It supplies the work contract, dependency order, specialist handoffs, integration, approval boundaries, and completion proof. Do not use for one self-contained specialist task or to operate campaigns without separate authority.
+---
+
+# Manage marketing work
+
+Own one marketing outcome across specialists without becoming a substitute for their methods. Load
+the applicable research, growth, analytics, content, compliance, and service skills for the work
+they actually govern.
+
+## Keep the ownership boundary explicit
+
+This skill owns:
+
+- the outcome, decision, scope, audience, constraints, and completion proof;
+- the order in which evidence, decisions, briefs, and artifacts become usable;
+- bounded specialist handoffs and integration of their returns;
+- conflicts between external evidence, first-party measurement, direction, and claims; and
+- the distinction between a finished local artifact and separately authorized activation.
+
+It does not discover the market, rank growth opportunities, analyze data, write content, approve
+legal claims, or operate a service by itself. Compose it with the skill that owns each method. A
+single specialist task with clear inputs and proof does not need orchestration ceremony.
+
+## Define the marketing work contract
+
+Write the smallest contract that makes completion observable:
+
+```text
+Outcome: the decision, change, or artifact the requester needs
+Audience: the people, market, segment, geography, and channel in scope
+Decision: who decides what after receiving the work
+Evidence: external and first-party facts required before that decision
+Direction: approved product, offer, position, claims, voice, and constraints
+Measures: baseline, primary outcome, downstream outcome, and harm guardrails
+Deliverables: briefs, findings, recommendations, content, or measurement artifacts
+Authority: allowed reads and drafts; approvals still required for contact, spend, publish, or mutation
+Scope: included work and the nearest tempting exclusions
+Proof: checks that distinguish a usable result from a plausible one
+Unknowns: missing facts or decisions that can materially change the work
+```
+
+Do not invent a market need, customer belief, baseline, target, claim, or approval to fill a field.
+Continue with unaffected work and return the smallest decision that blocks the rest.
+
+## Route by evidence need and artifact
+
+Route each bounded question to the capability that owns its method:
+
+| Need | Owning capability | Usable return |
+|---|---|---|
+| Market, customer, competitor, category, or current external fact | External research | Claim-linked findings, uncertainty, and reproducible sources |
+| Search, content, acquisition, landing-page, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
+| Funnel, cohort, retention, attribution, experiment, segment, or forecast | First-party analysis | Metric contract, query, result, uncertainty, and limits |
+| Approved message, requirement, documentation, or channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
+| Current account, property, event, page, product, or search evidence | Service integration | Bounded retrieval with resource, account, period, and truncation visible |
+
+Route the question, not the whole initiative. Do not ask research to choose strategy, analytics to
+invent a denominator, growth planning to write final copy, or content production to supply missing
+market evidence. When one return reveals a new evidence need, add that bounded dependency instead of
+quietly expanding the original handoff.
+
+## Order work by dependency
+
+Use only the stages the outcome needs. A useful default is:
+
+1. **Frame the decision.** Confirm the audience, situation, current state, desired change, owner,
+   authority, and proof.
+2. **Establish evidence.** Gather external facts and first-party baselines before selecting an
+   opportunity or writing a claim.
+3. **Choose direction.** Present options, tradeoffs, confidence, and the smallest owner decisions.
+   An agent may recommend; it does not convert a recommendation into approved direction.
+4. **Write the brief.** Bind the chosen audience, outcome, evidence, offer, claims, channel, format,
+   constraints, measure, and approval state.
+5. **Produce the artifact.** Create only what the approved brief authorizes. Preserve unsupported,
+   regulated, or pending claims as visible review items.
+6. **Validate the result.** Check the artifact against the brief, evidence, channel constraints,
+   measurement contract, and required approvals.
+
+Do not force a research answer through content production or a bounded content revision through a
+full strategy cycle. Skip a stage only when its input is already approved and traceable.
+
+## Make handoffs testable
+
+Give each specialist one self-contained brief:
+
+```text
+Question or artifact: one bounded result
+Decision served: what the requester will decide or do with it
+Inputs: approved evidence, direction, definitions, and prior artifacts
+Scope: market, audience, channel, geography, period, and exclusions
+Authority: permitted reads or drafts and prohibited external effects
+Return: required artifact, evidence, uncertainty, and format
+Proof: observable checks and source or query trace
+Stop: missing input, conflicting evidence, broader scope, or new authority required
+```
+
+Parallelize only independent evidence surfaces or artifacts. Research that defines the audience,
+analysis that establishes the baseline, and content that depends on both are sequential even when
+separate specialists perform them.
+
+A fluent return is not integration. Inspect the sources, queries, denominators, assumptions,
+claims, and artifact directly. Reconcile conflicts before downstream work uses them.
+
+## Integrate without erasing distinctions
+
+Keep these boundaries visible in the final result:
+
+- External market evidence does not become first-party customer behavior.
+- Attribution assigns reporting credit; it does not establish causal effect.
+- A forecast is not a target, promise, or budget commitment.
+- An opportunity ranking is a recommendation until its owner chooses it.
+- Approved direction is not evidence that a claim is true.
+- A content draft is not published, sent, launched, or accepted by its channel.
+- A successful service read proves only the bounded resource and period returned.
+
+When sources or tools disagree, reconcile definitions, populations, identities, timezones, windows,
+and freshness before choosing a number. Preserve unresolved disagreement instead of selecting the
+answer that makes the initiative look strongest.
+
+## Separate activation from preparation
+
+Research, analysis, planning, and drafting do not authorize media spend, consumer contact,
+publication, deployment, account configuration, tracking changes, experiment rollout, or service
+mutation. Name the exact external effect, target, account, audience, cost or blast radius, approval,
+rollback or stop condition, and verification before activation.
+
+Treat privacy, regulated claims, consent, lead transfer, suppression, personal data, money, and
+irreversible publication as explicit risk boundaries. Route legal conclusions to qualified owners;
+a marketing skill can identify a gate but cannot approve around it.
+
+## Prove completion
+
+Return one integrated completion record:
+
+```text
+Outcome: what is now decided, changed, or ready
+Decision: owner choice made or still required
+Evidence: external sources and first-party queries actually used
+Artifacts: briefs, findings, recommendations, content, and measurement contracts
+Measures: baseline, primary and downstream outcomes, guardrails, and observation window
+Approvals: obtained, pending, or outside scope
+Proof: checks performed and representative paths observed
+Excluded: adjacent work intentionally not performed
+Unrun: unavailable data, checks, activation, or external verification
+```
+
+Completion requires the requested result, traceable evidence, reconciled specialist returns,
+validated artifacts, and honest authority state. Pending approval, unrun activation, or a dashboard
+without its metric contract remains pending rather than complete.
+
+Read [sources](references/sources.md) when auditing or changing the routing, ownership, evidence, or
+authority boundaries. Use [validation](references/validation.md) when testing activation and
+workflow behavior in fresh provider sessions.
