@@ -27,9 +27,9 @@ as dependencies through the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-
 
 | Member | Responsibility |
 |---|---|
-| `beacon` | Maps SEO, AI-search, content, acquisition, and competitor-site opportunities. |
-| `scout` | Researches markets, customers, competitors, products, and general topics. |
-| `signal` | Analyzes first-party product and marketing data and forecasts. |
+| `beacon` | Owns organic and AI search end to end: opportunity, tests, and its own surface results. |
+| `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
+| `signal` | Owns the metric contract and certifies reported numbers, experiments, and forecasts. |
 | `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
@@ -80,6 +80,10 @@ come from declared integration catalogs.
 
 `google-auth` is installed with `rundesk-skills-google` as that catalog's provider declaration; it
 is not granted to a member by default.
+
+Beacon and Signal share `analyzing-growth-data`, `conversion-landing-pages`, and `google-analytics`.
+They read the same evidence for different questions: Beacon to decide what to do in its channel,
+Signal to certify what the data establishes. A shared skill never merges their outputs.
 
 ## 🚀 Install
 
@@ -140,7 +144,8 @@ python3 -m unittest discover -s tests -v
 git diff --check
 ```
 
-See [team validation](docs/team-validation.md) for the lifecycle and member-behavior contract.
+See [team validation](docs/team-validation.md) for the lifecycle and member-behavior contract,
+and [coverage gaps](docs/coverage-gaps.md) for the capability limits this catalog does not close.
 
 ## 🤝 Contributing
 

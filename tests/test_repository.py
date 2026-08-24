@@ -37,9 +37,11 @@ AGENT_HEADINGS = (
 )
 EXPECTED_GRANTS = {
     "beacon": {
+        "rundesk-skills-google/google-analytics",
         "rundesk-skills-google/google-merchant",
         "rundesk-skills-google/google-pagespeed-insights",
         "rundesk-skills-google/google-search-console",
+        "rundesk-team-marketing/analyzing-growth-data",
         "rundesk-team-marketing/conversion-landing-pages",
         "rundesk-team-marketing/lead-compliance-gates",
         "rundesk-team-marketing/seo",
@@ -53,6 +55,7 @@ EXPECTED_GRANTS = {
         "rundesk-skills-google/google-analytics",
         "rundesk-skills-integrations/posthog",
         "rundesk-team-marketing/analyzing-growth-data",
+        "rundesk-team-marketing/conversion-landing-pages",
     },
 }
 EXPECTED_CATALOGS = {

@@ -14,12 +14,14 @@
   "members": [
     {
       "name": "beacon",
-      "description": "Maps external growth opportunities across search, AI answers, content, acquisition channels, and competitor websites, returning ranked evidence.",
+      "description": "Owns organic and AI search end to end: ranks opportunity from retrieved evidence, proposes tests, and measures what its own surfaces did.",
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
+        "rundesk-skills-google/google-analytics",
         "rundesk-skills-google/google-merchant",
         "rundesk-skills-google/google-pagespeed-insights",
         "rundesk-skills-google/google-search-console",
+        "rundesk-team-marketing/analyzing-growth-data",
         "rundesk-team-marketing/conversion-landing-pages",
         "rundesk-team-marketing/lead-compliance-gates",
         "rundesk-team-marketing/seo"
@@ -40,7 +42,7 @@
     },
     {
       "name": "scout",
-      "description": "Researches markets, customers, competitors, products, and general topics, returning sourced findings with uncertainty and limits.",
+      "description": "Researches markets, customers, competitor businesses, products, and general topics from published sources, returning cited findings with uncertainty and limits.",
       "instructions": "agents/scout/AGENTS.md",
       "skills": [
         "rundesk-team-marketing/researching-topics"
@@ -50,12 +52,13 @@
     },
     {
       "name": "signal",
-      "description": "Analyzes first-party product and marketing data, returning reproducible funnel, cohort, retention, attribution, experiment, segment, and forecast findings.",
+      "description": "Owns the metric contract and certifies reported numbers across funnels, cohorts, retention, experiments, segments, and forecasts, with uncertainty and limits.",
       "instructions": "agents/signal/AGENTS.md",
       "skills": [
         "rundesk-skills-google/google-analytics",
         "rundesk-skills-integrations/posthog",
-        "rundesk-team-marketing/analyzing-growth-data"
+        "rundesk-team-marketing/analyzing-growth-data",
+        "rundesk-team-marketing/conversion-landing-pages"
       ],
       "delegates_to": [],
       "self_improve": false
