@@ -209,7 +209,12 @@ class RepositoryContract(unittest.TestCase):
 
     def test_text_files_have_clean_endings(self):
         for path in ROOT.rglob("*"):
-            if not path.is_file() or ".git" in path.parts or path.suffix == ".png":
+            if (
+                not path.is_file()
+                or ".git" in path.parts
+                or "__pycache__" in path.parts
+                or path.suffix == ".png"
+            ):
                 continue
             text = path.read_text(encoding="utf-8", errors="ignore")
             with self.subTest(path=path.relative_to(ROOT)):
