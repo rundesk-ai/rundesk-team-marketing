@@ -26,8 +26,8 @@ installable skill catalog and a team declaration for the [Rundesk CLI](https://g
 
 | Member | Responsibility |
 |---|---|
-| `beacon` | Maps SEO, AI-search, content, acquisition, and competitor-site opportunities. |
-| `scout` | Researches markets, customers, competitors, products, and general topics. |
+| `beacon` | Maps growth opportunity on retrievable surfaces: search, AI answers, pages, landing paths, product feeds, and competitor sites. |
+| `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
 | `signal` | Analyzes first-party product and marketing data and forecasts. |
 | `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
 
@@ -142,7 +142,8 @@ python3 skills/google-search-console/scripts/google-search-console.d/test-google
 git diff --check
 ```
 
-See [team validation](docs/team-validation.md) for the lifecycle and member-behavior contract.
+See [team validation](docs/team-validation.md) for the lifecycle and member-behavior contract,
+and [coverage gaps](docs/coverage-gaps.md) for the capability limits this catalog does not close.
 
 ## 🤝 Contributing
 

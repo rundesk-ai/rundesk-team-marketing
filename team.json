@@ -4,7 +4,7 @@
   "members": [
     {
       "name": "beacon",
-      "description": "Maps external growth opportunities across search, AI answers, content, acquisition channels, and competitor websites, returning ranked evidence.",
+      "description": "Maps growth opportunity across surfaces it can retrieve: organic and AI search, pages, landing paths, product feeds, and competitor sites, returning ranked evidence and proposed tests.",
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
         "conversion-landing-pages",
@@ -30,7 +30,7 @@
     },
     {
       "name": "scout",
-      "description": "Researches markets, customers, competitors, products, and general topics, returning sourced findings with uncertainty and limits.",
+      "description": "Researches markets, customers, competitor businesses, products, and general topics from published sources, returning cited findings with uncertainty and limits.",
       "instructions": "agents/scout/AGENTS.md",
       "skills": [
         "researching-topics"

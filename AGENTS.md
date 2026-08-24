@@ -28,7 +28,7 @@ license in `THIRD_PARTY_NOTICES.md`. No package may depend on another checkout.
 ```text
 agents/<member>/AGENTS.md          canonical member instructions
 assets/readme/                     public README artwork
-docs/                              stable validation method and evidence
+docs/                              stable validation method, evidence, and coverage gaps
 skills/<name>/                     guidance or self-contained integration packages
 tests/test_repository.py           repository and team contract
 AGENTS.md and CLAUDE.md            byte-identical repository rules
@@ -73,6 +73,11 @@ The team has no lead. Each member is an inbound-only specialist and returns to t
 Beacon owns external growth evidence, Scout owns external research, Signal owns first-party
 measurement and analysis, and Quill owns messaging and content artifacts.
 
+Growth evidence and external research are separated by how a claim is proved, not by its subject.
+Growth evidence is retrieved from a property or serving surface and can be retrieved again. External
+research is cited to a source someone else can look up. The same competitor belongs to Beacon as a
+site and to Scout as a business, and a question needing both is two requests the requester sequences.
+
 Inbound-only bounds named-agent handoffs, not provider subagents. A member may use bounded provider
 subagents when their value exceeds coordination cost, but retains scope, integration, and proof.
 Repository contributors may delegate only non-overlapping work and must verify every return.
@@ -84,10 +89,10 @@ exactly four sections after its title: `Before you act`, `Routing`, `Scope`, and
 skill names. A skill supplies reusable judgment or a guarded integration and never assumes this
 team's topology.
 
-Use the canonical terms growth evidence, external research, first-party data, funnel, cohort,
-retention, attribution, experiment, segment, forecast, brief, message, and content. Preserve Google,
-PostHog, and other vendor names at their boundaries. Distinguish attribution from causal effect and
-forecast from target or commitment.
+Use the canonical terms growth evidence, external research, retrieval, citation, first-party data,
+funnel, cohort, retention, attribution, experiment, segment, forecast, brief, message, and content. Preserve Google,
+PostHog, and other vendor names at their boundaries. Distinguish attribution from causal effect,
+forecast from target or commitment, and a source citation from an AI answer's citation of a page.
 
 ## Documentation duties
 
