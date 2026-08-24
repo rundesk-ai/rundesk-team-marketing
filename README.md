@@ -26,9 +26,9 @@ installable skill catalog and a team declaration for the [Rundesk CLI](https://g
 
 | Member | Responsibility |
 |---|---|
-| `beacon` | Maps SEO, AI-search, content, acquisition, and competitor-site opportunities. |
-| `scout` | Researches markets, customers, competitors, products, and general topics. |
-| `signal` | Analyzes first-party product and marketing data and forecasts. |
+| `beacon` | Owns organic and AI search end to end: opportunity, tests, and its own surface results. |
+| `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
+| `signal` | Owns the metric contract and certifies reported numbers, experiments, and forecasts. |
 | `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
@@ -76,6 +76,10 @@ Shared catalog access follows.
 
 `google-auth` is shipped as the provider declaration that makes the Google integration packages
 self-contained; it is not granted to a member by default.
+
+Beacon and Signal share `analyzing-growth-data`, `conversion-landing-pages`, and `google-analytics`.
+They read the same evidence for different questions: Beacon to decide what to do in its channel,
+Signal to certify what the data establishes. A shared skill never merges their outputs.
 
 ## 🚀 Install
 
@@ -142,7 +146,8 @@ python3 skills/google-search-console/scripts/google-search-console.d/test-google
 git diff --check
 ```
 
-See [team validation](docs/team-validation.md) for the lifecycle and member-behavior contract.
+See [team validation](docs/team-validation.md) for the lifecycle and member-behavior contract,
+and [coverage gaps](docs/coverage-gaps.md) for the capability limits this catalog does not close.
 
 ## 🤝 Contributing
 
