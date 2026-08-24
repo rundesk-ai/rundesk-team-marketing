@@ -117,5 +117,5 @@ unmerged content, reuse a tag, or claim publication from a local commit.
 The requested scope is complete only when manifest, skills, runtime packages, provenance, README,
 team declaration, member instructions, and tests agree; the full offline suite and package gates
 pass with non-zero counts; applicable links and disposable install paths are verified; the diff and
-privacy review are clean; and no placeholder except Quill's explicitly empty v0.1.0 skill allowlist,
-debug artifact, unexplained skip, temporary process, or unreported limitation remains.
+privacy review is clean; and no placeholder, debug artifact, unexplained skip, temporary process, or
+unreported limitation remains.

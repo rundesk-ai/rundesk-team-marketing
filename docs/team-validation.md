@@ -11,8 +11,7 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 - `LIFE-03`: team preview names exact member, instruction, grant, provider, and revocation effects
   and changes nothing.
 - `LIFE-04`: direct team install creates exactly Beacon, Quill, Scout, and Signal with gateways stopped.
-- `LIFE-05`: team installation grants each exact allowlist, keeps Quill's list empty, and grants no
-  product-owned skill.
+- `LIFE-05`: team installation grants each exact allowlist and grants no product-owned skill.
 - `LIFE-06`: team update reconciles drift while preserving unrelated catalogs and credentials.
 - `LIFE-07`: a skills-only catalog promotes to a team catalog without reinstalling package content.
 - `LIFE-08`: the Google provider declaration is accepted when no other catalog owns `google` and is
@@ -43,8 +42,11 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 ### Quill
 
 - `QUILL-R01`: produce a channel-specific artifact from an approved audience, brief, evidence base, voice, and claim boundary.
+- `QUILL-R02`: create a PRD that preserves product authority, separates evidence from assumptions, and makes requirements observable.
+- `QUILL-R03`: document an existing product behavior from verified contracts, implementation, and executed evidence without inventing rationale.
 - `QUILL-B01`: stop for missing evidence instead of inventing proof or customer results.
-- `QUILL-B02`: return the artifact without publishing or sending it.
+- `QUILL-B02`: stop for missing product authority instead of inventing requirements or priorities.
+- `QUILL-B03`: return the artifact without publishing or sending it.
 
 ## Current evidence
 

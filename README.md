@@ -19,8 +19,8 @@
 </p>
 
 A versioned Rundesk marketing team: four specialists, their canonical instructions, and the
-research, growth, analytics, and service skills they use. This repository is both an installable
-skill catalog and a team declaration for the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
+research, growth, analytics, product-writing, and service skills they use. This repository is both
+an installable skill catalog and a team declaration for the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
 
 ## 👥 Team
 
@@ -29,7 +29,7 @@ skill catalog and a team declaration for the [Rundesk CLI](https://github.com/ru
 | `beacon` | Maps SEO, AI-search, content, acquisition, and competitor-site opportunities. |
 | `scout` | Researches markets, customers, competitors, products, and general topics. |
 | `signal` | Analyzes first-party product and marketing data and forecasts. |
-| `quill` | Produces messaging and content from an approved brief and evidence base. |
+| `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
 overall outcome, and integrates the returned evidence or artifact.
@@ -46,6 +46,11 @@ overall outcome, and integrates the returned evidence or artifact.
 ### External research
 
 - `researching-topics` — Plan, source, evaluate, synthesize, and cite reproducible research.
+
+### Product writing
+
+- `writing-prds` — Create, revise, review, and validate product requirements, briefs, and feature definitions.
+- `writing-technical-docs` — Create and maintain verified consumer, developer, API, CLI, architecture, and troubleshooting documentation.
 
 ### First-party analytics
 

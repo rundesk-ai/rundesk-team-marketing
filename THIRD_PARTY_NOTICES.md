@@ -15,6 +15,8 @@ Packages:
 - `lead-compliance-gates`
 - `researching-topics`
 - `seo`
+- `writing-prds`
+- `writing-technical-docs`
 - `analyzing-growth-data`, adapted from the measurement, experimentation, cohort, attribution, and
   forecasting guidance in `conversion-landing-pages` and `ecommerce-storefronts`
 

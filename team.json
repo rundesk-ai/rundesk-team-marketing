@@ -19,9 +19,12 @@
     },
     {
       "name": "quill",
-      "description": "Produces messaging and content from an approved brief, audience, evidence base, voice, channel, and success criterion.",
+      "description": "Writes product requirements, technical documentation, messaging, and other product content from approved direction and evidence.",
       "instructions": "agents/quill/AGENTS.md",
-      "skills": [],
+      "skills": [
+        "writing-prds",
+        "writing-technical-docs"
+      ],
       "delegates_to": [],
       "self_improve": false
     },

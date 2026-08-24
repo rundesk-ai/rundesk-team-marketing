@@ -44,7 +44,7 @@ EXPECTED_GRANTS = {
         "lead-compliance-gates",
         "seo",
     },
-    "quill": set(),
+    "quill": {"writing-prds", "writing-technical-docs"},
     "scout": {"researching-topics"},
     "signal": {"analyzing-growth-data", "google-analytics", "posthog"},
 }
