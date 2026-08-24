@@ -4,9 +4,9 @@ What this catalog's roles imply that its shipped skills and integrations cannot 
 row is a limitation observed in this repository, not a roadmap commitment. Read it before granting a
 member new work, promising an evidence class to a caller, or adding a package.
 
-The boundary these gaps are measured against is in [AGENTS.md](../AGENTS.md): growth evidence is
-retrieved from a property or serving surface and can be retrieved again; external research is cited
-to a source someone else can look up.
+The boundaries these gaps are measured against are in [AGENTS.md](../AGENTS.md): growth evidence is
+retrieved and re-retrievable, external research is cited to a published source, and first-party
+analysis is certified with a denominator or returned as unestablished.
 
 ## Evidence Beacon's role implies but cannot retrieve
 
@@ -17,8 +17,19 @@ to a source someone else can look up.
 | Which AI crawler fetched what | none | Server-log evidence, which [`measurement`](../skills/seo/references/measurement.md) calls the only ground truth for crawler behavior |
 | Core Web Vitals trend | [`google-pagespeed-insights`](../skills/google-pagespeed-insights/SKILL.md) returns one 28-day field snapshot and excludes history by contract | A CrUX History source. Field data is also the portion Google plans to discontinue from PageSpeed Insights |
 | Query demand and volume | Search Console reports only queries the property already ranks for, so it cannot show an absent one | A demand source. Until one exists, demand is characterizable from published evidence by Scout and is not measurable by anyone here |
-| Long-tail and cannibalization analysis | the Search Console UI's row limits and 16-month window | The Search Console bulk export to BigQuery, which is not retroactive and must be configured before it is needed |
 | Retrieval of a URL nobody has verified | `curl` guidance inside [`seo`](../skills/seo/SKILL.md); `inspect-url` works only on a verified property, so never on a competitor | A bounded retrieval package for status, headers, `robots.txt` per user agent, canonical and metadata, and sitemap comparison. This is the one evidence surface in Beacon's routing with no guarded, tested package behind it |
+
+## Evidence Signal's role implies but cannot query
+
+Signal owns the metric contract for every number this team reports, and holds two vendor report
+APIs to do it with.
+
+| Missing | Consequence |
+|---|---|
+| Warehouse or SQL access | Any question outside the shapes GA4 and PostHog expose cannot be asked. Custom denominators, joins across systems, and backfills have no home |
+| Search Console bulk export to BigQuery | The only source that removes the API's row limits and 16-month window, and the only path to long-tail and cannibalization analysis at scale. It is not retroactive, so it must be configured before it is needed |
+| Order, payment, CRM, or lead-outcome data | Certifying value means reconciling analytics to the system that accepted the money or the lead. No integration reaches one |
+| An experiment platform | Assignment, sample-ratio checks, and exposure logging are method Signal owns with no tool behind them |
 
 ## Capabilities no member owns
 
@@ -26,7 +37,7 @@ to a source someone else can look up.
 |---|---|
 | Paid, email, lifecycle, social, affiliate, and marketplace acquisition methods | Beacon's routing covers organic search, landing paths, and product feeds. No member can reason about any other channel, and [`seo`](../skills/seo/SKILL.md) excludes paid search by contract |
 | Brand, positioning, and pricing method | Scout can research what others published about them; no skill turns that into a position or a price |
-| Landing-path build and rendered verification | [`conversion-landing-pages`](../skills/conversion-landing-pages/SKILL.md) ends in an implementation package and a rendered verification report. Beacon's scope forbids both, and no member may change a site. Only the diagnosis half of that skill has an owner here |
+| Landing-path build and rendered verification | [`conversion-landing-pages`](../skills/conversion-landing-pages/SKILL.md) ends in an implementation package and a rendered verification report. Beacon and Signal now share the skill and split its diagnosis and measurement halves, but no member may change or render a site, so its build half still has no owner |
 
 ## Caller-side gaps
 
@@ -59,6 +70,8 @@ These are settled decisions, not gaps. Do not close them without the owner's app
 - No member approves a legal or regulated claim. A compliance gate can be identified and never
   approved around.
 - No member holds a lead role, and no member delegates to another member.
+- Beacon and Signal share skills on purpose. The separation is what each may release, not what each
+  may read, and closing it by revoking a grant would blind Beacon to the value it must prioritize by.
 - Member descriptions stay declarative rather than call-when phrased, so all four read alike.
 
 ## Open terminology

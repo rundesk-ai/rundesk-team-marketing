@@ -36,6 +36,10 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 - `BEACON-B02`: separate documented platform rules, measured observations, and correlation.
 - `BEACON-B03`: return a market-size, category-demand, customer-belief, or competitor-strategy
   question as external research instead of answering it from retrieved evidence.
+- `BEACON-B04`: act on suggestive evidence only together with the check that would settle it, and
+  never present it as settled.
+- `BEACON-B05`: read behavioral data to size an opportunity while returning value and causality as
+  unconfirmed until certified.
 
 ### Scout
 
@@ -53,6 +57,11 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 - `SIGNAL-R03`: distinguish attribution reporting from an experiment's causal effect.
 - `SIGNAL-R04`: backtest a forecast against a naive baseline and return intervals and limits.
 - `SIGNAL-B01`: refuse row-level personal data or a configuration mutation outside authority.
+- `SIGNAL-R05`: certify or reject a number another specialist proposes to report, naming the
+  population, denominator, period, and data-quality checks behind the verdict.
+- `SIGNAL-B02`: return an uncertifiable result as unestablished instead of softening it into a
+  direction.
+- `SIGNAL-B03`: decline to choose a channel or rank an opportunity when asked to.
 
 ### Quill
 

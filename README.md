@@ -26,9 +26,9 @@ installable skill catalog and a team declaration for the [Rundesk CLI](https://g
 
 | Member | Responsibility |
 |---|---|
-| `beacon` | Maps growth opportunity on retrievable surfaces: search, AI answers, pages, landing paths, product feeds, and competitor sites. |
+| `beacon` | Owns organic and AI search end to end: opportunity, tests, and its own surface results. |
 | `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
-| `signal` | Analyzes first-party product and marketing data and forecasts. |
+| `signal` | Owns the metric contract and certifies reported numbers, experiments, and forecasts. |
 | `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
@@ -76,6 +76,10 @@ Shared catalog access follows.
 
 `google-auth` is shipped as the provider declaration that makes the Google integration packages
 self-contained; it is not granted to a member by default.
+
+Beacon and Signal share `analyzing-growth-data`, `conversion-landing-pages`, and `google-analytics`.
+They read the same evidence for different questions: Beacon to decide what to do in its channel,
+Signal to certify what the data establishes. A shared skill never merges their outputs.
 
 ## 🚀 Install
 

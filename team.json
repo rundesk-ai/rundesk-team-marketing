@@ -4,10 +4,12 @@
   "members": [
     {
       "name": "beacon",
-      "description": "Maps growth opportunity across surfaces it can retrieve: organic and AI search, pages, landing paths, product feeds, and competitor sites, returning ranked evidence and proposed tests.",
+      "description": "Owns organic and AI search end to end: ranks opportunity from retrieved evidence, proposes tests, and measures what its own surfaces did.",
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
+        "analyzing-growth-data",
         "conversion-landing-pages",
+        "google-analytics",
         "google-merchant",
         "google-pagespeed-insights",
         "google-search-console",
@@ -40,10 +42,11 @@
     },
     {
       "name": "signal",
-      "description": "Analyzes first-party product and marketing data, returning reproducible funnel, cohort, retention, attribution, experiment, segment, and forecast findings.",
+      "description": "Owns the metric contract and certifies reported numbers across funnels, cohorts, retention, experiments, segments, and forecasts, with uncertainty and limits.",
       "instructions": "agents/signal/AGENTS.md",
       "skills": [
         "analyzing-growth-data",
+        "conversion-landing-pages",
         "google-analytics",
         "posthog"
       ],

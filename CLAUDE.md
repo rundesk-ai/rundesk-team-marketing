@@ -73,10 +73,18 @@ The team has no lead. Each member is an inbound-only specialist and returns to t
 Beacon owns external growth evidence, Scout owns external research, Signal owns first-party
 measurement and analysis, and Quill owns messaging and content artifacts.
 
+Two boundaries keep those specialists distinct.
+
 Growth evidence and external research are separated by how a claim is proved, not by its subject.
 Growth evidence is retrieved from a property or serving surface and can be retrieved again. External
 research is cited to a source someone else can look up. The same competitor belongs to Beacon as a
 site and to Scout as a business, and a question needing both is two requests the requester sequences.
+
+Growth evidence and first-party analysis are separated by what the reader owes the reader. Beacon
+owns a channel and reads to decide, so suggestive evidence is legitimate when it also proposes the
+check that would settle it. Signal owns the metric contract and reads to certify, so a result carries
+its population, denominator, uncertainty, and data-quality checks or is returned as unestablished.
+Both may hold the same skill and read the same data; neither releases the other's output.
 
 Inbound-only bounds named-agent handoffs, not provider subagents. A member may use bounded provider
 subagents when their value exceeds coordination cost, but retains scope, integration, and proof.

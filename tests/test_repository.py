@@ -37,7 +37,9 @@ AGENT_HEADINGS = (
 )
 EXPECTED_GRANTS = {
     "beacon": {
+        "analyzing-growth-data",
         "conversion-landing-pages",
+        "google-analytics",
         "google-merchant",
         "google-pagespeed-insights",
         "google-search-console",
@@ -46,7 +48,12 @@ EXPECTED_GRANTS = {
     },
     "quill": {"writing-prds", "writing-technical-docs"},
     "scout": {"researching-topics"},
-    "signal": {"analyzing-growth-data", "google-analytics", "posthog"},
+    "signal": {
+        "analyzing-growth-data",
+        "conversion-landing-pages",
+        "google-analytics",
+        "posthog",
+    },
 }
 
 
