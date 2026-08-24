@@ -18,9 +18,9 @@
   <a href="#-development"><strong>🛠️ Development</strong></a>
 </p>
 
-A versioned Rundesk marketing team: four specialists, their canonical instructions, and the
-research, growth, analytics, product-writing, and service skills they use. This repository is both
-an installable skill catalog and a team declaration for the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
+A versioned Rundesk marketing team: four specialists, their canonical instructions, the skills they
+use, and caller-facing orchestration for combining their work. This repository is both an
+installable skill catalog and a team declaration for the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
 
 ## 👥 Team
 
@@ -36,33 +36,43 @@ overall outcome, and integrates the returned evidence or artifact.
 
 ## 🧠 Skills
 
-### Growth and acquisition
+### Orchestration
 
-- `conversion-landing-pages` — Plan and evaluate measurable campaign landing pages and experiments.
-- `google-merchant` — Read Merchant Center product serving, item issues, performance, pricing, best sellers, and competitive visibility.
-- `lead-compliance-gates` — Identify consent, suppression, privacy, and vertical-specific gates before lead traffic goes live.
-- `seo` — Audit and plan technical SEO, on-page content, structured data, AI-search visibility, and measurement.
+- `managing-marketing-work` — Coordinate multi-specialist marketing outcomes through verified completion.
 
-### External research
+Grant this to the domain-facing agent that calls the team. It is deliberately not granted to a team
+member: the caller retains the outcome and integrates every specialist return.
 
-- `researching-topics` — Plan, source, evaluate, synthesize, and cite reproducible research.
+Granted skills are grouped by the outcome they support and the specialist who receives them.
+Shared catalog access follows.
 
-### Product writing
+### Growth and acquisition — Beacon
 
-- `writing-prds` — Create, revise, review, and validate product requirements, briefs, and feature definitions.
-- `writing-technical-docs` — Create and maintain verified consumer, developer, API, CLI, architecture, and troubleshooting documentation.
+- `conversion-landing-pages` — Plan and improve measurable campaign pages and experiments.
+- `google-merchant` — Inspect product eligibility, issues, performance, pricing, and competitive visibility.
+- `google-pagespeed-insights` — Measure Lighthouse and field performance for public pages.
+- `google-search-console` — Inspect search performance, indexing, and sitemap evidence.
+- `lead-compliance-gates` — Identify consent, suppression, privacy, and lead-contact gates.
+- `seo` — Audit technical, on-page, structured-data, and AI-search visibility.
 
-### First-party analytics
+### Market and customer research — Scout
 
-- `analyzing-growth-data` — Define and analyze funnels, cohorts, retention, attribution, experiments, segments, and forecasts.
-- `google-analytics` — Read bounded GA4 acquisition, audience, event, ecommerce, historical, and realtime reports.
-- `posthog` — Read bounded PostHog events, persons, trends, insights, recordings, web analytics, and HogQL results.
+- `researching-topics` — Find, evaluate, synthesize, and cite reproducible external evidence.
 
-### Search evidence and access
+### Measurement and analytics — Signal
 
-- `google-auth` — Connect and inspect the Google accounts used by this catalog's Google integrations.
-- `google-pagespeed-insights` — Retrieve bounded Lighthouse and field evidence for public webpages.
-- `google-search-console` — Retrieve organic search performance, index inspection, and sitemap evidence.
+- `analyzing-growth-data` — Analyze funnels, cohorts, retention, attribution, experiments, segments, and forecasts.
+- `google-analytics` — Read bounded GA4 acquisition, audience, event, and ecommerce reports.
+- `posthog` — Read bounded product, web, conversion, insight, recording metadata, and HogQL evidence.
+
+### Product content — Quill
+
+- `writing-prds` — Create and validate product requirements, briefs, and feature definitions.
+- `writing-technical-docs` — Create and maintain verified consumer, developer, API, architecture, and troubleshooting documentation.
+
+### Shared Google access
+
+- `google-auth` — Connect and inspect the Google accounts used by this catalog's integrations.
 
 `google-auth` is shipped as the provider declaration that makes the Google integration packages
 self-contained; it is not granted to a member by default.
@@ -99,6 +109,7 @@ Install the catalog without creating agents:
 ```sh
 rundesk skills install https://github.com/rundesk-ai/rundesk-team-marketing
 rundesk skills install https://github.com/rundesk-ai/rundesk-team-marketing --confirm
+rundesk skills grant <agent> rundesk-team-marketing/managing-marketing-work
 ```
 
 This installs only the skills. You can add the complete team later without reinstalling them.

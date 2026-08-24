@@ -117,6 +117,16 @@ class RepositoryContract(unittest.TestCase):
         grants = {skill for member in self.team["members"] for skill in member["skills"]}
         self.assertNotIn("google-auth", grants)
 
+    def test_caller_orchestration_is_installed_and_not_member_granted(self):
+        self.assertIn("managing-marketing-work", self.skill_names())
+        grants = {skill for member in self.team["members"] for skill in member["skills"]}
+        self.assertNotIn("managing-marketing-work", grants)
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "rundesk-team-marketing/managing-marketing-work",
+            readme,
+        )
+
     def test_team_declaration_has_exact_members_and_grants(self):
         self.assertEqual({"schema", "name", "members"}, set(self.team))
         self.assertEqual(1, self.team["schema"])
@@ -184,9 +194,10 @@ class RepositoryContract(unittest.TestCase):
             "826953197c01c7816fdd480e1eb91ee4fe708a8b",
             "9e5b911230844ffb9243ae2580c0987f2cd4b6ff",
             "5d419423122d8fa31115eeba516274160d37f7b8",
+            "4e3908ab733b9f09525d8674c01daead8de7f83d",
         ):
             self.assertIn(commit, notices)
-        self.assertGreaterEqual(notices.count("MIT License"), 3)
+        self.assertGreaterEqual(notices.count("MIT License"), 4)
         for name in self.skill_names():
             self.assertIn(f"`{name}`", notices)
 
