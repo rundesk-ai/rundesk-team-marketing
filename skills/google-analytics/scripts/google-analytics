@@ -1,0 +1,3 @@
+#!/bin/sh
+DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec /usr/bin/env python3 "$DIR/google-analytics.d/google-analytics.py" "$@"

@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.9"
+      - name: Validate repository whitespace
+        run: git diff --check "$(git hash-object -t tree /dev/null)" HEAD
+      - name: Validate repository contract
+        run: python -m unittest discover -s tests -v
+      - name: Validate integration packages
+        run: |
+          python skills/posthog/scripts/posthog.d/test-posthog.py -q
+          python skills/google-auth/scripts/google-auth.d/test-google-auth.py -q
+          python skills/google-analytics/scripts/google-analytics.d/test-google-analytics.py -q
+          python skills/google-pagespeed-insights/scripts/google-pagespeed-insights.d/test-google-pagespeed-insights.py -q
+          python skills/google-search-console/scripts/google-search-console.d/test-google-search-console.py -q

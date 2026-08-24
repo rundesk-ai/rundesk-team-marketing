@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "name": "rundesk-team-marketing",
+  "members": [
+    {
+      "name": "beacon",
+      "description": "Maps external growth opportunities across search, AI answers, content, acquisition channels, and competitor websites, returning ranked evidence.",
+      "instructions": "agents/beacon/AGENTS.md",
+      "skills": [
+        "conversion-landing-pages",
+        "google-pagespeed-insights",
+        "google-search-console",
+        "lead-compliance-gates",
+        "seo"
+      ],
+      "delegates_to": [],
+      "self_improve": false
+    },
+    {
+      "name": "quill",
+      "description": "Produces messaging and content from an approved brief, audience, evidence base, voice, channel, and success criterion.",
+      "instructions": "agents/quill/AGENTS.md",
+      "skills": [],
+      "delegates_to": [],
+      "self_improve": false
+    },
+    {
+      "name": "scout",
+      "description": "Researches markets, customers, competitors, products, and general topics, returning sourced findings with uncertainty and limits.",
+      "instructions": "agents/scout/AGENTS.md",
+      "skills": [
+        "researching-topics"
+      ],
+      "delegates_to": [],
+      "self_improve": false
+    },
+    {
+      "name": "signal",
+      "description": "Analyzes first-party product and marketing data, returning reproducible funnel, cohort, retention, attribution, experiment, segment, and forecast findings.",
+      "instructions": "agents/signal/AGENTS.md",
+      "skills": [
+        "analyzing-growth-data",
+        "google-analytics",
+        "posthog"
+      ],
+      "delegates_to": [],
+      "self_improve": false
+    }
+  ]
+}

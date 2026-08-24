@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "provider": "google",
+  "display_name": "Google",
+  "authorization_endpoint": "https://accounts.google.com/o/oauth2/v2/auth",
+  "token_endpoint": "https://oauth2.googleapis.com/token",
+  "identity_endpoint": "https://openidconnect.googleapis.com/v1/userinfo",
+  "base_scopes": ["openid", "https://www.googleapis.com/auth/userinfo.email"],
+  "identity": {
+    "subject": "sub",
+    "email": "email",
+    "email_verified": "email_verified"
+  },
+  "authorization_parameters": {
+    "access_type": "offline",
+    "prompt": "consent select_account"
+  },
+  "client_secret": true,
+  "capabilities": {
+    "analytics": "https://www.googleapis.com/auth/analytics.readonly",
+    "search-console": "https://www.googleapis.com/auth/webmasters",
+    "merchant": "https://www.googleapis.com/auth/content"
+  }
+}

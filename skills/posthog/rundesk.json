@@ -1,0 +1,6 @@
+{
+  "needs": {
+    "POSTHOG_PERSONAL_API_KEY": "a personal API key created in PostHog under Settings > Personal API keys, with the read-only scopes needed for queries, event definitions, persons, recordings, insights, and web analytics, scoped to one project",
+    "POSTHOG_PROJECT_ID": "the numeric identifier of the PostHog project to read, shown under Settings > Project, and in the app URL after /project/"
+  }
+}
