@@ -1,4 +1,4 @@
-"""The marketing team catalog is complete, self-contained, and safely bounded."""
+"""The marketing team catalog owns its specialist guidance and declares only integrations."""
 
 import json
 import os
@@ -37,23 +37,30 @@ AGENT_HEADINGS = (
 )
 EXPECTED_GRANTS = {
     "beacon": {
-        "analyzing-growth-data",
-        "conversion-landing-pages",
-        "google-analytics",
-        "google-merchant",
-        "google-pagespeed-insights",
-        "google-search-console",
-        "lead-compliance-gates",
-        "seo",
+        "rundesk-skills-google/google-analytics",
+        "rundesk-skills-google/google-merchant",
+        "rundesk-skills-google/google-pagespeed-insights",
+        "rundesk-skills-google/google-search-console",
+        "rundesk-team-marketing/analyzing-growth-data",
+        "rundesk-team-marketing/conversion-landing-pages",
+        "rundesk-team-marketing/lead-compliance-gates",
+        "rundesk-team-marketing/seo",
     },
-    "quill": {"writing-prds", "writing-technical-docs"},
-    "scout": {"researching-topics"},
+    "quill": {
+        "rundesk-team-marketing/writing-prds",
+        "rundesk-team-marketing/writing-technical-docs",
+    },
+    "scout": {"rundesk-team-marketing/researching-topics"},
     "signal": {
-        "analyzing-growth-data",
-        "conversion-landing-pages",
-        "google-analytics",
-        "posthog",
+        "rundesk-skills-google/google-analytics",
+        "rundesk-skills-integrations/posthog",
+        "rundesk-team-marketing/analyzing-growth-data",
+        "rundesk-team-marketing/conversion-landing-pages",
     },
+}
+EXPECTED_CATALOGS = {
+    "rundesk-skills-google": "https://github.com/rundesk-ai/rundesk-skills-google",
+    "rundesk-skills-integrations": "https://github.com/rundesk-ai/rundesk-skills-integrations",
 }
 
 
@@ -85,10 +92,12 @@ class RepositoryContract(unittest.TestCase):
         self.assertEqual("0.1.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner.png").is_file())
 
-    def test_readme_lists_exactly_the_discovered_skills(self):
+    def test_readme_lists_the_exact_team_capabilities(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         listed = set(re.findall(r"(?m)^- `([a-z0-9-]+)` —", readme))
-        self.assertEqual(self.skill_names(), listed)
+        granted = {address.rsplit("/", 1)[1] for skills in EXPECTED_GRANTS.values()
+                   for address in skills}
+        self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
         self.assertIn("assets/readme/rundesk-team-marketing-banner.png", readme)
         self.assertIn("catalog-v0.1.0-blue", readme)
@@ -116,13 +125,11 @@ class RepositoryContract(unittest.TestCase):
                     if script.is_file() and "." not in script.name:
                         self.assertTrue(os.access(script, os.X_OK), f"{script} must be executable")
 
-    def test_google_provider_is_declared_once_and_not_granted(self):
+    def test_google_provider_stays_in_its_shared_catalog_and_is_not_granted(self):
         declarations = list((ROOT / "skills").glob("*/oauth-provider.json"))
-        self.assertEqual([ROOT / "skills/google-auth/oauth-provider.json"], declarations)
-        provider = json.loads(declarations[0].read_text(encoding="utf-8"))
-        self.assertEqual("google", provider["provider"])
+        self.assertEqual([], declarations)
         grants = {skill for member in self.team["members"] for skill in member["skills"]}
-        self.assertNotIn("google-auth", grants)
+        self.assertFalse(any(skill.endswith("/google-auth") for skill in grants))
 
     def test_caller_orchestration_is_installed_and_not_member_granted(self):
         self.assertIn("managing-marketing-work", self.skill_names())
@@ -135,13 +142,15 @@ class RepositoryContract(unittest.TestCase):
         )
 
     def test_team_declaration_has_exact_members_and_grants(self):
-        self.assertEqual({"schema", "name", "members"}, set(self.team))
-        self.assertEqual(1, self.team["schema"])
+        self.assertEqual({"schema", "name", "catalogs", "members"}, set(self.team))
+        self.assertEqual(2, self.team["schema"])
         self.assertEqual(self.manifest["name"], self.team["name"])
+        self.assertEqual(EXPECTED_CATALOGS,
+                         {one["name"]: one["source"] for one in self.team["catalogs"]})
         names = [member["name"] for member in self.team["members"]]
         self.assertEqual(sorted(names), names)
         self.assertEqual(MEMBERS, set(names))
-        skills = self.skill_names()
+        local = self.skill_names()
         for name, member in self.members().items():
             with self.subTest(member=name):
                 self.assertEqual(
@@ -153,8 +162,14 @@ class RepositoryContract(unittest.TestCase):
                 self.assertTrue(member["description"].endswith("."))
                 self.assertEqual(sorted(member["skills"]), member["skills"])
                 self.assertEqual(EXPECTED_GRANTS[name], set(member["skills"]))
-                self.assertLessEqual(set(member["skills"]), skills)
-                self.assertFalse(set(member["skills"]) & PRODUCT_OWNED)
+                self.assertTrue(all(skill.count("/") == 1 for skill in member["skills"]))
+                self.assertFalse({skill.rsplit("/", 1)[1] for skill in member["skills"]}
+                                 & PRODUCT_OWNED)
+                for catalog, package in (skill.split("/") for skill in member["skills"]):
+                    if catalog == self.team["name"]:
+                        self.assertIn(package, local)
+                    else:
+                        self.assertIn(catalog, EXPECTED_CATALOGS)
                 self.assertEqual([], member["delegates_to"])
                 self.assertIs(False, member["self_improve"])
                 self.assertEqual(f"agents/{name}/AGENTS.md", member["instructions"])
@@ -199,12 +214,10 @@ class RepositoryContract(unittest.TestCase):
         notices = (ROOT / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8")
         for commit in (
             "826953197c01c7816fdd480e1eb91ee4fe708a8b",
-            "9e5b911230844ffb9243ae2580c0987f2cd4b6ff",
-            "5d419423122d8fa31115eeba516274160d37f7b8",
             "4e3908ab733b9f09525d8674c01daead8de7f83d",
         ):
             self.assertIn(commit, notices)
-        self.assertGreaterEqual(notices.count("MIT License"), 4)
+        self.assertGreaterEqual(notices.count("MIT License"), 2)
         for name in self.skill_names():
             self.assertIn(f"`{name}`", notices)
 
@@ -215,15 +228,6 @@ class RepositoryContract(unittest.TestCase):
                 self.assertRegex(workflow, r"actions/checkout@[0-9a-f]{40}")
                 self.assertRegex(workflow, r"actions/setup-python@[0-9a-f]{40}")
                 self.assertIn("python -m unittest discover -s tests -v", workflow)
-                for package in (
-                    "posthog",
-                    "google-auth",
-                    "google-analytics",
-                    "google-merchant",
-                    "google-pagespeed-insights",
-                    "google-search-console",
-                ):
-                    self.assertIn(f"test-{package}.py -q", workflow)
                 self.assertIn("git diff --check", workflow)
 
     def test_text_files_have_clean_endings(self):

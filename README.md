@@ -19,8 +19,9 @@
 </p>
 
 A versioned Rundesk marketing team: four specialists, their canonical instructions, the skills they
-use, and caller-facing orchestration for combining their work. This repository is both an
-installable skill catalog and a team declaration for the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
+use, and caller-facing orchestration for combining their work. Specialist guidance stays with this
+team; Google and PostHog integrations remain in their reusable integration catalogs and are declared
+as dependencies through the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
 
 ## 👥 Team
 
@@ -45,6 +46,9 @@ member: the caller retains the outcome and integrates every specialist return.
 
 Granted skills are grouped by the outcome they support and the specialist who receives them.
 Shared catalog access follows.
+
+This catalog owns and ships every guidance skill listed below. Only the Google and PostHog skills
+come from declared integration catalogs.
 
 ### Growth and acquisition — Beacon
 
@@ -74,8 +78,8 @@ Shared catalog access follows.
 
 - `google-auth` — Connect and inspect the Google accounts used by this catalog's integrations.
 
-`google-auth` is shipped as the provider declaration that makes the Google integration packages
-self-contained; it is not granted to a member by default.
+`google-auth` is installed with `rundesk-skills-google` as that catalog's provider declaration; it
+is not granted to a member by default.
 
 Beacon and Signal share `analyzing-growth-data`, `conversion-landing-pages`, and `google-analytics`.
 They read the same evidence for different questions: Beacon to decide what to do in its channel,
@@ -87,7 +91,7 @@ Preview first, then confirm.
 
 ### Complete team
 
-Install all skills and four managed agents:
+Install the team, any missing integration catalogs, and four managed agents:
 
 ```sh
 rundesk teams install https://github.com/rundesk-ai/rundesk-team-marketing --provider <provider>
@@ -108,7 +112,7 @@ rundesk teams update rundesk-team-marketing --confirm
 
 ### Skills only
 
-Install the catalog without creating agents:
+Install only this catalog's guidance skills without creating agents or dependencies:
 
 ```sh
 rundesk skills install https://github.com/rundesk-ai/rundesk-team-marketing
@@ -116,20 +120,20 @@ rundesk skills install https://github.com/rundesk-ai/rundesk-team-marketing --co
 rundesk skills grant <agent> rundesk-team-marketing/managing-marketing-work
 ```
 
-This installs only the skills. You can add the complete team later without reinstalling them.
+You can add the complete team later; its missing integration catalogs will then be installed, while
+matching catalogs already present from the same sources will be reused.
 
 ## ✅ Requirements
 
-- A Rundesk CLI release that supports team catalogs.
+- A Rundesk CLI release that supports schema 2 team catalog dependencies.
 - Public GitHub access to this repository.
 - For complete-team installation: a provider and unused local names for all four members.
 - A configured PostHog profile for live PostHog reads.
 - A connected Google account and permitted GA4, Merchant Center, or Search Console resources for Google reads.
 - A PageSpeed Insights API key for PageSpeed reads.
 
-This catalog carries its own Google OAuth provider declaration. Do not install it alongside another
-catalog that declares the same `google` provider; Rundesk refuses ambiguous provider ownership.
-Read each integration package's `references/cli.md` before configuring access.
+The Google provider declaration remains owned by `rundesk-skills-google`. Rundesk refuses a
+same-named dependency already installed from another source instead of silently replacing it.
 
 ## 🛠️ Development
 
@@ -137,12 +141,6 @@ Read [AGENTS.md](AGENTS.md), then run the offline gate:
 
 ```sh
 python3 -m unittest discover -s tests -v
-python3 skills/posthog/scripts/posthog.d/test-posthog.py -q
-python3 skills/google-auth/scripts/google-auth.d/test-google-auth.py -q
-python3 skills/google-analytics/scripts/google-analytics.d/test-google-analytics.py -q
-python3 skills/google-merchant/scripts/google-merchant.d/test-google-merchant.py -q
-python3 skills/google-pagespeed-insights/scripts/google-pagespeed-insights.d/test-google-pagespeed-insights.py -q
-python3 skills/google-search-console/scripts/google-search-console.d/test-google-search-console.py -q
 git diff --check
 ```
 

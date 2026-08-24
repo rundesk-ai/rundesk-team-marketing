@@ -1,20 +1,30 @@
 {
-  "schema": 1,
+  "schema": 2,
   "name": "rundesk-team-marketing",
+  "catalogs": [
+    {
+      "name": "rundesk-skills-google",
+      "source": "https://github.com/rundesk-ai/rundesk-skills-google"
+    },
+    {
+      "name": "rundesk-skills-integrations",
+      "source": "https://github.com/rundesk-ai/rundesk-skills-integrations"
+    }
+  ],
   "members": [
     {
       "name": "beacon",
       "description": "Owns organic and AI search end to end: ranks opportunity from retrieved evidence, proposes tests, and measures what its own surfaces did.",
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
-        "analyzing-growth-data",
-        "conversion-landing-pages",
-        "google-analytics",
-        "google-merchant",
-        "google-pagespeed-insights",
-        "google-search-console",
-        "lead-compliance-gates",
-        "seo"
+        "rundesk-skills-google/google-analytics",
+        "rundesk-skills-google/google-merchant",
+        "rundesk-skills-google/google-pagespeed-insights",
+        "rundesk-skills-google/google-search-console",
+        "rundesk-team-marketing/analyzing-growth-data",
+        "rundesk-team-marketing/conversion-landing-pages",
+        "rundesk-team-marketing/lead-compliance-gates",
+        "rundesk-team-marketing/seo"
       ],
       "delegates_to": [],
       "self_improve": false
@@ -24,8 +34,8 @@
       "description": "Writes product requirements, technical documentation, messaging, and other product content from approved direction and evidence.",
       "instructions": "agents/quill/AGENTS.md",
       "skills": [
-        "writing-prds",
-        "writing-technical-docs"
+        "rundesk-team-marketing/writing-prds",
+        "rundesk-team-marketing/writing-technical-docs"
       ],
       "delegates_to": [],
       "self_improve": false
@@ -35,7 +45,7 @@
       "description": "Researches markets, customers, competitor businesses, products, and general topics from published sources, returning cited findings with uncertainty and limits.",
       "instructions": "agents/scout/AGENTS.md",
       "skills": [
-        "researching-topics"
+        "rundesk-team-marketing/researching-topics"
       ],
       "delegates_to": [],
       "self_improve": false
@@ -45,10 +55,10 @@
       "description": "Owns the metric contract and certifies reported numbers across funnels, cohorts, retention, experiments, segments, and forecasts, with uncertainty and limits.",
       "instructions": "agents/signal/AGENTS.md",
       "skills": [
-        "analyzing-growth-data",
-        "conversion-landing-pages",
-        "google-analytics",
-        "posthog"
+        "rundesk-skills-google/google-analytics",
+        "rundesk-skills-integrations/posthog",
+        "rundesk-team-marketing/analyzing-growth-data",
+        "rundesk-team-marketing/conversion-landing-pages"
       ],
       "delegates_to": [],
       "self_improve": false

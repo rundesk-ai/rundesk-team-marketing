@@ -2,14 +2,15 @@
 
 ## Purpose
 
-This repository publishes Rundesk's marketing team as one versioned artifact. It contains a mixed
-guidance and read-only integration skill catalog, the team declaration, and canonical instructions
+This repository publishes Rundesk's marketing team as one versioned artifact. It contains its
+specialist guidance skills, shared integration-catalog declarations, and canonical instructions
 for Beacon, Scout, Signal, and Quill. `README.md` is the consumer contract, `manifest.json` is the
 catalog identity, `team.json` declares the members, and `agents/<member>/AGENTS.md` defines each
 member's always-on behavior.
 
-The repository is self-contained at runtime. Adapted packages preserve their source commit and
-license in `THIRD_PARTY_NOTICES.md`. No package may depend on another checkout.
+Google and PostHog integration skills remain owned by their source catalogs. Every specialist
+guidance package a member uses ships in this catalog. `team.json` declares exact catalog names and
+sources, and members use fully qualified skill addresses.
 
 ## Before you work
 
@@ -29,7 +30,7 @@ license in `THIRD_PARTY_NOTICES.md`. No package may depend on another checkout.
 agents/<member>/AGENTS.md          canonical member instructions
 assets/readme/                     public README artwork
 docs/                              stable validation method, evidence, and coverage gaps
-skills/<name>/                     guidance or self-contained integration packages
+skills/<name>/                     guidance-only specialist skill packages
 tests/test_repository.py           repository and team contract
 AGENTS.md and CLAUDE.md            byte-identical repository rules
 README.md                          consumer contract
@@ -46,15 +47,14 @@ second catalog or team declaration.
 - `manifest.json` contains exactly `schema`, `name`, `version`, and `description`.
 - Every package is entirely under `skills/<name>/`, contains a valid `SKILL.md`, and works without
   another repository checkout.
-- Guidance packages contain references only when needed. Integration packages keep their complete
-  runtime, tests, declarations, and references inside the package.
-- Runtime packages use Python 3.9+ and the standard library, bound reads, explicit resource and
-  account selection, safe output, offline tests, and preview-first confirmation for mutations.
-- `team.json` contains exactly `schema`, `name`, and `members`. Each member contains exactly `name`,
+- Guidance packages contain references only when needed. Integration packages remain in the catalog
+  that owns their runtime, permissions, tests, declarations, and references.
+- `team.json` schema 2 contains exactly `schema`, `name`, `catalogs`, and `members`. Each catalog
+  dependency contains exactly `name` and `source`; each member contains exactly `name`,
   `description`, `instructions`, `skills`, `delegates_to`, and `self_improve`.
-- A member's `skills` is a sorted positive allowlist containing only packages this catalog ships.
-  Product-owned Rundesk skills are never shipped or listed.
-- `google-auth` is the catalog's sole Google OAuth provider declaration and is not a member grant.
+- A member's `skills` is a sorted positive allowlist of fully qualified addresses from this catalog
+  or a declared dependency. Only an integration package comes from a dependency. Product-owned
+  Rundesk skills are never shipped or listed.
 
 ## Safety and approval gates
 
@@ -104,16 +104,15 @@ forecast from target or commitment, and a source citation from an AI answer's ci
 
 ## Documentation duties
 
-Keep README, manifest, tests, team declaration, member instructions, package tree, environment
-requirements, and provenance synchronized. Update `THIRD_PARTY_NOTICES.md` when adapted content or
-its source commit changes. Verify source and local links. Record stable behavior cases in
-`docs/team-validation.md`; do not turn consumer documentation into maintainer state.
+Keep README, manifest, tests, team declaration, member instructions, package tree, dependency
+sources, provenance, and requirements synchronized. Verify source and local links. Record stable
+behavior cases in `docs/team-validation.md`; do not turn consumer documentation into maintainer
+state.
 
 ## Build, test, and run
 
-Run the root suite, every integration package suite, credential-free `--help` and `profiles` paths,
-local link checks, `git diff --check`, and privacy review. Run launchers once from outside the
-repository to prove package-relative execution. All tests use synthetic fixtures and no network.
+Run the root suite, local link checks, `git diff --check`, and privacy review. All tests use
+synthetic fixtures and no network.
 
 Prove skills-only preview/install and team preview/install/update against the exact compatible CLI
 head in a disposable `RUNDESK_HOME`. Preview must change nothing, team installation must reconcile
@@ -127,7 +126,7 @@ unmerged content, reuse a tag, or claim publication from a local commit.
 
 ## Definition of done
 
-The requested scope is complete only when manifest, skills, runtime packages, provenance, README,
+The requested scope is complete only when manifest, skills, dependency catalogs, provenance, README,
 team declaration, member instructions, and tests agree; the full offline suite and package gates
 pass with non-zero counts; applicable links and disposable install paths are verified; the diff and
 privacy review is clean; and no placeholder, debug artifact, unexplained skip, temporary process, or

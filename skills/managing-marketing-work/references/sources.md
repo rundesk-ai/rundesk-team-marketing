@@ -31,8 +31,8 @@ one external marketing framework prescribes a universal process.
 - [`writing-prds`](../../writing-prds/SKILL.md) and
   [`writing-technical-docs`](../../writing-technical-docs/SKILL.md) support artifacts grounded in
   approved direction and verifiable evidence.
-- The catalog's Google and PostHog packages establish bounded account, resource, period, output, and
-  mutation boundaries for service evidence. They do not decide what the evidence means.
+- The declared Google and PostHog integration catalogs establish bounded account, resource, period,
+  output, and mutation boundaries for service evidence. They do not decide what the evidence means.
 
 ## Structural source
 
