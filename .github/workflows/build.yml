@@ -19,11 +19,3 @@ jobs:
         run: git diff --check "$(git hash-object -t tree /dev/null)" HEAD
       - name: Validate repository contract
         run: python -m unittest discover -s tests -v
-      - name: Validate integration packages
-        run: |
-          python skills/posthog/scripts/posthog.d/test-posthog.py -q
-          python skills/google-auth/scripts/google-auth.d/test-google-auth.py -q
-          python skills/google-analytics/scripts/google-analytics.d/test-google-analytics.py -q
-          python skills/google-merchant/scripts/google-merchant.d/test-google-merchant.py -q
-          python skills/google-pagespeed-insights/scripts/google-pagespeed-insights.d/test-google-pagespeed-insights.py -q
-          python skills/google-search-console/scripts/google-search-console.d/test-google-search-console.py -q
