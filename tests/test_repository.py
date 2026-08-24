@@ -92,7 +92,7 @@ class RepositoryContract(unittest.TestCase):
         listed = set(re.findall(r"(?m)^- `([a-z0-9-]+)` —", readme))
         granted = {address.rsplit("/", 1)[1] for skills in EXPECTED_GRANTS.values()
                    for address in skills}
-        self.assertEqual(granted | {"google-auth"}, listed)
+        self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
         self.assertIn("assets/readme/rundesk-team-marketing-banner.png", readme)
         self.assertIn("catalog-v0.1.0-blue", readme)
@@ -125,6 +125,16 @@ class RepositoryContract(unittest.TestCase):
         self.assertEqual([], declarations)
         grants = {skill for member in self.team["members"] for skill in member["skills"]}
         self.assertFalse(any(skill.endswith("/google-auth") for skill in grants))
+
+    def test_caller_orchestration_is_installed_and_not_member_granted(self):
+        self.assertIn("managing-marketing-work", self.skill_names())
+        grants = {skill for member in self.team["members"] for skill in member["skills"]}
+        self.assertNotIn("managing-marketing-work", grants)
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "rundesk-team-marketing/managing-marketing-work",
+            readme,
+        )
 
     def test_team_declaration_has_exact_members_and_grants(self):
         self.assertEqual({"schema", "name", "catalogs", "members"}, set(self.team))
@@ -193,9 +203,10 @@ class RepositoryContract(unittest.TestCase):
         notices = (ROOT / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8")
         for commit in (
             "826953197c01c7816fdd480e1eb91ee4fe708a8b",
+            "4e3908ab733b9f09525d8674c01daead8de7f83d",
         ):
             self.assertIn(commit, notices)
-        self.assertGreaterEqual(notices.count("MIT License"), 1)
+        self.assertGreaterEqual(notices.count("MIT License"), 2)
         for name in self.skill_names():
             self.assertIn(f"`{name}`", notices)
 

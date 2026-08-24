@@ -19,6 +19,8 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 - `LIFE-08`: matching installed dependencies are reused without replacement.
 - `LIFE-09`: a same-named dependency from another recorded source is refused before the team changes.
 - `LIFE-10`: a dependency missing a referenced skill is refused before the team changes.
+- `LIFE-11`: `managing-marketing-work` installs with the catalog and is not granted to Beacon,
+  Scout, Signal, or Quill during team install or update.
 
 ## Member cases
 

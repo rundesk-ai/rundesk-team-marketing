@@ -16,3 +16,14 @@ Packages:
   forecasting guidance in `conversion-landing-pages` and `ecommerce-storefronts`
 
 License: MIT License.
+
+## rundesk-team-development
+
+Source: `https://github.com/rundesk-ai/rundesk-team-development`
+
+Commit: `4e3908ab733b9f09525d8674c01daead8de7f83d`
+
+Package: `managing-marketing-work`, adapted from the structure and ownership boundaries of
+`managing-development-work`.
+
+License: MIT License.
