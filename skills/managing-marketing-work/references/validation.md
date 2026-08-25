@@ -81,7 +81,7 @@ governs.
 That places the defect with certainty: the rule was written in the vocabulary of marketing
 activation — spend, contact, publish, deploy — and agents do not map it onto their own tooling.
 It is the same defect recorded against two members in
-[team validation](../../../docs/team-validation.md), now reproduced in the caller's skill. Across
+[team validation](../../../docs/guides/team-validation.md), now reproduced in the caller's skill. Across
 this catalog it has been observed six times in three different contracts, against two
 counter-instances where the agent described what it could publish and waited. Roughly two in three
 runs publish; the rule has never been the thing that decided it.
@@ -95,7 +95,7 @@ All three caller runs read the same fixture of specialist returns, including two
 different requests, because the file sat in the working directory they were pointed at. They are
 therefore not three independent tests of three boundaries; they are three runs of a similar shape,
 and M1 and M2 engaged their own requests only in part. The same reachable-context error is recorded
-in [team validation](../../../docs/team-validation.md) for a member run.
+in [team validation](../../../docs/guides/team-validation.md) for a member run.
 
 Activation was not tested by the three caller runs: each was handed this skill's path directly, so
 the trigger decision was made for them. Only the fourth run chose from descriptions alone, and it is

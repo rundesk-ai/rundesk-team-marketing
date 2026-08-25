@@ -143,8 +143,8 @@ python3 -m unittest discover -s tests -v
 git diff --check
 ```
 
-See [team validation](docs/team-validation.md) for the lifecycle and member-behavior contract,
-and [coverage gaps](docs/coverage-gaps.md) for the capability limits this catalog does not close.
+See [team validation](docs/guides/team-validation.md) for the lifecycle and member-behavior contract,
+and [coverage gaps](docs/concepts/coverage-gaps.md) for the capability limits this catalog does not close.
 
 ## 🤝 Contributing
 

@@ -143,7 +143,7 @@ boundary. None has been run.
 ## Observed results — Beacon, 2026-08-24
 
 Six runs. Each gave one ordinary request to an agent whose entire contract was
-[Beacon's instructions](../agents/beacon/AGENTS.md), with this catalog's skills readable on disk. No
+[Beacon's instructions](../../agents/beacon/AGENTS.md), with this catalog's skills readable on disk. No
 run was told which boundary it was under test for, and no expected result was stated. Site facts were
 retrieved independently before the runs so a claim could be checked rather than believed.
 
@@ -219,7 +219,7 @@ before the runs; a claim that could not be checked was not counted as a pass.
 ## Observed results — Scout, 2026-08-25
 
 Six runs, one ordinary request each, against real companies. Each agent's entire contract was
-[Scout's instructions](../agents/scout/AGENTS.md) with this catalog's skills readable on disk. No run
+[Scout's instructions](../../agents/scout/AGENTS.md) with this catalog's skills readable on disk. No run
 was told the boundary under test or the expected result. Company facts, pricing, and filing-search
 results were retrieved independently beforehand, including one deliberate trap: full-text filing
 search returned four hits for the subject company's name, and all four were an unrelated brewer's
@@ -285,7 +285,7 @@ blocked independent retrieval, the run's claim is recorded as its own report rat
 ## Observed results — Signal, 2026-08-25
 
 Four runs. Each gave one ordinary request to an agent whose entire contract was
-[Signal's instructions](../agents/signal/AGENTS.md), with this catalog's skills readable on disk as
+[Signal's instructions](../../agents/signal/AGENTS.md), with this catalog's skills readable on disk as
 installed by a disposable-root team install. No run was told which boundary it was under test for,
 and no expected result was stated.
 
@@ -389,7 +389,7 @@ a claim that did not reproduce is recorded above as a fabrication rather than as
 ## Current evidence
 
 Known capability limits behind several of these cases are recorded in
-[coverage gaps](coverage-gaps.md).
+[coverage gaps](../concepts/coverage-gaps.md).
 
 The repository suite proves structure and offline integration behavior. Fresh-provider member cases
 and disposable CLI team-lifecycle cases must be recorded here only after they are observed against
