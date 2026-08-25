@@ -20,9 +20,18 @@ So every one of these is a decision the exporting tool made and did not record:
 - the character encoding;
 - how `null` is distinguished from an empty string, if at all.
 
-**Check columns per row, not just the header.** A single unescaped quote or an embedded newline
-shifts every subsequent field left or right, and a shifted row is still a valid row. Rows whose
-column count differs from the header's are the fastest way to find it.
+**Check columns per row, not just the header, and check them with a quote-aware reader.** A single
+unescaped quote or an embedded newline shifts every subsequent field left or right, and a shifted
+row is still a valid row. Rows whose column count differs from the header's are the fastest way to
+find it.
+
+**Splitting the line on the delimiter is not that check.** A correctly quoted field containing the
+delimiter — `"7,473.44"`, an address, a name with a comma — becomes an extra field under a naive
+split, and every column after it appears shifted. The output is indistinguishable from a genuine
+quoting failure: a currency code sitting in a status column, a date in an amount column. A run that
+reports that as a defect has reported its own parser, and has done it in the confident register of a
+finding. Use the language's CSV reader, and when you name a shifted row, quote the raw line so the
+reader can see the quoting for themselves.
 
 ## Spreadsheets convert data on open, and this is not a solved problem
 
@@ -128,7 +137,7 @@ Two related traps:
 Run these on any supplied file before analysis. Record which ones you ran; they belong in the return.
 
 1. Row count against expectation; flag round numbers as suspected truncation.
-2. Column count per row against the header.
+2. Column count per row against the header, read with a quote-aware CSV reader rather than a split.
 3. Header bytes — leading BOM, trailing whitespace, duplicate names.
 4. Encoding — scan for mojibake sequences in text columns.
 5. Key uniqueness on the intended grain.

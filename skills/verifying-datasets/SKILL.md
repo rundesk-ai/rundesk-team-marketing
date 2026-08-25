@@ -67,7 +67,7 @@ are the ones that leave no trace in the file:
 | Spreadsheet auto-conversion | Identifiers turned into dates or serial numbers | Compare a sample of IDs against the source system |
 | Precision loss past 15 digits | Long IDs ending in zeros; totals off by cents | Read IDs as text; compare a known long value |
 | Encoding mismatch | `Ã©` for `é`; an invisible mark on the first column name | Check the first header name and any non-ASCII column |
-| Delimiter or quoting failure | A row with too many columns; a truncated address | Count columns per row, not just in the header |
+| Delimiter or quoting failure | A row with too many columns; a truncated address | Count columns per row with a quote-aware reader, never a naive split |
 | Ambiguous dates | `03/04` parsed as March in one column and April in another | Find a day past the 12th and see which position moved |
 | Thousands separators | A numeric column read as text | Check the column's type, not its appearance |
 
