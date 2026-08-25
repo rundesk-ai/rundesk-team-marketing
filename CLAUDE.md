@@ -8,7 +8,7 @@ for Beacon, Scout, Signal, and Quill. `README.md` is the consumer contract, `man
 catalog identity, `team.json` declares the members, and `agents/<member>/AGENTS.md` defines each
 member's always-on behavior.
 
-Google and PostHog integration skills remain owned by their source catalogs. Every specialist
+Google, PostHog, and Stripe integration skills remain owned by their source catalogs. Every specialist
 guidance package a member uses ships in this catalog. `team.json` declares exact catalog names and
 sources, and members use fully qualified skill addresses.
 
@@ -70,8 +70,8 @@ offline test or report an effect the service did not verify.
 ## Delegation
 
 The team has no lead. Each member is an inbound-only specialist and returns to the requester.
-Beacon owns external growth evidence, Scout owns external research, Signal owns first-party
-measurement and analysis, and Quill owns messaging and content artifacts.
+Beacon owns external growth evidence, Scout owns external research, Signal owns first-party and
+supplied-data certification, and Quill owns messaging and content artifacts.
 
 Two boundaries keep those specialists distinct.
 
@@ -84,6 +84,9 @@ Growth evidence and first-party analysis are separated by what the reader owes t
 owns a channel and reads to decide, so suggestive evidence is legitimate when it also proposes the
 check that would settle it. Signal owns the metric contract and reads to certify, so a result carries
 its population, denominator, uncertainty, and data-quality checks or is returned as unestablished.
+Signal also owns data it did not retrieve: a file or export is verified for provenance and integrity
+before anything is concluded from it, and two sources that disagree are reconciled rather than
+chosen between.
 Both may hold the same skill and read the same data; neither releases the other's output.
 
 Inbound-only bounds named-agent handoffs, not provider subagents. A member may use bounded provider
@@ -98,9 +101,12 @@ skill names. A skill supplies reusable judgment or a guarded integration and nev
 team's topology.
 
 Use the canonical terms growth evidence, external research, retrieval, citation, first-party data,
-funnel, cohort, retention, attribution, experiment, segment, forecast, brief, message, and content. Preserve Google,
-PostHog, and other vendor names at their boundaries. Distinguish attribution from causal effect,
-forecast from target or commitment, and a source citation from an AI answer's citation of a page.
+provenance, reconciliation, funnel, cohort, retention, attribution, experiment, segment, forecast, brief, message, and
+content. `signal` is a member name; the common noun means a suggestive input rather than a
+measurement, and skills use it only in that sense. Preserve Google, PostHog, Stripe, and other
+vendor names at their boundaries. Distinguish attribution from causal effect, forecast from target
+or commitment, reported value from recognized revenue, and a source citation from an AI answer's
+citation of a page.
 
 ## Documentation duties
 
