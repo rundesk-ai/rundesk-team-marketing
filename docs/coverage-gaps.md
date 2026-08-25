@@ -46,8 +46,8 @@ Each row was observed in the Beacon runs recorded in [team validation](team-vali
 
 | Missing | What exists today | What would close it |
 |---|---|---|
-| A bound on where a member may write | [Beacon's `Scope`](../agents/beacon/AGENTS.md) forbids publishing, spending, contacting, deploying, and mutating a site, account, campaign, or analytics property. It says nothing about a local working tree, and four of six runs located and read the worked-on source repository unprompted while one created a file in it | A stated filesystem boundary in the member instruction, and a case that tests it. The distinction that matters is preparing a change versus writing one where something else may pick it up |
-| Evidence that guidance was applied, not merely available | The runs had the corrected AI-search reference open and one still repeated a claim that reference retires | Nothing in this repository can close this. It is the argument for running cases rather than grepping wording, and for re-running them after guidance changes |
+| Evidence that the working-tree boundary holds | [Beacon's `Scope`](../agents/beacon/AGENTS.md) now says to return a proposed change as text and not to place the file. The rule was written after a run created a file in a repository it was never pointed at | A run of `BEACON-B10`. The rule is currently untested, and the defect that prompted it showed that available guidance is not applied guidance |
+| Evidence that guidance was applied, not merely available | The runs had the corrected AI-search reference open and one still repeated a claim that reference retires. The claim is now also listed among the things not to say, which is the scannable place rather than the explanatory one | Nothing in this repository closes this in general. It is the argument for running cases rather than grepping wording, and for re-running them after guidance changes; `SEO-W11` tests this specific instance |
 
 ## Caller-side gaps
 

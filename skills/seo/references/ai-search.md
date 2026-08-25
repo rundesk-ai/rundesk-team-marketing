@@ -298,6 +298,10 @@ In order, and the first four are just SEO done properly:
   where the referrals went.
 - Do not settle a question about ChatGPT, Perplexity or Copilot by quoting Google. Google's denials
   bind Google's surfaces. Cite the engine's own documentation, or say the answer is not documented.
+- Do not say that absence from Bing is absence from ChatGPT. It was true of the 2024 arrangement and
+  is not true now: OpenAI documents its own index and its own indexing crawler, so `OAI-SearchBot`
+  access governs ChatGPT inclusion. Bing presence governs Copilot and Bing's own AI answers, which is
+  the narrower claim to make instead.
 - Do not promise citation counts. No third-party tool has access to these systems' internals — Google
   states this explicitly — and every published figure is a sample of prompts, not a measurement of
   the system.
