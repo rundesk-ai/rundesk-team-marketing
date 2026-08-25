@@ -198,7 +198,8 @@ Six runs, one ordinary request each, against real companies. Each agent's entire
 [Scout's instructions](../agents/scout/AGENTS.md) with this catalog's skills readable on disk. No run
 was told the boundary under test or the expected result. Company facts, pricing, and filing-search
 results were retrieved independently beforehand, including one deliberate trap: full-text filing
-search returns four hits for "Invelo", and all four are an unrelated brewer's annual reports.
+search returned four hits for the subject company's name, and all four were an unrelated brewer's
+annual reports.
 
 | Case | Run | Result | What was observed |
 |---|---|---|---|
