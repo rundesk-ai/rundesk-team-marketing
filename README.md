@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.3.0-blue?style=flat-square" alt="Catalog version 0.3.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.4.0-blue?style=flat-square" alt="Catalog version 0.4.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/rundesk-ai/rundesk-team-marketing?style=flat-square" alt="MIT License"></a>
 </p>
 
@@ -41,49 +41,45 @@ overall outcome, and integrates the returned evidence or artifact.
 
 - `managing-marketing-work` — Coordinate multi-specialist marketing outcomes through verified completion.
 
-Grant this to the domain-facing agent that calls the team. It is deliberately not granted to a team
-member: the caller retains the outcome and integrates every specialist return.
+### Search and acquisition
 
-Granted skills are grouped by the outcome they support and the specialist who receives them.
-Shared catalog access follows.
-
-This catalog owns and ships every guidance skill listed below. Only the Google and PostHog skills
-come from declared integration catalogs.
-
-### Growth and acquisition — Beacon
-
-- `conversion-landing-pages` — Plan and improve measurable campaign pages and experiments.
-- `google-merchant` — Inspect product eligibility, issues, performance, pricing, and competitive visibility.
-- `google-pagespeed-insights` — Measure Lighthouse and field performance for public pages.
-- `google-search-console` — Inspect search performance, indexing, and sitemap evidence.
-- `lead-compliance-gates` — Identify consent, suppression, privacy, and lead-contact gates.
 - `seo` — Audit technical, on-page, structured-data, and AI-search visibility.
+- `conversion-landing-pages` — Plan and improve measurable campaign pages and experiments.
+- `lead-compliance-gates` — Identify consent, suppression, privacy, and lead-contact gates.
 
-### Market and customer research — Scout
+### Research
 
 - `researching-topics` — Find, evaluate, synthesize, and cite reproducible external evidence.
+- `researching-markets` — Size a market and characterize demand from counted public data.
+- `researching-competitors` — Analyze a rival's business, pricing, claims, and product from public records.
+- `researching-customers` — Establish who customers are and what they need from published and primary evidence.
 
-### Measurement and analytics — Signal
+### Measurement and analysis
 
 - `analyzing-growth-data` — Analyze funnels, cohorts, retention, attribution, experiments, segments, and forecasts.
-- `google-analytics` — Read bounded GA4 acquisition, audience, event, and ecommerce reports.
-- `posthog` — Read bounded product, web, conversion, insight, recording metadata, and HogQL evidence.
 
-### Product content — Quill
+### Product content
 
 - `writing-prds` — Create and validate product requirements, briefs, and feature definitions.
 - `writing-technical-docs` — Create and maintain verified consumer, developer, API, architecture, and troubleshooting documentation.
 
-### Shared Google access
+### Integrations
 
 - `google-auth` — Connect and inspect the Google accounts used by this catalog's integrations.
+- `google-analytics` — Read bounded GA4 acquisition, audience, event, and ecommerce reports.
+- `google-search-console` — Inspect search performance, indexing, and sitemap evidence.
+- `google-merchant` — Inspect product eligibility, issues, performance, pricing, and competitive visibility.
+- `google-pagespeed-insights` — Measure Lighthouse and field performance for public pages.
+- `posthog` — Read bounded product, web, conversion, insight, recording metadata, and HogQL evidence.
 
-`google-auth` is installed with `rundesk-skills-google` as that catalog's provider declaration; it
-is not granted to a member by default.
+This catalog owns and ships every guidance skill above. The Google and PostHog integrations come from
+declared catalog dependencies, and `google-auth` arrives with `rundesk-skills-google` as that
+catalog's provider declaration.
 
-Beacon and Signal share `analyzing-growth-data`, `conversion-landing-pages`, and `google-analytics`.
-They read the same evidence for different questions: Beacon to decide what to do in its channel,
-Signal to certify what the data establishes. A shared skill never merges their outputs.
+`managing-marketing-work` is granted to the domain-facing agent that calls the team, never to a team
+member: the caller retains the outcome and integrates every specialist return. Every other skill is
+granted per member in [`team.json`](team.json). Some are held by more than one member deliberately —
+they read the same evidence for different questions, and a shared skill never merges their outputs.
 
 ## 🚀 Install
 

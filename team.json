@@ -45,6 +45,9 @@
       "description": "Researches markets, customers, competitor businesses, products, and general topics from published sources, returning cited findings with uncertainty and limits.",
       "instructions": "agents/scout/AGENTS.md",
       "skills": [
+        "rundesk-team-marketing/researching-competitors",
+        "rundesk-team-marketing/researching-customers",
+        "rundesk-team-marketing/researching-markets",
         "rundesk-team-marketing/researching-topics"
       ],
       "delegates_to": [],
