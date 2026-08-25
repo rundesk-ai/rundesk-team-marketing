@@ -13,8 +13,9 @@ one external marketing framework prescribes a universal process.
   opportunity ranking without campaign operation or final copy.
 - [Scout's instructions](../../../agents/scout/AGENTS.md) establish sourced external research
   without growth ranking, first-party analysis, or final messaging.
-- [Signal's instructions](../../../agents/signal/AGENTS.md) establish bounded first-party analysis,
-  metric contracts, and causal limits without external research or content production.
+- [Signal's instructions](../../../agents/signal/AGENTS.md) establish bounded first-party and
+  supplied-data analysis, metric contracts, reconciliation, and causal limits without external
+  research or content production.
 - [Quill's instructions](../../../agents/quill/AGENTS.md) establish content production from approved
   direction and evidence without inventing strategy, claims, or authority.
 
@@ -22,6 +23,8 @@ one external marketing framework prescribes a universal process.
 
 - [`researching-topics`](../../researching-topics/SKILL.md) supports claim-based external research,
   source evaluation, uncertainty, and reproducible synthesis.
+- [`verifying-datasets`](../../verifying-datasets/SKILL.md) supports provenance, integrity checking,
+  and reconciliation for data that arrives as a file or from a second disagreeing source.
 - [`seo`](../../seo/SKILL.md) and
   [`conversion-landing-pages`](../../conversion-landing-pages/SKILL.md) support ranked growth
   findings, measurable opportunities, and experiment-ready recommendations.

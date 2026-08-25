@@ -53,6 +53,7 @@ Route each bounded question to the capability that owns its method:
 | Market, customer, competitor, category, or current external fact | External research | Claim-linked findings, uncertainty, and reproducible sources |
 | Search, content, acquisition, landing-page, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
 | Funnel, cohort, retention, attribution, experiment, segment, or forecast | First-party analysis | Metric contract, query, result, uncertainty, and limits |
+| A supplied file or export, two sources that disagree, or a number that must be certified before it is reported | Data verification | Provenance, integrity checks, a reconciliation with each adjustment sized, and what the data cannot support |
 | Approved message, requirement, documentation, or channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
 | Current account, property, event, page, product, or search evidence | Service integration | Bounded retrieval with resource, account, period, and truncation visible |
 

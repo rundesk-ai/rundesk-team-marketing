@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.4.0-blue?style=flat-square" alt="Catalog version 0.4.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.5.0-blue?style=flat-square" alt="Catalog version 0.5.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/rundesk-ai/rundesk-team-marketing?style=flat-square" alt="MIT License"></a>
 </p>
 
@@ -20,8 +20,8 @@
 
 A versioned Rundesk marketing team: four specialists, their canonical instructions, the skills they
 use, and caller-facing orchestration for combining their work. Specialist guidance stays with this
-team; Google and PostHog integrations remain in their reusable integration catalogs and are declared
-as dependencies through the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
+team; Google, PostHog, and Stripe integrations remain in their reusable integration catalogs and
+are declared as dependencies through the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
 
 ## 👥 Team
 
@@ -29,7 +29,7 @@ as dependencies through the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-
 |---|---|
 | `beacon` | Owns organic and AI search end to end: opportunity, tests, and its own surface results. |
 | `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
-| `signal` | Owns the metric contract and certifies reported numbers, experiments, and forecasts. |
+| `signal` | Certifies first-party and supplied data: integrity, reconciliation, decomposition, and what the data cannot establish. |
 | `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
@@ -56,7 +56,8 @@ overall outcome, and integrates the returned evidence or artifact.
 
 ### Measurement and analysis
 
-- `analyzing-growth-data` — Analyze funnels, cohorts, retention, attribution, experiments, segments, and forecasts.
+- `analyzing-growth-data` — Analyze funnels, cohorts, retention, attribution, experiments, segments, forecasts, and realized value.
+- `verifying-datasets` — Verify a supplied file or export, and reconcile sources that disagree.
 
 ### Product content
 
@@ -71,10 +72,11 @@ overall outcome, and integrates the returned evidence or artifact.
 - `google-merchant` — Inspect product eligibility, issues, performance, pricing, and competitive visibility.
 - `google-pagespeed-insights` — Measure Lighthouse and field performance for public pages.
 - `posthog` — Read bounded product, web, conversion, insight, recording metadata, and HogQL evidence.
+- `stripe` — Read account balances, revenue, payouts, charges, subscriptions, and disputes for reconciliation.
 
-This catalog owns and ships every guidance skill above. The Google and PostHog integrations come from
-declared catalog dependencies, and `google-auth` arrives with `rundesk-skills-google` as that
-catalog's provider declaration.
+This catalog owns and ships every guidance skill above. The Google, PostHog, and Stripe integrations
+come from declared catalog dependencies, and `google-auth` arrives with `rundesk-skills-google` as
+that catalog's provider declaration.
 
 `managing-marketing-work` is granted to the domain-facing agent that calls the team, never to a team
 member: the caller retains the outcome and integrates every specialist return. Every other skill is
@@ -125,6 +127,7 @@ matching catalogs already present from the same sources will be reused.
 - Public GitHub access to this repository.
 - For complete-team installation: a provider and unused local names for all four members.
 - A configured PostHog profile for live PostHog reads.
+- A configured read-only Stripe profile for live Stripe reads.
 - A connected Google account and permitted GA4, Merchant Center, or Search Console resources for Google reads.
 - A PageSpeed Insights API key for PageSpeed reads.
 

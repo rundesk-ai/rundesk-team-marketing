@@ -55,13 +55,15 @@
     },
     {
       "name": "signal",
-      "description": "Owns the metric contract and certifies reported numbers across funnels, cohorts, retention, experiments, segments, and forecasts, with uncertainty and limits.",
+      "description": "Certifies first-party and supplied data: checks its integrity, reconciles sources that disagree, decomposes it, and returns a number with its denominator and limits or states it is unestablished.",
       "instructions": "agents/signal/AGENTS.md",
       "skills": [
         "rundesk-skills-google/google-analytics",
         "rundesk-skills-integrations/posthog",
+        "rundesk-skills-integrations/stripe",
         "rundesk-team-marketing/analyzing-growth-data",
-        "rundesk-team-marketing/conversion-landing-pages"
+        "rundesk-team-marketing/conversion-landing-pages",
+        "rundesk-team-marketing/verifying-datasets"
       ],
       "delegates_to": [],
       "self_improve": false
