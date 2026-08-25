@@ -1,6 +1,6 @@
 ---
 name: seo
-description: Use this skill when the user asks to audit, plan, or implement search visibility — technical SEO, crawling and indexing, canonical and hreflang handling, Core Web Vitals, structured data, titles and on-page content, internal linking, ecommerce product and category pages, social link previews, or being cited in AI answers such as AI Overviews, AI Mode, ChatGPT and Copilot. It supplies source-backed rules, the checks that can be measured and changed in code, and the evidence behind each recommendation. Do not use it for paid search campaigns, or for performance work with no search or citation goal.
+description: Use this skill when the user asks to audit, plan, or implement search visibility — technical SEO, crawling and indexing, canonical and hreflang handling, Core Web Vitals, structured data, titles and on-page content, internal linking, ecommerce product and category pages, social link previews, or being cited in AI answers such as AI Overviews, AI Mode, ChatGPT, Copilot and Perplexity, including work proposed as answer engine optimization (AEO) or generative engine optimization (GEO). It supplies source-backed rules, the checks that can be measured and changed in code, and the evidence behind each recommendation. Do not use it for paid search campaigns, or for performance work with no search or citation goal.
 ---
 
 # SEO
@@ -17,7 +17,12 @@ returns and what renders, which is often not what the repository suggests.
 curl -sSI https://example.com/page                 # status, redirects, x-robots-tag
 curl -sS https://example.com/robots.txt
 curl -sS https://example.com/page | grep -iE '<title|canonical|meta name="(description|robots)"|og:'
+curl -sS https://example.com/page | grep -iE 'max-snippet|data-nosnippet'   # snippet limits
 ```
+
+`nosnippet` and `max-snippet` arrive three ways — the `robots` meta tag, the `X-Robots-Tag` header,
+and the `data-nosnippet` attribute — and they gate AI features that quote the page, so check all
+three before concluding a page is eligible.
 
 Then read the **rendered** HTML, not the response body, for any JavaScript-built page — Google's URL
 Inspection tool and Rich Results Test both expose it. Pull real performance and query data from the
@@ -89,7 +94,7 @@ Two rules that catch most mistakes:
 | [Structured data](references/structured-data.md) | Which types still earn anything, the policies, and what was withdrawn in 2026 |
 | [Content and on-page](references/content-and-onpage.md) | Titles, descriptions, headings, E-E-A-T, keyword mapping, internal linking |
 | [Ecommerce](references/ecommerce.md) | Product and category pages, variants, facets, pagination, feeds, shopping surfaces |
-| [AI search](references/ai-search.md) | AI Overviews, AI Mode, ChatGPT, Copilot: crawler control, what is documented, what is measured |
+| [AI search](references/ai-search.md) | AI Overviews, AI Mode, ChatGPT, Copilot, Perplexity, and anything proposed as AEO or GEO: crawler control, what is documented, what is measured, what was experimentally tested |
 | [Social and brand](references/social-and-brand.md) | Open Graph and cards, what social actually does for search, brand mentions |
 | [Measurement](references/measurement.md) | The APIs, exports, and thresholds that make a claim checkable |
 | [Anti-patterns](references/anti-patterns.md) | Every named spam policy, and the tactics the evidence has retired |
@@ -108,3 +113,6 @@ Check: crawl the sitemap and assert unique titles; re-inspect three URLs after d
 ```
 
 Rank by expected impact, not by how easy the fix is, and say plainly when a finding is cosmetic.
+
+Use [validation](references/validation.md) when testing which requests should load this skill and
+which boundaries it must hold.

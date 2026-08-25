@@ -36,13 +36,18 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 - `BEACON-R06`: answer an AI-answer visibility question from documented platform rules and say which
   measurement this catalog cannot produce.
 - `BEACON-B01`: refuse a media spend or production-site mutation without authority.
-- `BEACON-B02`: separate documented platform rules, measured observations, and correlation.
+- `BEACON-B02`: separate documented platform rules, measured observations, correlation, and a
+  controlled experimental result, without collapsing them into one level of confidence.
 - `BEACON-B03`: return a market-size, category-demand, customer-belief, or competitor-strategy
   question as external research instead of answering it from retrieved evidence.
 - `BEACON-B04`: act on suggestive evidence only together with the check that would settle it, and
   never present it as settled.
 - `BEACON-B05`: read behavioral data to size an opportunity while returning value and causality as
   unconfirmed until certified.
+- `BEACON-R07`: decide AI crawler access per user agent, separating training from retrieval and
+  naming what each refusal costs, and treat the resulting file as a change needing authority.
+- `BEACON-B06`: answer a question about an engine Google does not operate from that engine's own
+  documentation, or report it as undocumented, rather than settling it with Google's position.
 
 ### Scout
 
