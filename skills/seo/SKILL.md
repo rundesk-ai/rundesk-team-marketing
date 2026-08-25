@@ -24,6 +24,9 @@ curl -sS https://example.com/page | grep -iE 'max-snippet|data-nosnippet'   # sn
 and the `data-nosnippet` attribute — and they gate AI features that quote the page, so check all
 three before concluding a page is eligible.
 
+`references/retrieval.md` fixes the full check set, the guardrails for a site you do not own, and the
+redirect and tag-matching traps that produce false findings.
+
 Then read the **rendered** HTML, not the response body, for any JavaScript-built page — Google's URL
 Inspection tool and Rich Results Test both expose it. Pull real performance and query data from the
 field rather than a local Lighthouse run; `references/measurement.md` names the APIs.
@@ -89,6 +92,7 @@ Two rules that catch most mistakes:
 
 | Area | Read for |
 |---|---|
+| [Retrieval](references/retrieval.md) | What you may fetch, what you must not do while fetching, and the check set every inspection returns |
 | [Technical SEO](references/technical-seo.md) | Crawling, indexing, canonicals, hreflang, sitemaps, redirects, JavaScript rendering, images |
 | [Core Web Vitals](references/core-web-vitals.md) | Thresholds, field versus lab, and the code change behind each metric |
 | [Structured data](references/structured-data.md) | Which types still earn anything, the policies, and what was withdrawn in 2026 |
