@@ -40,6 +40,15 @@ APIs to do it with.
 | Brand, positioning, and pricing method | Scout can research what others published about them; no skill turns that into a position or a price |
 | Landing-path build and rendered verification | [`conversion-landing-pages`](../skills/conversion-landing-pages/SKILL.md) ends in an implementation package and a rendered verification report. Beacon and Signal now share the skill and split its diagnosis and measurement halves, but no member may change or render a site, so its build half still has no owner |
 
+## Boundaries no instruction draws
+
+Each row was observed in the Beacon runs recorded in [team validation](team-validation.md).
+
+| Missing | What exists today | What would close it |
+|---|---|---|
+| A bound on where a member may write | [Beacon's `Scope`](../agents/beacon/AGENTS.md) forbids publishing, spending, contacting, deploying, and mutating a site, account, campaign, or analytics property. It says nothing about a local working tree, and four of six runs located and read the worked-on source repository unprompted while one created a file in it | A stated filesystem boundary in the member instruction, and a case that tests it. The distinction that matters is preparing a change versus writing one where something else may pick it up |
+| Evidence that guidance was applied, not merely available | The runs had the corrected AI-search reference open and one still repeated a claim that reference retires | Nothing in this repository can close this. It is the argument for running cases rather than grepping wording, and for re-running them after guidance changes |
+
 ## Caller-side gaps
 
 [`managing-marketing-work`](../skills/managing-marketing-work/SKILL.md) routes by capability, which
