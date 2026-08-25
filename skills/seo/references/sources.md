@@ -99,8 +99,21 @@ be re-checked before being quoted to a client.
 ### Non-Google platforms
 
 - [OpenAI bots](https://developers.openai.com/api/docs/bots): `OAI-SearchBot`, `GPTBot`,
-  `ChatGPT-User`, `OAI-AdsBot`; per-agent IP lists; and the consequence of blocking each.
-- [Anthropic: does Anthropic crawl data from the web?](https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
+  `ChatGPT-User`, `OAI-AdsBot`; per-agent IP lists; and the consequence of blocking each. Also
+  OpenAI's own statement that `OAI-SearchBot` builds the index behind ChatGPT search, which is why
+  ChatGPT inclusion is no longer a Bing question.
+- [Anthropic: does Anthropic crawl data from the web?](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler):
+  `ClaudeBot` for training, `Claude-SearchBot` for search indexing, `Claude-User` for user-initiated
+  fetches, and the IP list at `claude.com/crawling/bots.json`. The former `support.anthropic.com`
+  address now redirects here.
+- [Perplexity bots](https://docs.perplexity.ai/guides/bots): `PerplexityBot` for search indexing —
+  stated not to be used for foundation-model training — and `Perplexity-User`, which "generally
+  ignores robots.txt rules" because a user requested the fetch.
+- [About Applebot](https://support.apple.com/en-us/119829): `Applebot-Extended` as a training-usage
+  control that does not itself crawl, so disallowing it leaves pages eligible for search results.
+- [Common Crawl: CCBot](https://commoncrawl.org/ccbot) and
+  [Amazonbot](https://developer.amazon.com/amazonbot), which documents `noarchive` as "do not use
+  the page for model training".
 - [Bing Webmaster Guidelines](https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a) ·
   [AI Performance in Bing Webmaster Tools](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)
 - [IndexNow documentation](https://www.indexnow.org/documentation)
@@ -121,7 +134,9 @@ be re-checked before being quoted to a client.
 
 ## Tier 1 — measurement APIs
 
-- [Search Console API](https://developers.google.com/webmaster-tools) ·
+- [Search Console API](https://developers.google.com/webmaster-tools) — its search analytics type
+  values remain `web`, `image`, `video`, `news`, `discover`, and `googleNews`, which is the basis for
+  saying the generative-AI performance report is not retrievable through the API ·
   [Bulk data export](https://developers.google.com/search/blog/2023/02/bulk-data-export) ·
   [BigQuery efficiency tips](https://developers.google.com/search/blog/2023/06/bigquery-efficiency-tips)
 - [CrUX API](https://developer.chrome.com/docs/crux/api) ·
@@ -133,18 +148,21 @@ be re-checked before being quoted to a client.
 
 ## Tier 2 — published measurement
 
-Correlational or sampled. Always quote the sample, the date, and the caveat; never present as
-causal. Every one of these is published by a vendor selling visibility tooling.
+Correlational or sampled unless the row says otherwise. Always quote the sample, the date, and the
+caveat. Every vendor row here is published by a company selling visibility tooling; the one
+peer-reviewed row is marked, and it is the only source in this package that manipulated content and
+observed the result.
 
 | Study | Sample | Finding used here |
 |---|---|---|
 | [Ahrefs — 76% of AI Overview citations pull from the top 10](https://ahrefs.com/blog/search-rankings-ai-citations/) | 1.9M citations across 1M AI Overviews, July 2025 | 76.1% of cited pages rank top 10; 14.4% rank nowhere in the top 100; median position of first citation is 2 |
-| [Ahrefs — top brand visibility factors](https://ahrefs.com/blog/ai-brand-visibility-correlations/) | 75,000 brands, ChatGPT / AI Mode / AI Overviews, Spearman | YouTube mentions 0.737; branded web mentions 0.656–0.709; DR 0.266–0.326; backlinks very weak. Authors state correlation is not causation |
-| [Ahrefs — AI Overview brand visibility factors](https://ahrefs.com/blog/ai-overview-brand-correlation/) | 75,000 brands | Brand web mentions 0.664 versus backlinks 0.218 |
+| [Ahrefs — top brand visibility factors](https://ahrefs.com/blog/ai-brand-visibility-correlations/) | 75,000 brands, ChatGPT / AI Mode / AI Overviews, Spearman, 12 December 2025 | YouTube mentions 0.737; branded web mentions 0.656–0.709; DR 0.266–0.326; link metrics "very weak" with no figure given in the text; number of site pages ~0.194. Authors state "correlation isn't causation" |
+| [Ahrefs — AI Overview brand visibility factors](https://ahrefs.com/blog/ai-overview-brand-correlation/) | 75,000 brands, 26 May 2025 | Brand web mentions 0.664 versus backlinks 0.218 |
 | [Semrush / Kevin Indig — ghost citations](https://www.semrush.com/blog/the-ghost-citations-study/) | 3,981 domain appearances, 115 prompts, 14 countries, June 2026 | 61.7% cited without a brand mention; Gemini names 83.7% / cites 21.4%; ChatGPT cites 87% / names 20.7%; comparative content 2.4× more mentions |
 | [Semrush 2026 AI Visibility Index](https://www.semrush.com/news/463141-semrush-releases-expanded-2026-ai-visibility-index-analyzing-126-million-ai-search-prompts/) | 126M US AI prompts, Jan–Apr 2026 | Scale and platform mix of AI answer sourcing |
 | [Ahrefs — 137K sites, llms.txt](https://ahrefs.com/blog/llmstxt-study/) | 137,210 domains, May 2026 | 97% of `llms.txt` files received zero requests; AI search bots made only hundreds of fetches |
-| [Pew Research, via Search Engine Land](https://searchengineland.com/google-ai-overviews-hurting-clicks-study-459434) | Browsing data from 900 US adults | 8% click-through with an AI Overview versus 15% without; 1% clicked a link inside the summary; median zero-click 80% versus 60% |
+| [Pew Research Center — clicks when an AI summary appears](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/) | KnowledgePanel Digital browsing data from 900 US adults, March 2025, published 22 July 2025. Not a vendor study | 8% click-through with an AI Overview versus 15% without; 1% clicked a link inside the summary; about 18% of observed searches produced an AI summary |
+| **Peer-reviewed experiment** — [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735) | GEO-bench: 10,000 queries, nine datasets, 25 domains; nine content modifications; KDD '24, August 2024 | Cite Sources, Quotation Addition and Statistics Addition gained 30–40% on position-adjusted word count and 15–30% on subjective impression; Keyword Stuffing did not work; the gain is negative for already top-ranked sources and largest for low-ranked ones. Run against a GPT-3.5 engine resembling BingChat plus a 200-example Perplexity.ai check — **not** against Google Search |
 
 ## Tier 3 — reported announcements and commentary
 
@@ -163,7 +181,9 @@ Useful for dates and enforcement history; confirm against Tier 1 before quoting 
 - [John Mueller rebuts the idea that Google uses a domain authority signal](https://www.searchenginejournal.com/domain-authority/246515/).
 - [Site reputation abuse: first-party involvement](https://searchengineland.com/google-site-reputation-abuse-policy-now-includes-first-party-involvement-or-oversight-of-content-448432)
   and [manual actions in Europe](https://searchengineland.com/google-manual-actions-site-reputation-abuse-europe-451046).
-- [ChatGPT Search makes Microsoft Bing an SEO priority](https://searchengineland.com/chatgpt-search-microsoft-bing-seo-448019).
+- [ChatGPT Search makes Microsoft Bing an SEO priority](https://searchengineland.com/chatgpt-search-microsoft-bing-seo-448019) —
+  retained as history only. It described the 2024 arrangement, and this package no longer states that
+  absence from Bing removes a site from ChatGPT; OpenAI's own bot documentation governs that now.
 
 ## What this package deliberately does not cite
 

@@ -26,8 +26,8 @@ direction, never as evidence.
 regression alerts.
 
 **The bulk data export** is the serious option: a daily dump into BigQuery containing all performance
-data except anonymized queries, in three tables — `searchdata_site_impression` (aggregated by
-property) and `searchdata_url_impression` (by URL, with query and rich-result detail). It removes the
+data except anonymized queries, in two tables — `searchdata_site_impression` (aggregated by
+property) and `searchdata_url_impression` (by URL, with query and rich-result detail). They remove the
 UI's row limits and 16-month window, which is what makes cannibalization and long-tail analysis
 possible at all.
 
@@ -72,11 +72,29 @@ canonical per page, canonical is self-referential or intentional, `200` status, 
   gives **impressions** in AI Overviews and AI Mode plus pages, countries, devices and dates. There
   is **no click data**, which Google indicated may come later. Rolling out incrementally, so it may
   be absent from a given property.
+
+  **It is not in the API.** `searchanalytics.query` still accepts only `web`, `image`, `video`,
+  `news`, `discover`, and `googleNews` for its type, there is no generative-AI value and no separate
+  endpoint, so the report is reachable through the Search Console UI and its export only. Anything
+  automated against the API cannot see it. Say that plainly rather than describing a number the
+  reader cannot pull. The `searchAppearance` dimension is passed through verbatim, so a future
+  Google-side value would arrive without a client change — but no such value is documented today,
+  and guessing at one is not a measurement.
 - **Microsoft:** Bing Webmaster Tools AI Performance (public preview, February 2026) reports total
   citations, average cited pages, grounding queries, and page-level citation activity across Copilot
   and Bing AI summaries. It reports citations, which is closer to the question than impressions.
+  There is no documented API; it is a dashboard.
 - **Everything else** is sampling. Prompt-based trackers run a prompt set and record what appeared;
   useful for trend, not a measurement of the system.
+
+  If a prompt sample is run anyway — in-house or bought — it is reportable only with all four of:
+  the **prompt set fixed and written down** before the run, the **denominator** (how many prompts,
+  how many runs each), the **date and platform version observed**, and the statement that generative
+  answers are **non-deterministic**, so a re-run differs without anything having changed. Without
+  those it is an anecdote with a percent sign. With them it is a trend line about a sample of
+  prompts, and still never a measurement of the system. Do not average it with Search Console
+  impressions or call the result share of voice; published tools each define that term differently
+  and none of the definitions is the platform's.
 
 ## AI and assistant referral traffic
 
@@ -89,10 +107,19 @@ platform, so add a custom channel group:
 - **Order it above `Referral`**, or GA4 classifies the session as a referral before reaching the rule.
 - Re-check the referral source list monthly; the platform list changes.
 
+That configuration is a change to the property, which is a different permission from reading it. The
+**read-only** route needs no configuration at all: a session breakdown by default channel group
+returns the native `AI Assistant` row wherever GA4 has assigned it, and a breakdown by session source
+returns the raw `chatgpt.com` and `perplexity.ai` rows to classify afterwards. Prefer that when the
+task is to measure rather than to instrument, and say which of the two produced the number — a
+custom channel group and a source breakdown will not agree, because they classify different things.
+
 **State the limitation whenever reporting these numbers:** a large share of AI referrals arrive with
 no referrer header and land in Direct, so measured AI referral traffic is a floor, not a total.
 Published estimates of the undercount vary widely and none is authoritative — report the shape of the
-error, not a fabricated correction factor.
+error, not a fabricated correction factor. Note also what this measures: a session that arrived from
+an assistant. It says nothing about answers where the brand was named and nobody clicked, which the
+citation studies suggest is the larger population.
 
 ## Server logs
 

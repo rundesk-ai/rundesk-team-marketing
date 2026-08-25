@@ -12,7 +12,8 @@ analysis is certified with a denominator or returned as unestablished.
 
 | Missing | What exists today | What would close it |
 |---|---|---|
-| AI-answer visibility measurement | [`seo`](../skills/seo/references/ai-search.md) documents the platform rules and the published studies; nothing measures this site | Search Console's generative-AI performance surface, which [`google-search-console`](https://github.com/rundesk-ai/rundesk-skills-google/blob/main/skills/google-search-console/references/cli.md) cannot request: its search types are `web`, `image`, `video`, `news`, `discover`, and `googleNews` |
+| AI-answer visibility measurement | [`seo`](../skills/seo/references/ai-search.md) documents the platform rules and the published studies; Search Console's generative-AI report exists but returns impressions only, with no clicks and no queries, and reaches a person through the UI and its export rather than any member | An API path to that report. [`google-search-console`](https://github.com/rundesk-ai/rundesk-skills-google/blob/main/skills/google-search-console/references/cli.md) still accepts only `web`, `image`, `video`, `news`, `discover`, and `googleNews` for its search type, and no generative-AI value is documented. Its `searchAppearance` dimension passes through verbatim, so a future Google-side value would arrive without a client change — but none exists to request today |
+| AI referral traffic, named as such | GA4 assigns a native `AI Assistant` channel, and [`google-analytics`](https://github.com/rundesk-ai/rundesk-skills-google/blob/main/skills/google-analytics/references/cli.md) can read it through a `channel` or `source` breakdown; no skill in this catalog told a member that path exists until now, and the custom channel group covering the platforms GA4 misses is a property configuration that package refuses by contract | Either a configuration-capable analytics path, which is a broader permission than this team holds, or acceptance that the native channel plus a source breakdown is the readable floor. The measured number is a floor regardless: a large share of AI referrals arrive with no referrer and land in Direct |
 | AI citation counts on Microsoft surfaces | none | A Bing Webmaster Tools package; its AI Performance report is the only source that reports citations rather than impressions |
 | Which AI crawler fetched what | none | Server-log evidence, which [`measurement`](../skills/seo/references/measurement.md) calls the only ground truth for crawler behavior |
 | Core Web Vitals trend | [`google-pagespeed-insights`](https://github.com/rundesk-ai/rundesk-skills-google/blob/main/skills/google-pagespeed-insights/SKILL.md) returns one 28-day field snapshot and excludes history by contract | A CrUX History source. Field data is also the portion Google plans to discontinue from PageSpeed Insights |
@@ -61,6 +62,13 @@ caller's skill currently names that sequence.
 of them and no member is granted them, so that guidance dead-ends. The package is adapted content
 whose provenance is pinned in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md); repairing it
 upstream keeps this catalog free of drift.
+
+[`seo`](../skills/seo/SKILL.md) has diverged from the `rundesk-skills` package it was adapted from.
+The AI-search guidance, the snippet-control checks, the skill description, and `references/validation.md`
+exist only here. The divergence is deliberate and its provenance is recorded in
+[THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md), but it is a maintenance cost: a correction made
+upstream no longer reaches this copy, and the two descriptions now route differently. Anyone reading
+the upstream package should not assume it is the one a member of this team received.
 
 ## Deliberate exclusions
 
