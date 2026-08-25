@@ -1,6 +1,6 @@
 ---
 name: managing-marketing-work
-description: Use when a domain-facing agent owns a marketing outcome that requires coordinating two or more of external research, growth planning, first-party measurement, or content production. It supplies the work contract, dependency order, specialist handoffs, integration, approval boundaries, and completion proof. Do not use for one self-contained specialist task or to operate campaigns without separate authority.
+description: Use when a marketing outcome needs work a specialist owns — market, customer, or competitor research; SEO and AI-search visibility; landing pages and conversion; funnels, attribution, experiments, and reported numbers; requirements, documentation, and messaging — whether that is one bounded handoff or a launch, positioning, or pricing outcome spanning several. It supplies the brief each specialist needs, the work contract, dependency order, integration of what comes back, approval boundaries, and completion proof. Do not use for work no specialist owns, or to operate a campaign, publish, spend, or contact anyone without separate authority.
 ---
 
 # Manage marketing work
@@ -22,6 +22,28 @@ This skill owns:
 It does not discover the market, rank growth opportunities, analyze data, write content, approve
 legal claims, or operate a service by itself. Compose it with the skill that owns each method. A
 single specialist task with clear inputs and proof does not need orchestration ceremony.
+
+## Choose the smallest engagement
+
+Classify before writing anything. Most requests are the first kind.
+
+**Direct handoff.** One specialist owns the whole question and the inputs are already clear. Write
+one brief, send it, verify the return against that specialist's own standard, and pass it on. No
+work contract, no dependency order, no stages. A single bounded task does not need orchestration
+ceremony.
+
+**Coordinated outcome.** Two or more capabilities are needed, or one specialist's output is an input
+another depends on, or evidence and direction must be reconciled before an artifact exists. Use the
+contract and dependency order below.
+
+**Loading a specialist's method skill is not a reason to do their work yourself.** Reading the
+research, growth, analytics, or content guidance tells you what a good return looks like and what to
+ask for. It does not transfer the work. When a specialist owns the question, the brief goes to them
+and you integrate what comes back; absorbing it yourself produces an answer nobody certified and
+loses the standard their return would have carried.
+
+When no installed specialist owns a needed capability, say so and name what is missing rather than
+covering the gap yourself or dropping that part of the outcome silently.
 
 ## Define the marketing work contract
 
@@ -51,8 +73,9 @@ Route each bounded question to the capability that owns its method:
 | Need | Owning capability | Usable return |
 |---|---|---|
 | Market, customer, competitor, category, or current external fact | External research | Claim-linked findings, uncertainty, and reproducible sources |
-| Search, content, acquisition, landing-page, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
+| SEO, AI-search, content, acquisition, landing-page, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
 | Funnel, cohort, retention, attribution, experiment, segment, or forecast | First-party analysis | Metric contract, query, result, uncertainty, and limits |
+| A supplied file or export, two sources that disagree, or a number that must be certified before it is reported | Data verification | Provenance, integrity checks, a reconciliation with each adjustment sized, and what the data cannot support |
 | Approved message, requirement, documentation, or channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
 | Current account, property, event, page, product, or search evidence | Service integration | Bounded retrieval with resource, account, period, and truncation visible |
 
@@ -125,6 +148,14 @@ Research, analysis, planning, and drafting do not authorize media spend, consume
 publication, deployment, account configuration, tracking changes, experiment rollout, or service
 mutation. Name the exact external effect, target, account, audience, cost or blast radius, approval,
 rollback or stop condition, and verification before activation.
+
+**This includes your own tooling, and that is the boundary most often crossed.** A request for a
+deliverable is not authority to place it. A shareable page, a hosted document, a posted message, a
+ticket, or a file written where something else may pick it up is a publication even when the work
+behind it is finished, correct, and exactly what was asked for — and being asked for something
+"for Thursday's review" names an audience, not a permission. Return the deliverable as text and ask
+before putting it anywhere. Where a specialist's own scope forbids placing a file, integrating its
+return does not lift that limit.
 
 Treat privacy, regulated claims, consent, lead transfer, suppression, personal data, money, and
 irreversible publication as explicit risk boundaries. Route legal conclusions to qualified owners;

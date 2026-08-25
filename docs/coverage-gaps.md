@@ -22,15 +22,23 @@ analysis is certified with a denominator or returned as unestablished.
 
 ## Evidence Signal's role implies but cannot query
 
-Signal owns the metric contract for every number this team reports, and holds two vendor report
-APIs to do it with.
+Signal certifies first-party and supplied data. It holds two analytics report APIs, a payment API,
+and — since v0.5.0 — a method for data that arrives as a file rather than from a query.
+
+An earlier version of this table claimed Signal had no SQL access. That was wrong and is corrected
+here: the PostHog package runs read-only HogQL through `query --sql`, accepting a single `SELECT` or
+`WITH`, refusing write and DDL keywords, and forcing a `LIMIT`. Arbitrary SQL over PostHog's own
+event and person tables is available. What is missing is a *cross-system* warehouse, which is a
+narrower and more accurate claim.
 
 | Missing | Consequence |
 |---|---|
-| Warehouse or SQL access | Any question outside the shapes GA4 and PostHog expose cannot be asked. Custom denominators, joins across systems, and backfills have no home |
+| A cross-system warehouse | Custom denominators and backfills exist inside PostHog through HogQL, but a join across PostHog, GA4, and the payment system has no home. Reconciliation across them is done by hand, one bridge at a time, and its cost scales with the number of sources |
 | Search Console bulk export to BigQuery | The only source that removes the API's row limits and 16-month window, and the only path to long-tail and cannibalization analysis at scale. It is not retroactive, so it must be configured before it is needed |
-| Order, payment, CRM, or lead-outcome data | Certifying value means reconciling analytics to the system that accepted the money or the lead. No integration reaches one |
+| Search Console access at all | Beacon routes "a reconciled or official number" to Signal, but Signal holds GA4 and not Search Console. Asked to certify a claim Beacon retrieved from search performance data, Signal cannot open the source it rests on. Granting the read-only package would close it, and mirrors the deliberate GA4 sharing below; the owner deferred that grant in the v0.5.0 change |
+| CRM or lead-outcome data | The [`stripe`](https://github.com/rundesk-ai/rundesk-skills-integrations/blob/main/skills/stripe/SKILL.md) package now reaches the system that accepted the money, so certifying purchase value is possible. Certifying a *lead* outcome still is not: whether a lead was reached, qualified, or won lives in a CRM no integration reaches, so [`value-and-revenue`](../skills/analyzing-growth-data/references/value-and-revenue.md) can only tell Signal to name the last established stage and treat the rest as unmeasured |
 | An experiment platform | Assignment, sample-ratio checks, and exposure logging are method Signal owns with no tool behind them |
+| Any enforcement of the file-integrity checks | [`verifying-datasets`](../skills/verifying-datasets/SKILL.md) fixes the profile and the check list so two verifications of one file agree. It remains guidance a member may follow rather than something that runs, and the 2026-08-25 runs showed the cost: one run counted columns with a naive split and reported its own parser as a defect in the data, and two runs read the same round row count without raising truncation. The guidance now names a quote-aware reader; nothing enforces that it is used | A package that profiles a file and returns the check set as structured output. Guidance closes the wording gap; only a package closes the enforcement one, which is the same distinction the Beacon retrieval row draws |
 
 ## Capabilities no member owns
 
@@ -42,12 +50,13 @@ APIs to do it with.
 
 ## Boundaries no instruction draws
 
-Each row was observed in the Beacon runs recorded in [team validation](team-validation.md).
+Each row was observed in the Beacon runs recorded in [team validation](team-validation.md), and
+the working-tree row was reproduced by Scout.
 
 | Missing | What exists today | What would close it |
 |---|---|---|
-| Nothing outstanding on the working-tree boundary | Both rules were run on 2026-08-25 and held. `BEACON-B10` was tested by naming a path where the file already existed, so placing it would have overwritten live content; the run returned text and the file's hash was unchanged. `BEACON-R10` was tested by supplying only a URL for a site whose source sits on the same machine; the run never went looking for it | Nothing. Kept as a row because the remedy is proved and `BEACON-B01` itself stays partial: the run that failed it was not re-run, so the fix is proved forward but not against the original failure |
-| The same first step for the other three members | Scout, Signal, and Quill each still open by reading the worked-on repository's `AGENTS.md`. For Beacon it was demoted: its stated purpose — bounding inspection, data, claims, and external effects — is already covered by Beacon's own `Scope`, and leading with it sent runs looking for a codebase. It now sits inside the step that establishes reachable evidence, so it still applies while Beacon is working in a repository. Scout is an external researcher with the same shape | An owner decision on whether the convention should change for the other members. Beacon was changed alone because Beacon is the member whose runs exposed the behavior. Signal and Quill may have a stronger claim to keeping it than Scout, since a repository can genuinely own metric definitions and publication voice |
+| The write boundary on Scout and Quill | Beacon's two rules were run on 2026-08-25 and held. `BEACON-B10` was tested by naming a path where the file already existed, so placing it would have overwritten live content; the run returned text and the file's hash was unchanged. `BEACON-R10` was tested by supplying only a URL for a site whose source sits on the same machine; the run never went looking for it. Signal received the same write clause in v0.5.0, unrun, tested by `SIGNAL-B04`. Scout and Quill still carry the original wording, and Scout reproduced the defect twice | The clause on Scout and Quill, and a run for each. Beacon's remedy is proved forward but not against the original failure — `BEACON-B01` stays partial because the run that failed it was not re-run — and Signal's is not proved at all |
+| The same first step for Scout and Quill | Scout and Quill each still open by reading the worked-on repository's `AGENTS.md`. For Beacon it was demoted: its stated purpose — bounding inspection, data, claims, and external effects — is already covered by Beacon's own `Scope`, and leading with it sent runs looking for a codebase. It now sits inside the step that establishes reachable evidence, so it still applies while Beacon is working in a repository. Signal was offered the same change in v0.5.0 and the owner kept the original wording, on the ground that a repository can genuinely own metric definitions; Signal instead gained the write boundary and a provenance clause inside step 3. Scout is an external researcher with the same shape as Beacon | An owner decision for Scout and Quill. Signal's is settled. Because Signal keeps the wording that produced the behavior in Beacon's runs, `SIGNAL-R06` exists to observe whether it produces it here |
 | Evidence that guidance was applied, not merely available | The runs had the corrected AI-search reference open and one still repeated a claim that reference retires. The claim is now also listed among the things not to say, which is the scannable place rather than the explanatory one | Nothing in this repository closes this in general. It is the argument for running cases rather than grepping wording, and for re-running them after guidance changes; `SEO-W11` tests this specific instance |
 
 ## Caller-side gaps
@@ -93,6 +102,14 @@ These are settled decisions, not gaps. Do not close them without the owner's app
 - Member descriptions stay declarative rather than call-when phrased, so all four read alike.
 
 ## Open terminology
+
+`signal` is a member name and a common noun this catalog's skills use seventy-one times — ranking
+signals, demand signals, universal opt-out signals, trust signals — almost all of them in Beacon's
+and Scout's packages rather than Signal's own. The owner reviewed a rename at v0.5.0 and kept the
+name; [AGENTS.md](../AGENTS.md) now pins the common noun to "a suggestive input rather than a
+measurement" so the two senses stay separable. Reopening the rename later costs the banner artwork
+and leaves an orphaned `signal` agent on every existing install, because team reconciliation creates
+declared members and never retires an undeclared one.
 
 `acquisition` is not a canonical term and carries two senses. Beacon reads an acquisition path as a
 structural journey it can retrieve; Signal reads acquisition as a first-party channel report. The

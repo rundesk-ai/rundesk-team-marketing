@@ -1,6 +1,6 @@
 ---
 name: analyzing-growth-data
-description: Use when first-party product or marketing data must answer a growth question through funnels, cohorts, retention, attribution, experiments, segmentation, or forecasting. It supplies metric contracts, comparable populations, causal boundaries, uncertainty, and reproducible proof. Do not use for retrieving data from a specific analytics service without an analysis question, external market research, or implementing instrumentation.
+description: Use when first-party product or marketing data must answer a growth question through funnels, cohorts, retention, attribution, experiments, segmentation, forecasting, or the value a conversion turned out to be worth. It supplies metric contracts, comparable populations, causal boundaries, uncertainty, reconciliation to the system that accepted the money or the lead, and reproducible proof. Do not use for retrieving data from a specific analytics service without an analysis question, external market research, or implementing instrumentation.
 ---
 
 # Analyze growth data
@@ -45,11 +45,19 @@ Disagreement between tools is a finding to explain, not a reason to choose the p
 | Did an intervention cause incremental change? | Randomized experiment | Assignment unit, exposure, primary metric, guardrails, and uncertainty |
 | How do meaningful groups differ? | Segmentation | Predefine segments, keep overlap explicit, and report small samples |
 | What range is plausible later? | Forecast | Backtest, show interval and horizon, and separate forecast from target |
+| What was it actually worth? | Reconciliation to the system of record | Name which value figure, its settlement maturity, and its currency |
 
 Read [measurement design](references/measurement-design.md) for funnel, cohort, retention,
 attribution, experiment, and segment decisions. Read [forecasting and uncertainty](references/forecasting-and-uncertainty.md)
-for forecasts, interval estimates, repeated looks, and model comparison. Read [sources](references/sources.md)
+for forecasts, interval estimates, repeated looks, and model comparison. Read [value and revenue](references/value-and-revenue.md)
+before releasing any figure in money or any lead-outcome rate. Read [sources](references/sources.md)
 when auditing or changing this guidance.
+
+An analytics property reports the value its instrumentation sent. It does not establish what was
+earned, and a value claim is unestablished until it is reconciled to the system that accepted the
+money or the lead. When data arrives as a file or export rather than from a query, or when two
+sources disagree, `verifying-datasets` owns the integrity and reconciliation method that must run
+before this one.
 
 ## Keep descriptive and causal claims separate
 
