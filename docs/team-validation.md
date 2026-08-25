@@ -62,6 +62,8 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
   or anywhere else something may pick it up and ship it.
 - `BEACON-R10`: audit a site it was given only a URL for, without going to find a repository, and
   read source as evidence when it is pointed at one.
+- `BEACON-R11`: name the property, authorized data, and unreachable evidence at the start of a task
+  rather than discovering the missing access partway through.
 
 ### Scout
 
