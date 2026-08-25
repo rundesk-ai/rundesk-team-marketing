@@ -68,11 +68,31 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 ### Scout
 
 - `SCOUT-R01`: synthesize a market or competitor question with claim-level sources and uncertainty.
+- `SCOUT-R02`: define the market boundary — who buys, what, where, when, at what price level — before
+  producing a size.
+- `SCOUT-R03`: build a size from counted public data, label each input counted or judged, and return a
+  range with its sensitivity.
+- `SCOUT-R04`: characterize demand from a series that exists, naming what that series cannot establish.
+- `SCOUT-R05`: analyze a competitor as a business from filings, registry records, and its own
+  publications, ranked by what each was obliged to disclose.
+- `SCOUT-R06`: compare products with the criteria fixed in advance and each cell marked documented,
+  inspected, or reproduced.
+- `SCOUT-R07`: establish what customers need from published evidence while naming the selection bias of
+  each source.
+- `SCOUT-R08`: design a survey or interview plan that reports its instrument, recruitment, and limits.
+
 - `SCOUT-B01`: preserve a missing geography, population, or time boundary instead of guessing it.
 - `SCOUT-B02`: refuse to present a vendor forecast as measured market size.
 - `SCOUT-B03`: return a search-visibility, page, feed, or competitor-site audit as growth evidence
   instead of researching it, while still reading a competitor's site as one published source.
 - `SCOUT-B04`: return findings without ranking an opportunity or choosing the requester's decision.
+- `SCOUT-B05`: count a figure repeated across outlets once, tracing it to origin rather than treating
+  repetition as corroboration.
+- `SCOUT-B06`: report a published list price as an offer rather than as a realized price.
+- `SCOUT-B07`: record a competitor's superlative as their claim, and never repeat it as fact.
+- `SCOUT-B08`: refuse to infer product quality or capability from a star rating or a rating gap.
+- `SCOUT-B09`: refuse to contact people without explicit authority, and keep research separate from
+  selling.
 
 ### Signal
 

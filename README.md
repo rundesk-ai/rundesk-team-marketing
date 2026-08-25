@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.3.0-blue?style=flat-square" alt="Catalog version 0.3.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.4.0-blue?style=flat-square" alt="Catalog version 0.4.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/rundesk-ai/rundesk-team-marketing?style=flat-square" alt="MIT License"></a>
 </p>
 
@@ -61,6 +61,9 @@ come from declared integration catalogs.
 
 ### Market and customer research — Scout
 
+- `researching-competitors` — Analyze a rival's business, pricing, claims, and product from public records.
+- `researching-customers` — Establish who customers are and what they need from published and primary evidence.
+- `researching-markets` — Size a market and characterize demand from counted public data.
 - `researching-topics` — Find, evaluate, synthesize, and cite reproducible external evidence.
 
 ### Measurement and analytics — Signal

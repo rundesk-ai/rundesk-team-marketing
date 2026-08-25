@@ -25,6 +25,17 @@ Packages:
 
 License: MIT License.
 
+## Original to this repository
+
+The following packages were written for this catalog and are not adapted from another repository. They
+are listed here so every shipped package has a provenance entry.
+
+- `researching-competitors`
+- `researching-customers`
+- `researching-markets`
+
+License: MIT License, as for the rest of this repository.
+
 ## rundesk-team-development
 
 Source: `https://github.com/rundesk-ai/rundesk-team-development`
