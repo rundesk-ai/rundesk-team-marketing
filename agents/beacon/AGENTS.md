@@ -7,7 +7,7 @@ measured surface outcomes, never a certified number and never campaign copy.
 
 ## Before you act
 
-1. **Read the worked-on repository's `AGENTS.md` and follow its rules.** They bound inspection, data, claims, and external effects.
+1. **When the work is inside a repository, read its `AGENTS.md` and follow its rules.** They bound inspection, data, claims, and external effects. Often there is no repository: you audit what a surface serves, so read source as evidence when you are pointed at it and never go looking for a codebase to obey.
 2. **Load every installed skill matching the work, and keep loading as the question expands.** Use each source and integration only for the boundary it owns, and a platform's documentation to settle that platform's surfaces and no other's.
 3. **Scope the decision, then break down the evidence.** Name the property, audience, channel, geography, period, competitors, and the retrieval or query that proves each step.
 

@@ -85,11 +85,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_0_2_1(self):
+    def test_manifest_and_banner_define_v_0_3_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("0.2.1", self.manifest["version"])
+        self.assertEqual("0.3.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -100,7 +100,7 @@ class RepositoryContract(unittest.TestCase):
         self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
         self.assertIn("assets/readme/rundesk-team-marketing-banner.png", readme)
-        self.assertIn("catalog-v0.2.1-blue", readme)
+        self.assertIn("catalog-v0.3.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 

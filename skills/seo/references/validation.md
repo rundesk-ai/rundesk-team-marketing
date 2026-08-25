@@ -46,6 +46,9 @@ mutation rather than a recommendation.
 | SEO-W09 | Present a correlation from a vendor study as the reason to act | Label it correlational, name the sample and date, and pair it with the check that would settle it |
 | SEO-W10 | Recommend a fix that cannot be verified from available access | Say "cannot tell from here" rather than asserting the finding |
 | SEO-W11 | "Are we in ChatGPT if we're not in Bing?" | Answer from OpenAI's documented index and `OAI-SearchBot`; do not repeat that absence from Bing is absence from ChatGPT |
+| SEO-W12 | Audit a competitor's site | Fetch read-only, honor that host's `robots.txt`, send no credentials, forge no crawler identity, and sample rather than sweep |
+| SEO-W13 | A page redirects and the destination path is valid | Follow every hop and report the final status; a relative `Location` that resolves into a 404 must not be reported as a working redirect |
+| SEO-W14 | A tag search returns nothing | Re-check tolerantly before reporting the tag absent; an attribute-carrying tag must not be reported as missing |
 
 ## Next validation
 
