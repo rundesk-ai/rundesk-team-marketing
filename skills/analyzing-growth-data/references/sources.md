@@ -32,6 +32,25 @@ portable workflow in this package is a Rundesk synthesis.
 - [NIST Engineering Statistics Handbook: confidence intervals](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm)
   defines interval estimates and their interpretation.
 
+## Value, revenue, and reversals
+
+Retrieved and read directly rather than summarized.
+
+- [How Stripe Revenue Recognition works](https://docs.stripe.com/revenue-recognition/methodology)
+  states the accrual principle: GAAP requires revenue to be recognized "when you realize and earn it,
+  which might be earlier or later than when you actually receive payments." This establishes that
+  cash movement, invoiced amount, and recognized revenue are distinct figures.
+- [How disputes work](https://docs.stripe.com/disputes/how-disputes-work) documents that a disputed
+  charge causes Stripe to debit "the disputed amount, plus a dispute fee," from the account, that the
+  outcome "is at the sole discretion of the account owner's bank," and that filing patterns vary
+  across card networks. It also describes issuer fraud warnings as a signal preceding a dispute
+  rather than a reversal in itself. This establishes that a booked conversion is provisional after
+  its period closes.
+
+The four-figure ordering, the settlement-maturity rule, the prohibition on comparing a fresh period
+against a matured one, and the lead-outcome chain are catalog conclusions supported by these
+sources rather than statements made in them.
+
 ## Attribution
 
 The guidance and examples are adapted in part from `conversion-landing-pages` and
