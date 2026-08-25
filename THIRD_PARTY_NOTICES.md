@@ -1,8 +1,9 @@
 # Third-party notices
 
 This repository adapts and redistributes guidance packages from Rundesk's general catalog under the
-MIT License. The repository [LICENSE](LICENSE) preserves the applicable license text. Google and
-PostHog integration packages are referenced as catalog dependencies and are not redistributed here.
+MIT License. The repository [LICENSE](LICENSE) preserves the applicable license text. Google,
+PostHog, and Stripe integration packages are referenced as catalog dependencies and are not
+redistributed here.
 
 ## rundesk-skills
 
@@ -33,6 +34,7 @@ are listed here so every shipped package has a provenance entry.
 - `researching-competitors`
 - `researching-customers`
 - `researching-markets`
+- `verifying-datasets`
 
 License: MIT License, as for the rest of this repository.
 
