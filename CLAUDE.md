@@ -14,7 +14,8 @@ sources, and members use fully qualified skill addresses.
 
 ## Before you work
 
-1. Read this file, `README.md`, `team.json`, and every complete file you may change. For a package,
+1. Read `docs/BRIEF.md` and `docs/CODEMAP.md` for what this is and where its parts are,
+   then this file, `README.md`, `team.json`, and every complete file you may change. For a package,
    read its `SKILL.md`, all linked references, runtime declarations, scripts, and tests.
 2. Search before adding a member, package, term, integration, or rule. Extend the existing owner.
 3. Use skill-authoring guidance for skill changes, naming guidance for recurring terminology, and
@@ -29,7 +30,7 @@ sources, and members use fully qualified skill addresses.
 ```text
 agents/<member>/AGENTS.md          canonical member instructions
 assets/readme/                     public README artwork
-docs/                              stable validation method, evidence, and coverage gaps
+docs/                              orientation, guides/, and concepts/
 skills/<name>/                     guidance-only specialist skill packages
 tests/test_repository.py           repository and team contract
 AGENTS.md and CLAUDE.md            byte-identical repository rules
@@ -110,9 +111,19 @@ citation of a page.
 
 ## Documentation duties
 
+Keep `docs/` in its layout. Only `README.md`, `BRIEF.md`, and `CODEMAP.md` sit at its root; a home is
+added when there is a page for it and never left empty. Use the `structuring-project-docs` skill
+before adding a home, moving a page, or changing the shape of one. Ecosystem root files stay at the
+repository root, where consumers and tooling look for them.
+
+Update `docs/CODEMAP.md` when a count, a layer, or a file it names changes, and `docs/BRIEF.md` only
+when the purpose, audience, or refusals actually move. Keep pages thin: lead with the fact, use a
+table wherever the content is tabular, and never restate a package's own guidance at the repository
+level.
+
 Keep README, manifest, tests, team declaration, member instructions, package tree, dependency
 sources, provenance, and requirements synchronized. Verify source and local links. Record stable
-behavior cases in `docs/team-validation.md`; do not turn consumer documentation into maintainer
+behavior cases in `docs/guides/team-validation.md`; do not turn consumer documentation into maintainer
 state.
 
 ## Build, test, and run
