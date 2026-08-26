@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/readme/rundesk-team-marketing-banner-v2.png" alt="Rundesk Marketing Team — Beacon, Scout, and Quill." width="100%">
+</p>
+
 <h1 align="center">Rundesk Marketing Team</h1>
 
 <p align="center">
@@ -13,16 +17,12 @@
   &nbsp;·&nbsp;
   <a href="#-install"><strong>🚀 Install</strong></a>
   &nbsp;·&nbsp;
-  <a href="#-development"><strong>🛠️ Development</strong></a>
+  <a href="#️-development"><strong>🛠️ Development</strong></a>
 </p>
 
 <p align="center">
   A versioned Rundesk team for research, growth, analytics, and marketing content.<br>
   Three specialists, their canonical instructions, their skills, and shared service integrations.
-</p>
-
-<p align="center">
-  <img src="assets/readme/rundesk-team-marketing-banner-v2.png" alt="Rundesk Marketing Team — Beacon, Scout, and Quill." width="100%">
 </p>
 
 ## 👥 Team
