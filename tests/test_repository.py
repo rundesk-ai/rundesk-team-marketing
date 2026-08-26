@@ -103,6 +103,7 @@ class RepositoryContract(unittest.TestCase):
         self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
         self.assertIn("assets/readme/rundesk-team-marketing-banner-v2.png", readme)
+        self.assertIn("# Rundesk Marketing Team\n\n[![build]", readme)
         self.assertIn("catalog-v1.1.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
