@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.5.0-blue?style=flat-square" alt="Catalog version 0.5.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v1.0.0-blue?style=flat-square" alt="Catalog version 1.0.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/rundesk-ai/rundesk-team-marketing?style=flat-square" alt="MIT License"></a>
 </p>
 
@@ -30,7 +30,7 @@ are declared as dependencies through the [Rundesk CLI](https://github.com/rundes
 | `beacon` | Owns organic and AI search end to end: opportunity, tests, and its own surface results. |
 | `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
 | `signal` | Certifies first-party and supplied data: integrity, reconciliation, decomposition, and what the data cannot establish. |
-| `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
+| `quill` | Writes product requirements, messaging, and other marketing content. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
 overall outcome, and integrates the returned evidence or artifact.
@@ -44,7 +44,7 @@ overall outcome, and integrates the returned evidence or artifact.
 ### Search and acquisition
 
 - `seo` — Audit technical, on-page, structured-data, and AI-search visibility.
-- `conversion-landing-pages` — Plan and improve measurable campaign pages and experiments.
+- `conversion-landing-pages` — Determine what appears to work, what appears not to work, and what to test next on focused campaign pages.
 - `lead-compliance-gates` — Identify consent, suppression, privacy, and lead-contact gates.
 
 ### Research
@@ -62,7 +62,6 @@ overall outcome, and integrates the returned evidence or artifact.
 ### Product content
 
 - `writing-prds` — Create and validate product requirements, briefs, and feature definitions.
-- `writing-technical-docs` — Create and maintain verified consumer, developer, API, architecture, and troubleshooting documentation.
 
 ### Integrations
 

@@ -48,7 +48,6 @@ EXPECTED_GRANTS = {
     },
     "quill": {
         "rundesk-team-marketing/writing-prds",
-        "rundesk-team-marketing/writing-technical-docs",
     },
     "scout": {
         "rundesk-team-marketing/researching-competitors",
@@ -92,11 +91,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_0_5_0(self):
+    def test_manifest_and_banner_define_v_1_0_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("0.5.0", self.manifest["version"])
+        self.assertEqual("1.0.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -107,7 +106,7 @@ class RepositoryContract(unittest.TestCase):
         self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
         self.assertIn("assets/readme/rundesk-team-marketing-banner.png", readme)
-        self.assertIn("catalog-v0.5.0-blue", readme)
+        self.assertIn("catalog-v1.0.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -146,6 +145,28 @@ class RepositoryContract(unittest.TestCase):
         self.assertIn(
             "rundesk-team-marketing/managing-marketing-work",
             readme,
+        )
+
+    def test_conversion_landing_pages_owns_planning_not_implementation(self):
+        page = (ROOT / "skills/conversion-landing-pages/SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("what appears to work", page)
+        self.assertIn("what appears not to work", page)
+        self.assertIn("above-the-fold review", page)
+        self.assertIn("implementation handoff", page)
+        self.assertIn("Do not write final copy", page)
+        self.assertNotIn("Produce an implementation-ready package", page)
+        self.assertNotIn("Prove the delivered page", page)
+        self.assertFalse(
+            (ROOT / "skills/conversion-landing-pages/references/mobile-performance-and-accessibility.md").exists()
+        )
+
+    def test_technical_documentation_remains_outside_the_marketing_team(self):
+        self.assertNotIn("writing-technical-docs", self.skill_names())
+        quill = self.members()["quill"]
+        self.assertFalse(any("technical-doc" in skill for skill in quill["skills"]))
+        self.assertNotIn(
+            "technical documentation",
+            (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8").lower(),
         )
 
     def test_team_declaration_has_exact_members_and_grants(self):

@@ -46,7 +46,6 @@ narrower and more accurate claim.
 |---|---|
 | Paid, email, lifecycle, social, affiliate, and marketplace acquisition methods | Beacon's routing covers organic search, landing paths, and product feeds. No member can reason about any other channel, and [`seo`](../../skills/seo/SKILL.md) excludes paid search by contract |
 | Brand, positioning, and pricing method | Scout can research what others published about them; no skill turns that into a position or a price |
-| Landing-path build and rendered verification | [`conversion-landing-pages`](../../skills/conversion-landing-pages/SKILL.md) ends in an implementation package and a rendered verification report. Beacon and Signal now share the skill and split its diagnosis and measurement halves, but no member may change or render a site, so its build half still has no owner |
 
 ## Boundaries no instruction draws
 
@@ -76,12 +75,6 @@ caller's skill currently names that sequence.
 
 ## Known package limitations shipped as-is
 
-[`conversion-landing-pages`](../../skills/conversion-landing-pages/SKILL.md) directs the reader to
-`frontend-design`, `performance-engineering`, and `laravel-stripe-payments`. This catalog ships none
-of them and no member is granted them, so that guidance dead-ends. The package is adapted content
-whose provenance is pinned in [THIRD_PARTY_NOTICES.md](../../THIRD_PARTY_NOTICES.md); repairing it
-upstream keeps this catalog free of drift.
-
 [`seo`](../../skills/seo/SKILL.md) has diverged from the `rundesk-skills` package it was adapted from.
 The AI-search guidance, the snippet-control checks, the skill description, and `references/validation.md`
 exist only here. The divergence is deliberate and its provenance is recorded in
@@ -96,6 +89,10 @@ These are settled decisions, not gaps. Do not close them without the owner's app
 - No member operates a campaign, spends money, contacts a consumer, or publishes.
 - No member approves a legal or regulated claim. A compliance gate can be identified and never
   approved around.
+- Landing-page work ends with a ranked plan, measurement contract, experiment backlog, and handoff.
+  Content, design, development, analytics implementation, launch, and rendered verification remain
+  with their owning teams.
+- Technical documentation belongs to the development team, not Quill or this catalog.
 - No member holds a lead role, and no member delegates to another member.
 - Beacon and Signal share skills on purpose. The separation is what each may release, not what each
   may read, and closing it by revoking a grant would blind Beacon to the value it must prioritize by.

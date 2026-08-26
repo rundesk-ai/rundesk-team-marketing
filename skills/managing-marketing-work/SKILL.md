@@ -1,6 +1,6 @@
 ---
 name: managing-marketing-work
-description: Use when a marketing outcome needs work a specialist owns — market, customer, or competitor research; SEO and AI-search visibility; landing pages and conversion; funnels, attribution, experiments, and reported numbers; requirements, documentation, and messaging — whether that is one bounded handoff or a launch, positioning, or pricing outcome spanning several. It supplies the brief each specialist needs, the work contract, dependency order, integration of what comes back, approval boundaries, and completion proof. Do not use for work no specialist owns, or to operate a campaign, publish, spend, or contact anyone without separate authority.
+description: Use when a marketing outcome needs work a specialist owns — market, customer, or competitor research; SEO and AI-search visibility; landing-page planning; funnels, attribution, experiments, and reported numbers; requirements, messaging, and marketing content — whether that is one bounded handoff or an outcome spanning several. It supplies the brief each specialist needs, dependency order, integration of returns, approval boundaries, and completion proof. Do not use to operate a campaign, publish, spend, or contact anyone without separate authority.
 ---
 
 # Manage marketing work
@@ -76,7 +76,7 @@ Route each bounded question to the capability that owns its method:
 | SEO, AI-search, content, acquisition, landing-page, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
 | Funnel, cohort, retention, attribution, experiment, segment, or forecast | First-party analysis | Metric contract, query, result, uncertainty, and limits |
 | A supplied file or export, two sources that disagree, or a number that must be certified before it is reported | Data verification | Provenance, integrity checks, a reconciliation with each adjustment sized, and what the data cannot support |
-| Approved message, requirement, documentation, or channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
+| Approved message, requirement, or marketing-channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
 | Current account, property, event, page, product, or search evidence | Service integration | Bounded retrieval with resource, account, period, and truncation visible |
 
 Route the question, not the whole initiative. Do not ask research to choose strategy, analytics to

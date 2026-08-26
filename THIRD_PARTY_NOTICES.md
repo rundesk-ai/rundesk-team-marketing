@@ -20,7 +20,6 @@ Packages:
   snippet-control checks, the skill description, and `references/validation.md` are specific to this
   catalog and are not present upstream
 - `writing-prds`
-- `writing-technical-docs`
 - `analyzing-growth-data`, adapted from the measurement, experimentation, cohort, attribution, and
   forecasting guidance in `conversion-landing-pages` and `ecommerce-storefronts`
 

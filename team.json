@@ -31,11 +31,10 @@
     },
     {
       "name": "quill",
-      "description": "Writes product requirements, technical documentation, messaging, and other product content from approved direction and evidence.",
+      "description": "Writes product requirements, messaging, and other marketing content from approved direction and evidence.",
       "instructions": "agents/quill/AGENTS.md",
       "skills": [
-        "rundesk-team-marketing/writing-prds",
-        "rundesk-team-marketing/writing-technical-docs"
+        "rundesk-team-marketing/writing-prds"
       ],
       "delegates_to": [],
       "self_improve": false

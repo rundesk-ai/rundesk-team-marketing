@@ -71,38 +71,24 @@ If using a provider's recommended schema, map rather than replace domain meaning
 defines lead lifecycle events and ecommerce events such as product view, add-to-cart, checkout,
 purchase, and refund. Your backend lifecycle still owns when those states occur.
 
-## Implement measurement through the project's data boundary
+## Define the measurement handoff
 
-Keep this skill provider and database neutral. Inspect the application's existing analytics,
-commerce, CRM, tenancy, and persistence contracts before proposing tables or queries. Use the
-project's ORM or query builder for ordinary event writes and reads; use raw SQL only when a complex
-aggregation or proven performance need earns it. Raw SQL is not inherently wrong, but an unscoped
-query copied from a generic landing-page recipe is not implementation-ready.
+Keep the plan provider and database neutral. Name the existing analytics, commerce, CRM, tenancy,
+and persistence contracts the implementation must preserve, then hand the contract to the owning
+analytics and development specialists.
 
-For any measurement store or report:
+The handoff defines:
 
-- define the row grain before joining events, sessions, leads, and orders so one-to-many joins do not
-  multiply numerators or denominators;
-- bind every value through the framework or driver; never interpolate campaign, date, tenant,
-  segment, sort, or filter input into SQL;
-- resolve tenant or account scope from authorized application context, not a request-supplied ID;
-  use database-enforced isolation where the project requires it;
-- keep timestamps in UTC and make reporting timezone, attribution window, late-arrival cutoff, and
-  experiment exposure window explicit;
-- make event ingestion idempotent with a durable event or business-operation key and a database
-  uniqueness constraint; do not overwrite accepted, refunded, or disqualified history merely to
-  simplify a dashboard;
-- select only the columns needed for the metric and keep lead PII, payment details, consent evidence,
-  and unrestricted payload JSON out of general experiment datasets; and
-- derive indexes from actual equality, range, join, and sort predicates. Verify the representative
-  plan and timings instead of adding generic single-column indexes to every event property.
+- the grain before any event, session, lead, or order joins;
+- authorized account or tenant scope;
+- event time, reporting timezone, attribution window, late-arrival cutoff, and exposure window;
+- durable event and business-operation identifiers for deduplication;
+- permitted properties and the personal, payment, or consent data excluded from general analytics;
+- the authoritative state for accepted, rejected, qualified, refunded, or disputed outcomes; and
+- the source totals and segment sums the implementation must reconcile against.
 
-When PostgreSQL is in scope, use `database-design` for the model and `postgres-patterns` for the
-actual schema, indexes, tenant security, locking, and query proof. Inspect the project's PostgreSQL
-major version and connection-pool mode. Run `EXPLAIN (ANALYZE, BUFFERS)` only in a safe environment
-with representative parameters: `ANALYZE` executes the statement, so do not apply it casually to a
-write or production workload. A report query is ready only after its output reconciles to source-of-
-truth counts and its plan is acceptable at representative volume.
+Do not prescribe tables, queries, indexes, framework calls, or provider configuration. Require the
+implementation owner to return the executed reconciliation and representative performance evidence.
 
 ## Preserve attribution without pretending it is causal
 

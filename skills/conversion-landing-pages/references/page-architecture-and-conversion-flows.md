@@ -1,9 +1,9 @@
-# Page architecture, copy, proof, and conversion flows
+# Page architecture, message requirements, proof, and conversion flows
 
-Read this reference when turning a campaign and offer into sections, copy, proof, CTA behavior, a
-product purchase path, lead form, or confirmation state. No section sequence is universally
-highest-converting; use the visitor's decision and the available evidence to choose and order
-content.
+Read this reference when planning how a campaign and offer become sections, message requirements,
+proof, CTA behavior, a product purchase path, lead form, or confirmation state. It specifies what
+the page must communicate and prove; content, design, and development owners decide the final
+expression and implementation. No section sequence is universally highest-converting.
 
 ## Match the arrival promise
 
@@ -19,6 +19,32 @@ Bad: the ad is specific, but every campaign lands on a generic homepage with mul
 
 Failure prevented: visitors must re-evaluate whether they reached the right place, and the campaign
 loses both relevance and trust.
+
+## Review what is good and bad above the fold
+
+Treat "above the fold" as the first rendered viewport under a named device and state, not a fixed
+pixel line. Review what the visitor can recognize before scrolling. Do not require every argument or
+the complete form to fit there.
+
+| Review area | Good evidence | Bad evidence |
+|---|---|---|
+| Arrival match | The product, audience, outcome, offer, and terminology continue the acquisition promise | A specific ad or query lands on a generic slogan, homepage, or different offer |
+| Decision clarity | The visitor can tell whether the page is for them, what they can get, and what happens next | Brand theatre or feature language leaves the task and next step unclear |
+| Proof | One relevant, attributable proof point supports the main promise at the strength claimed | Logo wallpaper, fake activity, context-free ratings, or an unsupported superlative |
+| Primary action | One truthful action has clear visual priority and names its real next step | Several equal CTAs compete, or `Submit` and `Get Started` conceal the result |
+| Material terms | Eligibility, price or commitment, availability, and important limitations appear early when they change the decision | A mandatory cost, disqualifier, or commitment is delayed until after activation |
+| Experience | The main content is stable, readable, unobstructed, and representative field evidence does not show a material loading or interaction failure | A late hero, consent layer, third party, or layout shift delays or covers the decision block |
+
+Classify each row as established, likely, plausible, or unknown and attach the source, observation,
+or metric that supports it. A missing item is not automatically bad: a low-risk, high-intent page may
+need little proof, while a complex or high-commitment decision may correctly place the full form after
+more explanation.
+
+The source basis is bounded. Google Ads documents message match, useful content, mobile friendliness,
+and important information early. W3C and NN/g support informative, frontloaded structure. Material
+and GOV.UK support descriptive action labels and clear action hierarchy. Web Vitals sources establish
+field experience and first-viewport performance mechanics. None establishes a universal hero layout,
+fold height, CTA position, or guaranteed conversion lift.
 
 ## Sequence the visitor's decision
 
@@ -59,7 +85,7 @@ both. A two-column desktop hero can stack to message then action on mobile. A lo
 the same primary action at real decision points; a short page should not add empty sections to look
 complete.
 
-## Write a specific value proposition
+## Plan a specific value proposition
 
 Use this structure as a diagnostic, not a fill-in-the-blank headline:
 
@@ -89,7 +115,7 @@ The future of home improvement is here.
 The good version identifies the task and expectation. It does not guarantee that this wording will
 win; test it with the intended traffic.
 
-## Design CTA hierarchy and continuity
+## Specify CTA hierarchy and continuity
 
 Choose one primary action for the page. Repeating that action after meaningful decision content is
 not the same as adding competing goals. A secondary action should serve visitors who cannot or
@@ -129,9 +155,9 @@ testimonials are not risk reducers.
 Do not imply that a platform badge, consent certificate, security icon, or trade membership approves
 the whole offer. Verify mark usage and link to meaningful detail when the visitor may need it.
 
-## Design the field ledger
+## Plan the field ledger
 
-Classify every field before building the form:
+Classify every field before specifying the form:
 
 | Field purpose | Keep now when | Better alternative when not needed now |
 |---|---|---|
@@ -163,8 +189,8 @@ uses `Buy now` for a button that only starts an inquiry.
 
 Do not let a content-management, feed, promotion, or personalization update make the ad and landing
 page disagree. Version and monitor offer inputs. Route actual checkout/payment, subscription,
-refund, and order-state implementation through the owning commerce system; use
-`laravel-stripe-payments` when Stripe in Laravel is in scope.
+refund, and order-state behavior through the owning commerce system. Route implementation to the
+commerce and development owners.
 
 ## Choose single-step or multi-step honestly
 

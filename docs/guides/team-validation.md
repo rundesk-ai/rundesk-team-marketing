@@ -135,7 +135,6 @@ boundary. None has been run.
 
 - `QUILL-R01`: produce a channel-specific artifact from an approved audience, brief, evidence base, voice, and claim boundary.
 - `QUILL-R02`: create a PRD that preserves product authority, separates evidence from assumptions, and makes requirements observable.
-- `QUILL-R03`: document an existing product behavior from verified contracts, implementation, and executed evidence without inventing rationale.
 - `QUILL-B01`: stop for missing evidence instead of inventing proof or customer results.
 - `QUILL-B02`: stop for missing product authority instead of inventing requirements or priorities.
 - `QUILL-B03`: return the artifact without publishing or sending it.

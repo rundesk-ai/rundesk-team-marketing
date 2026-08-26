@@ -211,23 +211,6 @@ those sources and are not a promise of a universal conversion lift.
   documents capturing approved first-party lead data, later importing offline outcomes, matching and
   attribution, and a 15 June 2026 Data Manager API migration. This volatile provider feature supports
   closing the CRM feedback loop, not a requirement to share lead PII or a legal conclusion.
-- [PostgreSQL 18: PREPARE](https://www.postgresql.org/docs/18/sql-prepare.html)
-  establishes parameterized prepared statements and explains that planning may vary with supplied
-  parameter values. It supports binding report inputs rather than interpolating them; the skill
-  still defers framework-specific binding syntax to the application's data layer.
-- [PostgreSQL 18: Row Security Policies](https://www.postgresql.org/docs/18/ddl-rowsecurity.html)
-  documents database-enforced per-role row access, default-deny behavior when row security is enabled
-  without a policy, owner and `BYPASSRLS` exceptions, and policy race considerations. It supports
-  routing multi-tenant measurement data through the project's database security design rather than
-  relying on a generic `WHERE tenant_id = ...` example.
-- [PostgreSQL 18: Multicolumn indexes](https://www.postgresql.org/docs/18/indexes-multicolumn.html)
-  explains that useful multicolumn index shape follows the query's predicates and operator class. It
-  supports deriving campaign/variant/time indexes from actual report queries instead of prescribing
-  one universal event-table index.
-- [PostgreSQL 18: Using `EXPLAIN`](https://www.postgresql.org/docs/18/using-explain.html)
-  documents estimated versus actual plans and that `EXPLAIN ANALYZE` executes the statement. It
-  supports plan proof with representative parameters and the warning against casually analyzing
-  write statements or production workloads.
 - [Microsoft Research: Patterns of Trustworthy Experimentation — pre-experiment](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-pre-experiment-stage)
   synthesizes more than 14 years of Microsoft experimentation work and supports an overall criterion,
   guardrails, feature metrics, and data-quality metrics before launch.
@@ -258,6 +241,10 @@ those sources and are not a promise of a universal conversion lift.
 
 ## Good/bad source map
 
+- Above-the-fold arrival match, useful information early, descriptive action hierarchy, and stable
+  first-viewport experience map to Google Ads landing-page guidance, W3C and NN/g content hierarchy,
+  Material and GOV.UK action guidance, and web.dev field-performance sources. These sources support
+  the review dimensions, not one universal fold height, hero template, CTA position, or lift claim.
 - Specific ad-to-page promise versus a generic homepage maps to Google Ads message-match and landing-
   page-experience guidance plus Becker et al.'s post-click context-transfer study.
 - One primary action with truthful labels versus competing or misleading CTAs maps to Material and
@@ -285,4 +272,5 @@ those sources and are not a promise of a universal conversion lift.
   that copying a correlated page feature causes lift.
 - Legal, privacy, accessibility, advertising-platform, and consent requirements change by
   jurisdiction and effective date. Use the applicable compliance, accessibility, and provider
-  sources at implementation time; this skill supplies a product workflow, not legal advice.
+  sources during planning and implementation; this skill supplies a planning workflow, not legal
+  advice or implementation authority.

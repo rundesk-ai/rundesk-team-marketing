@@ -31,9 +31,9 @@ one external marketing framework prescribes a universal process.
 - [`analyzing-growth-data`](../../analyzing-growth-data/SKILL.md) supports metric contracts,
   funnels, cohorts, attribution, experiments, forecasts, and the boundary between descriptive and
   causal claims.
-- [`writing-prds`](../../writing-prds/SKILL.md) and
-  [`writing-technical-docs`](../../writing-technical-docs/SKILL.md) support artifacts grounded in
-  approved direction and verifiable evidence.
+- [`writing-prds`](../../writing-prds/SKILL.md) supports requirements grounded in approved direction
+  and verifiable evidence. Quill's instructions own messaging and other marketing content; technical
+  documentation remains outside this team.
 - The declared Google and PostHog integration catalogs establish bounded account, resource, period,
   output, and mutation boundaries for service evidence. They do not decide what the evidence means.
 
