@@ -44,7 +44,7 @@ which skills it holds and who it may delegate to.
 
 | File | What it is |
 |---|---|
-| `manifest.json` | schema, name, version (`1.1.0`), and description |
+| `manifest.json` | schema, name, version (`1.1.1`), and description |
 | `README.md` | the consumer contract: the team, its skills, and how to install both |
 | `team.json` | the declaration Rundesk reconciles against, including borrowed catalogs |
 | `agents/<member>/AGENTS.md` | one member`s whole operating contract |

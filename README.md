@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v1.1.0-blue" alt="Catalog version 1.1.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v1.1.1-blue" alt="Catalog version 1.1.1"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></a>
 </p>
 
@@ -70,6 +70,7 @@ overall outcome, and integrates the returned evidence or artifact.
 
 - `google-auth` — Connect and inspect the Google accounts used by this catalog's integrations.
 - `google-analytics` — Read bounded GA4 acquisition, audience, event, and ecommerce reports.
+- `google-crux` — Read current and historical Chrome UX field-performance evidence for public origins and URLs.
 - `google-search-console` — Inspect search performance, indexing, and sitemap evidence.
 - `google-merchant` — Inspect product eligibility, issues, performance, pricing, and competitive visibility.
 - `google-pagespeed-insights` — Measure Lighthouse and field performance for public pages.
@@ -134,6 +135,7 @@ matching catalogs already present from the same sources will be reused.
 - A configured PostHog profile for live PostHog reads.
 - A configured read-only Stripe profile for live Stripe reads.
 - A connected Google account and permitted GA4, Merchant Center, or Search Console resources for Google reads.
+- A Chrome UX Report API key for CrUX reads.
 - A PageSpeed Insights API key for PageSpeed reads.
 
 The Google provider declaration remains owned by `rundesk-skills-google`. Rundesk refuses a
