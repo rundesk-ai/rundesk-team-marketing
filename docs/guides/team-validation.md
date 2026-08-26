@@ -453,3 +453,11 @@ continued to declare only Beacon, Quill, and Scout, preserved Signal, and left a
 stopped. This observes `LIFE-12` and the grant-repair portion of `LIFE-06`; unrelated catalog and
 credential preservation in `LIFE-06`, and `LIFE-01`, `LIFE-02`, and `LIFE-07` through `LIFE-10`,
 remain unrun.
+
+The Quill editorial update was validated separately on 2026-08-26 against catalog implementation
+commit `42f62ddb8b0aacf4d1261b4381ed4042ecc4c241` and the same compatible Rundesk CLI commit
+`d09cbee358f7c124db4cc9845b104e68828f5807`. A full disposable sequence passed skills-only preview,
+install, update, and removal; skills-to-team promotion; direct team install; drift repair; and an
+idempotent team update. The exact-commit rerun installed the three declared members, granted Quill
+`writing-editorial-content`, restored that grant after revocation, requested no gateway start, and
+left the live Rundesk root unchanged.
