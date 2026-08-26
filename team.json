@@ -18,6 +18,7 @@
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
         "rundesk-skills-google/google-analytics",
+        "rundesk-skills-google/google-crux",
         "rundesk-skills-google/google-merchant",
         "rundesk-skills-google/google-pagespeed-insights",
         "rundesk-skills-google/google-search-console",

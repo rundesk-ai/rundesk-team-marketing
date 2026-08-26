@@ -38,6 +38,7 @@ AGENT_HEADINGS = (
 EXPECTED_GRANTS = {
     "beacon": {
         "rundesk-skills-google/google-analytics",
+        "rundesk-skills-google/google-crux",
         "rundesk-skills-google/google-merchant",
         "rundesk-skills-google/google-pagespeed-insights",
         "rundesk-skills-google/google-search-console",
@@ -88,11 +89,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_1_1_0(self):
+    def test_manifest_and_banner_define_v_1_1_1(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("1.1.0", self.manifest["version"])
+        self.assertEqual("1.1.1", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -123,7 +124,7 @@ class RepositoryContract(unittest.TestCase):
             readme.index("A versioned Rundesk team for research, growth, analytics,"),
             readme.index("## 👥 Team"),
         )
-        self.assertIn("catalog-v1.1.0-blue", readme)
+        self.assertIn("catalog-v1.1.1-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
