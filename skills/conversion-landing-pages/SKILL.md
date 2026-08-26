@@ -1,6 +1,6 @@
 ---
 name: conversion-landing-pages
-description: Use when planning or reviewing a campaign landing page, lead form, quote path, demo request, booking path, or focused purchase page to determine what appears to work, what appears not to work, and what should be tested next. It supplies an evidence-backed conversion brief, prioritized findings, measurement contract, and experiment plan. Do not use it to write final copy, design or build the page, implement analytics, operate a campaign, or approve legal claims.
+description: Use when planning or reviewing a campaign destination or focused conversion path—such as a landing page, lead form, quote path, demo request, booking path, or focused purchase page—to determine what appears to work, what appears not to work, and what should be tested next. It supplies an evidence-backed conversion brief, prioritized findings, page measurement contract, and experiment plan. It stops at the planning and review handoff; final copy, visual design, page builds, analytics implementation, campaign operation, and legal approval remain with their owners.
 ---
 
 # Plan conversion landing pages
@@ -23,19 +23,29 @@ Before recommending a page change, record:
 Use `lead-compliance-gates` for U.S. lead-transfer and contact-consent gates. This skill identifies
 where approval is needed but does not write or approve consent language.
 
-Keep metric names distinct:
+Map the complete funnel before calling any rate good, bad, or page-caused. Keep metric names distinct:
 
 ```text
-ad CTR        = ad clicks / ad impressions
-page CTA rate = unique primary-action activators / eligible landing sessions
-page CVR      = accepted primary conversions / eligible landing sessions
-qualified CVR = qualified leads / eligible landing sessions
-purchase CVR  = accepted purchases / eligible landing sessions
-value/session = net attributable value / eligible landing sessions
+ad CTR              = ad clicks / ad impressions
+landing arrival rate = eligible landing sessions / ad clicks
+page CTA rate        = unique primary-action activators / eligible landing sessions
+accepted page CVR    = accepted primary conversions / eligible landing sessions
+qualified page CVR   = qualified leads / eligible landing sessions
+closed page CVR      = closed jobs or retained orders / eligible landing sessions
+value per session    = net attributable value / eligible landing sessions
 ```
 
-The page does not own ad CTR. Evaluate message match between the acquisition promise and the page,
-then judge the page against accepted and downstream outcomes.
+The page does not own ad CTR: CTR describes how ad impressions became clicks. A provider's reported
+conversion rate may instead divide attributed conversions by eligible ad interactions, while an
+analytics property may report the share of sessions or users with a configured key event. Do not
+compare or multiply rates until their population, action, scope, window, and deduplication align.
+
+CTA rate is a local diagnostic, not page CVR, unless activating the CTA is itself the accepted
+outcome. CTR and page CVR can move in opposite directions when targeting, promise, intent, or traffic
+mix changes. Evaluate message match between the acquisition promise and the page, reconcile clicks
+to eligible landings, then judge the page against accepted and downstream outcomes. Read
+[measurement and experimentation](references/measurement-and-experimentation.md) whenever a request
+uses `CTR`, `CVR`, `conversion`, `key event`, or an unlabeled rate.
 
 ## Diagnose before proposing
 
@@ -54,10 +64,19 @@ Use campaign and search terms, customer interviews, usability observations, sale
 support questions, CRM loss reasons, funnel data, field performance, and accepted outcomes. Do not
 replace evidence with demographic stereotypes, universal benchmarks, or landing-page folklore.
 
+Distinguish `observed absent` from `not supplied`. A screenshot, page description, or analytics
+summary proves only the state it actually covers; missing evidence is an unknown until the relevant
+rendered page, flow, or source is inspected.
+
 Identify known defects separately from hypotheses. Broken message match, inaccessible controls,
 failed validation, slow field performance, or incorrect measurement should be corrected and verified;
 they do not need an experiment to prove that the page is broken. Persuasion choices with credible
 alternatives belong in an experiment plan.
+
+Treat message match as broken when a material acquisition promise is absent, contradicted, or
+silently changed at arrival—for example product, audience, price, eligibility, timing, obligation,
+or next step. Alternative truthful framing of the same complete offer is a persuasion hypothesis,
+not a known defect.
 
 ## Plan the page around visitor decisions
 
@@ -111,6 +130,13 @@ Rank each item by expected downstream value, confidence, effort range, risk, dep
 time needed to learn. Do not fabricate a lift estimate or use a generic benchmark as one.
 
 ## Produce the planning package
+
+Deliver the smallest package that makes the decision and handoffs unambiguous. Combine sections when
+one table can satisfy them, link repeated findings by identifier, and do not restate the same message
+mismatch or metric warning in every artifact.
+
+For a bounded question, return only the decision, evidence and limits, metric ledger when relevant,
+and ranked next steps. Expand to the full package only when the requested outcome needs every handoff.
 
 Deliver:
 

@@ -22,6 +22,24 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
 - `LIFE-11`: `managing-marketing-work` installs with the catalog and is not granted to Beacon,
   Scout, Signal, or Quill during team install or update.
 
+## Conversion-skill behavior cases
+
+- `CONVERSION-R01`: direct page audit returns sourced what-works/what-does-not findings, confidence,
+  ranked corrections, experiments, and implementation handoffs.
+- `CONVERSION-R02`: indirect “ads get clicks but the page underperforms” language triggers a
+  campaign-destination review covering arrival match and the first viewport.
+- `CONVERSION-R03`: a reported `15% CVR` calculated from CTA clicks is relabeled as a diagnostic;
+  ad CTR, arrival rate, accepted page CVR, qualified page CVR, and downstream value retain named
+  numerators and denominators.
+- `CONVERSION-R04`: hero, layout, CTA section, navigation, form position, imagery, and color are
+  judged by the visitor decision and evidence rather than a universal template.
+- `CONVERSION-B01`: a mixed request for audit plus final copy or implementation completes the review
+  portion and hands the excluded artifact to its owner instead of suppressing the skill entirely.
+- `CONVERSION-B02`: ad-only CTR optimization, general homepage navigation, final CTA copy, page
+  building, and analytics installation do not trigger conversion-page planning by themselves.
+- `CONVERSION-B03`: no result calls a higher CTR, CTA rate, or provider key-event rate a page win
+  without aligned accepted and downstream outcomes.
+
 ## Member cases
 
 ### Beacon
@@ -138,6 +156,29 @@ boundary. None has been run.
 - `QUILL-B01`: stop for missing evidence instead of inventing proof or customer results.
 - `QUILL-B02`: stop for missing product authority instead of inventing requirements or priorities.
 - `QUILL-B03`: return the artifact without publishing or sending it.
+
+## Observed results — conversion skill, 2026-08-25
+
+Four fresh provider turns compared a no-skill baseline, the original planning skill, the revised
+skill on the same roof-quote case, and the revised skill on a different B2B demo case. Each was
+inspection-only and received the full synthetic input without an expected conclusion.
+
+| Case | Result | What was observed |
+|---|---|---|
+| `CONVERSION-R01` | ✅ | Both revised runs returned sourced findings, confidence, corrections, experiments, and owner handoffs without producing final copy or implementation |
+| `CONVERSION-R03` | ✅ | Both revised runs separated ad CTR, arrival, CTA, accepted, qualified, and closed rates; the roof case relabeled `540 / 3,600` as a click diagnostic rather than `CVR` |
+| `CONVERSION-R04` | ✅ | The roof run judged stock imagery, equal CTAs, form distance, and color by function and evidence; the B2B run retained useful security, integration, overview, and navigation paths instead of imposing the roof layout |
+| `CONVERSION-B03` | ✅ | The B2B run rejected “the hero works”: CTR and counts rose after broader targeting while accepted, qualified, and closed session rates fell, and no causal page effect was claimed |
+| `CONVERSION-R02`, `B01`, `B02` | not run | A separate routing review found the revised categories coherent, but no fresh activation turn exercised these mixed and near-miss requests |
+
+The no-skill baseline was already strong at arithmetic and general CRO caution. The revised skill's
+material gain was consistency: it forced a count-first funnel ledger, made the action and provider-
+transfer contract explicit, separated broken promise from testable framing, and generalized hero,
+layout, proof, navigation, and CTA judgment without a component template.
+
+These turns did not exercise Rundesk activation or grant reconciliation, inspect a rendered page,
+or use live analytics. They prove behavior with the package explicitly supplied, not automatic
+routing or causal conversion performance.
 
 ## Observed results — Beacon, 2026-08-24
 

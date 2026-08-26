@@ -149,16 +149,42 @@ class RepositoryContract(unittest.TestCase):
 
     def test_conversion_landing_pages_owns_planning_not_implementation(self):
         page = (ROOT / "skills/conversion-landing-pages/SKILL.md").read_text(encoding="utf-8")
+        description = page.split("---", 2)[1]
         self.assertIn("what appears to work", page)
         self.assertIn("what appears not to work", page)
         self.assertIn("above-the-fold review", page)
         self.assertIn("implementation handoff", page)
+        self.assertIn("campaign destination", description)
+        self.assertIn("planning and review handoff", description)
+        self.assertIn("ad CTR", page)
+        self.assertIn("page CTA rate", page)
+        self.assertIn("accepted page CVR", page)
+        self.assertIn("observed absent", page)
+        self.assertIn("For a bounded question", page)
         self.assertIn("Do not write final copy", page)
         self.assertNotIn("Produce an implementation-ready package", page)
         self.assertNotIn("Prove the delivered page", page)
         self.assertFalse(
             (ROOT / "skills/conversion-landing-pages/references/mobile-performance-and-accessibility.md").exists()
         )
+
+        architecture = (
+            ROOT / "skills/conversion-landing-pages/references/page-architecture-and-conversion-flows.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("hero as a decision region", architecture)
+        self.assertIn("Layout is the relationship", architecture)
+        self.assertIn("CTA as an action contract", architecture)
+        self.assertIn("Plan a CTA section at a real decision point", architecture)
+        self.assertIn("no navigation converts better", architecture)
+
+        measurement = (
+            ROOT / "skills/conversion-landing-pages/references/measurement-and-experimentation.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Translate CTR and CVR into one funnel ledger", measurement)
+        self.assertIn("session and user key-event rates", measurement)
+        self.assertIn("Never call a higher CTR a page win", measurement)
+        self.assertIn("targeting, channel mix", measurement)
+        self.assertIn("booking_confirmed", measurement)
 
     def test_technical_documentation_remains_outside_the_marketing_team(self):
         self.assertNotIn("writing-technical-docs", self.skill_names())

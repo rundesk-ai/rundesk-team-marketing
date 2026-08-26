@@ -24,6 +24,41 @@ Define every ratio with a named numerator, denominator, unit, time window, ident
 rule, eligibility rule, and late-arrival policy. `CVR` without those fields is not comparable across
 tools or teams.
 
+## Translate CTR and CVR into one funnel ledger
+
+Start with counts, then derive rates from the same cohort. Use one row per stage:
+
+| Stage | Count | Rate and denominator | Owner | Diagnostic or decision |
+|---|---:|---|---|---|
+| ad impression |  | — | acquisition platform | population context |
+| ad click |  | clicks / impressions = ad CTR | acquisition platform | ad and targeting diagnostic |
+| eligible landing session |  | sessions / clicks = arrival rate | analytics plus acquisition reconciliation | delivery diagnostic |
+| primary action |  | unique activators / eligible sessions = page CTA rate | page analytics | page diagnostic |
+| accepted conversion |  | accepted outcomes / eligible sessions = accepted page CVR | application, CRM, booking, or commerce state | primary page outcome |
+| qualified or retained outcome |  | qualified outcomes / eligible sessions = downstream page CVR | CRM or commerce state | quality decision |
+| realized value |  | net value / eligible sessions | finance or authoritative value owner | business decision |
+
+The same word can name different provider metrics. Google Ads defines CTR as clicks divided by
+impressions and its conversion rate as attributed conversions divided by eligible ad interactions.
+GA4 exposes session and user key-event rates, whose denominators are sessions and users. A locally
+defined page CVR can legitimately use eligible landing sessions, but it must be labeled rather than
+presented as the provider's formula.
+
+When someone reports `15% CVR`, reconstruct the calculation before interpreting it. If the numerator
+is CTA activations, relabel it as CTA rate. If accepted outcomes, qualified outcomes, and business
+value are unavailable, say which later result is unestablished. Never call a higher CTR a page win,
+or a higher CTA rate a conversion win, without the linked downstream result.
+
+Do not multiply stage rates unless every rate is conditional on the immediately preceding stage and
+the records are nested within the same cohort. Independently attributed, session-scoped, user-scoped,
+or differently matured rates do not form a valid funnel merely because their labels appear ordered.
+
+When targeting, channel mix, geography, device share, or eligibility changes between periods, rising
+counts or CTR do not establish that the page improved. Compare stable strata and equally matured
+cohorts, show how composition changed, and treat any volume-standardized expectation as descriptive,
+not a causal counterfactual. Use `analyzing-growth-data` when the decision requires certified mix
+decomposition, uncertainty, or experiment readout.
+
 ## Write a durable event contract
 
 A provider-neutral contract should share a common acquisition spine, then branch by conversion type:
@@ -44,6 +79,15 @@ lead_qualified
 lead_disqualified
 lead_contacted
 lead_converted
+
+# Demo or consultation states when applicable
+demo_requested
+booking_confirmed
+demo_held
+demo_no_show
+opportunity_created
+opportunity_closed_won
+opportunity_closed_lost
 
 # Product purchase branch
 offer_selected

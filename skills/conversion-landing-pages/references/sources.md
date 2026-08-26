@@ -1,6 +1,6 @@
 # Sources
 
-Accessed 12 August 2026. Official standards and platform documentation establish contracts and
+Accessed 25 August 2026. Official standards and platform documentation establish contracts and
 definitions. Practitioner studies and case reports expose recurring failures and empirical patterns;
 their effect sizes remain scoped to their samples. The recommendations in this package synthesize
 those sources and are not a promise of a universal conversion lift.
@@ -17,6 +17,10 @@ those sources and are not a promise of a universal conversion lift.
 - [Google Ads Help: CTR definition](https://support.google.com/google-ads/answer/2615875?hl=en)
   defines ad CTR as clicks divided by impressions and says a good CTR depends on the offer and
   network. It supports separating ad CTR from landing-page CTA rate and rejecting a universal CTR.
+- [Google Ads Help: Conversion rate definition](https://support.google.com/google-ads/answer/2684489?hl=en-GB)
+  defines its conversion rate as attributed conversions divided by eligible ad interactions and
+  notes that the rate can exceed 100% when multiple actions are counted per interaction. It supports
+  requiring the conversion action, denominator, and counting rule before comparing `CVR`.
 - [Google Ads Help: Use data to optimize Search campaigns](https://support.google.com/google-ads/answer/9451527?hl=en)
   distinguishes CTR, conversion rate, conversion value, cost per conversion, and ROAS. It supports
   optimizing value rather than raw counts.
@@ -50,6 +54,10 @@ those sources and are not a promise of a universal conversion lift.
 - [W3C WAI: Headings tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
   establishes semantic, nested headings as both page organization and assistive-technology
   navigation. It supports making each landing-page section recognizable from its heading.
+- [W3C WAI: Use a clear and understandable page structure](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o2p03-page-structure/)
+  supports logical sections, visible hierarchy, grouping, whitespace, and cues that make
+  relationships and relative importance understandable. It supports the layout concepts in this
+  package, not a marketing template or conversion-lift claim.
 - [Kara Pernice, NN/g: F-Shaped Pattern of Reading on the Web](https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/)
   revisits NN/g eye-tracking observations, including an early aggregate heatmap from more than 45
   people. It explains that the F pattern is one negative response to weak formatting, not a universal
@@ -204,6 +212,10 @@ those sources and are not a promise of a universal conversion lift.
 - [Google Analytics: About key events](https://support.google.com/analytics/answer/9267568?hl=en)
   distinguishes event counts, session key-event rate, and attribution reports. It supports documenting
   the metric and scope rather than comparing unnamed `conversions`.
+- [Google Analytics Data API schema](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema)
+  defines session key-event rate as the share of sessions with a key event and user key-event rate
+  as the share of users with one. It supports treating session, user, and event denominators as
+  different metrics rather than interchangeable versions of `CVR`.
 - [Google Analytics: Traffic-source dimension scopes](https://support.google.com/analytics/answer/11080067?hl=en)
   distinguishes first-user, session, and event attribution scopes. It supports recording the chosen
   scope and warning that differently scoped reports are not directly interchangeable.
@@ -241,6 +253,9 @@ those sources and are not a promise of a universal conversion lift.
 
 ## Good/bad source map
 
+- CTR, provider conversion rate, session key-event rate, and local page CVR distinctions map to the
+  Google Ads CTR and conversion-rate definitions plus the GA4 Data API schema. These definitions do
+  not select the business outcome or prove that the page caused a rate movement.
 - Above-the-fold arrival match, useful information early, descriptive action hierarchy, and stable
   first-viewport experience map to Google Ads landing-page guidance, W3C and NN/g content hierarchy,
   Material and GOV.UK action guidance, and web.dev field-performance sources. These sources support

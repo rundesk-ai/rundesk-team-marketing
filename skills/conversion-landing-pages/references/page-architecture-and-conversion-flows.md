@@ -20,6 +20,26 @@ Bad: the ad is specific, but every campaign lands on a generic homepage with mul
 Failure prevented: visitors must re-evaluate whether they reached the right place, and the campaign
 loses both relevance and trust.
 
+## Treat the hero as a decision region, not a template
+
+`Hero` is shorthand for the first prominent content region. It is not a required large image, a
+headline formula, or proof that the page has communicated its offer. Review the region by the
+decision it supports:
+
+| Concept | Good | Bad |
+|---|---|---|
+| recognition | the product, task, audience, and advertised outcome are recognizable | a category slogan makes the visitor reinterpret the ad |
+| value | the desired outcome and credible mechanism or differentiator are specific | adjectives such as `smarter`, `better`, or `next-generation` carry the claim |
+| expectation | material eligibility, burden, timing, cost, and next step are visible when they change the decision | the action conceals a long form, sales call, fee, or disqualifier |
+| proof | relevant, attributable evidence bears the weight of the nearby claim | an unsourced rating, logo wall, stock portrait, or decorative counter performs trust theater |
+| action | one truthful next step has clear priority, with necessary alternatives subordinate | equal actions compete or a generic label hides the destination |
+| media | imagery demonstrates the product, outcome, process, or fit without delaying the decision | decorative media consumes the viewport, implies unsupported proof, or becomes the slow unstable focal point |
+
+A text-first first view can be right. A product demonstration or relevant image can be right. A form
+can begin there when the task and burden are already understood, or later when visitors need proof or
+qualification first. Treat each as a hypothesis derived from the arrival intent and decision, not a
+component quota.
+
 ## Review what is good and bad above the fold
 
 Treat "above the fold" as the first rendered viewport under a named device and state, not a fixed
@@ -70,6 +90,22 @@ write every section as a slogan followed by generic marketing copy.
 
 ## Choose a layout around the conversion mode
 
+Layout is the relationship among information, proof, and action—not the name of a template. Review
+five concepts before prescribing regions:
+
+- **Hierarchy:** the visually strongest elements match the most important visitor decision.
+- **Grouping:** headings, spacing, boundaries, and proximity make each claim, proof item, and action
+  relationship clear.
+- **Sequence:** visual, reading, and focus order preserve a coherent path when columns stack or media
+  disappears.
+- **Density:** the page contains enough decision information without repetition, slogan stacks, or
+  decorative sections.
+- **Continuity:** repeated actions keep the same meaning and destination across viewport, section,
+  pending, validation, and success states.
+
+Good layout reduces the work of finding and relating decision information. It does not prove
+persuasion by being minimal, centered, two-column, card-based, long, or short.
+
 Use these as starting hypotheses, not universal templates:
 
 | Conversion mode | First decision region | Supporting sequence |
@@ -117,10 +153,11 @@ win; test it with the intended traffic.
 
 ## Specify CTA hierarchy and continuity
 
-Choose one primary action for the page. Repeating that action after meaningful decision content is
-not the same as adding competing goals. A secondary action should serve visitors who cannot or
-should not take the primary action yet, such as viewing eligibility or contacting accessibility
-support.
+Treat a CTA as an action contract: its label, visual priority, destination, required commitment,
+pending behavior, accepted outcome, and next state must agree. Choose one primary action for the
+page. Repeating that action after meaningful decision content is not the same as adding competing
+goals. A secondary action should serve visitors who cannot or should not take the primary action yet,
+such as viewing eligibility or contacting accessibility support.
 
 Use a label that describes the immediate, truthful next step:
 
@@ -129,6 +166,7 @@ Good: Check my eligibility
 Good: Book a 20-minute walkthrough
 Bad:  Submit
 Bad:  Get approved now     # when the form only sends an inquiry
+Bad:  Book a demo          # when the action only submits a request for later contact
 ```
 
 Preserve the label's meaning through pending and success states. Do not change `Check eligibility`
@@ -137,6 +175,16 @@ into an unexplained `Processing` or send it to a sales call booking page without
 Use visual prominence, surrounding copy, control shape, position, and contrast together. Do not rely
 on a fashionable color, animation, or `above the fold` placement as a conversion law. Keep the
 action in the visitor's task flow and verify it with the actual content and viewport.
+
+Plan a CTA section at a real decision point: after the nearby content has answered a meaningful
+question and before the visitor must search for the next step. Its job is to restate the relevant
+outcome, resolve the remaining commitment or risk, and offer the same truthful primary action. Do not
+repeat a generic banner every fixed number of pixels, introduce a new promise late in the page, or
+use a different label for the same destination.
+
+Judge navigation and secondary actions by function. Keep necessary trust, contact, legal,
+accessibility, and recovery paths. Demote or remove unrelated exits only when the campaign decision
+does not need them; `no navigation converts better` is not a universal rule.
 
 ## Use proof that bears the promised weight
 
@@ -191,6 +239,13 @@ Do not let a content-management, feed, promotion, or personalization update make
 page disagree. Version and monitor offer inputs. Route actual checkout/payment, subscription,
 refund, and order-state behavior through the owning commerce system. Route implementation to the
 commerce and development owners.
+
+When an offer promises quotes, matches, introductions, or responses from multiple providers, record
+how many recipients may receive the request, who selects them, which party provides the advertised
+outcome, when contact or data transfer occurs, and what the visitor is told before acting. This is a
+material part of the offer and next-step contract, not fine print to infer from a generic CTA. Route
+the applicable consent and lead-transfer conclusion to `lead-compliance-gates` and the current legal
+owner.
 
 ## Choose single-step or multi-step honestly
 
