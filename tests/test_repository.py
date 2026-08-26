@@ -49,7 +49,10 @@ EXPECTED_GRANTS = {
         "rundesk-team-marketing/verifying-datasets",
     },
     "quill": {
+        "rundesk-team-marketing/writing-advertising-copy",
+        "rundesk-team-marketing/writing-editorial-content",
         "rundesk-team-marketing/writing-prds",
+        "rundesk-team-marketing/writing-social-content",
     },
     "scout": {
         "rundesk-team-marketing/researching-competitors",
@@ -85,11 +88,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_1_0_0(self):
+    def test_manifest_and_banner_define_v_1_1_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("1.0.0", self.manifest["version"])
+        self.assertEqual("1.1.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -100,7 +103,7 @@ class RepositoryContract(unittest.TestCase):
         self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
         self.assertIn("assets/readme/rundesk-team-marketing-banner-v2.png", readme)
-        self.assertIn("catalog-v1.0.0-blue", readme)
+        self.assertIn("catalog-v1.1.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -158,6 +161,64 @@ class RepositoryContract(unittest.TestCase):
             "technical documentation",
             (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8").lower(),
         )
+
+    def test_quill_owns_evidence_based_editorial_writing(self):
+        quill = (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills/writing-editorial-content/SKILL.md").read_text(encoding="utf-8")
+        forms = (
+            ROOT / "skills/writing-editorial-content/references/forms-and-structure.md"
+        ).read_text(encoding="utf-8")
+        editing = (
+            ROOT / "skills/writing-editorial-content/references/editing-and-language.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("blogs, development logs, articles, columns, stories", quill)
+        self.assertIn("Do not write it into a repository", quill)
+        self.assertIn("Audience and reading situation:", skill)
+        self.assertIn("Author voice, product voice, tone, and English variant:", skill)
+        self.assertIn("Do not fabricate", skill)
+        self.assertIn("Use separate passes", skill)
+        self.assertIn("Drafting authority is not placement", skill)
+        self.assertIn("## Development log", forms)
+        self.assertIn("## Column or essay", forms)
+        self.assertIn("Never invent dialogue", forms)
+        self.assertIn("There is no universal best word count", editing)
+
+    def test_quill_owns_platform_true_social_copy_without_posting(self):
+        quill = (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills/writing-social-content/SKILL.md").read_text(encoding="utf-8")
+        platforms = (
+            ROOT / "skills/writing-social-content/references/platform-forms.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("Instagram captions and carousel or", quill)
+        self.assertIn("Writing a `post` means drafting its content", quill)
+        self.assertIn("Platform, surface, and organic/paid status:", skill)
+        self.assertIn("never invent what an unseen", skill)
+        self.assertIn("do not merely truncate", skill)
+        self.assertIn("do not post, schedule, upload, or engage", skill)
+        self.assertIn("## Instagram", platforms)
+        self.assertIn("## Pinterest", platforms)
+        self.assertIn("Do not hard-code universal", platforms)
+
+    def test_quill_owns_voice_true_keyword_aware_ad_copy_without_campaigns(self):
+        quill = (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills/writing-advertising-copy/SKILL.md").read_text(encoding="utf-8")
+        keywords = (
+            ROOT / "skills/writing-advertising-copy/references/keywords-and-message-match.md"
+        ).read_text(encoding="utf-8")
+        forms = (
+            ROOT / "skills/writing-advertising-copy/references/ad-forms.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("search-ad assets, paid social and sponsored copy", quill)
+        self.assertIn("Advertiser, product, service, or offer being promoted:", skill)
+        self.assertIn("preserve voice", skill.lower())
+        self.assertIn("Use keywords to express message match", skill)
+        self.assertIn("do not operate or publish the campaign", skill)
+        self.assertIn("query intent -> headline recognition", keywords)
+        self.assertIn("## Responsive search ads", forms)
+        self.assertIn("## Paid social", forms)
 
     def test_team_declaration_has_exact_members_and_grants(self):
         self.assertEqual({"schema", "name", "catalogs", "members"}, set(self.team))

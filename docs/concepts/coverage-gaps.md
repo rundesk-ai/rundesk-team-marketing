@@ -44,7 +44,7 @@ narrower and more accurate claim.
 
 | Missing | Consequence |
 |---|---|
-| Paid, email, lifecycle, social, affiliate, and marketplace acquisition methods | Beacon's routing covers organic search, landing paths, and product feeds. No member can reason about any other channel, and [`seo`](../../skills/seo/SKILL.md) excludes paid search by contract |
+| Paid, email, lifecycle, organic-social acquisition strategy, affiliate, and marketplace methods | Quill can draft organic social and paid advertising copy from approved direction and supplied keyword evidence, but no member selects media opportunities, researches bids or keyword volume, targets audiences, operates campaigns, or measures ad performance. Beacon's routing covers organic search, landing paths, and product feeds, and [`seo`](../../skills/seo/SKILL.md) excludes paid search by contract |
 | Brand, positioning, and pricing method | Scout can research what others published about them; no skill turns that into a position or a price |
 
 ## Boundaries no instruction draws
@@ -54,8 +54,7 @@ the working-tree row was reproduced by Scout.
 
 | Missing | What exists today | What would close it |
 |---|---|---|
-| The write boundary on Quill and behavioral proof for Scout | Beacon's rule held on 2026-08-25. Scout now carries the same local-placement boundary after two runs reproduced the defect, but the revised instruction has not been forward-tested. Quill still carries the original wording | Add the clause to Quill in the planned content-role work, and run a fresh placement case for Scout. Beacon's remedy is proved forward but not against the original failure, so `BEACON-B01` stays partial |
-| The same evidence-first opening for Quill | Beacon and Scout now establish reachable evidence and read repository rules only when pointed at source. Quill still opens by reading the worked-on repository's `AGENTS.md`, which can send a content request looking for a codebase | Address Quill's opening together with its positioning and content methods, then forward-test it |
+| Behavioral proof for Scout's write boundary | Beacon's rule held on 2026-08-25 and Quill's corresponding boundary held on 2026-08-26. Scout carries the same local-placement boundary after two runs reproduced the defect, but its revised instruction has not been forward-tested | Run a fresh placement case for Scout. Beacon's remedy is proved forward but not against the original failure, so `BEACON-B01` stays partial |
 | Evidence that guidance was applied, not merely available | The runs had the corrected AI-search reference open and one still repeated a claim that reference retires. The claim is now also listed among the things not to say, which is the scannable place rather than the explanatory one | Nothing in this repository closes this in general. It is the argument for running cases rather than grepping wording, and for re-running them after guidance changes; `SEO-W11` tests this specific instance |
 
 ## Known package limitations shipped as-is
@@ -78,6 +77,10 @@ These are settled decisions, not gaps. Do not close them without the owner's app
   Content, design, development, analytics implementation, launch, and rendered verification remain
   with their owning teams.
 - Technical documentation belongs to the development team, not Quill or this catalog.
+- Quill may draft organic social content, but account access, posting, scheduling, community
+  management, paid-ad strategy, and visual production remain outside its authority.
+- Quill may draft paid advertising copy, but keyword-volume and bid research, targeting, budget,
+  campaign setup or operation, upload, launch, and performance certification remain outside its authority.
 - No member holds a lead role, and no member delegates to another member.
 - Member descriptions stay declarative rather than call-when phrased, so all three read alike.
 

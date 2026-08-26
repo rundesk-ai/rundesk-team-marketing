@@ -28,6 +28,15 @@ one external marketing framework prescribes a universal process.
 - [`analyzing-growth-data`](../../analyzing-growth-data/SKILL.md) supports metric contracts,
   funnels, cohorts, attribution, experiments, forecasts, and the boundary between descriptive and
   causal claims.
+- [`writing-editorial-content`](../../writing-editorial-content/SKILL.md) supports source-grounded
+  blogs, development logs, articles, columns, stories, and long-form marketing copy that fit the
+  approved audience, product truth, author or character, and house voice.
+- [`writing-advertising-copy`](../../writing-advertising-copy/SKILL.md) supports paid search,
+  social, sponsored Pin, display, and related ad copy grounded in an approved audience, offer,
+  brand voice, keyword or query evidence, proof, destination, and no-campaign-operation boundary.
+- [`writing-social-content`](../../writing-social-content/SKILL.md) supports evidence-grounded
+  Instagram, Pinterest, and related organic social copy adapted to the approved audience, content
+  object, platform surface, author or brand voice, accessibility needs, and no-posting boundary.
 - [`writing-prds`](../../writing-prds/SKILL.md) supports requirements grounded in approved direction
   and verifiable evidence. Quill's instructions own messaging and other marketing content; technical
   documentation remains outside this team.
