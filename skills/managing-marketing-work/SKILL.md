@@ -1,6 +1,6 @@
 ---
 name: managing-marketing-work
-description: Use when a marketing outcome needs work a specialist owns — market, customer, or competitor research; SEO and AI-search visibility; landing pages and conversion; funnels, attribution, experiments, and reported numbers; requirements, documentation, and messaging — whether that is one bounded handoff or a launch, positioning, or pricing outcome spanning several. It supplies the brief each specialist needs, the work contract, dependency order, integration of what comes back, approval boundaries, and completion proof. Do not use for work no specialist owns, or to operate a campaign, publish, spend, or contact anyone without separate authority.
+description: Use when a marketing outcome needs work a specialist owns — market, customer, or competitor research; SEO and AI-search visibility; funnels, attribution, experiments, and reported numbers; requirements, messaging, and marketing content — whether that is one bounded handoff or an outcome spanning several. It supplies the brief each specialist needs, dependency order, integration of returns, approval boundaries, and completion proof. Do not use for software or interface design, or to operate a campaign, publish, spend, or contact anyone without separate authority.
 ---
 
 # Manage marketing work
@@ -42,8 +42,10 @@ ask for. It does not transfer the work. When a specialist owns the question, the
 and you integrate what comes back; absorbing it yourself produces an answer nobody certified and
 loses the standard their return would have carried.
 
-When no installed specialist owns a needed capability, say so and name what is missing rather than
-covering the gap yourself or dropping that part of the outcome silently.
+Bind each needed capability to an installed specialist by reading the specialist descriptions and
+return contracts available to the caller. Do not infer ownership from a name or from a skill grant
+alone. When no installed specialist owns a needed capability, say so and name what is missing rather
+than covering the gap yourself or dropping that part of the outcome silently.
 
 ## Define the marketing work contract
 
@@ -73,16 +75,21 @@ Route each bounded question to the capability that owns its method:
 | Need | Owning capability | Usable return |
 |---|---|---|
 | Market, customer, competitor, category, or current external fact | External research | Claim-linked findings, uncertainty, and reproducible sources |
-| SEO, AI-search, content, acquisition, landing-page, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
+| SEO, AI-search, content, acquisition, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
 | Funnel, cohort, retention, attribution, experiment, segment, or forecast | First-party analysis | Metric contract, query, result, uncertainty, and limits |
 | A supplied file or export, two sources that disagree, or a number that must be certified before it is reported | Data verification | Provenance, integrity checks, a reconciliation with each adjustment sized, and what the data cannot support |
-| Approved message, requirement, documentation, or channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
+| Approved message, requirement, or marketing-channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
 | Current account, property, event, page, product, or search evidence | Service integration | Bounded retrieval with resource, account, period, and truncation visible |
 
 Route the question, not the whole initiative. Do not ask research to choose strategy, analytics to
 invent a denominator, growth planning to write final copy, or content production to supply missing
 market evidence. When one return reveals a new evidence need, add that bounded dependency instead of
 quietly expanding the original handoff.
+
+When a growth ranking depends on market size, customer belief, competitor strategy, pricing, or
+another published claim, establish the external research first and pass its claim-linked return into
+growth planning. The growth owner may retrieve a competitor site as a serving surface; that does not
+establish the competitor's business strategy.
 
 ## Order work by dependency
 
@@ -106,7 +113,9 @@ full strategy cycle. Skip a stage only when its input is already approved and tr
 
 ## Make handoffs testable
 
-Give each specialist one self-contained brief:
+Give each specialist one self-contained brief. Inbound-only specialists retain no assignment state
+between requests, so every follow-up is a fresh brief that includes the prior return and the decision
+it now serves:
 
 ```text
 Question or artifact: one bounded result
@@ -123,7 +132,8 @@ Parallelize only independent evidence surfaces or artifacts. Research that defin
 analysis that establishes the baseline, and content that depends on both are sequential even when
 separate specialists perform them.
 
-A fluent return is not integration. Inspect the sources, queries, denominators, assumptions,
+A fluent return is not integration. Check the return against the owning specialist's current return
+contract and the usable-return column above. Inspect the sources, queries, denominators, assumptions,
 claims, and artifact directly. Reconcile conflicts before downstream work uses them.
 
 ## Integrate without erasing distinctions

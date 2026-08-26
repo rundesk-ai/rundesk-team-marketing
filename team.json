@@ -14,28 +14,29 @@
   "members": [
     {
       "name": "beacon",
-      "description": "Owns organic and AI search end to end: ranks opportunity from retrieved evidence, proposes tests, and measures what its own surfaces did.",
+      "description": "Owns growth evidence and measurement: ranks organic and conversion opportunities, verifies first-party and supplied data, proposes tests, and certifies results.",
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
         "rundesk-skills-google/google-analytics",
         "rundesk-skills-google/google-merchant",
         "rundesk-skills-google/google-pagespeed-insights",
         "rundesk-skills-google/google-search-console",
+        "rundesk-skills-integrations/posthog",
+        "rundesk-skills-integrations/stripe",
         "rundesk-team-marketing/analyzing-growth-data",
-        "rundesk-team-marketing/conversion-landing-pages",
         "rundesk-team-marketing/lead-compliance-gates",
-        "rundesk-team-marketing/seo"
+        "rundesk-team-marketing/seo",
+        "rundesk-team-marketing/verifying-datasets"
       ],
       "delegates_to": [],
       "self_improve": false
     },
     {
       "name": "quill",
-      "description": "Writes product requirements, technical documentation, messaging, and other product content from approved direction and evidence.",
+      "description": "Writes product requirements, messaging, and other marketing content from approved direction and evidence.",
       "instructions": "agents/quill/AGENTS.md",
       "skills": [
-        "rundesk-team-marketing/writing-prds",
-        "rundesk-team-marketing/writing-technical-docs"
+        "rundesk-team-marketing/writing-prds"
       ],
       "delegates_to": [],
       "self_improve": false
@@ -49,21 +50,6 @@
         "rundesk-team-marketing/researching-customers",
         "rundesk-team-marketing/researching-markets",
         "rundesk-team-marketing/researching-topics"
-      ],
-      "delegates_to": [],
-      "self_improve": false
-    },
-    {
-      "name": "signal",
-      "description": "Certifies first-party and supplied data: checks its integrity, reconciles sources that disagree, decomposes it, and returns a number with its denominator and limits or states it is unestablished.",
-      "instructions": "agents/signal/AGENTS.md",
-      "skills": [
-        "rundesk-skills-google/google-analytics",
-        "rundesk-skills-integrations/posthog",
-        "rundesk-skills-integrations/stripe",
-        "rundesk-team-marketing/analyzing-growth-data",
-        "rundesk-team-marketing/conversion-landing-pages",
-        "rundesk-team-marketing/verifying-datasets"
       ],
       "delegates_to": [],
       "self_improve": false

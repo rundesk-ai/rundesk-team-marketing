@@ -6,16 +6,14 @@ one external marketing framework prescribes a universal process.
 
 ## Team ownership
 
-- [`team.json`](../../../team.json) declares Beacon, Scout, Signal, and Quill as inbound-only
+- [`team.json`](../../../team.json) declares Beacon, Scout, and Quill as inbound-only
   specialists with separate positive skill allowlists. This supports keeping orchestration with the
   domain-facing caller instead of granting it to a team member.
-- [Beacon's instructions](../../../agents/beacon/AGENTS.md) establish external growth evidence and
-  opportunity ranking without campaign operation or final copy.
+- [Beacon's instructions](../../../agents/beacon/AGENTS.md) establish growth evidence, first-party
+  measurement, supplied-data verification, and opportunity ranking without campaign operation or
+  final copy.
 - [Scout's instructions](../../../agents/scout/AGENTS.md) establish sourced external research
   without growth ranking, first-party analysis, or final messaging.
-- [Signal's instructions](../../../agents/signal/AGENTS.md) establish bounded first-party and
-  supplied-data analysis, metric contracts, reconciliation, and causal limits without external
-  research or content production.
 - [Quill's instructions](../../../agents/quill/AGENTS.md) establish content production from approved
   direction and evidence without inventing strategy, claims, or authority.
 
@@ -25,15 +23,14 @@ one external marketing framework prescribes a universal process.
   source evaluation, uncertainty, and reproducible synthesis.
 - [`verifying-datasets`](../../verifying-datasets/SKILL.md) supports provenance, integrity checking,
   and reconciliation for data that arrives as a file or from a second disagreeing source.
-- [`seo`](../../seo/SKILL.md) and
-  [`conversion-landing-pages`](../../conversion-landing-pages/SKILL.md) support ranked growth
-  findings, measurable opportunities, and experiment-ready recommendations.
+- [`seo`](../../seo/SKILL.md) supports ranked growth findings, measurable opportunities, and
+  experiment-ready recommendations for organic and AI-search visibility.
 - [`analyzing-growth-data`](../../analyzing-growth-data/SKILL.md) supports metric contracts,
   funnels, cohorts, attribution, experiments, forecasts, and the boundary between descriptive and
   causal claims.
-- [`writing-prds`](../../writing-prds/SKILL.md) and
-  [`writing-technical-docs`](../../writing-technical-docs/SKILL.md) support artifacts grounded in
-  approved direction and verifiable evidence.
+- [`writing-prds`](../../writing-prds/SKILL.md) supports requirements grounded in approved direction
+  and verifiable evidence. Quill's instructions own messaging and other marketing content; technical
+  documentation remains outside this team.
 - The declared Google and PostHog integration catalogs establish bounded account, resource, period,
   output, and mutation boundaries for service evidence. They do not decide what the evidence means.
 
@@ -49,6 +46,8 @@ one external marketing framework prescribes a universal process.
 
 - Marketing work is routed by the evidence or artifact needed, not by sending a whole initiative to
   one specialist.
+- External research precedes growth planning when the ranking depends on a published claim; the
+  cited return becomes an input without becoming first-party measurement.
 - External research, first-party measurement, owner direction, claims, content, and activation stay
   distinct because each has different evidence and authority.
 - The six-stage default is dependency guidance, not mandatory ceremony. A task skips a stage when

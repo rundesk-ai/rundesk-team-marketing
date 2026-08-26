@@ -4,11 +4,11 @@
 
 ## Story
 
-`rundesk-team-marketing` is Rundesk's research, growth, analytics, and messaging team, kept as one
-versioned artifact. Four named agents: **beacon** owns organic and AI search end to end, **scout**
-researches markets, customers, and competitors from published sources, **signal** certifies
-first-party data, and **quill** writes requirements, documentation, and messaging from an approved
-brief.
+`rundesk-team-marketing` is Rundesk's research, growth, and messaging team, kept as one versioned
+artifact. Three named agents: **beacon** owns growth evidence, first-party measurement, supplied-data
+verification, and optimization; **scout** researches markets, customers, and competitors from
+published sources; and **quill** writes requirements, messaging, and marketing content from an
+approved brief.
 
 The catalog also declares the shared integration catalogs its members borrow, so a member can reach
 a service without this repository shipping one.
@@ -19,9 +19,9 @@ Marketing claims are the easiest kind to get wrong confidently. A ranking opport
 fact, a conversion number, and a customer quote all read the same on a slide, and only some of them
 can be traced back to anything.
 
-Splitting the work by evidence class is the point: what was retrieved and can be retrieved again,
-what was published by somebody else and is cited, and what is first-party and needs a denominator
-before it means anything. A member that mixes them produces work nobody can check.
+Separating evidence classes is the point: Beacon keeps retrieved growth evidence distinct from
+first-party or supplied measurements, while Scout returns claims published by somebody else with
+citations. A member that mixes these classes produces work nobody can check.
 
 ## Users
 
@@ -32,15 +32,15 @@ before it means anything. A member that mixes them produces work nobody can chec
 
 ## Scope
 
-- **Covers:** the four members and their canonical instructions; guidance for search, growth
+- **Covers:** the three members and their canonical instructions; guidance for search, growth
   analytics, market and customer research, competitor research, data verification, requirements,
-  documentation, and landing pages; and the declared dependencies on shared integration catalogs.
+  messaging, and marketing content; and the declared dependencies on shared integration catalogs.
 - **Refuses:**
   - Presenting an uncertified number as fact. First-party analysis carries a denominator or is
     returned as unestablished.
   - An external claim with no published source behind it.
   - Shipping its own service commands. Integrations are borrowed from declared catalogs.
-  - Turning consumer documentation into maintainer state.
+  - Taking technical-documentation work owned by the development team.
   - Promising an evidence class a member cannot actually deliver — the gaps are written down rather
     than worked around.
 

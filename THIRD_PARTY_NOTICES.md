@@ -13,14 +13,12 @@ Commit: `826953197c01c7816fdd480e1eb91ee4fe708a8b`
 
 Packages:
 
-- `conversion-landing-pages`
 - `lead-compliance-gates`
 - `researching-topics`
 - `seo`, adapted from the upstream package and since extended here. The AI-search guidance, the
   snippet-control checks, the skill description, and `references/validation.md` are specific to this
   catalog and are not present upstream
 - `writing-prds`
-- `writing-technical-docs`
 - `analyzing-growth-data`, adapted from the measurement, experimentation, cohort, attribution, and
   forecasting guidance in `conversion-landing-pages` and `ecommerce-storefronts`
 

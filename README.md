@@ -1,10 +1,10 @@
 <h1 align="center">
-  <img src="assets/readme/rundesk-team-marketing-banner.png" alt="Rundesk Marketing Team — Beacon, Scout, Signal, and Quill." width="100%">
+  <img src="assets/readme/rundesk-team-marketing-banner-v2.png" alt="Rundesk Marketing Team — Beacon, Scout, and Quill." width="100%">
 </h1>
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v0.5.0-blue?style=flat-square" alt="Catalog version 0.5.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v1.0.0-blue?style=flat-square" alt="Catalog version 1.0.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/rundesk-ai/rundesk-team-marketing?style=flat-square" alt="MIT License"></a>
 </p>
 
@@ -18,7 +18,7 @@
   <a href="#-development"><strong>🛠️ Development</strong></a>
 </p>
 
-A versioned Rundesk marketing team: four specialists, their canonical instructions, the skills they
+A versioned Rundesk marketing team: three specialists, their canonical instructions, the skills they
 use, and caller-facing orchestration for combining their work. Specialist guidance stays with this
 team; Google, PostHog, and Stripe integrations remain in their reusable integration catalogs and
 are declared as dependencies through the [Rundesk CLI](https://github.com/rundesk-ai/rundesk-cli).
@@ -27,10 +27,9 @@ are declared as dependencies through the [Rundesk CLI](https://github.com/rundes
 
 | Member | Responsibility |
 |---|---|
-| `beacon` | Owns organic and AI search end to end: opportunity, tests, and its own surface results. |
+| `beacon` | Owns growth evidence and measurement: opportunity ranking, data verification, experiments, and results. |
 | `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
-| `signal` | Certifies first-party and supplied data: integrity, reconciliation, decomposition, and what the data cannot establish. |
-| `quill` | Writes product requirements, technical documentation, messaging, and other product content. |
+| `quill` | Writes product requirements, messaging, and other marketing content. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
 overall outcome, and integrates the returned evidence or artifact.
@@ -44,7 +43,6 @@ overall outcome, and integrates the returned evidence or artifact.
 ### Search and acquisition
 
 - `seo` — Audit technical, on-page, structured-data, and AI-search visibility.
-- `conversion-landing-pages` — Plan and improve measurable campaign pages and experiments.
 - `lead-compliance-gates` — Identify consent, suppression, privacy, and lead-contact gates.
 
 ### Research
@@ -62,7 +60,6 @@ overall outcome, and integrates the returned evidence or artifact.
 ### Product content
 
 - `writing-prds` — Create and validate product requirements, briefs, and feature definitions.
-- `writing-technical-docs` — Create and maintain verified consumer, developer, API, architecture, and troubleshooting documentation.
 
 ### Integrations
 
@@ -80,8 +77,8 @@ that catalog's provider declaration.
 
 `managing-marketing-work` is granted to the domain-facing agent that calls the team, never to a team
 member: the caller retains the outcome and integrates every specialist return. Every other skill is
-granted per member in [`team.json`](team.json). Some are held by more than one member deliberately —
-they read the same evidence for different questions, and a shared skill never merges their outputs.
+granted per member in [`team.json`](team.json). Beacon holds the measurement methods and integrations
+that previously belonged to Signal, while Scout remains the owner of cited external research.
 
 ## 🚀 Install
 
@@ -89,7 +86,7 @@ Preview first, then confirm.
 
 ### Complete team
 
-Install the team, any missing integration catalogs, and four managed agents:
+Install the team, any missing integration catalogs, and three managed agents:
 
 ```sh
 rundesk teams install https://github.com/rundesk-ai/rundesk-team-marketing --provider <provider>
@@ -125,7 +122,7 @@ matching catalogs already present from the same sources will be reused.
 
 - A Rundesk CLI release that supports schema 2 team catalog dependencies.
 - Public GitHub access to this repository.
-- For complete-team installation: a provider and unused local names for all four members.
+- For complete-team installation: a provider and unused local names for all three members.
 - A configured PostHog profile for live PostHog reads.
 - A configured read-only Stripe profile for live Stripe reads.
 - A connected Google account and permitted GA4, Merchant Center, or Search Console resources for Google reads.
@@ -133,6 +130,10 @@ matching catalogs already present from the same sources will be reused.
 
 The Google provider declaration remains owned by `rundesk-skills-google`. Rundesk refuses a
 same-named dependency already installed from another source instead of silently replacing it.
+
+Updating an existing installation reconciles Beacon's expanded grants but does not remove an
+already installed Signal agent. Retire that agent separately only after preserving any durable
+context and following Rundesk's guarded agent-removal workflow.
 
 ## 🛠️ Development
 

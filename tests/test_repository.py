@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 NAME = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-MEMBERS = {"beacon", "quill", "scout", "signal"}
+MEMBERS = {"beacon", "quill", "scout"}
 PRODUCT_OWNED = {"managing-rundesk", "delegating-work", "managing-github"}
 MEMBER_HEADINGS = ("## Before you act", "## Routing", "## Scope", "## Return")
 README_HEADINGS = (
@@ -41,28 +41,21 @@ EXPECTED_GRANTS = {
         "rundesk-skills-google/google-merchant",
         "rundesk-skills-google/google-pagespeed-insights",
         "rundesk-skills-google/google-search-console",
+        "rundesk-skills-integrations/posthog",
+        "rundesk-skills-integrations/stripe",
         "rundesk-team-marketing/analyzing-growth-data",
-        "rundesk-team-marketing/conversion-landing-pages",
         "rundesk-team-marketing/lead-compliance-gates",
         "rundesk-team-marketing/seo",
+        "rundesk-team-marketing/verifying-datasets",
     },
     "quill": {
         "rundesk-team-marketing/writing-prds",
-        "rundesk-team-marketing/writing-technical-docs",
     },
     "scout": {
         "rundesk-team-marketing/researching-competitors",
         "rundesk-team-marketing/researching-customers",
         "rundesk-team-marketing/researching-markets",
         "rundesk-team-marketing/researching-topics",
-    },
-    "signal": {
-        "rundesk-skills-google/google-analytics",
-        "rundesk-skills-integrations/posthog",
-        "rundesk-skills-integrations/stripe",
-        "rundesk-team-marketing/analyzing-growth-data",
-        "rundesk-team-marketing/conversion-landing-pages",
-        "rundesk-team-marketing/verifying-datasets",
     },
 }
 EXPECTED_CATALOGS = {
@@ -92,12 +85,12 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_0_5_0(self):
+    def test_manifest_and_banner_define_v_1_0_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("0.5.0", self.manifest["version"])
-        self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner.png").is_file())
+        self.assertEqual("1.0.0", self.manifest["version"])
+        self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
@@ -106,8 +99,8 @@ class RepositoryContract(unittest.TestCase):
                    for address in skills}
         self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
-        self.assertIn("assets/readme/rundesk-team-marketing-banner.png", readme)
-        self.assertIn("catalog-v0.5.0-blue", readme)
+        self.assertIn("assets/readme/rundesk-team-marketing-banner-v2.png", readme)
+        self.assertIn("catalog-v1.0.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -148,6 +141,24 @@ class RepositoryContract(unittest.TestCase):
             readme,
         )
 
+    def test_interface_design_remains_outside_the_marketing_team(self):
+        self.assertNotIn("conversion-landing-pages", self.skill_names())
+        grants = {skill for member in self.team["members"] for skill in member["skills"]}
+        self.assertFalse(any("landing-pages" in skill for skill in grants))
+        orchestration = (
+            ROOT / "skills/managing-marketing-work/SKILL.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Do not use for software or interface design", orchestration)
+
+    def test_technical_documentation_remains_outside_the_marketing_team(self):
+        self.assertNotIn("writing-technical-docs", self.skill_names())
+        quill = self.members()["quill"]
+        self.assertFalse(any("technical-doc" in skill for skill in quill["skills"]))
+        self.assertNotIn(
+            "technical documentation",
+            (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8").lower(),
+        )
+
     def test_team_declaration_has_exact_members_and_grants(self):
         self.assertEqual({"schema", "name", "catalogs", "members"}, set(self.team))
         self.assertEqual(2, self.team["schema"])
@@ -180,6 +191,25 @@ class RepositoryContract(unittest.TestCase):
                 self.assertEqual([], member["delegates_to"])
                 self.assertIs(False, member["self_improve"])
                 self.assertEqual(f"agents/{name}/AGENTS.md", member["instructions"])
+
+    def test_beacon_absorbs_measurement_and_scout_keeps_external_research(self):
+        self.assertNotIn("signal", self.members())
+        beacon = self.members()["beacon"]
+        for skill in (
+            "rundesk-skills-integrations/posthog",
+            "rundesk-skills-integrations/stripe",
+            "rundesk-team-marketing/verifying-datasets",
+        ):
+            self.assertIn(skill, beacon["skills"])
+
+        beacon_instructions = (ROOT / "agents/beacon/AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("measurement contract", beacon_instructions)
+        self.assertIn("file provenance", beacon_instructions)
+        self.assertIn("population, denominator, period", beacon_instructions)
+
+        scout_instructions = (ROOT / "agents/scout/AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("never go looking for a codebase", scout_instructions)
+        self.assertIn("Do not write it into a repository", scout_instructions)
 
     def test_member_instructions_are_bounded_and_role_specific(self):
         declared = {member["instructions"] for member in self.team["members"]}
