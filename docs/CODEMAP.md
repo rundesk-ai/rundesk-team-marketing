@@ -3,7 +3,7 @@
 Where each part lives. Counts are of artifacts, so they survive a rename and go wrong visibly when
 the tree moves on without this page.
 
-Two things share one tree: a guidance-only skill catalog, and the declaration of the four agents
+Two things share one tree: a guidance-only skill catalog, and the declaration of the three agents
 Rundesk creates from it. The team also declares shared integration catalogs its members borrow.
 
 ## Packages (skills/ — 11, 56 reference files)
@@ -27,16 +27,15 @@ Each holds `SKILL.md` for routing and core procedure, and `references/` for deta
 
 Every package is guidance only: no script, executable, credential, or network call.
 
-## Team (agents/ — 4 members)
+## Team (agents/ — 3 members)
 
 Each member's `agents/<name>/AGENTS.md` is its whole operating contract, and `team.json` declares
 which skills it holds and who it may delegate to.
 
 | Member | Owns |
 |---|---|
-| `beacon` | organic and AI search, from ranked opportunity to proposed test |
+| `beacon` | growth evidence and measurement, from ranked opportunity to certified result |
 | `scout` | markets, customers, and competitors, from published sources |
-| `signal` | first-party data: integrity, reconciliation, and what it certifies |
 | `quill` | requirements, messaging, and marketing content from an approved brief |
 
 ## Identity (root)

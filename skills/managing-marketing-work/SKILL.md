@@ -42,8 +42,10 @@ ask for. It does not transfer the work. When a specialist owns the question, the
 and you integrate what comes back; absorbing it yourself produces an answer nobody certified and
 loses the standard their return would have carried.
 
-When no installed specialist owns a needed capability, say so and name what is missing rather than
-covering the gap yourself or dropping that part of the outcome silently.
+Bind each needed capability to an installed specialist by reading the specialist descriptions and
+return contracts available to the caller. Do not infer ownership from a name or from a skill grant
+alone. When no installed specialist owns a needed capability, say so and name what is missing rather
+than covering the gap yourself or dropping that part of the outcome silently.
 
 ## Define the marketing work contract
 
@@ -84,6 +86,11 @@ invent a denominator, growth planning to write final copy, or content production
 market evidence. When one return reveals a new evidence need, add that bounded dependency instead of
 quietly expanding the original handoff.
 
+When a growth ranking depends on market size, customer belief, competitor strategy, pricing, or
+another published claim, establish the external research first and pass its claim-linked return into
+growth planning. The growth owner may retrieve a competitor site as a serving surface; that does not
+establish the competitor's business strategy.
+
 ## Order work by dependency
 
 Use only the stages the outcome needs. A useful default is:
@@ -106,7 +113,9 @@ full strategy cycle. Skip a stage only when its input is already approved and tr
 
 ## Make handoffs testable
 
-Give each specialist one self-contained brief:
+Give each specialist one self-contained brief. Inbound-only specialists retain no assignment state
+between requests, so every follow-up is a fresh brief that includes the prior return and the decision
+it now serves:
 
 ```text
 Question or artifact: one bounded result
@@ -123,7 +132,8 @@ Parallelize only independent evidence surfaces or artifacts. Research that defin
 analysis that establishes the baseline, and content that depends on both are sequential even when
 separate specialists perform them.
 
-A fluent return is not integration. Inspect the sources, queries, denominators, assumptions,
+A fluent return is not integration. Check the return against the owning specialist's current return
+contract and the usable-return column above. Inspect the sources, queries, denominators, assumptions,
 claims, and artifact directly. Reconcile conflicts before downstream work uses them.
 
 ## Integrate without erasing distinctions

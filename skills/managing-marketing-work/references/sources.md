@@ -6,16 +6,14 @@ one external marketing framework prescribes a universal process.
 
 ## Team ownership
 
-- [`team.json`](../../../team.json) declares Beacon, Scout, Signal, and Quill as inbound-only
+- [`team.json`](../../../team.json) declares Beacon, Scout, and Quill as inbound-only
   specialists with separate positive skill allowlists. This supports keeping orchestration with the
   domain-facing caller instead of granting it to a team member.
-- [Beacon's instructions](../../../agents/beacon/AGENTS.md) establish external growth evidence and
-  opportunity ranking without campaign operation or final copy.
+- [Beacon's instructions](../../../agents/beacon/AGENTS.md) establish growth evidence, first-party
+  measurement, supplied-data verification, and opportunity ranking without campaign operation or
+  final copy.
 - [Scout's instructions](../../../agents/scout/AGENTS.md) establish sourced external research
   without growth ranking, first-party analysis, or final messaging.
-- [Signal's instructions](../../../agents/signal/AGENTS.md) establish bounded first-party and
-  supplied-data analysis, metric contracts, reconciliation, and causal limits without external
-  research or content production.
 - [Quill's instructions](../../../agents/quill/AGENTS.md) establish content production from approved
   direction and evidence without inventing strategy, claims, or authority.
 
@@ -49,6 +47,8 @@ one external marketing framework prescribes a universal process.
 
 - Marketing work is routed by the evidence or artifact needed, not by sending a whole initiative to
   one specialist.
+- External research precedes growth planning when the ranking depends on a published claim; the
+  cited return becomes an input without becoming first-party measurement.
 - External research, first-party measurement, owner direction, claims, content, and activation stay
   distinct because each has different evidence and authority.
 - The six-stage default is dependency guidance, not mandatory ceremony. A task skips a stage when

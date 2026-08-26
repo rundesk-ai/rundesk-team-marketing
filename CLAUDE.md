@@ -4,7 +4,7 @@
 
 This repository publishes Rundesk's marketing team as one versioned artifact. It contains its
 specialist guidance skills, shared integration-catalog declarations, and canonical instructions
-for Beacon, Scout, Signal, and Quill. `README.md` is the consumer contract, `manifest.json` is the
+for Beacon, Scout, and Quill. `README.md` is the consumer contract, `manifest.json` is the
 catalog identity, `team.json` declares the members, and `agents/<member>/AGENTS.md` defines each
 member's always-on behavior.
 
@@ -71,8 +71,8 @@ offline test or report an effect the service did not verify.
 ## Delegation
 
 The team has no lead. Each member is an inbound-only specialist and returns to the requester.
-Beacon owns external growth evidence, Scout owns external research, Signal owns first-party and
-supplied-data certification, and Quill owns messaging and content artifacts.
+Beacon owns growth evidence, first-party measurement, supplied-data verification, and optimization;
+Scout owns external research; and Quill owns messaging and content artifacts.
 
 Two boundaries keep those specialists distinct.
 
@@ -81,14 +81,11 @@ Growth evidence is retrieved from a property or serving surface and can be retri
 research is cited to a source someone else can look up. The same competitor belongs to Beacon as a
 site and to Scout as a business, and a question needing both is two requests the requester sequences.
 
-Growth evidence and first-party analysis are separated by what the reader owes the reader. Beacon
-owns a channel and reads to decide, so suggestive evidence is legitimate when it also proposes the
-check that would settle it. Signal owns the metric contract and reads to certify, so a result carries
-its population, denominator, uncertainty, and data-quality checks or is returned as unestablished.
-Signal also owns data it did not retrieve: a file or export is verified for provenance and integrity
-before anything is concluded from it, and two sources that disagree are reconciled rather than
-chosen between.
-Both may hold the same skill and read the same data; neither releases the other's output.
+Beacon keeps two evidence modes distinct. Directional growth evidence may rank an opportunity when
+it also names the check that would settle it. A measured result carries its population, denominator,
+uncertainty, and data-quality checks or is returned as unestablished. A file or export is verified
+for provenance and integrity before anything is concluded from it, and two sources that disagree
+are reconciled rather than chosen between.
 
 Inbound-only bounds named-agent handoffs, not provider subagents. A member may use bounded provider
 subagents when their value exceeds coordination cost, but retains scope, integration, and proof.
@@ -103,8 +100,7 @@ team's topology.
 
 Use the canonical terms growth evidence, external research, retrieval, citation, first-party data,
 provenance, reconciliation, funnel, cohort, retention, attribution, experiment, segment, forecast, brief, message, and
-content. `signal` is a member name; the common noun means a suggestive input rather than a
-measurement, and skills use it only in that sense. Preserve Google, PostHog, Stripe, and other
+content. The common noun `signal` means a suggestive input rather than a measurement. Preserve Google, PostHog, Stripe, and other
 vendor names at their boundaries. Distinguish attribution from causal effect, forecast from target
 or commitment, reported value from recognized revenue, and a source citation from an AI answer's
 citation of a page.
