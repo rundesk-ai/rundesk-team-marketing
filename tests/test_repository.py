@@ -105,15 +105,22 @@ class RepositoryContract(unittest.TestCase):
         self.assertIn("assets/readme/rundesk-team-marketing-banner-v2.png", readme)
         self.assertIn('<h1 align="center">Rundesk Marketing Team</h1>', readme)
         self.assertIn('<p align="center">\n  <a href="https://github.com/rundesk-ai/', readme)
-        for anchor in ("#-team", "#-skills", "#-install", "#-development"):
+        for anchor in ("#-team", "#-skills", "#-install", "#️-development"):
             self.assertIn(f'href="{anchor}"', readme)
         self.assertIn("A versioned Rundesk team for research, growth, analytics,", readme)
+        title = '<h1 align="center">Rundesk Marketing Team</h1>'
+        banner = "assets/readme/rundesk-team-marketing-banner-v2.png"
+        self.assertTrue(readme.startswith('<p align="center">\n  <img src="' + banner))
         self.assertLess(
-            readme.index("A versioned Rundesk team for research, growth, analytics,"),
-            readme.index("assets/readme/rundesk-team-marketing-banner-v2.png"),
+            readme.index(banner),
+            readme.index(title),
         )
         self.assertLess(
-            readme.index("assets/readme/rundesk-team-marketing-banner-v2.png"),
+            readme.index(title),
+            readme.index("A versioned Rundesk team for research, growth, analytics,"),
+        )
+        self.assertLess(
+            readme.index("A versioned Rundesk team for research, growth, analytics,"),
             readme.index("## 👥 Team"),
         )
         self.assertIn("catalog-v1.1.0-blue", readme)
