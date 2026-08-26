@@ -1,22 +1,12 @@
-<h1 align="center">
+<p align="center">
   <img src="assets/readme/rundesk-team-marketing-banner-v2.png" alt="Rundesk Marketing Team — Beacon, Scout, and Quill." width="100%">
-</h1>
-
-<p align="center">
-  <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v1.1.0-blue?style=flat-square" alt="Catalog version 1.1.0"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/rundesk-ai/rundesk-team-marketing?style=flat-square" alt="MIT License"></a>
 </p>
 
-<p align="center">
-  <a href="#-team"><strong>👥 Team</strong></a>
-  &nbsp;·&nbsp;
-  <a href="#-skills"><strong>🧠 Skills</strong></a>
-  &nbsp;·&nbsp;
-  <a href="#-install"><strong>🚀 Install</strong></a>
-  &nbsp;·&nbsp;
-  <a href="#-development"><strong>🛠️ Development</strong></a>
-</p>
+# Rundesk Marketing Team
+
+[![build](https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain)
+[![catalog v1.1.0](https://img.shields.io/badge/catalog-v1.1.0-blue)](manifest.json)
+[![license MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 A versioned Rundesk marketing team: three specialists, their canonical instructions, the skills they
 use, and caller-facing orchestration for combining their work. Specialist guidance stays with this
