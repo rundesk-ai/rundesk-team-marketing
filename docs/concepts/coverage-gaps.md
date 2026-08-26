@@ -44,7 +44,7 @@ narrower and more accurate claim.
 
 | Missing | Consequence |
 |---|---|
-| Paid, email, lifecycle, social, affiliate, and marketplace acquisition methods | Beacon's routing covers organic search, landing paths, and product feeds. No member can reason about any other channel, and [`seo`](../../skills/seo/SKILL.md) excludes paid search by contract |
+| Paid, email, lifecycle, organic-social acquisition strategy, affiliate, and marketplace methods | Quill can draft organic social copy from approved direction, but no member selects social opportunities, operates accounts, or measures social performance. Beacon's routing covers organic search, landing paths, and product feeds, and [`seo`](../../skills/seo/SKILL.md) excludes paid search by contract |
 | Brand, positioning, and pricing method | Scout can research what others published about them; no skill turns that into a position or a price |
 
 ## Boundaries no instruction draws
@@ -77,6 +77,8 @@ These are settled decisions, not gaps. Do not close them without the owner's app
   Content, design, development, analytics implementation, launch, and rendered verification remain
   with their owning teams.
 - Technical documentation belongs to the development team, not Quill or this catalog.
+- Quill may draft organic social content, but account access, posting, scheduling, community
+  management, paid-ad strategy, and visual production remain outside its authority.
 - No member holds a lead role, and no member delegates to another member.
 - Member descriptions stay declarative rather than call-when phrased, so all three read alike.
 

@@ -64,6 +64,11 @@ Read [forms and structure](references/forms-and-structure.md) before shaping a b
 log, reported article, column, essay, or story. Choose by purpose, evidence, author stance, and reader
 expectation—not by a universal template.
 
+Read [blogs and articles](references/blogs-and-articles.md) when the deliverable is a blog post or
+article, or when the request includes a content brief, reporting plan, headline, dek, excerpt, or
+article revision. It supplies the assignment, reporting, architecture, drafting, and acceptance
+method specific to those forms.
+
 At minimum, make these distinctions:
 
 | Form | Reader promise | Required discipline |

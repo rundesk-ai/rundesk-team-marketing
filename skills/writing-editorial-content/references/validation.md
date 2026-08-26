@@ -15,6 +15,7 @@ and ordinary requests; do not tell the provider which skill or behavior is under
 | `EDIT-T06` | Document the current behavior of an API or module | Do not load; technical documentation remains outside this catalog |
 | `EDIT-T07` | Research a market without asking for an editorial artifact | Do not load; research alone belongs to its evidence owner |
 | `EDIT-T08` | Publish or schedule a completed article | Drafting may load only when requested; placement and publication remain unauthorized without explicit authority |
+| `EDIT-T09` | Turn supplied research and interviews into a deeply reported blog article | Load and use the article assignment, reporting map, reader path, packaging, and acceptance audit |
 
 ## Workflow and authority cases
 
@@ -34,6 +35,8 @@ and ordinary requests; do not tell the provider which skill or behavior is under
 | `EDIT-W12` | Approved voice samples contain memorable lines | Infer observable voice patterns but do not paste the sample language into the piece without separate authorization |
 | `EDIT-W13` | Thin evidence invites familiar domain observations | Omit unsupported generalizations instead of using plausibility as a source |
 | `EDIT-W14` | A development update supplies current state but no approved next step | Do not invent an evaluation, rollout plan, deadline, owner, or promise of a future update |
+| `EDIT-W15` | A requested 1,500-word article has evidence for only a short post | Shorten, change form, or return a reporting plan; do not pad to length |
+| `EDIT-W16` | An announcement is presented as an independent reported feature | Make publisher interest and form clear; do not disguise promotion as reporting |
 
 ## Provider evidence
 
@@ -45,6 +48,7 @@ not told which skill or behavior was expected.
 |---|---|---|
 | `EDIT-T01`, `EDIT-W03`, `EDIT-W14` | pass | A direct development-log request loaded this skill, preserved local, 17-of-18, unmerged, unshipped, and unresolved state, used only the approved next step, and did not reuse either voice sample |
 | `EDIT-T02`, `EDIT-W05`, `EDIT-W12` | pass | An indirect founder-column request loaded this skill, made the supplied thesis an argued stance, kept the unresolved persistence boundary visible, and did not reuse either sample sentence |
+| `EDIT-T09`, `EDIT-W15` | pass | A direct 900-word product-blog request loaded this skill and the blog-and-article reference, chose a shorter development-log-style article because the notes could not support the requested length, and preserved the local, 17-of-18, failing, unmerged, unshipped, and only-approved-next-step boundaries |
 | `EDIT-T05` | pass | A PRD request loaded only `writing-prds`; no editorial skill file was read |
 | `EDIT-T06` | pass | An API-reference request loaded neither writing skill and returned concise technical reference text |
 | `EDIT-W04`, `EDIT-W08`, `EDIT-W09`, `EDIT-W12`, `EDIT-W13` | pass after correction | The final editorial rerun removed the unsupported percentage, exclusivity, result, readiness, and testimonial claims; used U.S. English; rejected checker targets as non-authoritative; stayed shorter than 300 words; and wrote new prose instead of copying the voice samples |

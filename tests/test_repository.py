@@ -51,6 +51,7 @@ EXPECTED_GRANTS = {
     "quill": {
         "rundesk-team-marketing/writing-editorial-content",
         "rundesk-team-marketing/writing-prds",
+        "rundesk-team-marketing/writing-social-content",
     },
     "scout": {
         "rundesk-team-marketing/researching-competitors",
@@ -181,6 +182,23 @@ class RepositoryContract(unittest.TestCase):
         self.assertIn("## Column or essay", forms)
         self.assertIn("Never invent dialogue", forms)
         self.assertIn("There is no universal best word count", editing)
+
+    def test_quill_owns_platform_true_social_copy_without_posting(self):
+        quill = (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills/writing-social-content/SKILL.md").read_text(encoding="utf-8")
+        platforms = (
+            ROOT / "skills/writing-social-content/references/platform-forms.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("Instagram captions and carousel or", quill)
+        self.assertIn("Writing a `post` means drafting its content", quill)
+        self.assertIn("Platform, surface, and organic/paid status:", skill)
+        self.assertIn("never invent what an unseen", skill)
+        self.assertIn("do not merely truncate", skill)
+        self.assertIn("do not post, schedule, upload, or engage", skill)
+        self.assertIn("## Instagram", platforms)
+        self.assertIn("## Pinterest", platforms)
+        self.assertIn("Do not hard-code universal", platforms)
 
     def test_team_declaration_has_exact_members_and_grants(self):
         self.assertEqual({"schema", "name", "catalogs", "members"}, set(self.team))

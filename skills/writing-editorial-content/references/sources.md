@@ -73,6 +73,10 @@ Verified 26 August 2026 against the linked pages.
 - [Nieman Storyboard: Nut grafs—overused, misused, or misunderstood?](https://niemanstoryboard.org/nut-grafs-overused-misused-or-merely-misunderstood/)
   documents both the reader-orientation value and the risk that a forced nut interrupts narrative
   voice. It supports treating focus as required and the visible device as optional.
+- [Purdue Online Writing Lab: Journalism and Journalistic Writing](https://owl.purdue.edu/owl/subject_specific_writing/journalism_and_journalistic_writing/index.html)
+  distinguishes news, features, reviews, columns, and other journalistic forms and supports choosing
+  structure for the form and reader rather than treating every article alike. Newsroom conventions
+  remain publication choices, not universal branded-content requirements.
 
 ## Revision and editing
 
@@ -86,6 +90,10 @@ Verified 26 August 2026 against the linked pages.
 - `Blog post`, `development log`, `article`, `column`, and `narrative` are separated by reader
   promise, evidence, and author stance so one package can route related editorial work without
   pretending every publication uses the same template.
+- The blog-and-article workflow turns the cited audience, people-first, reporting, focus,
+  accessibility, and revision lessons into an assignment, reporting map, article architecture, and
+  acceptance audit. Those named artifacts are local editorial controls, not claims that all
+  publications use one production system.
 - The voice card turns the stable-voice/contextual-tone distinction into observable language
   features. No source validates imitation from one sample, so the package requires representative
   approved evidence and treats missing voice as unknown.
