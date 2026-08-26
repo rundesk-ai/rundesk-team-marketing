@@ -446,6 +446,21 @@ instructions alone.
 Beacon's prior growth cases were run on 2026-08-24 and Scout's on 2026-08-25. Signal's 2026-08-25
 results are retained only as historical evidence for the measurement methods now granted to Beacon;
 they do not prove Beacon's combined contract. Quill's six cases, Beacon's transferred measurement
-cases, Scout's revised write boundary, and every lifecycle case remain unrun. A result recorded above
-is evidence about the member file and skills used in that run; it does not prove installation grants
-the right skills or carry forward to a later catalog or CLI commit without a fresh run.
+cases, and Scout's revised write boundary remain unrun. A result recorded above is evidence about the
+member file and skills used in that run; it does not carry forward to a later catalog or CLI commit
+without a fresh run.
+
+Lifecycle validation on 2026-08-26 used catalog commit
+`9959dd27969fdd07f66cae3a391745aec8e1f381` and compatible Rundesk CLI commit
+`d09cbee358f7c124db4cc9845b104e68828f5807` in a disposable root. The preview exited non-zero and
+named the three members, dependencies, grants, memory policy, upkeep, and stopped-gateway effect;
+confirmation created exactly Beacon, Quill, and Scout with their declared allowlists and no
+`managing-marketing-work` grant, and left all gateways stopped. This observes `LIFE-03`, `LIFE-04`,
+`LIFE-05`, and `LIFE-11`.
+
+For the update check, PostHog, Stripe, and `verifying-datasets` were revoked from Beacon and an
+unmanaged legacy Signal agent was added. The confirmed team update restored all three Beacon grants,
+continued to declare only Beacon, Quill, and Scout, preserved Signal, and left all four gateways
+stopped. This observes `LIFE-12` and the grant-repair portion of `LIFE-06`; unrelated catalog and
+credential preservation in `LIFE-06`, and `LIFE-01`, `LIFE-02`, and `LIFE-07` through `LIFE-10`,
+remain unrun.
