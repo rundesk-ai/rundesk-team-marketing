@@ -43,7 +43,6 @@ overall outcome, and integrates the returned evidence or artifact.
 ### Search and acquisition
 
 - `seo` — Audit technical, on-page, structured-data, and AI-search visibility.
-- `conversion-landing-pages` — Review post-click performance, page decisions, and what to test next on focused campaign destinations.
 - `lead-compliance-gates` — Identify consent, suppression, privacy, and lead-contact gates.
 
 ### Research

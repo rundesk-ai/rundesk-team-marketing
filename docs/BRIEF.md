@@ -34,8 +34,7 @@ citations. A member that mixes these classes produces work nobody can check.
 
 - **Covers:** the three members and their canonical instructions; guidance for search, growth
   analytics, market and customer research, competitor research, data verification, requirements,
-  messaging, marketing content, and landing-page planning; and the declared dependencies on shared
-  integration catalogs.
+  messaging, and marketing content; and the declared dependencies on shared integration catalogs.
 - **Refuses:**
   - Presenting an uncertified number as fact. First-party analysis carries a denominator or is
     returned as unestablished.

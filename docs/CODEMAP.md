@@ -6,7 +6,7 @@ the tree moves on without this page.
 Two things share one tree: a guidance-only skill catalog, and the declaration of the three agents
 Rundesk creates from it. The team also declares shared integration catalogs its members borrow.
 
-## Packages (skills/ — 11, 56 reference files)
+## Packages (skills/ — 10, 52 reference files)
 
 Each holds `SKILL.md` for routing and core procedure, and `references/` for detail loaded on demand.
 `references/sources.md` is required in every touched package.
@@ -14,7 +14,6 @@ Each holds `SKILL.md` for routing and core procedure, and `references/` for deta
 | Package | References | Command |
 |---|---|---|
 | `analyzing-growth-data` | 4 | — |
-| `conversion-landing-pages` | 4 | — |
 | `lead-compliance-gates` | 4 | — |
 | `managing-marketing-work` | 2 | — |
 | `researching-competitors` | 7 | — |

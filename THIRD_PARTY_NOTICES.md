@@ -13,7 +13,6 @@ Commit: `826953197c01c7816fdd480e1eb91ee4fe708a8b`
 
 Packages:
 
-- `conversion-landing-pages`
 - `lead-compliance-gates`
 - `researching-topics`
 - `seo`, adapted from the upstream package and since extended here. The AI-search guidance, the

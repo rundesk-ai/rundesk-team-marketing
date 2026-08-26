@@ -23,9 +23,8 @@ one external marketing framework prescribes a universal process.
   source evaluation, uncertainty, and reproducible synthesis.
 - [`verifying-datasets`](../../verifying-datasets/SKILL.md) supports provenance, integrity checking,
   and reconciliation for data that arrives as a file or from a second disagreeing source.
-- [`seo`](../../seo/SKILL.md) and
-  [`conversion-landing-pages`](../../conversion-landing-pages/SKILL.md) support ranked growth
-  findings, measurable opportunities, and experiment-ready recommendations.
+- [`seo`](../../seo/SKILL.md) supports ranked growth findings, measurable opportunities, and
+  experiment-ready recommendations for organic and AI-search visibility.
 - [`analyzing-growth-data`](../../analyzing-growth-data/SKILL.md) supports metric contracts,
   funnels, cohorts, attribution, experiments, forecasts, and the boundary between descriptive and
   causal claims.
