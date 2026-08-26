@@ -108,6 +108,14 @@ class RepositoryContract(unittest.TestCase):
         for anchor in ("#-team", "#-skills", "#-install", "#-development"):
             self.assertIn(f'href="{anchor}"', readme)
         self.assertIn("A versioned Rundesk team for research, growth, analytics,", readme)
+        self.assertLess(
+            readme.index("A versioned Rundesk team for research, growth, analytics,"),
+            readme.index("assets/readme/rundesk-team-marketing-banner-v2.png"),
+        )
+        self.assertLess(
+            readme.index("assets/readme/rundesk-team-marketing-banner-v2.png"),
+            readme.index("## 👥 Team"),
+        )
         self.assertIn("catalog-v1.1.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
