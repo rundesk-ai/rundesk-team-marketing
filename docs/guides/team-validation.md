@@ -241,6 +241,26 @@ run's demonstrated improvement was its explicit modular asset roles and named, t
 hypotheses. These synthetic cases do not establish approval, delivery, ranking, clicks, conversion,
 incrementality, profitability, or audience preference.
 
+## Observed lifecycle — Quill advertising grant, 2026-08-26
+
+The real CLI lifecycle at `d09cbee358f7c124db4cc9845b104e68828f5807` exercised catalog
+commit `f43f781c856804e37212ed4a9cac81f4c12e3a81` in one disposable root with synthetic local
+copies of its declared dependencies.
+
+- The unconfirmed team install exited `1`, named both dependency installs and every exact member
+  allowlist, and left no team or agent.
+- Confirmed installation created exactly Beacon, Quill, and Scout. Quill held
+  `writing-advertising-copy`, `writing-editorial-content`, `writing-prds`, and
+  `writing-social-content`, plus only Rundesk's required `managing-rundesk` grant.
+- Beacon and Scout retained their declared allowlists. All three gateways were `not running` and
+  `not placed`; no gateway was started.
+- Revoking `writing-advertising-copy` removed it. The team-update preview named the repair without
+  changing state; confirmation restored the grant. A second confirmed update made no member or
+  grant change.
+- Uninstall removed the disposable update and three gateway job definitions, command, app, and
+  data. The live Rundesk root's directory identity and timestamps were identical before and after,
+  and no disposable job definition remained in `~/Library/LaunchAgents`.
+
 ## Observed results — Beacon, 2026-08-24
 
 Six runs. Each gave one ordinary request to an agent whose entire contract was
