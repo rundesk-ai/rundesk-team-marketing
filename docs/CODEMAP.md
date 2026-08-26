@@ -6,7 +6,7 @@ the tree moves on without this page.
 Two things share one tree: a guidance-only skill catalog, and the declaration of the three agents
 Rundesk creates from it. The team also declares shared integration catalogs its members borrow.
 
-## Packages (skills/ — 12, 62 reference files)
+## Packages (skills/ — 13, 67 reference files)
 
 Each holds `SKILL.md` for routing and core procedure, and `references/` for detail loaded on demand.
 `references/sources.md` is required in every touched package.
@@ -22,6 +22,7 @@ Each holds `SKILL.md` for routing and core procedure, and `references/` for deta
 | `researching-topics` | 4 | — |
 | `seo` | 12 | — |
 | `verifying-datasets` | 4 | — |
+| `writing-advertising-copy` | 5 | — |
 | `writing-editorial-content` | 6 | — |
 | `writing-prds` | 4 | — |
 | `writing-social-content` | 4 | — |
@@ -37,7 +38,7 @@ which skills it holds and who it may delegate to.
 |---|---|
 | `beacon` | growth evidence and measurement, from ranked opportunity to certified result |
 | `scout` | markets, customers, and competitors, from published sources |
-| `quill` | requirements, messaging, editorial content, and organic social copy for a defined audience, voice, and platform |
+| `quill` | requirements, messaging, editorial, organic social, and paid advertising copy for a defined audience, offer, voice, and platform |
 
 ## Identity (root)
 

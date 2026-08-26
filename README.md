@@ -29,7 +29,7 @@ are declared as dependencies through the [Rundesk CLI](https://github.com/rundes
 |---|---|
 | `beacon` | Owns growth evidence and measurement: opportunity ranking, data verification, experiments, and results. |
 | `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
-| `quill` | Writes product requirements, messaging, blogs, articles, and organic social copy for the audience and platform. |
+| `quill` | Writes requirements, editorial, organic social, and paid advertising copy for the audience, offer, voice, and platform. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
 overall outcome, and integrates the returned evidence or artifact.
@@ -59,6 +59,7 @@ overall outcome, and integrates the returned evidence or artifact.
 
 ### Product content
 
+- `writing-advertising-copy` — Write voice-true, keyword-aware paid ad copy aligned to the audience, offer, proof, and destination.
 - `writing-editorial-content` — Write and edit audience-, product-, and author-true blogs, devlogs, articles, columns, and stories.
 - `writing-prds` — Create and validate product requirements, briefs, and feature definitions.
 - `writing-social-content` — Write and adapt evidence-, voice-, and platform-true organic social copy without posting it.
@@ -81,8 +82,9 @@ that catalog's provider declaration.
 member: the caller retains the outcome and integrates every specialist return. Every other skill is
 granted per member in [`team.json`](team.json). Beacon holds the measurement methods and integrations
 that previously belonged to Signal, while Scout remains the owner of cited external research.
-Quill drafts Instagram, Pinterest, and related social content as text; its grant does not authorize
-account access, scheduling, publishing, or engagement.
+Quill drafts Instagram, Pinterest, search, display, and related organic or paid copy as text; its
+grants do not authorize keyword-volume research, targeting, budgets, account or campaign operation,
+scheduling, publishing, launch, or engagement.
 
 ## 🚀 Install
 

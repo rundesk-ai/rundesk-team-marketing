@@ -33,9 +33,10 @@
     },
     {
       "name": "quill",
-      "description": "Writes requirements, messaging, blogs, articles, and organic social copy for a defined audience and platform from approved direction and evidence.",
+      "description": "Writes requirements, editorial, organic social, and paid advertising copy for a defined audience, offer, voice, and platform from approved evidence.",
       "instructions": "agents/quill/AGENTS.md",
       "skills": [
+        "rundesk-team-marketing/writing-advertising-copy",
         "rundesk-team-marketing/writing-editorial-content",
         "rundesk-team-marketing/writing-prds",
         "rundesk-team-marketing/writing-social-content"

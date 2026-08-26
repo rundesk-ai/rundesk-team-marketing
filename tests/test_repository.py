@@ -49,6 +49,7 @@ EXPECTED_GRANTS = {
         "rundesk-team-marketing/verifying-datasets",
     },
     "quill": {
+        "rundesk-team-marketing/writing-advertising-copy",
         "rundesk-team-marketing/writing-editorial-content",
         "rundesk-team-marketing/writing-prds",
         "rundesk-team-marketing/writing-social-content",
@@ -199,6 +200,25 @@ class RepositoryContract(unittest.TestCase):
         self.assertIn("## Instagram", platforms)
         self.assertIn("## Pinterest", platforms)
         self.assertIn("Do not hard-code universal", platforms)
+
+    def test_quill_owns_voice_true_keyword_aware_ad_copy_without_campaigns(self):
+        quill = (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills/writing-advertising-copy/SKILL.md").read_text(encoding="utf-8")
+        keywords = (
+            ROOT / "skills/writing-advertising-copy/references/keywords-and-message-match.md"
+        ).read_text(encoding="utf-8")
+        forms = (
+            ROOT / "skills/writing-advertising-copy/references/ad-forms.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("search-ad assets, paid social and sponsored copy", quill)
+        self.assertIn("Advertiser, product, service, or offer being promoted:", skill)
+        self.assertIn("preserve voice", skill.lower())
+        self.assertIn("Use keywords to express message match", skill)
+        self.assertIn("do not operate or publish the campaign", skill)
+        self.assertIn("query intent -> headline recognition", keywords)
+        self.assertIn("## Responsive search ads", forms)
+        self.assertIn("## Paid social", forms)
 
     def test_team_declaration_has_exact_members_and_grants(self):
         self.assertEqual({"schema", "name", "catalogs", "members"}, set(self.team))

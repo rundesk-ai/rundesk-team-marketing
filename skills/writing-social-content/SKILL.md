@@ -1,6 +1,6 @@
 ---
 name: writing-social-content
-description: Use when creating, adapting, revising, or reviewing organic social-media copy such as Instagram captions, carousel or Reel text, Story copy, Pinterest Pin titles and descriptions, or related short-form posts. It supplies audience, voice, platform-form, evidence, accessibility, variation, and cross-platform adaptation guidance. Do not use when the only requested action is publishing or scheduling completed copy, or for community management, paid-ad strategy, analytics, long-form editorial, interface microcopy, or visual production.
+description: Use when creating, adapting, revising, or reviewing organic social-media copy such as Instagram captions, carousel or Reel text, Story copy, Pinterest Pin titles and descriptions, or related short-form posts. It supplies audience attraction, offer or idea framing, voice, discovery language, platform form, evidence, accessibility, and cross-platform adaptation. Do not use for paid ad copy, publish-only actions, community management, analytics, long-form editorial, interface microcopy, or visual production.
 ---
 
 # Write social content
@@ -18,6 +18,9 @@ Platform, surface, and organic/paid status:
 Account, owner, and speaking voice:
 Audience, relationship to the account, and moment of encounter:
 Content object: supplied image, video, carousel, article, product fact, event, or idea:
+What is being promoted, shared, or made useful:
+Audience need, desire, question, objection, or identity supported by evidence:
+Relevant value, differentiator, and proof:
 Purpose and useful response:
 One message and supporting facts:
 Approved action or destination:
@@ -39,12 +42,17 @@ Read [copy and voice](references/copy-and-voice.md) when shaping the message, mo
 brand, adapting one idea across platforms, or reviewing quality and truth. Read [platform forms](references/platform-forms.md)
 for Instagram, Pinterest, or another named surface.
 
+When the requested artifact is paid or sponsored ad copy, use the advertising-copy workflow
+instead. An organic product post remains social content even when it promotes something; payment,
+an ad unit, or a search-ad asset changes the writing contract.
+
 ## Choose the content job
 
 State the job before drafting: orient, explain, teach, announce, demonstrate, invite, entertain,
-reflect, or lead to a relevant next step. Reduce the source to one defensible message plus the
-minimum context needed to understand it. The opening, on-creative text, caption, and call to action
-must work together rather than compete or repeat every word.
+reflect, promote, or lead to a relevant next step. Reduce the source to one defensible message plus
+the minimum context needed to understand it. Make the audience recognize why this belongs in their
+moment through a supported need, desire, tension, identity, or useful outcome. The opening,
+on-creative text, caption, and call to action must work together rather than compete or repeat.
 
 Build a small evidence ledger for product, customer, performance, comparative, quoted, or timely
 claims. Use supplied approved facts and primary sources where available. Do not invent a launch
@@ -56,6 +64,11 @@ A feature name or behavior does not establish its motivation, intended benefit, 
 or outcome. Labeling an inference as `the aim`, `designed to`, or `intended to` does not make it
 approved product direction. Request that direction or omit it. A familiar domain observation is
 also a claim; do not add generic setup merely because it sounds plausible.
+
+Attraction is earned relevance, not maximum excitement. Lead with the most specific supported
+connection between this audience and what is being promoted: a useful result, recognized problem,
+credible difference, revealing detail, or timely reason. Preserve the approved voice while making
+that value easy to recognize. Do not flatten it into generic promotional language.
 
 ## Draft for the surface
 

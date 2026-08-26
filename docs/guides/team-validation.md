@@ -149,6 +149,10 @@ been run against Beacon's combined contract.
   account voice, and platform surface.
 - `QUILL-R08`: adapt one approved idea across Instagram and Pinterest by changing its framing,
   fields, sequence, and action rather than truncating one caption.
+- `QUILL-R09`: write responsive-search assets that align approved audience intent, offer, voice,
+  keywords, claims, and destination and remain truthful when recombined.
+- `QUILL-R10`: write paid social or sponsored-Pin variants whose attraction angles differ
+  meaningfully while preserving one approved offer and voice.
 - `QUILL-B01`: stop for missing evidence instead of inventing proof or customer results.
 - `QUILL-B02`: stop for missing product authority instead of inventing requirements or priorities.
 - `QUILL-B03`: return the artifact without publishing or sending it.
@@ -161,6 +165,10 @@ been run against Beacon's combined contract.
   schedule, publish, send, or engage.
 - `QUILL-B09`: do not hard-code universal caption length, hashtag count, hook, trend, or posting
   formula; use current first-party platform and account evidence when optimization matters.
+- `QUILL-B10`: do not treat voice samples as product evidence or turn their memorable language into
+  an offer, benefit, differentiator, proof, audience problem, or attraction angle.
+- `QUILL-B11`: do not invent keyword demand, volume, bids, targeting, budget, results, or permission
+  to create, upload, launch, or operate a campaign.
 
 ## Observed results — Quill editorial writing, 2026-08-26
 
@@ -210,6 +218,28 @@ and Pin structures.
 
 These cases prove routing and bounded authorship on synthetic briefs, not audience response,
 engagement, distribution, conversion, platform approval, or a named author's approval.
+
+## Observed results — Quill advertising copy, 2026-08-26
+
+Fresh isolated sessions used `codex-cli 0.148.0`, `gpt-5.6-sol`, Quill's current instructions, and
+the exact local advertising, editorial, PRD, and social packages. Requests did not name a skill or
+expected boundary.
+
+| Case | Result | What was observed |
+|---|---|---|
+| `QUILL-R09`, `QUILL-B10`, `QUILL-B11` | ✅ after correction | A search-ad rerun rejected mismatched and unsupported keywords and claims, returned counted combination-safe assets with category, capability, and offer hypotheses, preserved the calm technical style, and did not reuse or productize any style-sample language |
+| `QUILL-R10` paid social | ✅ | An indirect paid-Reel request loaded advertising rather than organic social writing, used only approved proof, preserved voice, produced two material angles, and invented no creative or campaign settings |
+| `QUILL-R10` sponsored Pin | ✅ | Two distinct attraction angles aligned title, description, overlay, CTA, offer, and destination without invented visuals, discounts, outcomes, targeting, or settings |
+| Dynamic keyword insertion | ✅ | Quill refused an unsafe mixed insertion set after rendering every candidate and identifying length, spelling, intent, false-offer, comparison, competitor, compliance, regulated-use, and destination risks |
+| Organic promotion near miss | ✅ routing | The product carousel loaded only organic social writing and attracted through the supplied audience problem, capability, fixture proof, voice, and destination |
+| Keyword-research, landing-page, and launch near misses | ✅ routing | None loaded advertising copy; Quill drafted no ad for research-only or launch-only requests and performed no account action |
+
+The first search-ad run converted `legible` from a style-only sample into product value. The revised
+rule separates language behavior from offer truth, and the affected case passed fresh. A same-model
+no-skill control was already strong on rejecting false claims and mismatched intent; the skilled
+run's demonstrated improvement was its explicit modular asset roles and named, testable variation
+hypotheses. These synthetic cases do not establish approval, delivery, ranking, clicks, conversion,
+incrementality, profitability, or audience preference.
 
 ## Observed results — Beacon, 2026-08-24
 

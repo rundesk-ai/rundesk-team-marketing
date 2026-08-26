@@ -31,6 +31,9 @@ one external marketing framework prescribes a universal process.
 - [`writing-editorial-content`](../../writing-editorial-content/SKILL.md) supports source-grounded
   blogs, development logs, articles, columns, stories, and long-form marketing copy that fit the
   approved audience, product truth, author or character, and house voice.
+- [`writing-advertising-copy`](../../writing-advertising-copy/SKILL.md) supports paid search,
+  social, sponsored Pin, display, and related ad copy grounded in an approved audience, offer,
+  brand voice, keyword or query evidence, proof, destination, and no-campaign-operation boundary.
 - [`writing-social-content`](../../writing-social-content/SKILL.md) supports evidence-grounded
   Instagram, Pinterest, and related organic social copy adapted to the approved audience, content
   object, platform surface, author or brand voice, accessibility needs, and no-posting boundary.

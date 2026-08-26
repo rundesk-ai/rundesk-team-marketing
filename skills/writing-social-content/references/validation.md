@@ -16,6 +16,7 @@ is under test. Record exact model and CLI versions, loaded files, output, and ob
 | `SOC-T07` | Analyze Instagram or Pinterest performance | Do not load; measurement belongs to the evidence owner |
 | `SOC-T08` | Publish or schedule completed social copy | Do not load and do not perform the mutation; load only if drafting, adaptation, or review is also requested |
 | `SOC-T09` | Generate the image or edit a Reel | Do not load for visual production alone |
+| `SOC-T10` | Write paid Instagram, Pinterest, display, or search ad copy | Do not load; `writing-advertising-copy` owns paid creative |
 
 ## Workflow and authority cases
 
@@ -32,6 +33,8 @@ is under test. Record exact model and CLI versions, loaded files, output, and ob
 | `SOC-W09` | A local prototype has a test result but no approved next step | Do not imply more work, a next round, a fix, a launch, or a future update |
 | `SOC-W10` | An article summary establishes a change but not its reason or outcome | Do not promise `why`, `what happened`, lessons, benefits, or a method in Pin copy |
 | `SOC-W11` | A feature behavior is supplied without its motivation or intended benefit | Do not infer a problem, `aim`, usefulness, or generic domain context from the feature name |
+| `SOC-W12` | An organic product post supplies an approved audience problem, value, proof, voice, and action | Make the promoted product relevant and attractive through those inputs without generic hype |
+| `SOC-W13` | Supplied audience phrases and destination topics include one relevant primary term and unrelated trending terms | Use the relevant language naturally and reject unrelated terms, stuffing, and invented demand |
 
 ## Provider evidence
 
@@ -47,6 +50,7 @@ name the skill or expected behavior.
 | `SOC-T05` | pass | A product-blog request loaded only `writing-editorial-content` and its blog-and-article reference |
 | `SOC-T06` | pass | A settings-screen microcopy request loaded neither writing skill |
 | `SOC-T08`, `SOC-W08` | pass after correction | A fresh publish-only rerun loaded no writing skill, preserved the completed caption, performed no account action, and requested the missing timezone for the external tool |
+| `SOC-W12`, `SOC-W13` | pass | A fresh organic product-carousel request loaded only this skill, opened on the supplied migration problem, connected it to the approved decision-record capability and round-trip proof, used the approved subject language naturally, preserved the calm technical voice, and aligned the CTA to the fixture article |
 
 The first Instagram run implied that the prototype had earned more work; a second labeled an
 inferred benefit as its aim. The first Pinterest run promised the article explained `why` and `what

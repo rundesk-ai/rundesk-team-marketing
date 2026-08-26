@@ -33,6 +33,7 @@ are listed here so every shipped package has a provenance entry.
 - `researching-customers`
 - `researching-markets`
 - `verifying-datasets`
+- `writing-advertising-copy`
 - `writing-editorial-content`
 - `writing-social-content`
 

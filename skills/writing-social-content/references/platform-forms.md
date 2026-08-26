@@ -66,4 +66,5 @@ delivers that material.
 Do not force an Instagram or Pinterest template onto another platform. Ask for or verify the
 surface's current fields and constraints, then apply the same audience, content-object, truth,
 voice, accessibility, and no-publication controls. Separate organic content from paid advertising:
-an organic-copy request does not authorize campaign strategy, spend, targeting, or ad claims.
+organic product promotion belongs here, while paid or sponsored copy uses the advertising-copy
+workflow. Neither authorizes campaign strategy, spend, targeting, account operation, or publishing.

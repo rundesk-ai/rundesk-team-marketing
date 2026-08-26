@@ -7,8 +7,9 @@
 `rundesk-team-marketing` is Rundesk's research, growth, and messaging team, kept as one versioned
 artifact. Three named agents: **beacon** owns growth evidence, first-party measurement, supplied-data
 verification, and optimization; **scout** researches markets, customers, and competitors from
-published sources; and **quill** writes requirements, messaging, editorial work, organic social
-copy, and other marketing content for a defined audience from approved direction and evidence.
+published sources; and **quill** writes requirements, messaging, editorial work, organic social and
+paid advertising copy, and other marketing content for a defined audience from approved direction
+and evidence.
 
 The catalog also declares the shared integration catalogs its members borrow, so a member can reach
 a service without this repository shipping one.
@@ -34,8 +35,8 @@ citations. A member that mixes these classes produces work nobody can check.
 
 - **Covers:** the three members and their canonical instructions; guidance for search, growth
   analytics, market and customer research, competitor research, data verification, requirements,
-  messaging, editorial content, organic social copy for named platform surfaces, and marketing
-  content; and the declared dependencies on shared integration catalogs.
+  messaging, editorial content, organic social and paid advertising copy for named platform
+  surfaces, and marketing content; and the declared dependencies on shared integration catalogs.
 - **Refuses:**
   - Presenting an uncertified number as fact. First-party analysis carries a denominator or is
     returned as unestablished.
@@ -43,6 +44,8 @@ citations. A member that mixes these classes produces work nobody can check.
   - Shipping its own service commands. Integrations are borrowed from declared catalogs.
   - Taking technical-documentation work owned by the development team.
   - Treating social-copy authorship as account access, scheduling, publishing, or engagement.
+  - Treating ad-copy authorship as keyword-volume research, targeting, budget, campaign operation,
+    upload, launch, or certified performance.
   - Promising an evidence class a member cannot actually deliver — the gaps are written down rather
     than worked around.
 

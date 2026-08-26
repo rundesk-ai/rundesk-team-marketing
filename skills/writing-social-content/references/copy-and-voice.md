@@ -5,14 +5,25 @@
 Convert the brief into one sentence:
 
 ```text
-For <audience in this encounter>, this content makes <one supported idea> useful or felt through
-<the supplied content object>, then offers <approved response>.
+For <audience in this encounter>, this content makes <promoted thing or idea> relevant through
+<supported need, desire, tension, identity, value, or proof>, then offers <approved response>.
 ```
 
 A hook is the first meaningful point of contact, not a formula. It can be a concrete result, useful
 question, tension, observation, instruction, or scene established by the source. Do not manufacture
 stakes, withhold the subject artificially, or use empty commands such as `stop scrolling` to cover
 a weak idea. Put enough context early that the audience can decide whether the post is for them.
+
+Build attraction in this order when the evidence supports it:
+
+1. **Recognition:** name a situation, desire, question, or tension the audience recognizes.
+2. **Relevance:** connect that moment to the actual product, offer, story, or idea being promoted.
+3. **Credibility:** supply a concrete feature, example, demonstration, fact, or approved proof.
+4. **Response:** offer a proportionate next step that the content and destination can fulfill.
+
+Do not print all four as a formula. A strong visual may carry recognition; an established follower
+may need less context; a story may delay the product while preserving its promise. The sequence is
+an audit of why someone would care, not a caption template.
 
 Use concrete nouns and verbs. Cut throat-clearing, vague inspiration, duplicate setup, inflated
 adjectives, and unearned urgency. Short is not automatically clear, and long is not automatically
@@ -30,6 +41,11 @@ slang; a professional audience does not require lifeless corporate prose. Emojis
 lowercase styling, and punctuation patterns are deliberate voice choices only when the evidence or
 brief supports them.
 
+Voice attracts the right audience by making the source recognizable and the relationship clear.
+Keep the approved stance, vocabulary, rhythm, emotional temperature, and degree of directness while
+bringing the audience's real language and stakes forward. Do not make every brand loud, witty,
+urgent, intimate, or slang-heavy in the name of engagement.
+
 ## Make the parts cooperate
 
 - **On-creative text** provides the essential orientation, sequence, or takeaway the visual needs.
@@ -38,6 +54,13 @@ brief supports them.
 - **Call to action** follows from the content and available destination; it need not be a command.
 - **Hashtags and keywords** describe genuine subject matter for people and discovery systems; they
   are not a substitute for useful prose or a fixed-volume growth ritual.
+
+For organic discovery, use the audience's supplied language and the destination's actual subject.
+Map one primary topic and a small set of natural supporting terms to the title, opening, caption,
+description, or on-creative text where they clarify meaning. Never repeat a term to reach a density,
+borrow a trending phrase unrelated to the content, or claim search demand that was not researched.
+Keyword research, volume, competition, and opportunity selection remain evidence inputs; this
+workflow turns approved inputs into readable copy.
 
 Do not repeat identical language in every field unless accessibility or comprehension requires it.
 Do not make a caption depend on a visual detail that was not supplied. If creative is still being

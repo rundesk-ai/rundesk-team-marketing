@@ -31,6 +31,10 @@ change; verify current mechanics when they matter. Verified 26 August 2026 again
 - [Mailchimp Content Style Guide: Voice and tone](https://styleguide.mailchimp.com/voice-and-tone/)
   distinguishes a relatively stable voice from tone adapted to a reader's state. Its specific house
   personality is not copied; the distinction supports consistent cross-platform voice.
+- [Google Ads Help: Write compelling, genuine ad copy](https://support.google.com/google-ads/answer/6167101?hl=en-AU)
+  advises beginning with user needs and benefits and showing value without becoming pushy. This is
+  paid-search guidance, but it supports the durable audience-relevance distinction used for organic
+  promotional copy; it does not make every social post an ad or supply a universal hook.
 - [Federal Trade Commission: Advertising and Marketing](https://www.ftc.gov/business-guidance/advertising-marketing)
   states that advertising claims must be truthful, non-deceptive, and evidence-based, with
   additional rules for some subjects. The package preserves substantiation and disclosure gates but
@@ -51,3 +55,6 @@ change; verify current mechanics when they matter. Verified 26 August 2026 again
 - No linked source proves a universal caption length, opening formula, hashtag or keyword count,
   emoji style, call to action, posting cadence, cross-posting method, or performance outcome. Current
   platform guidance and first-party account evidence override generic advice.
+- The recognition, relevance, credibility, and response audit combines the cited audience, voice,
+  truth, destination, and platform lessons. Its four labels are a local copy-review control, not a
+  published platform formula or guaranteed attraction sequence.
