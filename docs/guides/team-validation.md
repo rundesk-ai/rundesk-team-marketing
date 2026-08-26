@@ -498,3 +498,12 @@ install, update, and removal; skills-to-team promotion; direct team install; dri
 idempotent team update. The exact-commit rerun installed the three declared members, granted Quill
 `writing-editorial-content`, restored that grant after revocation, requested no gateway start, and
 left the live Rundesk root unchanged.
+
+The blog and organic-social extension was validated against catalog implementation commit
+`cd91cab450a26f972da3e82fa6b6002bb40ca95e` and Rundesk CLI commit
+`d09cbee358f7c124db4cc9845b104e68828f5807`. A disposable install preview changed nothing;
+confirmation created exactly Beacon, Quill, and Scout and granted Quill
+`writing-editorial-content`, `writing-prds`, and `writing-social-content`. A confirmed team
+update restored `writing-social-content` after deliberate revocation, and a second update was
+idempotent. No gateway start was requested. Directory-level fingerprints for the live Rundesk root
+and Rundesk LaunchAgents matched before and after.
