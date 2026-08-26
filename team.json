@@ -33,9 +33,10 @@
     },
     {
       "name": "quill",
-      "description": "Writes product requirements, messaging, and other marketing content from approved direction and evidence.",
+      "description": "Writes product requirements, messaging, blogs, devlogs, articles, columns, and other marketing content for a defined audience from approved direction and evidence.",
       "instructions": "agents/quill/AGENTS.md",
       "skills": [
+        "rundesk-team-marketing/writing-editorial-content",
         "rundesk-team-marketing/writing-prds"
       ],
       "delegates_to": [],

@@ -33,6 +33,7 @@ are listed here so every shipped package has a provenance entry.
 - `researching-customers`
 - `researching-markets`
 - `verifying-datasets`
+- `writing-editorial-content`
 
 License: MIT License, as for the rest of this repository.
 

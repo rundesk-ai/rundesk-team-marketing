@@ -7,8 +7,8 @@
 `rundesk-team-marketing` is Rundesk's research, growth, and messaging team, kept as one versioned
 artifact. Three named agents: **beacon** owns growth evidence, first-party measurement, supplied-data
 verification, and optimization; **scout** researches markets, customers, and competitors from
-published sources; and **quill** writes requirements, messaging, and marketing content from an
-approved brief.
+published sources; and **quill** writes requirements, messaging, editorial work, and marketing
+content for a defined audience from approved direction and evidence.
 
 The catalog also declares the shared integration catalogs its members borrow, so a member can reach
 a service without this repository shipping one.
@@ -34,7 +34,8 @@ citations. A member that mixes these classes produces work nobody can check.
 
 - **Covers:** the three members and their canonical instructions; guidance for search, growth
   analytics, market and customer research, competitor research, data verification, requirements,
-  messaging, and marketing content; and the declared dependencies on shared integration catalogs.
+  messaging, editorial content, and marketing content; and the declared dependencies on shared
+  integration catalogs.
 - **Refuses:**
   - Presenting an uncertified number as fact. First-party analysis carries a denominator or is
     returned as unestablished.

@@ -49,6 +49,7 @@ EXPECTED_GRANTS = {
         "rundesk-team-marketing/verifying-datasets",
     },
     "quill": {
+        "rundesk-team-marketing/writing-editorial-content",
         "rundesk-team-marketing/writing-prds",
     },
     "scout": {
@@ -85,11 +86,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_1_0_0(self):
+    def test_manifest_and_banner_define_v_1_1_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("1.0.0", self.manifest["version"])
+        self.assertEqual("1.1.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -100,7 +101,7 @@ class RepositoryContract(unittest.TestCase):
         self.assertEqual(granted | {"google-auth", "managing-marketing-work"}, listed)
         self.assertEqual(README_HEADINGS, tuple(re.findall(r"^## .+$", readme, re.MULTILINE)))
         self.assertIn("assets/readme/rundesk-team-marketing-banner-v2.png", readme)
-        self.assertIn("catalog-v1.0.0-blue", readme)
+        self.assertIn("catalog-v1.1.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -158,6 +159,28 @@ class RepositoryContract(unittest.TestCase):
             "technical documentation",
             (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8").lower(),
         )
+
+    def test_quill_owns_evidence_based_editorial_writing(self):
+        quill = (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills/writing-editorial-content/SKILL.md").read_text(encoding="utf-8")
+        forms = (
+            ROOT / "skills/writing-editorial-content/references/forms-and-structure.md"
+        ).read_text(encoding="utf-8")
+        editing = (
+            ROOT / "skills/writing-editorial-content/references/editing-and-language.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("blogs, development logs, articles, columns, stories", quill)
+        self.assertIn("Do not write it into a repository", quill)
+        self.assertIn("Audience and reading situation:", skill)
+        self.assertIn("Author voice, product voice, tone, and English variant:", skill)
+        self.assertIn("Do not fabricate", skill)
+        self.assertIn("Use separate passes", skill)
+        self.assertIn("Drafting authority is not placement", skill)
+        self.assertIn("## Development log", forms)
+        self.assertIn("## Column or essay", forms)
+        self.assertIn("Never invent dialogue", forms)
+        self.assertIn("There is no universal best word count", editing)
 
     def test_team_declaration_has_exact_members_and_grants(self):
         self.assertEqual({"schema", "name", "catalogs", "members"}, set(self.team))

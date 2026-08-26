@@ -54,8 +54,7 @@ the working-tree row was reproduced by Scout.
 
 | Missing | What exists today | What would close it |
 |---|---|---|
-| The write boundary on Quill and behavioral proof for Scout | Beacon's rule held on 2026-08-25. Scout now carries the same local-placement boundary after two runs reproduced the defect, but the revised instruction has not been forward-tested. Quill still carries the original wording | Add the clause to Quill in the planned content-role work, and run a fresh placement case for Scout. Beacon's remedy is proved forward but not against the original failure, so `BEACON-B01` stays partial |
-| The same evidence-first opening for Quill | Beacon and Scout now establish reachable evidence and read repository rules only when pointed at source. Quill still opens by reading the worked-on repository's `AGENTS.md`, which can send a content request looking for a codebase | Address Quill's opening together with its positioning and content methods, then forward-test it |
+| Behavioral proof for Scout's write boundary | Beacon's rule held on 2026-08-25 and Quill's corresponding boundary held on 2026-08-26. Scout carries the same local-placement boundary after two runs reproduced the defect, but its revised instruction has not been forward-tested | Run a fresh placement case for Scout. Beacon's remedy is proved forward but not against the original failure, so `BEACON-B01` stays partial |
 | Evidence that guidance was applied, not merely available | The runs had the corrected AI-search reference open and one still repeated a claim that reference retires. The claim is now also listed among the things not to say, which is the scannable place rather than the explanatory one | Nothing in this repository closes this in general. It is the argument for running cases rather than grepping wording, and for re-running them after guidance changes; `SEO-W11` tests this specific instance |
 
 ## Known package limitations shipped as-is

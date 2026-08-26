@@ -28,6 +28,9 @@ one external marketing framework prescribes a universal process.
 - [`analyzing-growth-data`](../../analyzing-growth-data/SKILL.md) supports metric contracts,
   funnels, cohorts, attribution, experiments, forecasts, and the boundary between descriptive and
   causal claims.
+- [`writing-editorial-content`](../../writing-editorial-content/SKILL.md) supports source-grounded
+  blogs, development logs, articles, columns, stories, and long-form marketing copy that fit the
+  approved audience, product truth, author or character, and house voice.
 - [`writing-prds`](../../writing-prds/SKILL.md) supports requirements grounded in approved direction
   and verifiable evidence. Quill's instructions own messaging and other marketing content; technical
   documentation remains outside this team.
