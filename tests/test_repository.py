@@ -89,11 +89,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_2_0_0(self):
+    def test_manifest_and_banner_define_v_2_0_1(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("2.0.0", self.manifest["version"])
+        self.assertEqual("2.0.1", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -124,7 +124,7 @@ class RepositoryContract(unittest.TestCase):
             readme.index("A versioned Rundesk team for research, growth, analytics,"),
             readme.index("## 👥 Team"),
         )
-        self.assertIn("catalog-v2.0.0-blue", readme)
+        self.assertIn("catalog-v2.0.1-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -164,6 +164,25 @@ class RepositoryContract(unittest.TestCase):
             "rundesk-team-marketing/managing-marketing-work",
             readme,
         )
+
+    def test_marketing_review_briefs_require_artifact_role_fit(self):
+        orchestration = " ".join((
+            ROOT / "skills/managing-marketing-work/SKILL.md"
+        ).read_text(encoding="utf-8").split())
+        for phrase in (
+            "Choose role fit before writing an independent-review brief",
+            "reviewer must own judgment of the finished artifact type",
+            "completed-code-change reviewer does not become a marketing",
+            "reviewer must not have produced the artifact",
+            "producer is the only artifact-qualified reviewer",
+            "only after the exact artifact is finished and inspectable",
+            "report that routing gap",
+            "exact artifact and version",
+            "few change-specific highest-risk invariants",
+            "Omit the reviewer's generic role and checklist",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, orchestration)
 
     def test_interface_design_remains_outside_the_marketing_team(self):
         self.assertNotIn("conversion-landing-pages", self.skill_names())

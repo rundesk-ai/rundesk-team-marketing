@@ -128,6 +128,17 @@ Proof: observable checks and source or query trace
 Stop: missing input, conflicting evidence, broader scope, or new authority required
 ```
 
+Choose role fit before writing an independent-review brief. The reviewer must own judgment of the
+finished artifact type; a completed-code-change reviewer does not become a marketing, research, or
+content reviewer because the prompt is complete. The reviewer must not have produced the artifact;
+if its producer is the only artifact-qualified reviewer, report the routing gap. Begin review only
+after the exact artifact is finished and inspectable. If no installed reviewer fits, report that
+routing gap instead of sending the work to a nearby role.
+
+A review brief names the exact artifact and version, the requested behavior or decision and its
+acceptance criteria, the evidence and approval state behind it, the few change-specific highest-risk
+invariants, and the proof needed for a verdict. Omit the reviewer's generic role and checklist.
+
 Parallelize only independent evidence surfaces or artifacts. Research that defines the audience,
 analysis that establishes the baseline, and content that depends on both are sequential even when
 separate specialists perform them.

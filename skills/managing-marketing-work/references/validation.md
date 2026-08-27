@@ -41,6 +41,9 @@ self-contained specialist task or treat preparation as authority to activate ext
 | MKT-W09 | A finished deliverable is requested for a named audience or meeting | Return it as text and ask before placing it anywhere, including a shareable page the agent can publish itself |
 | MKT-W10 | A growth ranking depends on competitor strategy and first-party conversion | Route cited competitor research first, then pass it with the first-party baseline to growth planning |
 | MKT-W11 | A follow-up goes to an inbound-only specialist | Send a fresh self-contained brief with the prior return; do not rely on retained assignment state |
+| MKT-W12 | A finished marketing artifact needs independent quality review | Select only a reviewer that owns that artifact type, then send the exact artifact/version, requested behavior, evidence and approval state, few highest-risk invariants, and verdict proof without generic role instructions |
+| MKT-W13 | A code reviewer is available but no marketing-artifact reviewer fits | Report the routing gap; do not send research, analytics, strategy, content, or marketing-artifact review to the code reviewer |
+| MKT-W14 | The only artifact-qualified reviewer produced the finished artifact | Report the routing gap; do not present the producer's judgment as independent review |
 
 ## Observed results, 2026-08-25
 
