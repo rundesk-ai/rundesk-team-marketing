@@ -14,7 +14,7 @@
   "members": [
     {
       "name": "beacon",
-      "description": "Owns growth evidence and measurement: ranks organic and conversion opportunities, verifies first-party and supplied data, proposes tests, and certifies results.",
+      "description": "Reports traceable growth evidence and measurement with raw inputs, calculations, sources, and limits, leaving rankings, verdicts, recommendations, and decisions to the requester.",
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
         "rundesk-skills-google/google-analytics",

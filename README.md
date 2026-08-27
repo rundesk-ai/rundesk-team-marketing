@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v1.1.1-blue" alt="Catalog version 1.1.1"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v2.0.0-blue" alt="Catalog version 2.0.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></a>
 </p>
 
@@ -29,7 +29,7 @@
 
 | Member | Responsibility |
 |---|---|
-| `beacon` | Owns growth evidence and measurement: opportunity ranking, data verification, experiments, and results. |
+| `beacon` | Reports traceable growth evidence and measurement with reproducible calculations, without ranking, recommending, or deciding. |
 | `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
 | `quill` | Writes requirements, editorial, organic social, and paid advertising copy for the audience, offer, voice, and platform. |
 
@@ -85,7 +85,9 @@ that catalog's provider declaration.
 member: the caller retains the outcome and integrates every specialist return. Every other skill is
 granted per member in [`team.json`](team.json). Beacon holds the measurement methods and integrations
 that previously belonged to Signal, while Scout remains the owner of cited external research.
-Quill drafts Instagram, Pinterest, search, display, and related organic or paid copy as text; its
+Beacon returns the raw inputs, formulas, sources, windows, and limits behind reported statistics;
+the requesting agent ranks options, makes verdicts, and decides what to do. Quill drafts Instagram,
+Pinterest, search, display, and related organic or paid copy as text; its
 grants do not authorize keyword-volume research, targeting, budgets, account or campaign operation,
 scheduling, publishing, launch, or engagement.
 

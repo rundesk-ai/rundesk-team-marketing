@@ -32,6 +32,17 @@ portable workflow in this package is a Rundesk synthesis.
 - [NIST Engineering Statistics Handbook: confidence intervals](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm)
   defines interval estimates and their interpretation.
 
+## Reproducible percentages and comparisons
+
+- The U.S. Census Bureau's [Percent Changes](https://www2.census.gov/programs-surveys/acs/tech_docs/accuracy/percchg.pdf)
+  defines period-over-period percent change from the earlier value and documents exceptions and
+  uncertainty around derived estimates. It supports naming the current and earlier physical values
+  and the denominator used by a relative-change calculation.
+- The UK Office for National Statistics' [Percentages and percentage points](https://service-manual.ons.gov.uk/content/numbers/percentages)
+  distinguishes a percentage-point difference between two rates from a relative percentage change.
+  The exact calculation-ledger format, zero-baseline refusal, source trail, and no-verdict return are
+  this catalog's reproducibility and role-boundary conclusions.
+
 ## Value, revenue, and reversals
 
 Retrieved and read directly rather than summarized.

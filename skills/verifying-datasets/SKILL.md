@@ -57,6 +57,25 @@ Compare a small hand-checkable slice against the aggregate before trusting the a
 rows you can read by eye do not produce the number the whole file produces, the file wins the
 argument and you have found something.
 
+## Process reproducibly
+
+For a file too large or complex to verify by hand, use a deterministic local script or query rather
+than hidden spreadsheet clicks or mental arithmetic. Read [local processing](references/local-processing.md)
+before parsing a workbook, joining files, scraping a bounded public table, or aggregating enough
+rows that a rerunnable transformation is needed.
+
+Keep the supplied bytes read-only and work in a disposable location outside the source directory
+and any repository. Do not install a dependency merely to make the run convenient. Use an available
+quote-aware reader, workbook reader, streaming pass, or local query engine whose behavior you can
+state. Preserve identifiers as text and money as decimal values or integer minor units.
+
+Return the input name and checksum; parser, encoding, delimiter, schema, null, timezone, and sheet
+choices; exact script or query and runtime; command and parameters; counts before and after every
+filter, join, exclusion, and grouping; unmatched and multiplied rows; and an independent total or
+hand-check. A local command proves how the supplied file was processed, not where its data
+originated. If the source file, parsing choice, or transformation cannot be reproduced, lower the
+claim instead of hiding the gap behind an aggregate.
+
 ## Assume the export damaged the data
 
 `references/file-integrity.md` has the mechanisms and the checks. The short version, because these
@@ -136,10 +155,12 @@ Return:
 1. the question, and the decision it serves;
 2. provenance — system, extractor, extraction moment and timezone, filters, and grain;
 3. the profile, including row counts, key uniqueness, and every integrity check run;
-4. the result with its numerator, denominator, and uncertainty;
-5. the breakdown, and whether the parts sum to the whole;
-6. for a disagreement, the reconciliation with each adjustment and any residual;
-7. what this file cannot establish, and what would establish it.
+4. the processing trail, including input checksum, exact script or query, runtime, parser choices,
+   and filter and join counts when a local transformation was used;
+5. the result with its numerator, denominator, and uncertainty;
+6. the breakdown, and whether the parts sum to the whole;
+7. for a disagreement, the reconciliation with each adjustment and any residual;
+8. what this file cannot establish, and what would establish it.
 
 A number without its denominator, a total that no breakdown reproduces, an export nobody can run
 again, and a clean-looking file whose integrity was never checked are each unestablished. Say so
