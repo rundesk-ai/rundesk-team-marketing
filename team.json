@@ -14,7 +14,7 @@
   "members": [
     {
       "name": "beacon",
-      "description": "Owns growth evidence and measurement: ranks organic and conversion opportunities, verifies first-party and supplied data, proposes tests, and certifies results.",
+      "description": "Handles first-party analytics, supplied datasets, and organic/search measurement: funnels, conversion, retention, attribution, experiments, CSVs, and spreadsheets; never ranks, recommends, or decides.",
       "instructions": "agents/beacon/AGENTS.md",
       "skills": [
         "rundesk-skills-google/google-analytics",
@@ -34,7 +34,7 @@
     },
     {
       "name": "quill",
-      "description": "Writes requirements, editorial, organic social, and paid advertising copy for a defined audience, offer, voice, and platform from approved evidence.",
+      "description": "Creates, revises, or reviews PRDs, messaging, blogs, articles, organic social posts, and paid advertising copy from approved direction and evidence; never publishes or operates campaigns.",
       "instructions": "agents/quill/AGENTS.md",
       "skills": [
         "rundesk-team-marketing/writing-advertising-copy",
@@ -47,7 +47,7 @@
     },
     {
       "name": "scout",
-      "description": "Researches markets, customers, competitor businesses, products, and general topics from published sources, returning cited findings with uncertainty and limits.",
+      "description": "Researches markets, customers, competitor businesses, products, and topics from published sources, with cited findings and limits; excludes analytics, content, rankings, and decisions.",
       "instructions": "agents/scout/AGENTS.md",
       "skills": [
         "rundesk-team-marketing/researching-competitors",

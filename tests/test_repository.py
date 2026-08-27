@@ -89,11 +89,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_1_1_1(self):
+    def test_manifest_and_banner_define_v_2_0_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("1.1.1", self.manifest["version"])
+        self.assertEqual("2.0.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -124,7 +124,7 @@ class RepositoryContract(unittest.TestCase):
             readme.index("A versioned Rundesk team for research, growth, analytics,"),
             readme.index("## 👥 Team"),
         )
-        self.assertIn("catalog-v1.1.1-blue", readme)
+        self.assertIn("catalog-v2.0.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -274,7 +274,7 @@ class RepositoryContract(unittest.TestCase):
                 self.assertIs(False, member["self_improve"])
                 self.assertEqual(f"agents/{name}/AGENTS.md", member["instructions"])
 
-    def test_beacon_absorbs_measurement_and_scout_keeps_external_research(self):
+    def test_member_routing_descriptions_and_beacon_measurement_contract(self):
         self.assertNotIn("signal", self.members())
         beacon = self.members()["beacon"]
         for skill in (
@@ -287,7 +287,83 @@ class RepositoryContract(unittest.TestCase):
         beacon_instructions = (ROOT / "agents/beacon/AGENTS.md").read_text(encoding="utf-8")
         self.assertIn("measurement contract", beacon_instructions)
         self.assertIn("file provenance", beacon_instructions)
-        self.assertIn("population, denominator, period", beacon_instructions)
+        self.assertIn("physical inputs into the displayed formula", beacon_instructions)
+        self.assertIn("percentage-point difference", beacon_instructions)
+        self.assertIn("bounded script or query in a disposable workspace", beacon_instructions)
+        self.assertIn("never bypass authentication, crawler rules, bot controls, or rate limits", beacon_instructions)
+        self.assertIn("Stop without a yes/no answer, ranking, recommendation, verdict, or decision", beacon_instructions)
+
+        analysis = (
+            ROOT / "skills/analyzing-growth-data/SKILL.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("## Expose every calculation", analysis)
+        self.assertIn("numerator / denominator × 100 = rate", analysis)
+        self.assertIn("percentage-point change", analysis)
+        self.assertIn("A zero prior value makes relative change undefined", analysis)
+        self.assertIn("Substitute the physical values", analysis)
+        self.assertIn("Do not inspect or reconcile an adjacent", analysis)
+        self.assertIn("Do not calculate an interval", analysis)
+        self.assertIn("compare it with the unrounded calculated value", analysis)
+        self.assertIn("inspection command is not the analytics source", analysis)
+        self.assertIn("source-trail status complete or incomplete", analysis)
+        self.assertIn("do not tell the requester what they should conclude", analysis)
+        self.assertIn("Stop before ranking options", analysis)
+
+        verification = (
+            ROOT / "skills/verifying-datasets/SKILL.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("## Process reproducibly", verification)
+        self.assertIn("input name and checksum", verification)
+        self.assertIn("counts before and after every", verification)
+        self.assertIn("A local command proves how the supplied file was processed", verification)
+
+        description = beacon["description"]
+        for trigger in (
+            "first-party analytics",
+            "supplied datasets",
+            "organic/search measurement",
+            "funnels",
+            "conversion",
+            "retention",
+            "attribution",
+            "experiments",
+            "CSVs",
+            "spreadsheets",
+        ):
+            self.assertIn(trigger, description)
+        for reserved in ("never ranks", "recommends", "decides"):
+            self.assertIn(reserved, description)
+        self.assertLessEqual(len(description), 200)
+
+        scout_description = self.members()["scout"]["description"]
+        for trigger in (
+            "markets",
+            "customers",
+            "competitor businesses",
+            "products",
+            "topics",
+            "published sources",
+            "cited findings",
+        ):
+            self.assertIn(trigger, scout_description)
+        for boundary in ("analytics", "content", "rankings", "decisions"):
+            self.assertIn(boundary, scout_description)
+        self.assertLessEqual(len(scout_description), 200)
+
+        quill_description = self.members()["quill"]["description"]
+        for trigger in (
+            "PRDs",
+            "messaging",
+            "blogs",
+            "articles",
+            "organic social posts",
+            "paid advertising copy",
+            "approved direction and evidence",
+        ):
+            self.assertIn(trigger, quill_description)
+        for boundary in ("never publishes", "operates campaigns"):
+            self.assertIn(boundary, quill_description)
+        self.assertLessEqual(len(quill_description), 200)
 
         scout_instructions = (ROOT / "agents/scout/AGENTS.md").read_text(encoding="utf-8")
         self.assertIn("never go looking for a codebase", scout_instructions)

@@ -71,8 +71,9 @@ offline test or report an effect the service did not verify.
 ## Delegation
 
 The team has no lead. Each member is an inbound-only specialist and returns to the requester.
-Beacon owns growth evidence, first-party measurement, supplied-data verification, and optimization;
-Scout owns external research; and Quill owns messaging and content artifacts.
+Beacon owns traceable growth evidence, first-party measurement, and supplied-data verification;
+Scout owns external research; and Quill owns messaging and content artifacts. The requester owns
+ranking, recommendations, verdicts, and decisions.
 
 Two boundaries keep those specialists distinct.
 
@@ -81,11 +82,11 @@ Growth evidence is retrieved from a property or serving surface and can be retri
 research is cited to a source someone else can look up. The same competitor belongs to Beacon as a
 site and to Scout as a business, and a question needing both is two requests the requester sequences.
 
-Beacon keeps two evidence modes distinct. Directional growth evidence may rank an opportunity when
-it also names the check that would settle it. A measured result carries its population, denominator,
-uncertainty, and data-quality checks or is returned as unestablished. A file or export is verified
-for provenance and integrity before anything is concluded from it, and two sources that disagree
-are reconciled rather than chosen between.
+Beacon keeps two evidence modes distinct. Directional growth evidence names the check that would
+settle it without ranking what to do. A derived statistic carries its physical inputs, formula,
+source, comparable windows, population, denominator, uncertainty, and data-quality checks or is
+returned as unestablished. A file or export is verified for provenance and integrity before use,
+and two sources that disagree are reconciled rather than chosen between.
 
 Inbound-only bounds named-agent handoffs, not provider subagents. A member may use bounded provider
 subagents when their value exceeds coordination cost, but retains scope, integration, and proof.

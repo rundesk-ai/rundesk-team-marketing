@@ -5,14 +5,16 @@ description: Use when first-party product or marketing data must answer a growth
 
 # Analyze growth data
 
-Turn a decision into a metric contract before opening a dashboard or writing a query.
+Turn the question and its supplied decision context into a metric contract before opening a
+dashboard or writing a query. The analysis informs the requester; it does not choose for them.
 
 ## Define the question and population
 
 Write these fields first:
 
 ```text
-Decision: the action this analysis informs
+Question: what the data must establish
+Decision context: the action the requester says this may inform
 Population: eligible people, accounts, sessions, or events
 Start event: how an observation enters the analysis
 Outcome: the event or state that counts as success
@@ -31,9 +33,38 @@ ingestion time, reporting time, and experiment assignment time distinct.
 2. Inspect missingness, duplicates, impossible order, schema changes, late events, bots, and internal traffic.
 3. Reconcile timezones, filters, attribution windows, and identity rules before comparing tools.
 4. Compare a small hand-checkable sample with the aggregate query.
-5. Record the exact query, saved report, export, or transformation and the extraction time.
+5. Record the exact query, saved report, export, or local script and transformation, its runtime,
+   parameters, audit counts, and the extraction time.
+6. Use only sources named by or required for the question. Do not inspect or reconcile an adjacent
+   dataset merely because it shares a directory or date.
 
 Disagreement between tools is a finding to explain, not a reason to choose the preferred number.
+
+## Expose every calculation
+
+Make each derived value independently recomputable from the return. Substitute the physical values
+into every displayed equation; a generic formula followed by an unsupported result is not a trail.
+
+- A count names its unit, population, source row or query field, and window.
+- A rate shows `numerator / denominator × 100 = rate`, with the physical numerator and denominator.
+- A period comparison shows both values and windows, the absolute change, and
+  `(current - previous) / previous × 100 = relative change`.
+- When comparing rates, also show `current rate - previous rate = percentage-point change`; never
+  call that difference a percent change.
+- A zero prior value makes relative change undefined. Report the absolute change and `n/a` rather
+  than dividing by zero or calling the result infinite growth.
+- Keep units and currency attached, calculate before rounding, and state the rounding applied.
+- When auditing a displayed headline, compare it with the unrounded calculated value first, then
+  show the displayed values under the stated rounding rule; do not let rounding replace the exact
+  discrepancy.
+- Do not calculate an interval, p-value, or significance claim from aggregates unless the sampling,
+  assignment, unit of analysis, independence assumptions, and error model are established.
+
+Name the property or project, exact command, saved report, query, export, or transformation behind
+the inputs. When that identifier was not supplied, label the source trail incomplete; a local file-
+inspection command is not the analytics source. A dashboard name, screenshot, or tool name alone is
+not a reproducible source. Do not return an unlabeled percentage or a comparison such as “up 20%”
+without both physical values and their comparable windows.
 
 ## Use the method that matches the question
 
@@ -59,7 +90,7 @@ money or the lead. When data arrives as a file or export rather than from a quer
 sources disagree, `verifying-datasets` owns the integrity and reconciliation method that must run
 before this one.
 
-## Keep descriptive and causal claims separate
+## Classify claims without deciding
 
 Attribution distributes credit under a reporting rule. It does not estimate what would have
 happened without the channel. A cohort comparison describes groups that may differ for many reasons.
@@ -73,13 +104,15 @@ segment differs, or an association was observed.
 
 Return:
 
-1. the decision and metric contract;
-2. source, query or report, extraction time, and timezone;
+1. the question, supplied decision context, and metric contract;
+2. source-trail status complete or incomplete; source, query or report, extraction time, and timezone;
 3. population, exclusions, identity, window, and comparison;
-4. result with counts, denominator, uncertainty, and material segments;
-5. data-quality checks and reconciliation notes;
-6. interpretation labeled descriptive, causal, or forecast;
-7. limitations and the next decision the evidence supports.
+4. raw inputs, units, formula, result, denominator, uncertainty, and material segments;
+5. absolute, relative, and percentage-point changes where applicable;
+6. data-quality checks, reconciliation notes, and claim class: descriptive, causal, or forecast;
+7. limitations, unused adjacent sources, and unresolved data questions.
 
 Do not hide an unstable result behind an aggregate, a forecast behind one accuracy score, or an
-experiment behind a statistically significant secondary metric.
+experiment behind a statistically significant secondary metric. Stop before ranking options,
+recommending an action, issuing a verdict, or making the requester's decision. State what the data
+establishes and lacks; do not tell the requester what they should conclude.

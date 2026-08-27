@@ -5,11 +5,11 @@
 ## Story
 
 `rundesk-team-marketing` is Rundesk's research, growth, and messaging team, kept as one versioned
-artifact. Three named agents: **beacon** owns growth evidence, first-party measurement, supplied-data
-verification, and optimization; **scout** researches markets, customers, and competitors from
-published sources; and **quill** writes requirements, messaging, editorial work, organic social and
-paid advertising copy, and other marketing content for a defined audience from approved direction
-and evidence.
+artifact. Three named agents: **beacon** reports traceable growth evidence, first-party measurement,
+and supplied-data verification without choosing what to do; **scout** researches markets, customers,
+and competitors from published sources; and **quill** writes requirements, messaging, editorial
+work, organic social and paid advertising copy, and other marketing content for a defined audience
+from approved direction and evidence.
 
 The catalog also declares the shared integration catalogs its members borrow, so a member can reach
 a service without this repository shipping one.
@@ -21,8 +21,9 @@ fact, a conversion number, and a customer quote all read the same on a slide, an
 can be traced back to anything.
 
 Separating evidence classes is the point: Beacon keeps retrieved growth evidence distinct from
-first-party or supplied measurements, while Scout returns claims published by somebody else with
-citations. A member that mixes these classes produces work nobody can check.
+first-party or supplied measurements and exposes the inputs and arithmetic behind derived numbers,
+while Scout returns claims published by somebody else with citations. The requesting agent, not
+Beacon, ranks options and decides what the evidence means for action.
 
 ## Users
 
@@ -40,6 +41,8 @@ citations. A member that mixes these classes produces work nobody can check.
 - **Refuses:**
   - Presenting an uncertified number as fact. First-party analysis carries a denominator or is
     returned as unestablished.
+  - Returning a percentage without its physical inputs, formula, source, and comparable windows.
+  - Turning Beacon's report into a ranking, recommendation, verdict, or decision.
   - An external claim with no published source behind it.
   - Shipping its own service commands. Integrations are borrowed from declared catalogs.
   - Taking technical-documentation work owned by the development team.

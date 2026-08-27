@@ -17,6 +17,27 @@ not the procedure.
   implementations. This establishes that delimiter, quoting, line-ending, header, and encoding
   choices are producer decisions rather than format guarantees.
 
+- [Python `csv` documentation](https://docs.python.org/3/library/csv.html) states that the reader
+  accepts explicit dialect and formatting parameters, returns each field as a string unless numeric
+  conversion is requested, and should receive files opened with `newline=''` so embedded newlines
+  are handled correctly. It also labels header detection as a rough heuristic with possible false
+  positives and negatives. This supports returning the parser choices and verifying detected
+  dialect or header behavior rather than treating it as ground truth.
+
+- [Python `decimal` documentation](https://docs.python.org/3/library/decimal.html) states that
+  decimal numbers such as `1.1` and `2.2` can be represented exactly, unlike binary floating point,
+  and identifies decimal arithmetic as preferred for accounting applications with strict equality
+  invariants. This supports the decimal-money processing rule.
+
+- [Python `sqlite3` documentation](https://docs.python.org/3/library/sqlite3.html) documents both
+  in-memory databases and opening an existing database in read-only mode. This supports a local
+  query engine as one available bounded mechanism, not a required dependency.
+
+- [RFC 9309, Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309.html) specifies rules
+  crawlers are requested to honor, requires a crawler that successfully retrieves `robots.txt` to
+  follow its parseable rules, and states that those rules are not access authorization. This
+  supports honoring crawler rules while separately refusing access-control bypass.
+
 - [Floating-point arithmetic may give inaccurate results in Excel](https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/excel/floating-point-arithmetic-inaccurate-result)
   states that Excel was designed around IEEE 754, that it can store numbers only "within 15 digits of
   precision," and that this limit "is a direct result of strictly following the IEEE 754
