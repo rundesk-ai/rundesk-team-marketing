@@ -63,3 +63,7 @@ one external marketing framework prescribes a universal process.
   its input is already approved and traceable.
 - Contact, spend, publication, configuration, rollout, and other external effects remain separate
   authority boundaries from research, analysis, planning, and drafting.
+- Independent artifact review is routed by the finished artifact type, not by a nearby reviewer name
+  or a complete-looking prompt, and its producer cannot supply that independent judgment. The
+  exact-artifact and highest-risk review brief is a catalog design conclusion that preserves the
+  team's capability boundaries and evidence requirements.

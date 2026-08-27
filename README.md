@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v2.0.0-blue" alt="Catalog version 2.0.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v2.0.1-blue" alt="Catalog version 2.0.1"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></a>
 </p>
 
