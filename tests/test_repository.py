@@ -274,7 +274,7 @@ class RepositoryContract(unittest.TestCase):
                 self.assertIs(False, member["self_improve"])
                 self.assertEqual(f"agents/{name}/AGENTS.md", member["instructions"])
 
-    def test_beacon_absorbs_measurement_and_scout_keeps_external_research(self):
+    def test_member_routing_descriptions_and_beacon_measurement_contract(self):
         self.assertNotIn("signal", self.members())
         beacon = self.members()["beacon"]
         for skill in (
@@ -317,9 +317,53 @@ class RepositoryContract(unittest.TestCase):
         self.assertIn("counts before and after every", verification)
         self.assertIn("A local command proves how the supplied file was processed", verification)
 
-        description = beacon["description"].lower()
-        for boundary in ("raw inputs", "calculations", "sources", "decisions"):
-            self.assertIn(boundary, description)
+        description = beacon["description"]
+        for trigger in (
+            "first-party analytics",
+            "supplied datasets",
+            "organic/search measurement",
+            "funnels",
+            "conversion",
+            "retention",
+            "attribution",
+            "experiments",
+            "CSVs",
+            "spreadsheets",
+        ):
+            self.assertIn(trigger, description)
+        for reserved in ("never ranks", "recommends", "decides"):
+            self.assertIn(reserved, description)
+        self.assertLessEqual(len(description), 200)
+
+        scout_description = self.members()["scout"]["description"]
+        for trigger in (
+            "markets",
+            "customers",
+            "competitor businesses",
+            "products",
+            "topics",
+            "published sources",
+            "cited findings",
+        ):
+            self.assertIn(trigger, scout_description)
+        for boundary in ("analytics", "content", "rankings", "decisions"):
+            self.assertIn(boundary, scout_description)
+        self.assertLessEqual(len(scout_description), 200)
+
+        quill_description = self.members()["quill"]["description"]
+        for trigger in (
+            "PRDs",
+            "messaging",
+            "blogs",
+            "articles",
+            "organic social posts",
+            "paid advertising copy",
+            "approved direction and evidence",
+        ):
+            self.assertIn(trigger, quill_description)
+        for boundary in ("never publishes", "operates campaigns"):
+            self.assertIn(boundary, quill_description)
+        self.assertLessEqual(len(quill_description), 200)
 
         scout_instructions = (ROOT / "agents/scout/AGENTS.md").read_text(encoding="utf-8")
         self.assertIn("never go looking for a codebase", scout_instructions)

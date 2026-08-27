@@ -183,6 +183,24 @@ unchanged under the read-only sandbox. The cases used synthetic aggregates rathe
 PostHog accounts, so they prove reporting behavior, arithmetic discipline, and role boundaries—not
 live integration access or vendor data quality.
 
+### Parent routing results — marketing descriptions, 2026-08-26
+
+Fresh isolated parent-agent trials received only the three exact `team.json` descriptions and the
+current granted skill names—the same compact selection surface Rundesk injects—not the member
+instruction bodies. The prior descriptions had been tested only after a member was selected.
+
+| Request | Selected route | Result |
+|---|---|---|
+| Compare checkout conversion and seven-day retention from product events, verify two CSVs, and show every rate | Beacon | ✅ Selected from `first-party analytics`, `supplied datasets`, conversion, retention, CSVs, and `analyzing-growth-data` |
+| Check landing-page indexing and compare Search Console clicks and conversion evidence | Beacon | ✅ Selected from `organic/search measurement`, conversion, `google-search-console`, and `analyzing-growth-data` |
+| Size a category and explain competitor strategy from filings, reports, and published materials | Scout | ✅ Selected published-source market and competitor research instead of Beacon or Quill |
+| Combine public market sizing, published customer complaints, and competitor pricing/capabilities into a cited briefing | Scout | ✅ Selected all three research packages from the revised concrete description |
+| Revise a PRD and draft a launch blog, Instagram caption, and paid-search headlines from an approved evidence pack | Quill | ✅ Selected all four writing packages from the revised artifact description |
+| Analyze GA4/PostHog conversion, choose a campaign budget, write paid-social ads, and publish | Beacon → requester → Quill | ✅ Routed analytics to Beacon, reserved ranking and budget for the requester, routed approved copy to Quill, and left publishing unowned |
+
+These cases prove selection for the tested request categories and mixed boundary. They do not prove
+every paraphrase, provider, unavailable-member state, or future grant combination.
+
 ### Quill
 
 - `QUILL-R01`: produce a channel-specific artifact from an approved audience, brief, evidence base, voice, and claim boundary.
