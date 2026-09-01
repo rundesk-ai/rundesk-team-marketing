@@ -483,18 +483,93 @@ from the package copies so the run could not read the case it was under test for
 ordinary and applied direct pressure toward a ranking: "which of these should we do first, give me
 your top three in priority order and tell me what to tell the owner."
 
-A branch name or commit SHA cannot identify what this run read: recording one inside the commit that
-creates it is circular, and the next commit makes it stale. These content hashes can. This session
-held `skills/seo/SKILL.md` at
-`2eaba9b4a16359ae9851ed724eaec695e6f0e19438323a502b3192c063c8236c`,
-`skills/seo/references/planning.md` at
-`f12ea0076be56172b80a0594a6ef5da8b9162ffff92178ffe58b06dfb02064de`, and the synthetic baseline
-fixture at `d1d1152304999b480b9c7f2133c03ff1a4fb50ba60894050432605c3d542fb4d`. It did not hold
-`managing-marketing-work`, which is not granted to Beacon. Each hash was computed from the
-repository and from the retained run copy and they agree; the same binding, including the
-orchestration package the three domain-agent sessions held, is recorded in
-[`seo`](../../skills/seo/references/validation.md) and
-[`managing-marketing-work`](../../skills/managing-marketing-work/references/validation.md).
+### Search-growth behavior input manifests
+
+An immutable commit SHA can identify a tested tree, but it cannot self-reference inside the evidence
+commit that creates this record. Direct content and manifest hashes bind the exact tested bytes
+independently of later documentation commits.
+
+The session manifests bind every input a session could read, in three groups. The request is the
+exact argument bytes the runner passed, after POSIX command substitution removed its trailing line
+feed, under the logical path `prompt.txt`. The CLI's user-level instruction file, which every session
+carries alongside its workspace and which directs the session to the workspace instructions, is bound
+under `cli-instructions.md`. Every regular file recursively present in that session's workspace is
+bound under `workspace/` with its exact relative path: the selection instructions and installed-skill
+descriptions for `T1` through `T3`, the run-specific identity, reachability, response, and
+no-skill-control instructions in `AGENTS.md`, each synthetic fixture, and every exposed package file.
+
+To recompute one digest, SHA-256 each input's raw bytes, emit one
+`logical-path NUL lowercase-sha256 LF` entry, sort the entries bytewise by logical path, concatenate
+them, and SHA-256 that manifest. The table publishes only generic run labels, counts, and digests;
+the retained manifest paths, private fixture names, prompts, transcripts, and local paths remain
+unpublished.
+
+| Session | Pass and case surface | Bound entries | Manifest SHA-256 |
+|---|---|---:|---|
+| `T1` | selection, direct positive | 4 | `3bf6582582826786d0b178a0f53426aba5ff07da4932ac3908ebfd54358ac8ac` |
+| `T2` | selection, indirect positive | 4 | `2002a24fae136f7e803f0696ade9faa12abf8dc6c1db61f00a7e4dbba2b25400` |
+| `T3` | selection, paid-search near miss | 4 | `c2b25de6ed298731eab145ba94f4c1fd515575aa57e2fd13bc9a67bc99ff4bed` |
+| `P1` | baseline, first pass | 78 | `d7cafd1dc96d3b723ab06032d29a129a2b5ba4f72b9fc804c0b589b91c0fb9af` |
+| `P1` | baseline, final pass | 78 | `a3c44675502eb5c1b1cb90047ee1f9407d0f0c4450687f903b0f15451f75e667` |
+| `P2` | red flag, first pass | 78 | `217c27b4f86bf6cba08b81e6106b22c04d12f4903fa1b186dc26abfeb16b6aaf` |
+| `P2` | red flag, second pass | 78 | `ce4e1a4e2b5afb4a0583efa61c98c0ad697d556cdbdc47eb507aa2b7f5a13611` |
+| `P2` | red flag, final pass | 78 | `df57c4632334f5662ce2f7c126e63f325fc428a937af943bbdcd277e9cb29011` |
+| `P3` | supplied evidence, first pass | 78 | `f8874f3fa91c13d360225eeed1456f5722649080c398253d1c3fc63ae82c26b6` |
+| `P3` | supplied evidence, second pass | 78 | `fb2208b8f79326d388d217255fa9ab368bb5f7fb547d60a1b6424eb18ba0da3e` |
+| `P3` | supplied evidence, final pass | 78 | `6ab4abe4e270a565a2ecab2514f5cd84d8ab4d00afd529790d3b272619508ce6` |
+| `E1` | measurement boundary, first pass, overexposed | 78 | `08bf4cbd2bb4766bc1b0d25cab62a720b51fe15a338eb1658fa04106d5b13edb` |
+| `E1` | measurement boundary, second pass, allowlist corrected | 32 | `dd540bed0a9f4169ccfd0067b3a4f2975627b151f2bbd08c1b40e0a6891330b5` |
+| `E1` | measurement boundary, final pass | 32 | `7c11ed5ec73bd7f53353638e4764cac6b73c115e25e57d16b7b394fb8e2acfee` |
+| `C1` | no-skill control | 4 | `4602dd70b1e59de2089e2d19a00a3027c6b711090c9c3b349d60d43bd6a3a82f` |
+
+These are fifteen sessions and 782 per-session input bindings, counting a shared byte again whenever
+another session could see it. Each domain-agent session bound its prompt, the CLI instruction file,
+its domain-agent instructions, one fixture, and 74 exposed package files. `E1`'s first pass was
+overexposed to the same 74; its second and final passes bound the prompt, the CLI instruction file,
+its measurement-agent instructions, one fixture, and the 28 files in its four-package allowlist. Each
+selection session bound its prompt, the CLI instruction file, its selection instructions, and the
+installed-skill descriptions. `C1` bound its prompt, the CLI instruction file, its no-skill
+instructions, and one fixture.
+
+The three rounds are ordered by the corrections between them. The first ran before either wording
+correction. The second ran after the shared lifecycle's ownership section was corrected and after
+`E1`'s exposure was cut to its declared allowlist. The third, recorded as the final pass, ran after
+the `seo` planning reference was corrected.
+
+The manifests exclude only material the sessions could not read: runner scripts, status files,
+transcripts, final answers, staging copies outside the workspace, and the withheld maintainer answer
+keys. Two surfaces the CLI supplies rather than the workspace are identified instead of hashed. The
+provider's own system instructions are fixed by the recorded CLI version, provider, model, approval
+policy, and sandbox mode. The CLI's runtime skill surface — its bundled system skills, its enabled
+plugin packages, and one unrelated user-level package — is regenerated by the CLI rather than
+retained, so it is named rather than digested; every file behind it predates the first session, none
+of it is a search, marketing, growth, or content package, and it was identical across all fifteen
+sessions including the control.
+
+The following direct hashes preserve the final-pass package and fixture checks:
+
+| Final-pass behavior input | SHA-256 | Held by |
+|---|---|---|
+| `skills/seo/SKILL.md` | `2eaba9b4a16359ae9851ed724eaec695e6f0e19438323a502b3192c063c8236c` | `P1`, `P2`, `P3`, `E1` |
+| `skills/seo/references/planning.md` | `f12ea0076be56172b80a0594a6ef5da8b9162ffff92178ffe58b06dfb02064de` | `P1`, `P2`, `P3`, `E1` |
+| `skills/managing-marketing-work/SKILL.md` | `8ec5b78887a614c1be5d711154635cab24c317cb3e70eb3d0ca8b3d59975b6e0` | `P1`, `P2`, `P3` |
+| `skills/managing-marketing-work/references/seo-lifecycle.md` | `7db2ed353f5de97499ccbcc63af31471ed5f012153af1a9e944d52710041f911` | `P1`, `P2`, `P3` |
+| Baseline evidence fixture, synthetic | `d1d1152304999b480b9c7f2133c03ff1a4fb50ba60894050432605c3d542fb4d` | `P1`, `E1` |
+| Red-flag week fixture, synthetic | `88fb6cdf2af91551c8129991f829419dbaf7fa8b271a89cd30f521d702d3c84c` | `P2` |
+| Specialist evidence-return fixture, synthetic | `d038dfba8367e5b64c0d523b0400f75dbdc52201adb7a9f675e1d1a2a8ec9279` | `P3` |
+
+In the final pass, `E1` held only the measurement member's four declared catalog packages and did not
+see `managing-marketing-work`; `P1`, `P2`, and `P3` held all thirteen. The overexposed first `E1`
+pass is retained only as corroborating history, not as the result recorded below.
+
+The nine `references/validation.md` files are answer keys and were withheld from every run copy. The
+74 package Markdown files exposed in each final domain-agent session digest to
+`b7bcf692f9684b48482ba75a3039e5f434fc8919fcc54fec85a3b324571126b9` under a manifest of sorted
+`path\0sha256` lines. The four package files above were hashed from the repository and from every
+retained final run copy that held them, and all 250 final exposed package files were compared file by
+file: zero mismatches. The fifteen session manifests were independently recomputed with two
+implementations from the retained inputs and agreed exactly. No hash here was carried forward from
+an earlier pass.
 
 | Case | Result | What was observed |
 |---|---|---|
