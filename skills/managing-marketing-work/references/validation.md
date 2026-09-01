@@ -118,7 +118,7 @@ current description were observed on 2026-09-01 and are recorded below.
 ## Observed results, 2026-09-01
 
 Eight cases ran across fifteen fresh isolated sessions using `codex-cli 0.149.0`, `gpt-5.6-sol`,
-and the exact local package tree. `T1`, `T2`, and `T3` saw skill names and descriptions only and could open no package body.
+the OpenAI provider, a read-only sandbox, and the local package tree bound by content hash below. `T1`, `T2`, and `T3` saw skill names and descriptions only and could open no package body.
 `P1`, `P2`, and `P3` were domain agents holding the whole catalog with four specialists described as
 installed but unreachable, so every specialist input had to be asked for rather than assumed. `E1`
 was the measurement specialist holding only its declared allowlist. `C1` was a no-skill control.
@@ -139,6 +139,32 @@ reference — and every pass agreed on every case below. The last pass is what i
 | `MKT-W05` | `P3`, `E1` | ✅ | Both named the supplied return's incomplete source trail — no saved report or query identifier, extraction time, timezone, or attribution definition — and said what it therefore could not support |
 | `MKT-W08` | `P2`, `P3` | ✅ | Both wrote the bounded evidence request for the unreachable specialist and reported it as unsent rather than implying the evidence was in hand |
 | `MKT-T07`, `MKT-W09` | – | not run | No session held a publishing surface, so the defect those cases exist for could not present itself. The remedy remains unrun |
+
+### Tested behavior inputs
+
+A branch name or commit SHA cannot identify these inputs: recording one inside the commit that
+creates it is circular, and the next commit makes it stale. The content hashes below identify what
+the runs actually read. Re-verify by hashing the files, not by trusting a revision label.
+
+| Behavior input | SHA-256 | Held by |
+|---|---|---|
+| `skills/seo/SKILL.md` | `2eaba9b4a16359ae9851ed724eaec695e6f0e19438323a502b3192c063c8236c` | `P1`, `P2`, `P3`, `E1` |
+| `skills/seo/references/planning.md` | `f12ea0076be56172b80a0594a6ef5da8b9162ffff92178ffe58b06dfb02064de` | `P1`, `P2`, `P3`, `E1` |
+| `skills/managing-marketing-work/SKILL.md` | `8ec5b78887a614c1be5d711154635cab24c317cb3e70eb3d0ca8b3d59975b6e0` | `P1`, `P2`, `P3` |
+| `skills/managing-marketing-work/references/seo-lifecycle.md` | `7db2ed353f5de97499ccbcc63af31471ed5f012153af1a9e944d52710041f911` | `P1`, `P2`, `P3` |
+| Baseline evidence fixture, synthetic | `d1d1152304999b480b9c7f2133c03ff1a4fb50ba60894050432605c3d542fb4d` | `P1`, `E1` |
+| Red-flag week fixture, synthetic | `88fb6cdf2af91551c8129991f829419dbaf7fa8b271a89cd30f521d702d3c84c` | `P2` |
+| Specialist evidence-return fixture, synthetic | `d038dfba8367e5b64c0d523b0400f75dbdc52201adb7a9f675e1d1a2a8ec9279` | `P3` |
+
+`E1` held only the measurement member's four declared catalog packages, so it never saw
+`managing-marketing-work`. `P1`, `P2`, and `P3` held all thirteen.
+
+The nine `references/validation.md` files are answer keys — they name the case IDs and the expected
+behavior — and were withheld from every run copy. The 74 package Markdown files that were exposed
+digest to `b7bcf692f9684b48482ba75a3039e5f434fc8919fcc54fec85a3b324571126b9` under a manifest of
+sorted `path\0sha256` lines. Each of the four files above was hashed from the repository and from
+every retained run copy that held it, and all 250 exposed files were compared file by file: zero
+mismatches. No hash here was carried forward from an earlier pass.
 
 `T3` is the paid-search near miss. It correctly declined `seo`, quoting that package's own paid-search
 exclusion, and selected this skill to coordinate the campaign, copy, and landing-page work — the

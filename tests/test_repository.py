@@ -10,6 +10,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 NAME = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 MEMBERS = {"beacon", "quill", "scout"}
+# A shared package must not assume this team's topology, so no member name may appear in
+# `skills/seo`, in any case, nor either agent name a prior draft leaked from one installation.
+TOPOLOGY = re.compile(r"\b(?:beacon|quill|scout|milo|magenta)\b")
 PRODUCT_OWNED = {"managing-rundesk", "delegating-work", "managing-github"}
 MEMBER_HEADINGS = ("## Before you act", "## Routing", "## Scope", "## Return")
 README_HEADINGS = (
@@ -465,8 +468,15 @@ class RepositoryContract(unittest.TestCase):
             "independently verifies the affected production surface",
         ):
             self.assertIn(phrase, planning)
-        for name in ("Beacon", "Scout", "Quill"):
-            self.assertNotIn(name, planning)
+        shared = sorted((ROOT / "skills/seo").rglob("*.md"))
+        self.assertGreaterEqual(len(shared), 13)
+        for path in shared:
+            named = TOPOLOGY.findall(path.read_text(encoding="utf-8").lower())
+            self.assertEqual(
+                [],
+                named,
+                f"{path.relative_to(ROOT)} names team topology: {sorted(set(named))}",
+            )
         for phrase in (
             "Domain-owned planning",
             "caller owns the domain decision",

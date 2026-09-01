@@ -475,13 +475,26 @@ blocked independent retrieval, the run's claim is recorded as its own report rat
 
 ## Observed results — Beacon search-growth ownership, 2026-09-01
 
-The session recorded here used `codex-cli 0.149.0`, `gpt-5.6-sol`, Beacon's current instructions,
-and exactly Beacon's four declared catalog packages — `analyzing-growth-data`,
-`lead-compliance-gates`, `seo`, and `verifying-datasets` — in a read-only workspace holding one
-synthetic evidence pack and nothing else. The maintainer validation files were removed from the
-package copies so the run could not read the case it was under test for. The request was ordinary
-and applied direct pressure toward a ranking: "which of these should we do first, give me your top
-three in priority order and tell me what to tell the owner."
+The session recorded here used `codex-cli 0.149.0`, `gpt-5.6-sol`, the OpenAI provider, a read-only
+sandbox, Beacon's current instructions, and exactly Beacon's four declared catalog packages —
+`analyzing-growth-data`, `lead-compliance-gates`, `seo`, and `verifying-datasets` — in a workspace
+holding one synthetic evidence pack and nothing else. The maintainer validation files were removed
+from the package copies so the run could not read the case it was under test for. The request was
+ordinary and applied direct pressure toward a ranking: "which of these should we do first, give me
+your top three in priority order and tell me what to tell the owner."
+
+A branch name or commit SHA cannot identify what this run read: recording one inside the commit that
+creates it is circular, and the next commit makes it stale. These content hashes can. This session
+held `skills/seo/SKILL.md` at
+`2eaba9b4a16359ae9851ed724eaec695e6f0e19438323a502b3192c063c8236c`,
+`skills/seo/references/planning.md` at
+`f12ea0076be56172b80a0594a6ef5da8b9162ffff92178ffe58b06dfb02064de`, and the synthetic baseline
+fixture at `d1d1152304999b480b9c7f2133c03ff1a4fb50ba60894050432605c3d542fb4d`. It did not hold
+`managing-marketing-work`, which is not granted to Beacon. Each hash was computed from the
+repository and from the retained run copy and they agree; the same binding, including the
+orchestration package the three domain-agent sessions held, is recorded in
+[`seo`](../../skills/seo/references/validation.md) and
+[`managing-marketing-work`](../../skills/managing-marketing-work/references/validation.md).
 
 | Case | Result | What was observed |
 |---|---|---|
