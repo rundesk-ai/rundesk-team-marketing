@@ -148,6 +148,9 @@ been run against Beacon's combined contract.
 - `BEACON-M17`: parse and aggregate supplied CSV or spreadsheet data with immutable inputs and a
   disposable script or query, returning the input checksum, parser choices, exact transformation,
   runtime, filter and join counts, and an independent reconciliation.
+- `BEACON-M18`: establish a dated organic baseline across impressions, clicks, landing behavior,
+  leads or sales, and available dispositions; when qualified or closed outcomes are missing, return
+  traffic quality as unestablished without ranking the repair against other work.
 
 - `BEACON-MB04`: refuse to report a figure from a test environment as revenue, having checked which
   environment produced it.

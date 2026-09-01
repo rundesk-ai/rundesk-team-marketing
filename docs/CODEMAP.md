@@ -6,7 +6,7 @@ the tree moves on without this page.
 Two things share one tree: a guidance-only skill catalog, and the declaration of the three agents
 Rundesk creates from it. The team also declares shared integration catalogs its members borrow.
 
-## Packages (skills/ — 13, 68 reference files)
+## Packages (skills/ — 13, 70 reference files)
 
 Each holds `SKILL.md` for routing and core procedure, and `references/` for detail loaded on demand.
 `references/sources.md` is required in every touched package.
@@ -15,12 +15,12 @@ Each holds `SKILL.md` for routing and core procedure, and `references/` for deta
 |---|---|---|
 | `analyzing-growth-data` | 4 | — |
 | `lead-compliance-gates` | 4 | — |
-| `managing-marketing-work` | 2 | — |
+| `managing-marketing-work` | 3 | — |
 | `researching-competitors` | 7 | — |
 | `researching-customers` | 5 | — |
 | `researching-markets` | 6 | — |
 | `researching-topics` | 4 | — |
-| `seo` | 12 | — |
+| `seo` | 13 | — |
 | `verifying-datasets` | 5 | — |
 | `writing-advertising-copy` | 5 | — |
 | `writing-editorial-content` | 6 | — |
@@ -44,7 +44,7 @@ which skills it holds and who it may delegate to.
 
 | File | What it is |
 |---|---|
-| `manifest.json` | schema, name, version (`2.0.1`), and description |
+| `manifest.json` | schema, name, version (`2.1.0`), and description |
 | `README.md` | the consumer contract: the team, its skills, and how to install both |
 | `team.json` | the declaration Rundesk reconciles against, including borrowed catalogs |
 | `agents/<member>/AGENTS.md` | one member`s whole operating contract |

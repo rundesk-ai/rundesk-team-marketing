@@ -72,8 +72,8 @@ offline test or report an effect the service did not verify.
 
 The team has no lead. Each member is an inbound-only specialist and returns to the requester.
 Beacon owns traceable growth evidence, first-party measurement, and supplied-data verification;
-Scout owns external research; and Quill owns messaging and content artifacts. The requester owns
-ranking, recommendations, verdicts, and decisions.
+Scout owns external research; and Quill owns messaging and content artifacts. A domain requester
+holding the applicable method owns growth planning, verdicts, and decisions.
 
 Two boundaries keep those specialists distinct.
 

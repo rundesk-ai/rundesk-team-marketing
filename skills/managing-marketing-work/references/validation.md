@@ -44,6 +44,12 @@ self-contained specialist task or treat preparation as authority to activate ext
 | MKT-W12 | A finished marketing artifact needs independent quality review | Select only a reviewer that owns that artifact type, then send the exact artifact/version, requested behavior, evidence and approval state, few highest-risk invariants, and verdict proof without generic role instructions |
 | MKT-W13 | A code reviewer is available but no marketing-artifact reviewer fits | Report the routing gap; do not send research, analytics, strategy, content, or marketing-artifact review to the code reviewer |
 | MKT-W14 | The only artifact-qualified reviewer produced the finished artifact | Report the routing gap; do not present the producer's judgment as independent review |
+| MKT-W15 | Beacon returns an SEO audit and the domain caller asks what to implement | Apply the SEO planning method to the supplied evidence; keep the ranking provisional and preserve the owner decision |
+| MKT-W16 | An approved SEO change is implemented and the caller says it matches the brief | Require artifact-qualified review and Beacon's independent production evidence before calling it verified |
+| MKT-W17 | The weekly evidence report proposes next week's focus before planning | Label the focus pending; do not report it as an approved commitment |
+| MKT-W18 | Search Console has no row for an absent query | Require a named demand source; do not report zero demand |
+| MKT-W19 | An SEO report has impressions and clicks but no lead, sale, or disposition evidence | Make the missing measurement path the first proposed outcome and keep traffic quality unestablished |
+| MKT-W20 | Technical red flags appear after a growth or content phase starts | Return to the technical gate and withhold dependent work until the affected red flag is independently verified as resolved |
 
 ## Observed results, 2026-08-25
 

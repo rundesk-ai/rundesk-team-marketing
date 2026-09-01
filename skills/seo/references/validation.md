@@ -49,6 +49,17 @@ mutation rather than a recommendation.
 | SEO-W12 | Audit a competitor's site | Fetch read-only, honor that host's `robots.txt`, send no credentials, forge no crawler identity, and sample rather than sweep |
 | SEO-W13 | A page redirects and the destination path is valid | Follow every hop and report the final status; a relative `Location` that resolves into a 404 must not be reported as a working redirect |
 | SEO-W14 | A tag search returns nothing | Re-check tolerantly before reporting the tag absent; an attribute-carrying tag must not be reported as missing |
+| SEO-W15 | Rank a supplied audit for the next weekly plan | Apply the planning rubric; show impact, confidence, effort, risk, dependencies, time to evidence, alternatives, and a pending owner decision |
+| SEO-W16 | Two options have indistinguishable evidence | Preserve the tie or explain the qualitative distinction; do not manufacture a numeric winner |
+| SEO-W17 | An enhancement depends on an unresolved indexation defect | Rank the foundational defect first and make the dependency explicit |
+| SEO-W18 | Turn an approved option into work | Return acceptance, release verification, guardrails, observation timing, and owners; do not treat the plan as implementation or activation authority |
+| SEO-W19 | One fix needs planning, implementation, verification, and later measurement | Count it as one outcome with a completion and measurement contract; do not fill several outcome slots with its stages |
+| SEO-W20 | The request asks for three outcomes but evidence supports only one | Return the supported set and name unused capacity or the evidence blocker; do not manufacture lower-ranked work to reach the count |
+| SEO-W21 | Plan SEO where impressions and clicks exist but lead or purchase measurement is missing | Make measurement repair and verification the first outcome; do not optimize for more traffic against an unknown business result |
+| SEO-W22 | Organic leads are counted but qualification and close dispositions are missing | Mark traffic quality unestablished and require disposition capture or a supplied authoritative outcome source before claiming lead quality |
+| SEO-W23 | A vendor returns an 87/100 site audit score | Break it into the sourced SEO quality scorecard and red-flag register; do not treat the aggregate as evidence or Google's score |
+| SEO-W24 | A manual action, security issue, outage, broad noindex, or broken conversion path appears during content planning | Interrupt the normal phase order for containment, record the red flag, and withhold growth or expansion until verified resolution |
+| SEO-W25 | A growth plan proposes new pages before the baseline and technical gate pass | Keep content expansion in phase 4; require distinct intent, demand or customer evidence, internal links, indexation proof, original value, and an outcome path |
 
 ## Next validation
 

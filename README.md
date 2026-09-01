@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="assets/readme/rundesk-team-marketing-banner-v2.png" alt="Rundesk Marketing Team — Beacon, Scout, and Quill." width="100%">
+  <img src="assets/readme/rundesk-team-marketing-banner-v2.png" alt="Rundesk Marketing Team." width="100%">
 </p>
 
 <h1 align="center">Rundesk Marketing Team</h1>
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v2.0.1-blue" alt="Catalog version 2.0.1"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v2.1.0-blue" alt="Catalog version 2.1.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></a>
 </p>
 
@@ -86,8 +86,8 @@ member: the caller retains the outcome and integrates every specialist return. E
 granted per member in [`team.json`](team.json). Beacon holds the measurement methods and integrations
 that previously belonged to Signal, while Scout remains the owner of cited external research.
 Beacon returns the raw inputs, formulas, sources, windows, and limits behind reported statistics;
-the requesting agent ranks options, makes verdicts, and decides what to do. Quill drafts Instagram,
-Pinterest, search, display, and related organic or paid copy as text; its
+the requesting agent applies the SEO planning method, ranks options, and decides what to do. Quill
+drafts Instagram, Pinterest, search, display, and related organic or paid copy as text; its
 grants do not authorize keyword-volume research, targeting, budgets, account or campaign operation,
 scheduling, publishing, launch, or engagement.
 

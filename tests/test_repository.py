@@ -89,11 +89,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_2_0_1(self):
+    def test_manifest_and_banner_define_v_2_1_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("2.0.1", self.manifest["version"])
+        self.assertEqual("2.1.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -124,7 +124,7 @@ class RepositoryContract(unittest.TestCase):
             readme.index("A versioned Rundesk team for research, growth, analytics,"),
             readme.index("## 👥 Team"),
         )
-        self.assertIn("catalog-v2.0.1-blue", readme)
+        self.assertIn("catalog-v2.1.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -303,7 +303,9 @@ class RepositoryContract(unittest.TestCase):
         ):
             self.assertIn(skill, beacon["skills"])
 
-        beacon_instructions = (ROOT / "agents/beacon/AGENTS.md").read_text(encoding="utf-8")
+        beacon_instructions = " ".join((
+            ROOT / "agents/beacon/AGENTS.md"
+        ).read_text(encoding="utf-8").split())
         self.assertIn("measurement contract", beacon_instructions)
         self.assertIn("file provenance", beacon_instructions)
         self.assertIn("physical inputs into the displayed formula", beacon_instructions)
@@ -387,6 +389,113 @@ class RepositoryContract(unittest.TestCase):
         scout_instructions = (ROOT / "agents/scout/AGENTS.md").read_text(encoding="utf-8")
         self.assertIn("never go looking for a codebase", scout_instructions)
         self.assertIn("Do not write it into a repository", scout_instructions)
+
+        beacon_instructions = " ".join((
+            ROOT / "agents/beacon/AGENTS.md"
+        ).read_text(encoding="utf-8").split())
+        for phrase in (
+            "dated SEO baselines across impressions, clicks, organic landing behavior, leads or sales",
+            "available lead dispositions",
+            "traffic quality is established or blocked by missing outcomes",
+            "The requester ranks options, makes verdicts, and decides what to do",
+        ):
+            self.assertIn(phrase, beacon_instructions)
+
+    def test_seo_lifecycle_separates_evidence_decision_and_verification(self):
+        lifecycle = (
+            ROOT / "skills/managing-marketing-work/references/seo-lifecycle.md"
+        ).read_text(encoding="utf-8")
+        normalized = " ".join(lifecycle.split())
+        for heading in (
+            "## 1. Frame the decision",
+            "## 2. Establish traceable evidence",
+            "## 3. Rank and recommend",
+            "## 4. Record the owner decision",
+            "## 5. Brief and implement",
+            "## 6. Independently verify",
+            "## 7. Observe and read out",
+            "## 8. Operate the cadence",
+        ):
+            self.assertIn(heading, lifecycle)
+        for boundary in (
+            "## Ownership",
+            "The `seo` skill owns the method",
+            "The domain caller owns planning",
+            "Beacon owns evidence",
+            "`managing-marketing-work` owns orchestration",
+            "A shared method does not merge these roles",
+            "A user-agent string alone does not prove crawler identity",
+            "Do not relabel ordinary Bing search metrics as citation evidence",
+            "Search Console absence is not zero demand",
+            "measurement repair is the first planned outcome",
+            "measurement readiness and baseline, technical quality and red-flag resolution, growth planning, then content expansion",
+            "Beacon independently verifies",
+            "must label that focus pending",
+        ):
+            self.assertIn(boundary, normalized)
+
+    def test_seo_planning_is_domain_owned_and_decision_ready(self):
+        planning = " ".join((
+            ROOT / "skills/seo/references/planning.md"
+        ).read_text(encoding="utf-8").split())
+        orchestration = " ".join((
+            ROOT / "skills/managing-marketing-work/SKILL.md"
+        ).read_text(encoding="utf-8").split())
+        for phrase in (
+            "The domain owner applies this method and retains the decision",
+            "Do not retrieve missing specialist evidence while ranking",
+            "Foundational defects",
+            "Evidence-supported enhancements",
+            "Coverage expansion",
+            "### 1. Measurement readiness and baseline",
+            "### 2. Technical quality and red-flag resolution",
+            "### 3. Growth plan",
+            "### 4. Content expansion",
+            "SEO quality scorecard",
+            "qualified-lead rate",
+            "disposition completeness",
+            "the first planned outcome is to repair that measurement path",
+            "A new red flag found in any later phase returns the program to this gate",
+            "Do not advance a phase merely because its report exists",
+            "Do not split one change into separate planning, implementation, verification, and readout outcomes",
+            "If the evidence supports fewer outcomes than the requested count",
+            "Do not multiply invented numeric scores",
+            "Decision state: Pending owner decision",
+            "Beacon independently verifies",
+        ):
+            self.assertIn(phrase, planning)
+        for phrase in (
+            "Domain-owned planning",
+            "caller owns the domain decision",
+            "does not transfer evidence retrieval",
+            "keeps the recommendation visibly pending",
+        ):
+            self.assertIn(phrase, orchestration)
+
+    def test_seo_measurement_covers_search_business_and_disposition_baselines(self):
+        measurement = " ".join((
+            ROOT / "skills/seo/references/measurement.md"
+        ).read_text(encoding="utf-8").split())
+        sources = " ".join((
+            ROOT / "skills/seo/references/sources.md"
+        ).read_text(encoding="utf-8").split())
+        for phrase in (
+            "Search Console records what happened before arrival",
+            "Analytics records onsite behavior after arrival",
+            "CRM or commerce system establishes whether a lead qualified",
+            "working_lead",
+            "qualify_lead",
+            "disqualify_lead",
+            "close_convert_lead",
+            "close_unconvert_lead",
+            "missing disposition data means traffic quality is unestablished",
+        ):
+            self.assertIn(phrase, measurement)
+        for phrase in (
+            "The four-gate order in `planning.md` is this catalog's operational synthesis",
+            "The SEO quality scorecard deliberately has no combined numeric grade",
+        ):
+            self.assertIn(phrase, sources)
 
     def test_member_instructions_are_bounded_and_role_specific(self):
         declared = {member["instructions"] for member in self.team["members"]}

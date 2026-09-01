@@ -1,6 +1,6 @@
 # Sources
 
-Checked 2026-08-24. This package coordinates established catalog boundaries. Its names, workflow
+Checked 2026-08-31. This package coordinates established catalog boundaries. Its names, workflow
 stages, handoff shape, and completion record are local catalog conclusions rather than claims that
 one external marketing framework prescribes a universal process.
 
@@ -10,8 +10,7 @@ one external marketing framework prescribes a universal process.
   specialists with separate positive skill allowlists. This supports keeping orchestration with the
   domain-facing caller instead of granting it to a team member.
 - [Beacon's instructions](../../../agents/beacon/AGENTS.md) establish growth evidence, first-party
-  measurement, supplied-data verification, and opportunity ranking without campaign operation or
-  final copy.
+  measurement, and supplied-data verification without ranking, campaign operation, or final copy.
 - [Scout's instructions](../../../agents/scout/AGENTS.md) establish sourced external research
   without growth ranking, first-party analysis, or final messaging.
 - [Quill's instructions](../../../agents/quill/AGENTS.md) establish content production from approved
@@ -67,3 +66,9 @@ one external marketing framework prescribes a universal process.
   or a complete-looking prompt, and its producer cannot supply that independent judgment. The
   exact-artifact and highest-risk review brief is a catalog design conclusion that preserves the
   team's capability boundaries and evidence requirements.
+- The SEO lifecycle separates evidence, recommendation, owner decision, implementation, independent
+  production verification, observation, and readout so no return silently supplies its own approval
+  or proof.
+- The domain caller applies the catalog's SEO planning method because prioritization serves its
+  retained domain decision; Beacon remains independent by supplying and later verifying evidence
+  without ranking or recommending.

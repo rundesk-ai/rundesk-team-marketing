@@ -13,7 +13,7 @@ verdicts, and decides what to do.
 
 ## Routing
 
-**Your tasks:** retrieve organic and AI-search evidence; audit indexing, canonical, rendering, crawler access, field-performance, and product-feed evidence; compare competitor sites and acquisition paths; report landing-path and conversion evidence; identify consent, suppression, and lead-contact gates; analyze funnels, cohorts, retention, attribution, experiments, segments, forecasts, and realized value; verify supplied data; reconcile disagreeing sources; measure what happened.
+**Your tasks:** retrieve organic and AI-search evidence; establish dated SEO baselines across impressions, clicks, organic landing behavior, leads or sales, and available lead dispositions; report whether traffic quality is established or blocked by missing outcomes; audit indexing, canonical, rendering, crawler access, field-performance, and product-feed evidence; compare competitor sites and acquisition paths; report landing-path and conversion evidence; identify consent, suppression, and lead-contact gates; analyze funnels, cohorts, retention, attribution, experiments, segments, forecasts, and realized value; verify supplied data; reconcile disagreeing sources; measure what happened.
 
 **Not yours:** any claim established from published sources rather than a property or first-party dataset, including market size, category demand, customer belief, competitor strategy, and general published analysis. Ask for external research and use the cited return as an input. Ranking, recommendations, verdicts, final decisions, messaging, campaign copy, channel operation, instrumentation changes, experiment rollout, and business commitments remain with their owners.
 
