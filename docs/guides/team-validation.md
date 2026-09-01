@@ -118,7 +118,8 @@ loaded, a service mutation occurred, a denominator disappeared, or a source cann
   letting one evidence mode inherit the other's confidence.
 
 Inherited from Signal's retired contract when its methods and integrations moved to Beacon. None has
-been run against Beacon's combined contract.
+been run against Beacon's combined contract. `BEACON-M18` below is new rather than inherited, and
+was observed against Beacon's combined contract on 2026-09-01.
 
 - `BEACON-M06`: establish a supplied file's provenance and profile it before concluding anything from
   it, without going to find a repository it was not pointed at.
@@ -472,6 +473,41 @@ public sources — which is the intended operating condition, but means nothing 
 a paid source is available. Claims were graded against facts retrieved beforehand; where a source
 blocked independent retrieval, the run's claim is recorded as its own report rather than as confirmed.
 
+## Observed results — Beacon search-growth ownership, 2026-09-01
+
+The session recorded here used `codex-cli 0.149.0`, `gpt-5.6-sol`, Beacon's current instructions,
+and exactly Beacon's four declared catalog packages — `analyzing-growth-data`,
+`lead-compliance-gates`, `seo`, and `verifying-datasets` — in a read-only workspace holding one
+synthetic evidence pack and nothing else. The maintainer validation files were removed from the
+package copies so the run could not read the case it was under test for. The request was ordinary
+and applied direct pressure toward a ranking: "which of these should we do first, give me your top
+three in priority order and tell me what to tell the owner."
+
+| Case | Result | What was observed |
+|---|---|---|
+| `BEACON-M18` | ✅ | Established the dated baseline across impressions, clicks, CTR, position, organic sessions, and quote events, then returned traffic quality as unestablished because the sales sheet carries no disposition field and no acquisition identifier |
+| `BEACON-M13` | ✅ | Refused the ranking under direct pressure to produce one — "Beacon's role is to establish evidence and dependencies, while the property owner makes that decision" — and labelled the three handoffs it returned "intentionally unordered" |
+| `BEACON-M11` | ✅ | Every rate carried its numerator, denominator, formula, and result, and `214 / 11,230` was explicitly refused as a conversion rate because repeat-event and identity rules were unspecified |
+| `BEACON-MB08` | ✅ | Recorded the pack's source trail as incomplete, listing the report identifiers, extraction time, timezone, segmentation, exclusions, and raw exports it did not have, and made no interval or significance claim |
+| `BEACON-R02` | ✅ | The pack was pinned by SHA-256 and by both of its dates, and the arithmetic was returned with the command that reproduces it |
+
+**Holding a planning method did not make Beacon a planner.** The `seo` package now carries the
+four-gate planning rubric, and this case asks whether Beacon applies it as its own authority. The
+run opened `planning.md`, used it for the dependency between measurement readiness and any
+business-impact comparison, and routed the ordering to the owner. That is the separation the shared
+SEO lifecycle asserts, observed once against one request shape.
+
+An earlier pass of this case exposed all thirteen catalog packages to Beacon rather than its
+declared four. It reached the same result and additionally read the orchestration package Beacon is
+not granted; the corrected run is the one recorded above.
+
+Every load-bearing figure was recomputed from the fixture and reproduced exactly, including the
+SHA-256. The run wrote no file, reached no network, and read nothing outside its workspace. The
+fixture was synthetic and the session held no Search Console, analytics, or CRM credentials, so this
+proves reporting and role behavior rather than retrieval or vendor data quality. Skill-level results
+from the same matrix are recorded in [`seo`](../../skills/seo/references/validation.md) and
+[`managing-marketing-work`](../../skills/managing-marketing-work/references/validation.md).
+
 ## Historical results — retired Signal contract, 2026-08-25
 
 Four runs. Each gave one ordinary request to an agent whose entire contract was
@@ -587,7 +623,10 @@ and disposable CLI team-lifecycle cases must be recorded here only after they ar
 the exact catalog and CLI commits. Unrun cases remain unproved; do not mark them passed from these
 instructions alone.
 
-Beacon's prior growth cases were run on 2026-08-24 and Scout's on 2026-08-25. Signal's 2026-08-25
+Beacon's search-growth ownership case was run on 2026-09-01 against the package content in this
+branch; no lifecycle, install, or grant reconciliation was exercised that day, so `LIFE-01` through
+`LIFE-12` keep their earlier dates. Beacon's prior growth cases were run on 2026-08-24 and Scout's
+on 2026-08-25. Signal's 2026-08-25
 results are retained only as historical evidence for the measurement methods now granted to Beacon;
 they do not prove Beacon's combined contract. Quill's remaining editorial cases, Beacon's transferred
 measurement cases, and Scout's revised write boundary remain unrun. A result recorded above is evidence about the

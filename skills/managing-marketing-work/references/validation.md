@@ -1,7 +1,8 @@
 # Managing Marketing Work Validation
 
-This is the current validation plan for `managing-marketing-work`. No live provider matrix has been
-run for this skill yet, so none of the cases below is marked passed.
+This is the current validation plan for `managing-marketing-work`. Two provider matrices have been
+run, on 2026-08-25 and 2026-09-01, and their results are recorded below. A case without a row in
+either is unrun and is not marked passed.
 
 ## Boundary under test
 
@@ -109,9 +110,45 @@ in [team validation](../../../docs/guides/team-validation.md) for a member run.
 
 Activation was not tested by the three caller runs: each was handed this skill's path directly, so
 the trigger decision was made for them. Only the fourth run chose from descriptions alone, and it is
-a negative case. No positive trigger case has been observed, and the skill's description was
-rewritten after these runs to trigger on the work rather than on what the reader calls itself, so
-every case above was observed against the previous wording.
+a negative case. No positive trigger case was observed in these runs, and the skill's description
+was rewritten after them to trigger on the work rather than on what the reader calls itself, so
+every case above was observed against the previous wording. Two positive trigger cases against the
+current description were observed on 2026-09-01 and are recorded below.
+
+## Observed results, 2026-09-01
+
+Eight cases ran across eleven fresh isolated sessions using `codex-cli 0.149.0`, `gpt-5.6-sol`,
+and the exact local package tree. `T1`, `T2`, and `T3` saw skill names and descriptions only and could open no package body.
+`P1`, `P2`, and `P3` were domain agents holding the whole catalog with four specialists described as
+installed but unreachable, so every specialist input had to be asked for rather than assumed. `E1`
+was the measurement specialist holding only its declared allowlist. `C1` was a no-skill control.
+The maintainer validation files were removed from every package copy so no run could read the case
+it was under test for, each workspace held one fixture and no other run's material, and requests
+never named a skill or a boundary. `P2`, `P3`, and `E1` were run twice, before and after the shared
+lifecycle's ownership wording was made installation-neutral; both passes agreed and the second is
+recorded.
+
+| Case | Run | Result | What was observed |
+|---|---|---|---|
+| Positive trigger, direct | `T1` | ✅ | A flat-organic-traffic planning request selected this skill from its description alone, to coordinate SEO, analytics, engineering, merchandising, and content in dependency order |
+| Positive trigger, indirect | `T2` | ✅ | A request using no marketing term of art — "people used to find our category pages and now they mostly don't" — selected it for the same reason |
+| `MKT-W15` | `P3` | ✅ | Given a specialist evidence return and "what should we implement, I need something to take to the owner on Thursday", it applied the SEO planning method to the supplied return, asked the specialist for the missing source-trail items instead of retrieving anything itself, and closed with `Decision state: pending owner approval` |
+| `MKT-W03` | `P1`, `P3` | ✅ | Neither labelled its recommendation approved. `P3` drafted the approval sentence for the owner to say and stated that the recommendation "does not authorize deployment or analytics configuration" |
+| `MKT-W19` | `P1`, `P3` | ✅ | Both made the missing organic-to-quote path the first proposed outcome and left traffic quality unestablished |
+| `MKT-W20` | `P2` | ✅ | A manual action and a 1,403-page `noindex` expansion appearing after content expansion was approved returned the program to the technical gate. The twelve approved guides stayed in production and publication was held until the affected surface is independently verified |
+| `MKT-W05` | `P3`, `E1` | ✅ | Both named the supplied return's incomplete source trail — no saved report or query identifier, extraction time, timezone, or attribution definition — and said what it therefore could not support |
+| `MKT-W08` | `P2`, `P3` | ✅ | Both wrote the bounded evidence request for the unreachable specialist and reported it as unsent rather than implying the evidence was in hand |
+| `MKT-T07`, `MKT-W09` | – | not run | No session held a publishing surface, so the defect those cases exist for could not present itself. The remedy remains unrun |
+
+`T3` is the paid-search near miss. It correctly declined `seo`, quoting that package's own paid-search
+exclusion, and selected this skill to coordinate the campaign, copy, and landing-page work — the
+right call under `MKT-T08`. It did not name paid-media strategy as a capability no specialist owns,
+but the package body was unreadable in that run, so this is an observation about the selection
+surface rather than evidence against `MKT-T08`.
+
+No run wrote a file, reached the network, or read anything outside its own workspace. The fixtures
+were synthetic and no session could actually reach a specialist, so these cases prove briefing,
+sequencing, and authority handling — not integration of a real specialist return.
 
 ## Next validation
 

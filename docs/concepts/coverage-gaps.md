@@ -65,11 +65,11 @@ exist only here. The divergence is deliberate and its provenance is recorded in
 upstream no longer reaches this copy, and the two descriptions now route differently. Anyone reading
 the upstream package should not assume it is the one a member of this team received.
 
-Corey Haines' separately installed `marketingskills` catalog also contains overlapping SEO packages.
-They are not granted to this team and are not the supported operating path: several rules conflict
-with this catalog's current platform-specific evidence and validation contract. Use this catalog's
-`seo` package and shared SEO lifecycle unless the owner explicitly approves a migration after a
-fresh source and behavior review.
+A separately published third-party SEO or marketing-skills catalog may overlap these packages. Any
+such catalog is outside this team's declared dependencies, is not granted to any member, and is not
+the supported operating path: its rules can conflict with this catalog's current platform-specific
+evidence and validation contract. Use this catalog's `seo` package and shared SEO lifecycle unless
+the owner explicitly approves a migration after a fresh source and behavior review.
 
 ## Deliberate exclusions
 

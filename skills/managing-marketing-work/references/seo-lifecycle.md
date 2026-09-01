@@ -7,9 +7,9 @@ bounded audit or report. The domain caller owns the outcome and every owner deci
 
 - **The `seo` skill owns the method.** It supplies the source-backed checks, four-gate order, SEO
   quality scorecard, red-flag handling, and planning rubric. It is not a role or a separate planner.
-- **The domain caller owns planning.** Milo, Magenta, or another authorized domain owner applies the
-  method to complete specialist returns, ranks options, recommends direction, and keeps the decision
-  pending for the named owner.
+- **The domain caller owns planning.** An authorized domain owner holding this method applies it to
+  complete specialist returns, ranks options, recommends direction, and keeps the decision pending
+  for the named owner.
 - **Beacon owns evidence.** Beacon retrieves the baseline, traffic-quality and disposition evidence,
   page and technical evidence, and red flags. It states what is established or missing without
   ranking, recommending, issuing a verdict, or deciding.
