@@ -31,6 +31,12 @@ be re-checked before being quoted to a client.
   the critical dashboard checks for security issues and manual actions before routine optimization.
 - [Debugging drops in Google Search traffic](https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops):
   the documented investigation path across technical, security, spam, seasonality, and demand causes.
+- [Google Search's guidance on third-party SEO tools and advice](https://developers.google.com/search/docs/fundamentals/third-party-seo):
+  external advice should be checked against official guidance; vendor data is not Google's internal
+  ranking data, and no tool or service can guarantee performance.
+- [Search Console recommendations](https://developers.google.com/search/blog/2024/08/search-console-recommendations):
+  suggestions are based on Google systems data but remain experimental, may expire or change, and
+  still require property-specific verification and prioritization.
 
 ### Crawling, indexing, and rendering
 
@@ -51,6 +57,9 @@ be re-checked before being quoted to a client.
   invalid `UK`/`EU`/`UN` codes.
 - [Mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing).
 - [Verifying Googlebot and other Google crawlers](https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot).
+- [Site moves and migrations](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes):
+  staged change control, old-to-new URL mapping, permanent redirects, Search Console preparation,
+  removal of temporary crawl blocks, monitoring, and the at-least-one-year redirect period.
 - [Qualify your outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links):
   `sponsored`, `ugc`, `nofollow`.
 

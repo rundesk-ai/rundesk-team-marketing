@@ -65,6 +65,11 @@ Build the technical section of the scorecard from observable checks, not a singl
 - conversion-path failures, broken forms or checkout, missing tags, duplicate events, irreconcilable
   attribution, and disposition leakage that makes traffic quality unknowable.
 
+Search Console recommendations may surface indexing, crawling, serving, sitemap, structured-data,
+or trending-query opportunities. Record them as dated inputs, not commands: Google describes the
+feature as experimental and says recommendations can expire or change. Verify the underlying report,
+business-outcome path, dependency, and red-flag state before promoting one into the plan.
+
 Keep a red-flag register with location or affected population, evidence, severity, owner, required
 fix, verification, and state. Security issues, manual actions, an unavailable site, broad accidental
 blocking or `noindex`, broken conversion paths, and material tracking loss interrupt the normal

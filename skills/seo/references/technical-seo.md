@@ -121,6 +121,30 @@ Server-side rendering or pre-rendering remains the safe default; Google's own do
 "is still a great idea." Always confirm against the rendered HTML rather than assuming the hydration
 worked.
 
+## Site moves and high-risk URL changes
+
+A domain, protocol, hostname, path, CMS, or large-template change is a technical red flag until its
+mapping and monitoring plan are verified. Follow Google's
+[site-move guidance](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes),
+not a generic relaunch checklist:
+
+1. Preserve the dated pre-move baseline and inventory old URLs from sitemaps, analytics, server
+   logs, and linked-page reports. Map every retained URL to a relevant new destination; deleted
+   content returns `404` or `410`, not a blanket homepage redirect.
+2. Change one major axis at a time. Do not combine a domain move, CMS replacement, and redesign into
+   one release when they can be separated. For a large site, test a stable section before widening
+   the move and state that the sample does not prove whole-site behavior.
+3. Before launch, verify both old and new Search Console properties, analytics continuity, server
+   capacity, self-canonicals, hreflang, internal links, robots directives, and the new sitemap.
+4. Use direct server-side permanent redirects, test the complete old-to-new mapping, remove staging
+   `noindex` or crawl blocks, and use Change of Address only for a domain or subdomain move.
+5. Keep redirects for at least one year, monitor old and new sitemaps, indexing, queries, crawler and
+   error logs, traffic, and conversions, and annotate the release in the measurement record.
+
+Do not call a migration complete because redirects return `301`. Completion requires the mapped
+URLs to resolve correctly, the new URLs to be crawlable and canonical, and Search Console plus
+business-outcome monitoring to show the expected transfer without an unresolved red flag.
+
 ## Lazy loading, images, and video
 
 - Lazy loading must load content **when it enters the viewport**. An implementation that waits for a
@@ -154,3 +178,4 @@ worked.
 - [Image SEO best practices](https://developers.google.com/search/docs/appearance/google-images)
 - [Video SEO best practices](https://developers.google.com/search/docs/appearance/video)
 - [Mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing)
+- [Site moves and migrations](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes)

@@ -89,6 +89,9 @@ The ways an SEO engagement itself goes wrong:
 - **Bulk-redirecting removed pages to the homepage.** Treated as soft 404s; the equity is lost anyway.
 - **Fixing content before indexation.** A page Google will not index cannot be improved into ranking.
 - **Making many changes at once, then attributing the outcome to the favoured one.**
+- **Treating a borrowed SEO skill, vendor recommendation, or tool score as authority.** Check each
+  material claim against the documentation for the affected search surface. Preserve unsupported
+  advice as a hypothesis, not a rule, and prefer Search Console evidence for Google Search.
 - **Claiming a recovery timeline.** Nobody can promise one, and the honest answer — "indexing in
   days, ranking effects over weeks, contaminated by any core update in between" — is more useful.
 - **Treating "GEO"/"AEO" as a separate discipline with a separate budget.** Google's position:
@@ -106,3 +109,4 @@ The ways an SEO engagement itself goes wrong:
 - [Google says llms.txt is purely speculative for now](https://www.searchenginejournal.com/google-says-llms-txt-is-purely-speculative-for-now/577576/)
 - [John Mueller rebuts the idea that Google uses a domain authority signal](https://www.searchenginejournal.com/domain-authority/246515/)
 - [Qualify your outbound links to Google](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links)
+- [Google Search's guidance on third-party SEO tools and advice](https://developers.google.com/search/docs/fundamentals/third-party-seo)
