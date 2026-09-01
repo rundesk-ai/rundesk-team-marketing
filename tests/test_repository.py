@@ -461,9 +461,12 @@ class RepositoryContract(unittest.TestCase):
             "If the evidence supports fewer outcomes than the requested count",
             "Do not multiply invented numeric scores",
             "Decision state: Pending owner decision",
-            "Beacon independently verifies",
+            "the evidence specialist — not the domain owner and not the implementer —",
+            "independently verifies the affected production surface",
         ):
             self.assertIn(phrase, planning)
+        for name in ("Beacon", "Scout", "Quill"):
+            self.assertNotIn(name, planning)
         for phrase in (
             "Domain-owned planning",
             "caller owns the domain decision",

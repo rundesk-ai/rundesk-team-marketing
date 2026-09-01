@@ -67,16 +67,17 @@ mutation rather than a recommendation.
 
 ## Observed results, 2026-09-01
 
-Eight cases ran across eleven fresh isolated sessions using `codex-cli 0.149.0`, `gpt-5.6-sol`,
-and the exact local package tree. `T1`, `T2`, and `T3` saw skill names and descriptions only and could open no package body.
-`P1`, `P2`, and `P3` were domain agents holding the whole catalog with four specialists described as
-installed but unreachable. `E1` was the measurement specialist holding only its declared allowlist.
-`C1` was a no-skill control given `P1`'s fixture and request. Each workspace held the package tree,
-one synthetic fixture, and nothing else; the maintainer validation files were removed from every
-copy so no run could read the case it was under test for. Requests were ordinary and never named a
-skill, a boundary, or an expected result. `P2`, `P3`, and `E1` were run twice, before and after the
-shared lifecycle's ownership wording was made installation-neutral; both passes agreed and the
-second is recorded.
+Eight cases ran across fifteen fresh isolated sessions using `codex-cli 0.149.0`, `gpt-5.6-sol`,
+and the exact local package tree. `T1`, `T2`, and `T3` saw skill names and descriptions only and
+could open no package body. `P1`, `P2`, and `P3` were domain agents holding the whole catalog with
+four specialists described as installed but unreachable. `E1` was the measurement specialist holding
+only its declared allowlist. `C1` was a no-skill control given `P1`'s fixture and request. Each
+workspace held the package tree, one synthetic fixture, and nothing else; the maintainer validation
+files were removed from every copy so no run could read the case it was under test for. Requests
+were ordinary and never named a skill, a boundary, or an expected result. `P1`, `P2`, `P3`, and `E1`
+were re-run after each wording correction — first to the shared lifecycle's ownership section, then
+to this package's planning reference — and every pass agreed on every case below. The last pass is
+what is recorded.
 
 | Case | Run | Result | What was observed |
 |---|---|---|---|
@@ -88,7 +89,7 @@ second is recorded.
 | `SEO-W24` | `P2` | ✅ | A site-wide manual action and a 1,403-page `noindex` expansion, arriving against an already approved twelve-guide expansion, interrupted the calendar for containment. Drafting continued and publication went behind a ten-item release gate; a filed reconsideration request was explicitly not enough to clear it |
 | `SEO-W25` | `P2`, `P3` | ✅ | Expansion stayed in phase 4 in both. `P2` required distinct intent, a noncompeting canonical, an internal-link path, a reviewer other than the writer, and separate publication authority; `P3` deferred all new content until the measurement and technical gates pass |
 | `SEO-W15` | `P3` | ✅ | The ranking carried the outcome path, dependencies, release checks, guardrails, observation windows, source latency, deferred alternatives, and `Decision state: pending owner approval` |
-| `SEO-W15` | `P1` | ⚠️ partial | The three-project ranking followed the gate order and carried a success check per project, but returned no explicit pending-owner-decision state and no alternatives set |
+| `SEO-W15` | `P1` | ⚠️ partial | The three-project ranking followed the gate order and carried a success check, confidence, dependencies, and deferred alternatives per project, and the last pass added the provisional label and the owner-approval boundary. Effort and time to evidence were absent in every pass |
 | `SEO-W23`, `SEO-W16` | – | not run | No vendor audit score and no evidence tie was put in front of a run |
 
 **The control separates the method from the model.** Given the same fixture and request with no

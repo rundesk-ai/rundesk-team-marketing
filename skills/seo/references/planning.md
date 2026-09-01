@@ -15,9 +15,10 @@ Start with:
 - the current approved phase, active experiments, dependencies, constraints, and known risks; and
 - the baseline, guardrails, observation window, and evidence latency.
 
-Do not retrieve missing specialist evidence while ranking. Ask Beacon for property, first-party, or
-supplied-data evidence and Scout for published external claims. Continue with unaffected options and
-mark every dependent conclusion provisional.
+Do not retrieve missing specialist evidence while ranking. Ask the first-party and supplied-data
+evidence specialist for property, analytics, and supplied-file evidence, and the external-research
+specialist for published claims. Continue with unaffected options and mark every dependent
+conclusion provisional.
 
 ## Operate four gates in order
 
@@ -159,7 +160,7 @@ experiments, spend, or contact.
 ## Preserve independent verification
 
 An implementation reviewer judges the finished artifact type and must not be its producer. After an
-authorized release, Beacon independently verifies the affected production surface, measurement
-behavior, and source trail. The domain owner compares Beacon's observed return with the approved
-measurement contract and recommends keep, iterate, stop, or gather more evidence; the named owner
-makes the resulting decision.
+authorized release, the evidence specialist — not the domain owner and not the implementer —
+independently verifies the affected production surface, measurement behavior, and source trail. The
+domain owner compares that observed return with the approved measurement contract and recommends
+keep, iterate, stop, or gather more evidence; the named owner makes the resulting decision.

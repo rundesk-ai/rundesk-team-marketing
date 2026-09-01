@@ -117,16 +117,16 @@ current description were observed on 2026-09-01 and are recorded below.
 
 ## Observed results, 2026-09-01
 
-Eight cases ran across eleven fresh isolated sessions using `codex-cli 0.149.0`, `gpt-5.6-sol`,
+Eight cases ran across fifteen fresh isolated sessions using `codex-cli 0.149.0`, `gpt-5.6-sol`,
 and the exact local package tree. `T1`, `T2`, and `T3` saw skill names and descriptions only and could open no package body.
 `P1`, `P2`, and `P3` were domain agents holding the whole catalog with four specialists described as
 installed but unreachable, so every specialist input had to be asked for rather than assumed. `E1`
 was the measurement specialist holding only its declared allowlist. `C1` was a no-skill control.
 The maintainer validation files were removed from every package copy so no run could read the case
 it was under test for, each workspace held one fixture and no other run's material, and requests
-never named a skill or a boundary. `P2`, `P3`, and `E1` were run twice, before and after the shared
-lifecycle's ownership wording was made installation-neutral; both passes agreed and the second is
-recorded.
+never named a skill or a boundary. `P1`, `P2`, `P3`, and `E1` were re-run after each wording
+correction — first to the shared lifecycle's ownership section, then to the `seo` planning
+reference — and every pass agreed on every case below. The last pass is what is recorded.
 
 | Case | Run | Result | What was observed |
 |---|---|---|---|
