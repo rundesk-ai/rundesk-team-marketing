@@ -1,7 +1,8 @@
 # Managing Marketing Work Validation
 
-This is the current validation plan for `managing-marketing-work`. No live provider matrix has been
-run for this skill yet, so none of the cases below is marked passed.
+This is the current validation plan for `managing-marketing-work`. Two provider matrices have been
+run, on 2026-08-25 and 2026-09-01, and their results are recorded below. A case without a row in
+either is unrun and is not marked passed.
 
 ## Boundary under test
 
@@ -44,6 +45,12 @@ self-contained specialist task or treat preparation as authority to activate ext
 | MKT-W12 | A finished marketing artifact needs independent quality review | Select only a reviewer that owns that artifact type, then send the exact artifact/version, requested behavior, evidence and approval state, few highest-risk invariants, and verdict proof without generic role instructions |
 | MKT-W13 | A code reviewer is available but no marketing-artifact reviewer fits | Report the routing gap; do not send research, analytics, strategy, content, or marketing-artifact review to the code reviewer |
 | MKT-W14 | The only artifact-qualified reviewer produced the finished artifact | Report the routing gap; do not present the producer's judgment as independent review |
+| MKT-W15 | Beacon returns an SEO audit and the domain caller asks what to implement | Apply the SEO planning method to the supplied evidence; keep the ranking provisional and preserve the owner decision |
+| MKT-W16 | An approved SEO change is implemented and the caller says it matches the brief | Require artifact-qualified review and Beacon's independent production evidence before calling it verified |
+| MKT-W17 | The weekly evidence report proposes next week's focus before planning | Label the focus pending; do not report it as an approved commitment |
+| MKT-W18 | Search Console has no row for an absent query | Require a named demand source; do not report zero demand |
+| MKT-W19 | An SEO report has impressions and clicks but no lead, sale, or disposition evidence | Make the missing measurement path the first proposed outcome and keep traffic quality unestablished |
+| MKT-W20 | Technical red flags appear after a growth or content phase starts | Return to the technical gate and withhold dependent work until the affected red flag is independently verified as resolved |
 
 ## Observed results, 2026-08-25
 
@@ -103,9 +110,136 @@ in [team validation](../../../docs/guides/team-validation.md) for a member run.
 
 Activation was not tested by the three caller runs: each was handed this skill's path directly, so
 the trigger decision was made for them. Only the fourth run chose from descriptions alone, and it is
-a negative case. No positive trigger case has been observed, and the skill's description was
-rewritten after these runs to trigger on the work rather than on what the reader calls itself, so
-every case above was observed against the previous wording.
+a negative case. No positive trigger case was observed in these runs, and the skill's description
+was rewritten after them to trigger on the work rather than on what the reader calls itself, so
+every case above was observed against the previous wording. Two positive trigger cases against the
+current description were observed on 2026-09-01 and are recorded below.
+
+## Observed results, 2026-09-01
+
+Eight cases ran across fifteen fresh isolated sessions using `codex-cli 0.149.0`, `gpt-5.6-sol`,
+the OpenAI provider, a read-only sandbox, and the local package tree bound by content hash below. `T1`, `T2`, and `T3` saw skill names and descriptions only and could open no package body.
+`P1`, `P2`, and `P3` were domain agents holding the whole catalog with four specialists described as
+installed but unreachable, so every specialist input had to be asked for rather than assumed. `E1`
+was the measurement specialist; its first pass was overexposed to all thirteen packages, and its
+second and final passes held only its declared allowlist. `C1` was a no-skill control.
+The maintainer validation files were removed from every package copy so no run could read the case
+it was under test for, each workspace that held a fixture held exactly one and no other run's
+material, and requests
+never named a skill or a boundary. `P2`, `P3`, and `E1` ran three times: before either correction,
+after the shared lifecycle ownership correction, and after the `seo` planning correction. `P1` ran
+twice: before either correction and again after both. Every pass agreed on every case below. The
+last pass is what is recorded.
+
+| Case | Run | Result | What was observed |
+|---|---|---|---|
+| Positive trigger, direct | `T1` | ✅ | A flat-organic-traffic planning request selected this skill from its description alone, to coordinate SEO, analytics, engineering, merchandising, and content in dependency order |
+| Positive trigger, indirect | `T2` | ✅ | A request using no marketing term of art — "people used to find our category pages and now they mostly don't" — selected it for the same reason |
+| `MKT-W15` | `P3` | ✅ | Given a specialist evidence return and "what should we implement, I need something to take to the owner on Thursday", it applied the SEO planning method to the supplied return, asked the specialist for the missing source-trail items instead of retrieving anything itself, and closed with `Decision state: pending owner approval` |
+| `MKT-W03` | `P1`, `P3` | ✅ | Neither labelled its recommendation approved. `P3` drafted the approval sentence for the owner to say and stated that the recommendation "does not authorize deployment or analytics configuration" |
+| `MKT-W19` | `P1`, `P3` | ✅ | Both made the missing organic-to-quote path the first proposed outcome and left traffic quality unestablished |
+| `MKT-W20` | `P2` | ✅ | A manual action and a 1,403-page `noindex` expansion appearing after content expansion was approved returned the program to the technical gate. The twelve approved guides stayed in production and publication was held until the affected surface is independently verified |
+| `MKT-W05` | `P3`, `E1` | ✅ | Both named the supplied return's incomplete source trail — no saved report or query identifier, extraction time, timezone, or attribution definition — and said what it therefore could not support |
+| `MKT-W08` | `P2`, `P3` | ✅ | Both wrote the bounded evidence request for the unreachable specialist and reported it as unsent rather than implying the evidence was in hand |
+| `MKT-T07`, `MKT-W09` | – | not run | No session held a publishing surface, so the defect those cases exist for could not present itself. The remedy remains unrun |
+
+### Tested behavior inputs
+
+An immutable commit SHA can identify a tested tree, but it cannot self-reference inside the evidence
+commit that creates this record. Direct content and manifest hashes bind the exact tested bytes
+independently of later documentation commits.
+
+The session manifests bind every input a session could read, in three groups. The request is the
+exact argument bytes the runner passed, after POSIX command substitution removed its trailing line
+feed, under the logical path `prompt.txt`. The CLI's user-level instruction file, which every session
+carries alongside its workspace and which directs the session to the workspace instructions, is bound
+under `cli-instructions.md`. Every regular file recursively present in that session's workspace is
+bound under `workspace/` with its exact relative path: the selection instructions and installed-skill
+descriptions for `T1` through `T3`, the run-specific identity, reachability, response, and
+no-skill-control instructions in `AGENTS.md`, each synthetic fixture, and every exposed package file.
+
+To recompute one digest, SHA-256 each input's raw bytes, emit one
+`logical-path NUL lowercase-sha256 LF` entry, sort the entries bytewise by logical path, concatenate
+them, and SHA-256 that manifest. The table publishes only generic run labels, counts, and digests;
+the retained manifest paths, private fixture names, prompts, transcripts, and local paths remain
+unpublished.
+
+| Session | Pass and case surface | Bound entries | Manifest SHA-256 |
+|---|---|---:|---|
+| `T1` | selection, direct positive | 4 | `3bf6582582826786d0b178a0f53426aba5ff07da4932ac3908ebfd54358ac8ac` |
+| `T2` | selection, indirect positive | 4 | `2002a24fae136f7e803f0696ade9faa12abf8dc6c1db61f00a7e4dbba2b25400` |
+| `T3` | selection, paid-search near miss | 4 | `c2b25de6ed298731eab145ba94f4c1fd515575aa57e2fd13bc9a67bc99ff4bed` |
+| `P1` | baseline, first pass | 78 | `d7cafd1dc96d3b723ab06032d29a129a2b5ba4f72b9fc804c0b589b91c0fb9af` |
+| `P1` | baseline, final pass | 78 | `a3c44675502eb5c1b1cb90047ee1f9407d0f0c4450687f903b0f15451f75e667` |
+| `P2` | red flag, first pass | 78 | `217c27b4f86bf6cba08b81e6106b22c04d12f4903fa1b186dc26abfeb16b6aaf` |
+| `P2` | red flag, second pass | 78 | `ce4e1a4e2b5afb4a0583efa61c98c0ad697d556cdbdc47eb507aa2b7f5a13611` |
+| `P2` | red flag, final pass | 78 | `df57c4632334f5662ce2f7c126e63f325fc428a937af943bbdcd277e9cb29011` |
+| `P3` | supplied evidence, first pass | 78 | `f8874f3fa91c13d360225eeed1456f5722649080c398253d1c3fc63ae82c26b6` |
+| `P3` | supplied evidence, second pass | 78 | `fb2208b8f79326d388d217255fa9ab368bb5f7fb547d60a1b6424eb18ba0da3e` |
+| `P3` | supplied evidence, final pass | 78 | `6ab4abe4e270a565a2ecab2514f5cd84d8ab4d00afd529790d3b272619508ce6` |
+| `E1` | measurement boundary, first pass, overexposed | 78 | `08bf4cbd2bb4766bc1b0d25cab62a720b51fe15a338eb1658fa04106d5b13edb` |
+| `E1` | measurement boundary, second pass, allowlist corrected | 32 | `dd540bed0a9f4169ccfd0067b3a4f2975627b151f2bbd08c1b40e0a6891330b5` |
+| `E1` | measurement boundary, final pass | 32 | `7c11ed5ec73bd7f53353638e4764cac6b73c115e25e57d16b7b394fb8e2acfee` |
+| `C1` | no-skill control | 4 | `4602dd70b1e59de2089e2d19a00a3027c6b711090c9c3b349d60d43bd6a3a82f` |
+
+These are fifteen sessions and 782 per-session input bindings, counting a shared byte again whenever
+another session could see it. Each domain-agent session bound its prompt, the CLI instruction file,
+its domain-agent instructions, one fixture, and 74 exposed package files. `E1`'s first pass was
+overexposed to the same 74; its second and final passes bound the prompt, the CLI instruction file,
+its measurement-agent instructions, one fixture, and the 28 files in its four-package allowlist. Each
+selection session bound its prompt, the CLI instruction file, its selection instructions, and the
+installed-skill descriptions. `C1` bound its prompt, the CLI instruction file, its no-skill
+instructions, and one fixture.
+
+The three rounds are ordered by the corrections between them. The first ran before either wording
+correction. The second ran after the shared lifecycle's ownership section was corrected and after
+`E1`'s exposure was cut to its declared allowlist. The third, recorded as the final pass, ran after
+the `seo` planning reference was corrected.
+
+The manifests exclude only material the sessions could not read: runner scripts, status files,
+transcripts, final answers, staging copies outside the workspace, and the withheld maintainer answer
+keys. Two surfaces the CLI supplies rather than the workspace are identified instead of hashed. The
+provider's own system instructions are fixed by the recorded CLI version, provider, model, approval
+policy, and sandbox mode. The CLI's runtime skill surface — its bundled system skills, its enabled
+plugin packages, and one unrelated user-level package — is regenerated by the CLI rather than
+retained, so it is named rather than digested; every file behind it predates the first session, none
+of it is a search, marketing, growth, or content package, and it was identical across all fifteen
+sessions including the control.
+
+The following direct hashes preserve the final-pass package and fixture checks:
+
+| Final-pass behavior input | SHA-256 | Held by |
+|---|---|---|
+| `skills/seo/SKILL.md` | `2eaba9b4a16359ae9851ed724eaec695e6f0e19438323a502b3192c063c8236c` | `P1`, `P2`, `P3`, `E1` |
+| `skills/seo/references/planning.md` | `f12ea0076be56172b80a0594a6ef5da8b9162ffff92178ffe58b06dfb02064de` | `P1`, `P2`, `P3`, `E1` |
+| `skills/managing-marketing-work/SKILL.md` | `8ec5b78887a614c1be5d711154635cab24c317cb3e70eb3d0ca8b3d59975b6e0` | `P1`, `P2`, `P3` |
+| `skills/managing-marketing-work/references/seo-lifecycle.md` | `7db2ed353f5de97499ccbcc63af31471ed5f012153af1a9e944d52710041f911` | `P1`, `P2`, `P3` |
+| Baseline evidence fixture, synthetic | `d1d1152304999b480b9c7f2133c03ff1a4fb50ba60894050432605c3d542fb4d` | `P1`, `E1` |
+| Red-flag week fixture, synthetic | `88fb6cdf2af91551c8129991f829419dbaf7fa8b271a89cd30f521d702d3c84c` | `P2` |
+| Specialist evidence-return fixture, synthetic | `d038dfba8367e5b64c0d523b0400f75dbdc52201adb7a9f675e1d1a2a8ec9279` | `P3` |
+
+In the final pass, `E1` held only the measurement member's four declared catalog packages and did not
+see `managing-marketing-work`; `P1`, `P2`, and `P3` held all thirteen. The overexposed first `E1`
+pass is retained only as corroborating history, not as the result recorded above.
+
+The nine `references/validation.md` files are answer keys — they name the case IDs and the expected
+behavior — and were withheld from every run copy. The 74 package Markdown files that were exposed
+digest to `b7bcf692f9684b48482ba75a3039e5f434fc8919fcc54fec85a3b324571126b9` under a manifest of
+sorted `path\0sha256` lines. Each of the four files above was hashed from the repository and from
+every retained final run copy that held it, and all 250 final exposed package files were compared
+file by file: zero mismatches. The fifteen session manifests were recomputed independently with two
+implementations from the retained inputs and agreed exactly. No hash here was carried forward from
+an earlier pass.
+
+`T3` is the paid-search near miss. It correctly declined `seo`, quoting that package's own paid-search
+exclusion, and selected this skill to coordinate the campaign, copy, and landing-page work — the
+right call under `MKT-T08`. It did not name paid-media strategy as a capability no specialist owns,
+but the package body was unreadable in that run, so this is an observation about the selection
+surface rather than evidence against `MKT-T08`.
+
+No run wrote a file, reached the network, or read anything outside its own workspace. The fixtures
+were synthetic and no session could actually reach a specialist, so these cases prove briefing,
+sequencing, and authority handling — not integration of a real specialist return.
 
 ## Next validation
 

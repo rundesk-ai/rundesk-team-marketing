@@ -15,10 +15,40 @@ somebody else can reproduce.
 | Server logs | Which crawler fetched what, and what it received | your infrastructure |
 | The live URL | Status, headers, rendered HTML | `curl`, URL Inspection, Rich Results Test |
 | Analytics | What humans did after arriving | GA4 or equivalent |
+| CRM or commerce system | Which leads qualified, closed, were lost, and produced recognized value | authorized report or supplied export |
 
 Third-party rank trackers and "AI visibility" tools sample; they do not observe. Google states
 plainly that "no third-party tool has access to our internal ranking or AI systems." Use them for
 direction, never as evidence.
+
+## Baseline the full organic outcome chain
+
+Search Console records what happened before arrival: impressions, clicks, CTR, and average position.
+Analytics records onsite behavior after arrival. A CRM or commerce system establishes whether a lead
+qualified, closed, was lost, or produced a sale. Do not collapse these sources into one number or
+silently choose between them when they differ.
+
+For a lead business, use the authoritative lifecycle available to the property. GA4 documents the
+recommended events `generate_lead`, `working_lead`, `qualify_lead`, `disqualify_lead`,
+`close_convert_lead`, and `close_unconvert_lead`; its Lead acquisition report can then break new,
+qualified, and converted leads down by channel. Equivalent CRM statuses are valid when their
+definitions, transition rules, timestamps, and ownership are recorded. For ecommerce, establish the
+`purchase` event against the authoritative order or payment record rather than treating a checkout
+view as a sale.
+
+At minimum, retain these baseline layers for the same dated population:
+
+1. Search impressions and clicks by query and canonical landing page.
+2. Organic landing sessions and the named onsite key event.
+3. Generated leads or purchases.
+4. Lead dispositions and reasons, or refunds/cancellations where those determine realized quality.
+5. Qualified or converted outcomes and recognized value, with the attribution model stated.
+
+Report each rate with its physical numerator and denominator. A high click count with a low
+qualified-lead or sale rate is not healthy traffic, and missing disposition data means traffic
+quality is unestablished. Fix missing tags, events, joins, status definitions, or disposition capture
+before setting a traffic-growth target. Preserve consent and privacy requirements; measurement
+readiness does not authorize collecting personal data or changing an account.
 
 ## Search Console
 
@@ -161,3 +191,8 @@ OpenAI publishes `openai.com/searchbot.json` and siblings. User-agent strings ar
 - [Introducing AI Performance in Bing Webmaster Tools](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)
 - [Verifying Googlebot and other Google crawlers](https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot)
 - [OpenAI bots](https://developers.openai.com/api/docs/bots) — published IP ranges per agent
+- [Search Console Performance report](https://support.google.com/webmasters/answer/7576553)
+- [GA4 recommended lead-generation events](https://support.google.com/analytics/answer/9267735)
+- [GA4 Lead acquisition report](https://support.google.com/analytics/answer/16376749)
+- [GA4 key events](https://support.google.com/analytics/answer/9267568)
+- [GA4 ecommerce events](https://support.google.com/analytics/answer/14434488)

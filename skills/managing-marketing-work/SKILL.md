@@ -36,15 +36,22 @@ ceremony.
 another depends on, or evidence and direction must be reconciled before an artifact exists. Use the
 contract and dependency order below.
 
+**Domain-owned planning.** When the caller owns the domain decision and holds the applicable growth
+method, it may rank supplied specialist evidence and recommend direction itself. This does not
+transfer evidence retrieval, external research, analysis, content, implementation, or verification
+from their specialists. The caller keeps the recommendation visibly pending until the named owner
+decides.
+
 **Loading a specialist's method skill is not a reason to do their work yourself.** Reading the
-research, growth, analytics, or content guidance tells you what a good return looks like and what to
+research, analytics, or content guidance tells you what a good return looks like and what to
 ask for. It does not transfer the work. When a specialist owns the question, the brief goes to them
 and you integrate what comes back; absorbing it yourself produces an answer nobody certified and
 loses the standard their return would have carried.
 
 Bind each needed capability to an installed specialist by reading the specialist descriptions and
-return contracts available to the caller. Do not infer ownership from a name or from a skill grant
-alone. When no installed specialist owns a needed capability, say so and name what is missing rather
+return contracts available to the caller. The exception is domain-owned planning above: its method
+and retained decision establish the caller's ownership. Do not infer any other ownership from a name
+or skill grant alone. When nobody owns a needed capability, say so and name what is missing rather
 than covering the gap yourself or dropping that part of the outcome silently.
 
 ## Define the marketing work contract
@@ -75,7 +82,7 @@ Route each bounded question to the capability that owns its method:
 | Need | Owning capability | Usable return |
 |---|---|---|
 | Market, customer, competitor, category, or current external fact | External research | Claim-linked findings, uncertainty, and reproducible sources |
-| SEO, AI-search, content, acquisition, or competitor-site opportunity | Growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
+| SEO, AI-search, content, acquisition, or competitor-site opportunity | Domain-owned growth planning | Ranked opportunity, evidence, expected impact, test, and measurement |
 | Funnel, cohort, retention, attribution, experiment, segment, or forecast | First-party analysis | Metric contract, query, result, uncertainty, and limits |
 | A supplied file or export, two sources that disagree, or a number that must be certified before it is reported | Data verification | Provenance, integrity checks, a reconciliation with each adjustment sized, and what the data cannot support |
 | Approved message, requirement, or marketing-channel artifact | Content production | Finished artifact with direction, claims, format, and approval notes |
@@ -88,7 +95,7 @@ quietly expanding the original handoff.
 
 When a growth ranking depends on market size, customer belief, competitor strategy, pricing, or
 another published claim, establish the external research first and pass its claim-linked return into
-growth planning. The growth owner may retrieve a competitor site as a serving surface; that does not
+domain-owned growth planning. The evidence owner may retrieve a competitor site as a serving surface; that does not
 establish the competitor's business strategy.
 
 ## Order work by dependency
@@ -201,6 +208,10 @@ Unrun: unavailable data, checks, activation, or external verification
 Completion requires the requested result, traceable evidence, reconciled specialist returns,
 validated artifacts, and honest authority state. Pending approval, unrun activation, or a dashboard
 without its metric contract remains pending rather than complete.
+
+For an SEO or AI-search change, recurring program, or weekly operating cadence, read and follow the
+complete [SEO delivery lifecycle](references/seo-lifecycle.md). A bounded audit or evidence retrieval
+still uses the direct-handoff mode above.
 
 Read [sources](references/sources.md) when auditing or changing the routing, ownership, evidence, or
 authority boundaries. Use [validation](references/validation.md) when testing activation and

@@ -22,8 +22,8 @@ can be traced back to anything.
 
 Separating evidence classes is the point: Beacon keeps retrieved growth evidence distinct from
 first-party or supplied measurements and exposes the inputs and arithmetic behind derived numbers,
-while Scout returns claims published by somebody else with citations. The requesting agent, not
-Beacon, ranks options and decides what the evidence means for action.
+while Scout returns claims published by somebody else with citations. A domain requester holding the
+SEO method ranks options from those supplied returns and decides what the evidence means for action.
 
 ## Users
 
@@ -42,7 +42,7 @@ Beacon, ranks options and decides what the evidence means for action.
   - Presenting an uncertified number as fact. First-party analysis carries a denominator or is
     returned as unestablished.
   - Returning a percentage without its physical inputs, formula, source, and comparable windows.
-  - Turning Beacon's report into a ranking, recommendation, verdict, or decision.
+  - Turning Beacon's report into Beacon's ranking, recommendation, verdict, or decision.
   - An external claim with no published source behind it.
   - Shipping its own service commands. Integrations are borrowed from declared catalogs.
   - Taking technical-documentation work owned by the development team.

@@ -35,7 +35,12 @@ State which of the three a finding is: **verified** on this site, **documented**
 engine, or **correlational** from a published study. They carry different weight and the third is
 never a guarantee.
 
-## Fix in dependency order
+Before sequencing a recurring program, establish whether impressions, clicks, organic landing-page
+behavior, leads or sales, and lead dispositions can be measured. Missing outcome tracking is a
+foundational defect, not a footnote; fix it before using traffic growth as the goal. The full
+measurement-first order and SEO quality scorecard are in `references/planning.md`.
+
+## Fix site defects in dependency order
 
 Work down this list. An optimization above an unmet requirement is wasted.
 
@@ -117,6 +122,10 @@ Check: crawl the sitemap and assert unique titles; re-inspect three URLs after d
 ```
 
 Rank by expected impact, not by how easy the fix is, and say plainly when a finding is cosmetic.
+
+When choosing among findings, sequencing a program, or preparing a decision-ready recommendation,
+read and follow [search-growth planning](references/planning.md). It keeps evidence retrieval,
+domain-owned prioritization, owner approval, implementation, and independent verification distinct.
 
 Use [validation](references/validation.md) when testing which requests should load this skill and
 which boundaries it must hold.

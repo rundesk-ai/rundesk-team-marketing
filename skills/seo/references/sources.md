@@ -8,7 +8,7 @@ claim, and to check whether a source has moved since it was read.
 outcomes and are correlational; commentary reports announcements. Never present the second or third
 as the first.
 
-Verified against the sources listed here in **August 2026**. Google withdrew several rich result
+Verified against the sources listed here in **September 2026**. Google withdrew several rich result
 types during 2026 and AI reporting surfaces are rolling out incrementally, so anything dated should
 be re-checked before being quoted to a client.
 
@@ -27,6 +27,16 @@ be re-checked before being quoted to a client.
   rules (disclosure, and the spam line on rank manipulation).
 - [Spam policies for Google web search](https://developers.google.com/search/docs/essentials/spam-policies):
   all sixteen named policies, including scaled content abuse and site reputation abuse.
+- [Getting started with Search Console](https://support.google.com/webmasters/answer/10267942):
+  the critical dashboard checks for security issues and manual actions before routine optimization.
+- [Debugging drops in Google Search traffic](https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops):
+  the documented investigation path across technical, security, spam, seasonality, and demand causes.
+- [Google Search's guidance on third-party SEO tools and advice](https://developers.google.com/search/docs/fundamentals/third-party-seo):
+  external advice should be checked against official guidance; vendor data is not Google's internal
+  ranking data, and no tool or service can guarantee performance.
+- [Search Console recommendations](https://developers.google.com/search/blog/2024/08/search-console-recommendations):
+  suggestions are based on Google systems data but remain experimental, may expire or change, and
+  still require property-specific verification and prioritization.
 
 ### Crawling, indexing, and rendering
 
@@ -47,6 +57,9 @@ be re-checked before being quoted to a client.
   invalid `UK`/`EU`/`UN` codes.
 - [Mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing).
 - [Verifying Googlebot and other Google crawlers](https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot).
+- [Site moves and migrations](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes):
+  staged change control, old-to-new URL mapping, permanent redirects, Search Console preparation,
+  removal of temporary crawl blocks, monitoring, and the at-least-one-year redirect period.
 - [Qualify your outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links):
   `sponsored`, `ugc`, `nofollow`.
 
@@ -145,6 +158,28 @@ be re-checked before being quoted to a client.
 - [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) —
   note Google's stated plan to drop field data from it.
 - [Using Search Console and Google Analytics data for SEO](https://developers.google.com/search/docs/monitor-debug/google-analytics-search-console)
+- [Search Console Performance report](https://support.google.com/webmasters/answer/7576553) and
+  [click, impression, CTR, and position definitions](https://support.google.com/webmasters/answer/7042828) —
+  the pre-arrival search baseline and the warning to pursue meaningful rather than empty impressions.
+- [GA4 recommended events](https://support.google.com/analytics/answer/9267735) and
+  [Lead acquisition report](https://support.google.com/analytics/answer/16376749) — the documented
+  generated, working, qualified, disqualified, converted, and unconverted lead lifecycle and its
+  channel-level reporting.
+- [GA4 key events](https://support.google.com/analytics/answer/9267568) and
+  [ecommerce events](https://support.google.com/analytics/answer/14434488) — onsite business outcomes
+  and purchases. A CRM or commerce record remains authoritative when analytics and business systems
+  disagree.
+
+### Catalog process conclusions
+
+- The four-gate order in `planning.md` is this catalog's operational synthesis, not a platform claim:
+  establish measurable search and business outcomes, resolve technical and measurement red flags,
+  plan growth against the established baseline, then expand content. It prevents more traffic from
+  being called success when qualified outcomes, sales, or dispositions are missing.
+- The SEO quality scorecard deliberately has no combined numeric grade. Google documents no single
+  page-experience signal, and vendor audit scores can conceal a critical failure behind unrelated
+  passing checks. The scorecard preserves each measurement-readiness, traffic-quality, and technical
+  status with its source and denominator.
 
 ## Tier 2 — published measurement
 
