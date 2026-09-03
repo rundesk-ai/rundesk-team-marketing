@@ -7,8 +7,8 @@
 `rundesk-team-marketing` is Rundesk's research, growth, and messaging team, kept as one versioned
 artifact. Three named agents: **beacon** reports traceable growth evidence, first-party measurement,
 and supplied-data verification without choosing what to do; **scout** researches markets, customers,
-and competitors from published sources; and **quill** writes requirements, messaging, editorial
-work, organic social and paid advertising copy, and other marketing content for a defined audience
+and competitors from published sources; and **quill** plans and writes requirements, messaging,
+editorial work, organic social and paid advertising content, and other marketing content for a defined audience
 from approved direction and evidence.
 
 The catalog also declares the shared integration catalogs its members borrow, so a member can reach
@@ -36,7 +36,7 @@ SEO method ranks options from those supplied returns and decides what the eviden
 
 - **Covers:** the three members and their canonical instructions; guidance for search, growth
   analytics, market and customer research, competitor research, data verification, requirements,
-  messaging, editorial content, organic social and paid advertising copy for named platform
+  messaging, editorial content, organic social content planning and paid advertising copy for named platform
   surfaces, and marketing content; and the declared dependencies on shared integration catalogs.
 - **Refuses:**
   - Presenting an uncertified number as fact. First-party analysis carries a denominator or is
@@ -46,7 +46,7 @@ SEO method ranks options from those supplied returns and decides what the eviden
   - An external claim with no published source behind it.
   - Shipping its own service commands. Integrations are borrowed from declared catalogs.
   - Taking technical-documentation work owned by the development team.
-  - Treating social-copy authorship as account access, scheduling, publishing, or engagement.
+  - Treating social-content planning or authorship as account access, scheduling, publishing, or engagement.
   - Treating ad-copy authorship as keyword-volume research, targeting, budget, campaign operation,
     upload, launch, or certified performance.
   - Promising an evidence class a member cannot actually deliver — the gaps are written down rather

@@ -1,6 +1,6 @@
 ---
 name: writing-social-content
-description: Use when creating, adapting, revising, or reviewing organic social-media copy such as Instagram captions, carousel or Reel text, Story copy, Pinterest Pin titles and descriptions, or related short-form posts. It supplies audience attraction, offer or idea framing, voice, discovery language, platform form, evidence, accessibility, and cross-platform adaptation. Do not use for paid ad copy, publish-only actions, community management, analytics, long-form editorial, interface microcopy, or visual production.
+description: Use when planning, creating, adapting, revising, or reviewing organic social-media content such as Instagram captions, carousel or Reel text, Story copy, Pinterest Pins, or a Pinterest content portfolio. It supplies audience attraction, offer or idea framing, voice, discovery language, platform form, evidence, accessibility, organic traffic and monetization alignment, and cross-platform adaptation. Do not use for paid ad copy, channel investment, publish-only actions, community management, analytics, long-form editorial, interface microcopy, or visual production.
 ---
 
 # Write social content
@@ -21,7 +21,8 @@ Content object: supplied image, video, carousel, article, product fact, event, o
 What is being promoted, shared, or made useful:
 Audience need, desire, question, objection, or identity supported by evidence:
 Relevant value, differentiator, and proof:
-Purpose and useful response:
+Approved objective, monetization path, primary success metric, and useful response:
+Search intent, season or planning moment, and evidence:
 One message and supporting facts:
 Approved action or destination:
 Voice, tone, English variant, and examples:
@@ -40,11 +41,19 @@ review is also requested, perform only that content work and keep the external e
 
 Read [copy and voice](references/copy-and-voice.md) when shaping the message, modeling an author or
 brand, adapting one idea across platforms, or reviewing quality and truth. Read [platform forms](references/platform-forms.md)
-for Instagram, Pinterest, or another named surface.
+for Instagram, Pinterest, or another named surface. Read the [Pinterest content playbook](references/pinterest.md)
+for any Pinterest portfolio, traffic, save, follower, timing, format, product-content, or
+monetization request.
 
 When the requested artifact is paid or sponsored ad copy, use the advertising-copy workflow
 instead. An organic product post remains social content even when it promotes something; payment,
 an ad unit, or a search-ad asset changes the writing contract.
+
+Content planning does not authorize selecting whether the business should invest in Pinterest,
+choosing a commercial model, setting spend, or claiming an outcome. Require the owner-approved
+objective and monetization path, or return the available content paths and the decision still
+needed. Turn that direction into a portfolio, Pin briefs, and a measurement handoff; leave account
+analysis to its evidence owner.
 
 ## Choose the content job
 
@@ -84,6 +93,7 @@ Approved call to action
 Accessibility copy or production requirements
 Claim, source, disclosure, and approval notes
 Meaningfully distinct variants, when requested
+Content portfolio, cadence, and measurement handoff, when planning was requested
 ```
 
 Keep on-creative words legible and purposeful. Let the caption add context, story, evidence, or a
