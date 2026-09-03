@@ -92,11 +92,11 @@ class RepositoryContract(unittest.TestCase):
     def members(self):
         return {member["name"]: member for member in self.team["members"]}
 
-    def test_manifest_and_banner_define_v_2_1_0(self):
+    def test_manifest_and_banner_define_v_2_2_0(self):
         self.assertEqual({"schema", "name", "version", "description"}, set(self.manifest))
         self.assertEqual(1, self.manifest["schema"])
         self.assertEqual("rundesk-team-marketing", self.manifest["name"])
-        self.assertEqual("2.1.0", self.manifest["version"])
+        self.assertEqual("2.2.0", self.manifest["version"])
         self.assertTrue((ROOT / "assets/readme/rundesk-team-marketing-banner-v2.png").is_file())
 
     def test_readme_lists_the_exact_team_capabilities(self):
@@ -127,7 +127,7 @@ class RepositoryContract(unittest.TestCase):
             readme.index("A versioned Rundesk team for research, growth, analytics,"),
             readme.index("## 👥 Team"),
         )
-        self.assertIn("catalog-v2.1.0-blue", readme)
+        self.assertIn("catalog-v2.2.0-blue", readme)
         self.assertLess(readme.index("### Complete team"), readme.index("### Skills only"))
         self.assertIn("gateways stopped", readme)
 
@@ -233,6 +233,12 @@ class RepositoryContract(unittest.TestCase):
         platforms = (
             ROOT / "skills/writing-social-content/references/platform-forms.md"
         ).read_text(encoding="utf-8")
+        pinterest = (
+            ROOT / "skills/writing-social-content/references/pinterest.md"
+        ).read_text(encoding="utf-8")
+        sources = " ".join((
+            ROOT / "skills/writing-social-content/references/sources.md"
+        ).read_text(encoding="utf-8").split())
 
         self.assertIn("Instagram captions and carousel or", quill)
         self.assertIn("Writing a `post` means drafting its content", quill)
@@ -243,6 +249,27 @@ class RepositoryContract(unittest.TestCase):
         self.assertIn("## Instagram", platforms)
         self.assertIn("## Pinterest", platforms)
         self.assertIn("Do not hard-code universal", platforms)
+        self.assertIn("desktop creation\nturns selected images into separate Pins", platforms)
+        for phrase in (
+            "outbound clicks and outbound-click rate",
+            "Do not prescribe a universal product-to-editorial ratio",
+            "Multi-asset video Pin",
+            "Product Pins are not a replacement for useful organic content",
+            "There is no defensible universal best day or hour",
+            "Earn saves",
+            "Earn follows",
+            "Earn outbound clicks",
+            "clear nearby disclosure",
+            "Use their repeated tactics as experiment candidates, never as a forecast",
+        ):
+            self.assertIn(phrase, pinterest)
+        for phrase in (
+            "observational research from a Pinterest scheduling vendor",
+            "selected platform case with paid amplification",
+            "service-provider marketing case studies without independent verification",
+            "do not establish that Pinterest is the right investment",
+        ):
+            self.assertIn(phrase, sources)
 
     def test_quill_owns_voice_true_keyword_aware_ad_copy_without_campaigns(self):
         quill = (ROOT / "agents/quill/AGENTS.md").read_text(encoding="utf-8")

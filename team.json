@@ -34,7 +34,7 @@
     },
     {
       "name": "quill",
-      "description": "Creates, revises, or reviews PRDs, messaging, blogs, articles, organic social posts, and paid advertising copy from approved direction and evidence; never publishes or operates campaigns.",
+      "description": "Creates PRDs, messaging, blogs, articles, organic social posts and Pinterest content plans, and paid advertising copy from approved direction and evidence; never publishes or operates campaigns.",
       "instructions": "agents/quill/AGENTS.md",
       "skills": [
         "rundesk-team-marketing/writing-advertising-copy",

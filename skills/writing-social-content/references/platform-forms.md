@@ -61,6 +61,12 @@ Words such as `why`, `how`, `results`, `lessons`, `guide`, and `what happened` a
 promises, not harmless headline decoration. Use them only when the supplied source actually
 delivers that material.
 
+Do not assume that selecting several files creates an organic gallery. Current desktop creation
+turns selected images into separate Pins, while current mobile creation can stitch multiple assets
+into one video Pin. A swipeable carousel is currently an advertising format. Verify these mechanics
+before specifying production, then use the [Pinterest content playbook](pinterest.md) to choose the
+content job, portfolio, creative, timing, and monetization alignment.
+
 ## Other platforms
 
 Do not force an Instagram or Pinterest template onto another platform. Ask for or verify the

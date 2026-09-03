@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml?query=branch%3Amain"><img src="https://github.com/rundesk-ai/rundesk-team-marketing/actions/workflows/build.yml/badge.svg?branch=main" alt="Build and tests"></a>
-  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v2.1.0-blue" alt="Catalog version 2.1.0"></a>
+  <a href="manifest.json"><img src="https://img.shields.io/badge/catalog-v2.2.0-blue" alt="Catalog version 2.2.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></a>
 </p>
 
@@ -31,7 +31,7 @@
 |---|---|
 | `beacon` | Reports traceable growth evidence and measurement with reproducible calculations, without ranking, recommending, or deciding. |
 | `scout` | Researches markets, customers, competitor businesses, products, and general topics from published sources. |
-| `quill` | Writes requirements, editorial, organic social, and paid advertising copy for the audience, offer, voice, and platform. |
+| `quill` | Plans and writes requirements, editorial, organic social, and paid advertising content for the audience, offer, voice, and platform. |
 
 Each member is an inbound-only specialist. The requesting agent chooses the specialist, retains the
 overall outcome, and integrates the returned evidence or artifact.
@@ -64,7 +64,7 @@ overall outcome, and integrates the returned evidence or artifact.
 - `writing-advertising-copy` — Write voice-true, keyword-aware paid ad copy aligned to the audience, offer, proof, and destination.
 - `writing-editorial-content` — Write and edit audience-, product-, and author-true blogs, devlogs, articles, columns, and stories.
 - `writing-prds` — Create and validate product requirements, briefs, and feature definitions.
-- `writing-social-content` — Write and adapt evidence-, voice-, and platform-true organic social copy without posting it.
+- `writing-social-content` — Plan and write evidence-, voice-, and platform-true organic social content, including Pinterest traffic and monetization alignment, without posting it.
 
 ### Integrations
 
@@ -87,7 +87,7 @@ granted per member in [`team.json`](team.json). Beacon holds the measurement met
 that previously belonged to Signal, while Scout remains the owner of cited external research.
 Beacon returns the raw inputs, formulas, sources, windows, and limits behind reported statistics;
 the requesting agent applies the SEO planning method, ranks options, and decides what to do. Quill
-drafts Instagram, Pinterest, search, display, and related organic or paid copy as text; its
+plans or drafts Instagram, Pinterest, search, display, and related organic or paid content as text; its
 grants do not authorize keyword-volume research, targeting, budgets, account or campaign operation,
 scheduling, publishing, launch, or engagement.
 
